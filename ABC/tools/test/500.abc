@@ -1,0 +1,20 @@
+X:501
+T:Tuti final
+C:Anon, 16th century
+M:3/4
+L:1/8
+K:G
+V:1 name="Soprano" sname="S." clef=treble
+%%MIDI program 1 1
+B3 A GF| E2 D2 EF| G4 F2| G6!D.C.!|| 
+w: 1.~Que * no * | ten -go~en* | que~os e-|cheis?'
+w: 2.~Es * na - |sci -do * | se-gun | vies
+V:2 name="Contralto" sname="C." clef=treble
+%%MIDI program 1 1
+G4 G2| G4 G2| E2 D2 D2| D6|| 
+V:3 name="Tenor" sname="T." clef=treble-8
+%%MIDI program 1 1
+B4 B2| c2 B4| c2 A4| G6|| 
+V:4 name="Baixo" sname="B." clef=bass
+%%MIDI program 1 1
+G,3 F, E,D,| C,2 G,2 E,2| C,2 D,4| G,,6|| 

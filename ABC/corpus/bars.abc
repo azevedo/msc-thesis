@@ -1,0 +1,21 @@
+X:1
+T:Overtura
+C:Pugnani, Gaetano (1731-1798)
+M:7/8 (3+2+2)
+L:1/4
+%Q:"Allegro" 1/2 = 240
+V: RH1 clef=treble name="Violini I" sname="Vl.I" auto
+V: RH2 clef=treble name="Contralto" sname="VB" scale=0.5 merge
+K:D 
+[V:RH1] A/>^A/ =A/ _A/ ^/A/ _/A/ ^3/2A/ _3/2A/ | \
+D z/ > F/ F z/> A/ .| \
+a a z d' & A2 z A [| \
+.[CEGc2] d d d |: \
+CDEf :: \
+GFED :| \
+CDEF || \
+GFED [|] \
+CDEF |[| \
+GFED :::|] \
+CDEF : \
+GFED |]

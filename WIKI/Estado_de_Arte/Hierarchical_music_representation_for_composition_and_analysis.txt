@@ -1,0 +1,41 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-12-20T11:49:10+00:00
+
+====== Hierarchical music representation for composition and analysis ======
+Created Thursday 20 December 2012
+
+=== Smaill, A; Wiggins, G; Harris, M ===
+
+* Lido a 20/12/2012
+
+2. **Representing Musical Events**
+The important thing to notice in this example is that we do not have to refer to the elements of the datatype itself: events are accessed through their identifiers, which are universal. Thus, it makes no difference what is the form of our exact repre-sentation, as long as the necessary interface functions are defined. The whole issue then rests upon the existence of a small atomic set of such functions; in the earlier paper, we argued that such a set does exist.
+2.3. **Constituents**
+//Example://
+	constituent( col, collection( 0, 34*dotted_minim+crotchet), syrinx, [eOOO,eOOl,...elSl,e182] )
+The first is a unique **identifier** for the constituent;
+The second field, the **structural type**, specifies the nature of the constituent. In this case, the constituent is to be viewed as an entity with a start time and an end time, but no further visible structure. The collection, then, is the least structured, and therefore the least interesting, kind of constituent;
+The third field can be thought of as a "musical type" - that is, a **label** which, in some sense, represents the role of the constituent;
+The fourth is a **set of** identifiers, naming the **events** which make up the constituent;
+2.4. **Stream Constituents**
+It seems likely that it will be useful, then, to admit the existence of a class of constituents enjoying this property. This we will call a stream. A stream has a start time and a duration, and, as a first approx- imation, we will suggest that its particles are con- tiguous.
+We can use the constituent's structural type to determine whether or not to call a version of the program optimised for monophonic lines.
+We can represent multiple "views" of the same data using constituents with different "musical types," which is an important requirement of a musical repre-sentation system.
+3.2. **Implementing constituents**
+We claim that the basic representation contains in principle enough information to allow a wide range of musical tasks to be performed. However, it is vital that the user can approach the musical material in ways that make musical sense at a higher level, and that the user has liberty in choosing how the material can best be structured for the purpose at hand. Our intention is that the constituent mechanism allows the user just this freedom. 
+4.2. **The similarities**
+The similarities used in our analysis are as follows:
+* //Identity// - True if a phrase is identical with another.
+* //Longer Identity// - True if a phrase is almost identical with an existing motif- specifically, identical except for a longer first note.
+* //Transpose// - True if a phrase is a transposition of a constant number of semitones (i.e. not a modal transposition) of an existing motif.
+* //Loose Transpose// - True if a phrase is a trans- position of a constant number of semitones (i.e. not a modal transposition) of an existing motif, regardless of the equality of note durations. It might be argued that these similarities are rather ad hoc; indeed, it is generally necessary to use similarities in this kind of analysis which are suited to the style of writing used by the composer. However, note that the program is modular over the set of similarities, which can be regarded as further data which can easily be updated.
+
+5. **Extending the Analysis to Another Tonal System**
+5.1. **The Data**
+There are two main issues to consider when attempting to apply our program to other, harder sets of data. The first is the problem of the choice of appropriate similarities, mentioned before; the second is the problem of polyphony.
+5.2. **Possible variations in the analysis**
+All we would need, then, would be a representation admitting streams of chords - the stream still being the basic unit over which the analysis works. The idea of a chord can clearly be captured in our structural type system as a collection of events; however, it seems likely that we will want to define a particular structural type, orthogonal to streams, which captures the notion of a chord more precisely. This will be a subject for future consideration.
+6. **Related Work and Conclusions**
+Often these formal models describe musical structures in grammatical terms. Our work is orthogonal to this approach - a grammar could be specified in terms of the constituent structure, and a piece of music parsed by determining auto-matically whether such a constituent structure coutd be imposed upon the underlying events. Our interest in describing the internal structure, in pitch and time, of the musical events, sets our work apart from most grammatical approaches where the notion of event is taken as a primitive with no internal structure.
+We have proposed the existence of (at least) two special kinds of constituent, whose structural properties, regardless of musical interpretation, can be relevant in analysis.

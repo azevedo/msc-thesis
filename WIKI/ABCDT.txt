@@ -1,0 +1,61 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2013-07-06T17:44:12+01:00
+
+====== ABC::DT ======
+Created Saturday 06 July 2013
+
+===== Main Module =====
+Interesting features to add:
+[ ] **isChord**: Boolean value describing if the element is a Chord
+[ ] **isNote**: Boolean value describing if the element is a Note
+[ ] **isRest**: Boolean value describing if the element is a Rest
+[ ] **isGrace**: Boolean value describing if the element is a Grace Note
+[ ] **measureNumber**: Returns the measure number of a measure that contains this element if the object is in a measure.
+	Returns None if the object is not in a measure.
+
+[*] **findConsecutiveNotesInMeasure**: Returns a list of consecutive note structures that are in the same measure
+[ ] **findConsecutiveNotes**: Returns a list of consecutive note structures
+[ ] **melodicIntervals**(*skipArgs, **skipKeywords): Returns a Stream of Interval objects between Notes (and by default, Chords) that follow each other in a stream. the offset of the Interval is the offset of the beginning of the interval (if two notes are adjacent, then this offset is equal to the offset of the second note, but if skipRests is set to True or there is a gap in the Stream, then these two numbers will be different).
+
+===== Chord Module =====
+Interesting features to add:
+[ ] **pitchedCommonName**: Return the common name of this Chord preceded by its root, if a root is available.
+[ ] **fullName**: Return the most complete representation of this Note, providing duration and pitch information.
+[ ] **commonName**: return the most common name associated with this Chord as a string. does not currently check enharmonic equivalents.
+[ ] **closedPosition**(forceOctave=None, inPlace=False, leaveRedundantPitches=False): Returns a new Chord object with the same pitch classes, but now in closed position. If forcedOctave is provided, the bass of the chord will be shifted to that provided octave.
+[*] **getThird**: Returns a Note structure describing the third of the chord
+[*] **getFifth**: Returns a Note structure describing the fifth of the chord
+[ ] **getSeventh**: Returns a Note structure describing the seventh of the chord
+[ ] **quality**: Returns the quality (string) of the underlying triad or seventh, either major, minor, diminished, augmented, or other
+[ ] **canBeDominantV**: Returns True if the chord is a Major Triad or a Dominant Seventh
+[ ] **canBeTonic**: Returns True if the chord is a major or minor triad
+[ ] **containsSeventh**: Returns True if the chord contains at least one of each of Third, Fifth, and Seventh
+[ ] **containsTriad**: Returns False if there is no triad above the root. Eg.: A dominant-seventh chord contains a triad.
+[*] **root**: Looks for the root usually by finding the note with the most 3rds above it
+[*] **getChordStep**(chordStep, testRoot=None): Returns the (first) pitch at the provided scaleDegree. Returns None if none can be found.
+[ ] **hasAnyRepeatedDiatonicNote**(testRoot=None): Returns True if for any diatonic note (e.g., C or C# = C) there are two or more different notes (such as E and E-) in the chord. If there are no repeated scale degrees, return false.
+[ ] **hasRepeatedChordStep**(chordStep, testRoot=None): Returns True if chordStep above testRoot (or self.root()) has two or more different notes (such as E and E-) in it. Otherwise returns false.
+[ ] **inversion**(newInversion=None, find=True, testRoot=None): Returns an integer representing which inversion (if any) the chord is in. Chord does not have to be complete, but determines the inversion by looking at the relationship of the bass note to the root. Returns max value of 5 for inversion of a thirteenth chord. Returns 0 if bass to root interval is 1 or if interval is not a common inversion (1st-5th). Octave of bass and root are irrelevant to this calculation of inversion.
+[ ] **inversionName()**: Returns an integer representing the common abbreviation for the inversion the chord is in. If chord is not in a common inversion, returns None.
+[ ] **isAugmentedSixth()**: Returns True if the chord is an Augmented 6th chord in first inversion. (N.B. a French/Swiss sixth technically needs to be in second inversion)
+[ ] **isAugmentedTriad**(): Returns True if chord is an Augmented Triad, that is, if it contains only notes that are either in unison with the root, a major third above the root, or an augmented fifth above the root. Additionally, must contain at least one of each third and fifth above the root. Chord might NOT seem to have to be spelled correctly because incorrectly spelled Augmented Triads are usually augmented triads in some other inversion (e.g. C-E-Ab is a 2nd inversion aug triad; C-Fb-Ab is 1st inversion). However, B#-Fb-Ab does return False as expeccted). Returns false if is not an augmented triad.
+[ ] **isConsonant()**: Returns True if the chord is one pitch two pitches: uses isConsonant() , which checks if interval is a major or minor third or sixth or perfect fifth. three pitches: if chord is a major or minor triad not in second inversion. These rules define all common-practice consonances (and earlier back to about 1300 all imperfect consonances).
+[ ] **isDiminishedSeventh**(): Returns True if chord is a Diminished Seventh, that is, if it contains only notes that are either in unison with the root, a minor third above the root, a diminished fifth, or a minor seventh above the root. Additionally, must contain at least one of each third and fifth above the root. Chord must be spelled correctly. Otherwise returns false.
+[ ] **isDiminishedTriad**(): Returns True if chord is a Diminished Triad, that is, if it contains only notes that are either in unison with the root, a minor third above the root, or a diminished fifth above the root. Additionally, must contain at least one of each third and fifth above the root. Chord must be spelled correctly. Otherwise returns false.
+[*] **isDominantSeventh**(): Returns True if chord is a Dominant Seventh, that is, if it contains only notes that are either in unison with the root, a major third above the root, a perfect fifth, or a minor seventh above the root. Additionally, must contain at least one of each third and fifth above the root. Chord must be spelled correctly. Otherwise returns false.
+[ ] **isFalseDiminishedSeventh**(): Returns True if chord is a Diminished Seventh, that is, if it contains only notes that are either in unison with the root, a minor third above the root, a diminished fifth, or a minor seventh above the root. Additionally, must contain at least one of each third and fifth above the root. Chord MAY BE SPELLED INCORRECTLY. Otherwise returns false.
+[ ] **isFrenchAugmentedSixth**(): Returns True if the chord is a French augmented sixth chord (flat 6th scale degree in bass, tonic, second scale degree, and raised 4th).
+N.B. The findRoot() method of music21.chord Chord determines the root based on the note with the most thirds above it. However, under this definition, a 1st-inversion french augmented sixth chord resembles a second inversion chord, not the first inversion subdominant chord it is based upon. We fix this by adjusting the root. First, however, we check to see if the chord is in second inversion to begin with, otherwise its not a Fr+6 chord.
+[ ] **isGermanAugmentedSixth**()
+[ ] **isHalfDiminishedSeventh**(): Returns True if chord is a Half Diminished Seventh, that is, if it contains only notes that are either in unison with the root, a minor third above the root, a diminished fifth, or a minor seventh above the root. Additionally, must contain at least one of each third, fifth, and seventh above the root. Chord must be spelled correctly. Otherwise returns false.
+[ ] **isIncompleteMajorTriad**(): Returns True if the chord is an incomplete Major triad, or, essentially, a dyad of root and major third
+[ ] **isIncompleteMinorTriad**(): Returns True if the chord is an incomplete Minor triad, or, essentially, a dyad of root and minor third
+[ ] **isItalianAugmentedSixth**(restrictDoublings=False): Returns true if the chord is a properly spelled Italian augmented sixth chord in first inversion.
+If restrictDoublings is set to True then only the tonic may be doubled.
+[*] **isMajorTriad**(): Returns True if chord is a Major Triad, that is, if it contains only notes that are either in unison with the root, a major third above the root, or a perfect fifth above the root. Additionally, must contain at least one of each third and fifth above the root. Chord must be spelled correctly. Otherwise returns false.
+[*] **isMinorTriad**(): Returns True if chord is a Minor Triad, that is, if it contains only notes that are either in unison with the root, a minor third above the root, or a perfect fifth above the root. Additionally, must contain at least one of each third and fifth above the root. Chord must be spelled correctly. Otherwise returns false.
+[ ] **isSeventh**(): Returns True if chord contains at least one of each of Third, Fifth, and Seventh, and every note in the chord is a Third, Fifth, or Seventh, such that there are no repeated scale degrees (ex: E and E-). Else return false.
+[ ] **isSwissAugmentedSixth**(): Returns true is it is a respelled German augmented 6th chord with sharp 2 instead of flat 3. This chord has many names, Swiss Augmented Sixth, Alsatian Chord, English A6, Norwegian, etc. as well as doubly-augmented sixth, which is a bit of a misnomer since it is the 4th that is doubly augmented, not the sixth.
+[ ] **isTriad**(): returns True or False “Contains vs. Is:” A dominant-seventh chord is NOT a triad. returns True if the chord contains at least one Third and one Fifth and all notes are equivalent to either of those notes. Only returns True if triad is spelled correctly.
+[ ] **transpose**(value): Transpose the Note by the user-provided value. If the value is an integer, the transposition is treated in half steps and enharmonics might be simplified (not done yet). If the value is a string, any Interval string specification can be provided.

@@ -1,0 +1,184 @@
+% This chapter presents a summary of the work performed in the context of this dissertation,
+% establishing some conclusions about some .
+%
+% Additionally, future work possibilities are discussed, including .
+
+\section{Conclusions}
+
+The \unix{} philosophy and its simple and successful ideas were essential to the conception of this
+dissertation:
+
+\begin{itemize}
+  \item The concept of simple and compact tools/commands that solve problems of small complexity and
+  can be articulated with others was adopted;
+  \item The universal type (the text stream) suggested \abc{} as the obvious universal type since it
+  is text as well;
+  \item The creation of the language \emph{C} to help developing \unix{} inspired the creation of a
+  language as well (a \ac{DSL}) called \abcdt{}.
+\end{itemize}
+
+So, the natural course of events is to map some of the existing \unix{} tools into \abc{} ones like
+\emph{cat}, \emph{paste} and \emph{wc}.\\
+
+
+The strategy of creating a robust parser for a reflexive language (Perl) is obtained in 3 steps: 1)
+searching the best tool that processes what is wanted; 2) isolating its parser; 3) adding a function
+that traverses the parser's generated \ac{IR} and serializes it in order to be evaluated.
+
+The \ac{IR} used must be complete enough to enable the application of many different analytic tasks.
+However, that fact doesn't invalidate an approach that starts by generating a sequential and
+\sourcewise{} structure and then transforming it into something that suits more complex demands.
+
+Reusing \abcmtops{}' parser was very important to help guarantee this work's quality, coverage and
+developing time. The generated \ac{IR} is \sourcewise{} which, along with the calculation of the
+current \context{} (consult section \ref{sec:abcdt_rules}), allows performing a
+representation-agnostic processing.\\
+
+
+With the \ac{DSL} \abcdt{} there is a considerable simplification of the process of creating an
+\abcpt{} considering the following features:
+
+\begin{itemize}
+  \item It's not necessary to specify what doesn't need to be transformed (default functions);
+  \item A transformation specification is rule-based which facilitates its writing;
+  \item There's a set of rich \actuators{} which allows to precisely select a specific point to
+  transform.
+\end{itemize}
+
+Using a structured processing of \abc{} allows an \abcpt{} to be described in an effective and
+compact way.  Processing a complex structure is possible if divided into smaller parts, i.e.,
+applying many surgical transformations to its parts (according to its structure) and composing each
+individual result into a single result.
+
+A rule based processor (\abcdt{}'s \dt{} function) makes it possible to write very compact and
+effective tools. Most of the processing is done by default, i.e. the user only needs to specify what
+needs to be transformed. The default function is the identity function, \emph{toabc()}.
+
+Using Perl as the language embedded into \abcdt{} provides a rich environment to allow easy
+processing of text. Furthermore, through the use of data structures, like hashes, the user has
+bigger expressive power to specify transformations.\\
+
+
+Currently, there are tools that process \abc{} with specific purposes as well as big software
+packages that integrate a lot of features, however there's always the need to process music, this
+is, making custom modifications to the original \abc{}, producing some sort of information,
+integrating existing tools, etc... That is the main reason for creating an \ac{OS} comprised of
+simple tools for generic \abc{} processing which can be composed with each other, as well as a
+versatile environment to create new tools through a compact \ac{DSL} embedded in Perl.
+
+\section{Future Work}
+
+As expected, there are many parts of this work that can be improved and extended. In this section,
+only a few are going to be described.
+
+\subsection*{Internal Representation}
+
+A \partwise{} \ac{IR} is more suited to melody processing, while a \timewise{} \ac{IR} is more
+suited to harmony processing and a \sourcewise{} to a general, robust processing. These
+"\emph{views}" of the \ac{IR} provide different spacial perspectives over a score. Each one of them
+covers different aspects of music and can even hide those less relevant.
+
+So there will be a mechanism that, during the \ac{IR}'s traversal, recalculates the structure's
+orientation when needed in order to provide different notions of the spacial context.
+
+Consequently, a more thorough investigation on data structures and music representations is required
+in order to obtain a set of \ac{IR}s capable of answering to very specific tasks in the best way
+possible.
+
+\subsection*{Musical Corpora}
+
+Due to time limitations, no work has been done towards this area of research, even though it's one
+of the most interesting areas that can bring a lot of useful features.
+
+Building an \abc{} corpus to serve as testing material for the toolkit and also to train systems
+that learn from data is still a main goal.
+
+A set of statistical models is planned to be developed over \abc{} corpora in order to produce
+features like automatic classification of scores by genre, time period, author, ...
+
+The composition field has been, from the beginning of this dissertation's writing, postponed due to
+its complexity. However, it's definitely an area of research worth working in, therefore one of the
+features that will be developed is the automatic generation of music. For instance, training a
+program to generate a score that follows a certain style, author, or other characteristics
+associated, through the use of models, like \emph{Hidden Markov}~\cite{chai2001folk,Lo2010}. Also,
+techniques of text mining~\cite{Tan1999} will be used to extract interesting and non-trivial
+patterns from text documents.
+
+\subsection*{ABC::DT}
+
+\abcdt{} is far from being complete, it's actually in constant development. Still, some
+improvements, extensions, even fixes are to be done in the near future.
+
+The parser used - \abcmtops{}' - has its own bugs that the author has identified but not fixed yet,
+as well as bugs that were identified during \abcdt{}'s development. So, whenever possible, any bug
+found will be reported to the author in order to help to the parser's and the tools' it is used in -
+\abcmtops{} and \tclabc{} - improvement.\\
+
+
+The set of available \actuators{} will be expanded to accept even more detailed queries.
+
+Another approach to \actuator{} specification will be devised. What's intended is a richer syntax
+for identifying \abc{} elements, one that uses path expressions to navigate through an \abc{} tune
+and has a set of standard functions to help selecting \abc{} elements. This approach is very similar
+to \emph{XPath}'s\cite{XPath:Online}.
+
+More default functions will be added to \abcdt{}'s API.
+
+The identity function - \toabc{} - is not perfect and still needs some improvements.
+
+\subsection*{Toolkit}
+\paragraph{}
+More \unix{}-like tools will be developed, such as:
+\begin{itemize}
+  \item \emph{grep\_abc}\\
+    Prints melodic lines that match a pattern
+  \item \emph{diff\_abc}\\
+    Compares scores, for instance, voice by voice
+  \item \emph{cut\_abc}, \emph{sed\_abc}, \emph{head\_abc}, \emph{tail\_abc}, \ldots
+\end{itemize}
+
+Other tools are planned to be developed:
+\begin{itemize}
+  \item \emph{transpose\_abc}\\
+    Transposes a score up or down by an interval. There are already some tools that perform this
+    task, such as \texttt{abc2abc}~\cite{abc2abc:Online} and the Perl script
+    \texttt{transpose\_abc.pl}~\cite{transposeabc:Online}.
+
+    It's desired that this feature is available as a polymorphic \abcdt{}'s function, i.e., it may
+    be applied to the \emph{note} element, as well to the \emph{key} element and also an
+    \emph{accompaniment chord}.
+  \item \emph{fugue\_abc}\\
+    Similar to \canonabc{}, only that each voice may change the pitch of the original theme. The
+    fugue form, is not simple and has more details to its structure, however this tool may serve as
+    an initial structure to build one.
+\end{itemize}
+
+For the existing tools a few improvements will be done as well:
+
+\begin{description}
+  \item[wc\_abc] \hfill
+    \begin{itemize}
+      \item Add more counts
+      \item Provide options to select specific counts from the output
+    \end{itemize}
+  \item[canon\_abc] \hfill
+    \begin{itemize}
+      \item Add the option to assign a name to a voice
+      \item Add the option to assign a \midi{} instrument to a voice
+    \end{itemize}
+  \item[find\_chords\_abc] \hfill
+    \begin{itemize}
+      \item Add more chord formations to find
+    \end{itemize}
+  \item[detect\_errors\_abc] \hfill
+    \begin{itemize}
+      \item Add more errors to detect
+      \item Error fixing
+        \begin{itemize}
+          \item Incomplete measures $\Rightarrow$ Add Rests
+          \item Overflowing measures $\Rightarrow$ For example, comment the exceeding elements and
+          annotate a FIXME
+          \item Final bar $\Rightarrow$ Add bar
+        \end{itemize}
+    \end{itemize}
+\end{description}

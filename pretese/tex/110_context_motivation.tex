@@ -1,0 +1,78 @@
+\documentclass[main.tex]{subfiles}
+\begin{document}
+
+The main incentives that justify the need for writing such a document are presented in the following
+sections.
+
+\subsection{Textual Musical Notation}
+
+All music needs to be written before read, comprehended or performed by any musician. To make it
+possible, a notation system has been developed that provides musicians with the information
+necessary to reproduce it as the composer wanted.\\
+The notation consists on any system that represents audible music through written symbols. The use
+of symbolic and abstract formats improves music reasoning, as it gives the composer a greater
+freedom to express his music and provides easier readability to the performer.\\
+As computers were introduced to the world of music, a variety of file formats and textual notations
+began to emerge in order to store notation, such as, Abc, LilyPond or MusicXML.
+
+\subsection{Textual Musical Notation Processing} 
+
+More and more, musicology aided by computer is a reality which leads to an ever growing research in
+some fields of music such as tonal analysis and composition. Likewise, a contribution in these
+research fields is expected, which will provide tools for analyzing, detecting errors, restoring
+scores and producing statistical results when applied on abc scores.\\
+Composition is not included in the scope of this dissertation as it is a field rather complex and
+that would not fit in the regular schedule. However as an interesting field of research as it is, it
+would be a great feature to include in future work.
+
+\subsection{Unix Philosophy}
+
+\begin{quotation}
+  \small\textit{Unix is simple. It just takes a genius to understand its simplicity.}
+  \begin{flushright}
+    Dennis Ritchie
+  \end{flushright}
+\end{quotation}
+
+In the 1970s the \ac{SO} Unix was born and with it a new philosophy\cite{raymond2004art} based on a
+principle that stated that creating robust and complex tools wasn't the right way, but instead
+preferred tools of smaller scale, simple and efficient which tackle only one problem at a time and
+whose results articulation is possible.
+
+The main interface with the system is the command line where a user runs commands and programs. Thus
+making the work method very powerful and flexible as it is possible to compound and execute commands
+automatically.
+
+Many Unix commands execute functions of reduced dimension and their input/output share the same data
+type which allows the articulation of commands. Such philosophy can be easily applied to music
+scores.
+
+There are some Unix commands whose behavior can be adapted:
+\begin{description}
+  \item[grep:]
+    Prints the lines of a file matching a pattern;\\
+    It could print melodic sequences matching a pattern. The pattern could be a sequence of melodic
+    intervals or rhythms;
+  \item[diff:] 
+    Compares files line by line;\\
+    It could compare files voice by voice;
+  \item[\ldots]
+\end{description}
+
+\subsection{Application Areas}
+
+Some of the activities that could benefit from this toolkit are:
+\begin{description}
+  \item[Musical Wikis] \hfill \\
+    Wikis that deal with the edition of musical scores. E.g.: Wiki::Score.
+  \item[Cultural and cooperative volunteering] \hfill \\
+    In environments like Wikis where the edition of documents happens in cooperation with many
+    elements concurrently. E.g.: Wiki::Score.
+  \item[Score transcription] \hfill \\
+    Often errors occur while manually transcribing a score and those errors are not easily detected.
+  \item[Musical analysis and composition] \hfill \\
+    E.g.: through the detection of certain patterns in specific musical style it is possible to
+    assess if a composition uses any feature of that style.
+\end{description}
+
+\end{document}

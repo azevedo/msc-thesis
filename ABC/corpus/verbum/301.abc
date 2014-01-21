@@ -1,0 +1,10 @@
+X:301
+T:Solo Tenor
+C:Anonimo sec XVI
+M:3/4
+L:1/8
+K:G
+V:1 clef=treble name="Soprano" sname="S."
+%%MIDI program 1 1
+%%staves [ 1 ]
+Z4 |

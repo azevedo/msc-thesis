@@ -1,0 +1,397 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-10-11T11:55:57+01:00
+
+====== Tarefas ======
+Created Thursday 11 October 2012
+
+1. state of the art + bibliografia
+2. representações internas (transformadas) **check**
+	* notas → intervalos (deltas frequências)
+	* proporcionalidades temporais (deltas tempos)
+	* como representar harmónicas?
+3. Como mostrar o resultado da análise (estatística, outro)
+	ser capaz de gerar este tipo de diagramas
+	diagramas que mostrem alguma faceta da musica: linha tonal; estranheza de acordes; mapa de caracteristicas (periodo musical)
+	detetar padroes/facetas e com eles ajudar na analise
+
+
+4. grep musical; paste; cat; diff; patch **check**
+5. tipologia de erros **FIXME** ir completando **check**
+	a. lexicos (ABC) D´ d,
+	b. sintáticos (compassos desiguais,
+	c. erros de desalinhamento (alinhador)
+	d. lint = aviso de provável erro (salto demasiado grande; acorde demasiado esquisito)
+	e. erros corrigiveis automáticamente
+
+7. corpus (com metadata rica) **check**
+	casos de exemplo
+	situacao padrao para poder calcular diferencas para com o padrao
+	permite ver o que é esperável
+	conjunto de textos musicais que serve para aferir o que esperado, o que é regra, o que é habitual; permitirá procurar semelhanças entre textos
+	comparacoes estatisticas
+9. estatisticas de uso
+10. classificador de estilo musical (facetas musicais)
+11. ? adivinhar anacrusas, compassos, classificar "intensidades" de tempos (tempo forte, fraco)
+12. restauros especificos 
+	a. MIDI--> abc
+13. spell checker musical
+
+== 31/10/2012 ==
+12. musica21
+13. vexflow
+14. machine learning para adivinhar notas em tempo forte, nota final, ...
+	a. features(caracteristicas) que se possam detetar numa musica e assim verificar se condiz com corpus passados e com isso calcular classificadores para calcular candidatos a coisas
+
+== 07/01/2013 ==
+[*] mail to abcusers ou jeff moine: estou a planear fazer isto, precisa de um parser abc robusto. lembrei-me destas hipoteses (parser do abcmidi, abcm2ps, parser do music21, abc2xml/xml2abc), o que recomendam? algo ligeiramente mais independente mas baseado nos ficheiros do abcm2ps, anc2midi. tomar como ponto de partida (tirar o que nao interessa). 
+alternativa seria criar um parser de raiz (lex/yacc, etc)
+**utilizar** **texto cientifico para depois por na tese**
+[*] ir estudando as hipoteses
+
+
+== 10/01/2013 ==
+* criação de um abcparser baseado no parser do abcmps.c
+
+TODO
+* analisar e relatoriar a estrutura (exemplo em notação matemática ou Haskell)
+* começar a processar a estrutura (strut tune, sym...)
+
+== ABC scripting! ==
+
+* gerar algo que facilitasse perl
+	* abcdumper
+	* abcslurp
+* abcwc (que desse algumas estatisticas)
+
+
+== 17/01/2013 ==
+* criar doc latex com seccoes
+* ver como por haskell no latex
+* mail_to moine: 
+	* é possivel gerar o abc como estava a partir das estruturas geradas? essas estruturas possuem informacao suficiente para tal?
+	* perguntar sobre a existencia de funcao que torne as estruturas geradas noutra mais time-wise por exemplo
+	* pequeno relato do que fiz;
+* caso de estudo:
+	* pequeno exemplo abc com alguns componentes essenciais
+	* partitura gerada pelo abcm2ps
+	* desenho da estrutura em c
+	* como poderia ser representado em perl (tipo de estrutura => atributos; ou outra coisa, pensar melhor)
+	* exemplo de algo que se possa fazer em perl (à la DT). ex: distribuicao das notas
+
+== 21/01/2013 ==
+* implementar toabc (trata do kit minimo do que tenho) (funcao default)
+* funcao de processamento tipo XML::DT
+	* atualizacao de estado (voz, offset, etc)
+	* return sempre alguma coisa (ex: fazer nada, devolver o to_abc; apagar;)
+	* permitir redefinir default function
+* pre-tese_: avancamos com atividades que envolvem a criacao de coisas tipo Unix; coisas como cut e paste sao demasiado complicadas, por isso deve-se poupar o trabalho através de um scripting previo; mensagem subliminar: fazer processador generico que permita fazer varias coisas ao inves de uma so
+* fazer horario mais rigido
+* ver [[http://en.wikibooks.org/wiki/LaTeX/Algorithms|algorithm2e]]
+* filosofia preocessadores dt (aplicar coisas as partes para depois fazer um todo)
+* como subdividir os problemas; reutilizar coisas. processamento estruturado
+* claims; justificam coisas
+* parsers
+* duvidas que surgiram, os mails e respostas (opinioes) trocados; podem ser relevantes
+
+== 24/01/2013 ==
+na introducao ha uma parte ligada ao state of the art em que se pode falar qual é o problema que preocupa e qual a abordagem geral que se pretende (qt mais cedo melhor); falar na tematica recolha de abc, transformacao e 
+nas referencias incluir artigos, ferramentas e projetos
+abc pk ha outros projetos associados a equipa que assim  exigiam
+ver tese do jj XML::DT
+para o toabc ha dois processamentos: o de angariacao de estados e o do utilizador
+
+== 01/31/2013 ==
+para depois da pre-tese:
+handler ter entradas diferentes
+pensar no update possivel do abcm2ps (implicacoes). tentar preparar a cena para que a mudanca seja o menos dolorosa possivel
+pensar em tabela de regras de mapeamento dos defines do abcm2ps para o perl (4 => note) algo mais generico
+
+== 02/05/2013 ==
+Rever tese:
+o que é se podia dizer mais sobre algo que apanhe pessoal desprevenido
+Corpora:
+* é preciso corpora pk: 
+	* estatistica
+	* testing
+	* processos que precisem de 
+	* aprendizagem
+=> arranjar exemplo para cada para fortificar texto da tese
+Introdução:
+* citacao de algum pessoal do unix
+* tentar por mais carne no osso: pk? e para que? nos design goals
+* mais introducoes e summary
+Planeamento da Investigação:
+* continuacao do trabalho ja realizado, 
+* coisas que mapeiem com o que estava ameacado na proposta (tentar tirar elementos)
+	* verificar que o parser esta robusto
+	* conjunto de testes que verifiquem correcao das coisas geradas
+	* scripts que tenham a ver com os filtros unix
+
+== 02/14/2013 ==
+* ferramenta tipo wc
+* ver abctool
+* mudar a obrigatoriedade dos parametros do toabc
+* permitir mudar os valores de um simbolo para que se possa  ter novo símbolo
+* ver problema das variaveis de estado globais quando se chama o toabc nested
+* perlizar mais a estrutura interna (ex: listas em vez de arrays, ou seja, evitar arrays com zeros)
+
+== 02/20/2013 ==
+* Representação interna mais simples. Haverá uma conversão de representações (ver o que se pode simplificar)
+* O processador deve permitir ser mais específico na especificação das keys (ex: XPath no XML::DT). Isso pode implicar a criação de uma representação interna mais simples que possibilite e facilite tal feature.
+* Case studies:
+	* transpose
+	* cat (como se devem concatenar os diferentes elementos?)
+	* cut
+	* paste
+	* elimina redundancias
+	* all but one
+* TODO das scripts que seria interessante ter
+
+== 03/07/2013 ==
+* pensar em acrescentar funcionalidade de acrescentar um simbolo a lista de simbolos antes e depois do current
+
+== 03/20/2013 ==
+* melhorar handler (ver page da wiki [[ABC Tools]])
+
+== 04/04/2013 ==
+[*] fazer script de teste que teste o funcionamento do handler
+
+== 04/17/2013 ==
+[x] permitir especificar mais a voz::id
+[*] fazer LearningOutput que devolve all but one e o vice-versa (contar previamente as vozes)
+[*] calcular offset das vozes
+[x] calcular tempos fortes
+[x] calcular na horizontal:
+	ngrams: de intervalos, frequencia das notas, ritmos
+	apanhar sequencias de guitarra associado ao tempo em que aparece
+[*] documentar tese e pod
+
+== 04/23/2013 ==
+mandar mail a moine e ao seymour a perguntar sobre a contabilizacao da duracao das notas, como é fazem e onde posso encontrar esse codigo. perguntar tb como se vai mantendo um registo do offset de uma musica e tb indicar como e onde está esse codigo.
+
+== 04/24/2013 ==
+ver [[http://www.sciencedirect.com/science/article/pii/S0950584907000419|A preliminary study on various implementation approaches of domain-specific language]] e [[http://www.doiserbia.nb.rs/Article.aspx?ID=1820-02141002247K&AspxAutoDetectCookieSupport=1|Comparing general-purpose and domain-specific languages: An empirical study]] para poder enquadrar o nosso trabalho
+fazer uma discussao relacionada com o ser dsl e ter caracteriscas de compiladores
+ler por alto haskore, estabelecer algumas diferencas e possibilidade de conjugacao	
+citar slides de jno e comparar tb
+no bibtex quando necessario acerscentar notas, ou links para o livro ou artigo das ferramentas, etc
+acknowledgments para os reviewers/chair pela contribuicao no melhoramento do paper
+investir um pouco mais na justificacao da esclha do parser
+
+== 04/29/2013 ==
+[*] falar com jj da estrutura da tese para comecar a escrever coisas (ESTOU PREOCUPADO COM ISTO)
+
+== 05/30/2013 ==
+[*] criar tese um pouco com base no rpd e artigo slate
+ver que ferramentas exemplificativas que cobrissem o que foi proposto
+	ex:
+		part-wise
+		time-wise
+		source-wise
+
+
+== 06/26/2013 ==
+[*] saber se e como documentar variaveis que sao exportadas pelo modulo ABC:DT
+[*] ver exemplos de ferramentas/exemplos que possa implementar:
+	[*] demonstrar que realcem caracteristicas diferentes do abc_dt. ex: estado
+	[*] ver exemplos e ferramentas music21
+[*] descricao a nivel algoritmico
+[*] considerar dividir modulo perl. mas como? perguntar jj
+
+== 07/08/2013 ==
+[*] ferramenta: **Finding Chords within Melodic Fragments**
+	para cada voz, encontrar compassos que melodicamente expressem acordes (ex:dominantes de setima) em
+ notas consecutivas (default 4 notas). Associar à primeira nota desse conjunto de notas selecionadas, o acorde como accompaniment chord
+[*] ver paper **music21: A toolkit for computer-aided musicology and symbolic music data** cap.5
+
+== 07/10/2013 ==
+[ ] Case studies que consigam interagir com abc real
+	[ ] enunciado/narrativa real
+		[*] wiki::score
+		[ ] musica parcialmente instanciada (achamos que para **trabalho futuro**, esta área é promissora )
+			[ ] all but one
+			[ ] improvisacao
+			[ ] composicao
+	[*] Introduzir medidas/metricas/estatisticas que ajudem a analisar o comportamento das ferramentas
+		[*] tempo gasto
+		[*] comparacao entre o resultado obtido e o esperado
+		[*] ...
+[*] Trabalho Futuro
+	[*] Aquilo que nao se conseguiu fazer
+
+== 07/11/2013 ==
+[*] wc_abc
+	* vozes
+	* compassos / voz
+[*] canon_abc
+	* atributos: ([^+]+)(\+\d|\+\+)
+[x] momentos harmonicos (prova de conceito)
+	* { offset => [ (voz , sym), ... ], ... }
+
+== 07/26/2013 ==
+[x] ao reler a tese sublinhar aquilo que é considerado claim
+[*] subseccoes sozinhas => sinal de que pode ter mais ou entao deve ser anonima (*)
+[*] mudar Real Example para Compositional Examples/Working Together
+[*] explicacao do algoritmo mais **algoritmica**
+* se houver necessidade de mostrar exemplos no meio de seccao => por algo que mostre que aquilo é um aparte (que permita ao leitor passar ao frente)
+* tentar incluir algoritmos e extratos abc nas ferramentas
+
+== 07/29/2013 ==
+[*] vale a pena dar mais pormenores sobre o processo de isolamento do parser. ex: includes all the necessary C libraries used by abcm2ps
+[*] a abordagem dt foi aplicada com sucesso no xml::dt e que mais? compiladores de gramaticas?
+
+== 07/31/2013 ==
+
+== ABD::DT Rules ==
+	* escrita geral da atuador fica muito complexa (muita coisa) mas chegamos a conclusao que se tivermos mecanismos que encontrem o ponto cirurgico que atuem sobre o que quero atuar e uma funcao generica que transforme...
+	* analogia a xpaths, etc
+	* esmiucar que atuadores ha, como se faz matching com atuadores
+	* existem:
+		* hierarquias
+		* tipos/classes
+	* escrita afirmativa em vez de defensiva
+	* escrita textual: explicacao filosófica, decisoes
+	* escrita tabular: lista de atuadores
+	* escrita algoritmica: caso necessario, ajudam à leitura
+	**Atuadores**
+		classes, instancias e enriquecimento (vozes)
+		exemplo para a tese: transposer onde existem os atuadores: gchord, key, note
+		os atuadores aplicaveis sao estes (mostrar algoritmo matematico)
+		o atuador selecionado será o mais especifico/mais fundo na arvores
+
+
+== State of the Art ==
+	o music21 foi desenvolvendo um conjunto de funcoes o que revela um estado de maturidade interessante e que serviu de fonte de inspiracao para alguns casos
+
+
+== Ferramenta ==
+	[*] Uso em Recuperacao de Erros e Ajudar na validacao
+		conjunto pequeno de certos:
+			[*] erros tipicos 	    => substituicao automatica
+			[*] erro nao tao tipico=> warning, inserir marca que avise (FIXME)
+			[x] introduzo redundancia (pontos de sincronizacao)=> warning ou escrita de pausas
+	[*] Para melhorar leitura das ferramentas, as regras podiam ficar num formato mais tabular, ex: um quadrado em que tem o atuador e depois uma divisao desse quadrado tem a acao (perl)
+
+== 08/05/2013 ==
+[*] deve-se por na tese?
+	[*] mails trocados (acknowledgements)
+	[x] tecnologias usadas
+		[x] perl
+			[x] testes criados
+
+== 08/09/2013 ==
+**TODO TESE**
+[*] atualizar lista de atuadores
+	[*] M:
+[*] atualizar funcoes exportadas
+[*] Future Work: olhar para todos e fixme no ABC::DT
+[x] exlicar estrutura do voice_struct (como pode ser usada numa ABC processing tool)
+[*] lstlisting estao a sobrepor-se uns em cima dos outros. ver o que se passa
+
+**TODO ABC::DT**
+[*] calculo do offset está mal. a soma da duracao é feita no final da iteracao do simbolo
+[ ] resolver FIXMEs:
+	[ ] _get_ps
+	[ ] get_gchords
+	[ ] get_time
+	[ ] get_time_ql
+[ ] testes para:
+	[ ] find_consecutive_notes_in_measure
+	[ ] _simplify_note
+	[ ] _convert_ps_to_step
+	[ ] _calculate_alter_micro
+	[ ] _calculate_name_acc
+	[ ] _update_time_offset
+	[ ] _set_time_offset
+	[ ] get_*
+	[ ] is_minor_triad
+	[ ] is_dominant_seventh
+
+== 08/22/2013 ==
+[*] criar seccao com alguma explicacao da estrutura gerada pelo abcm2ps
+	* estrutura generica (lhs)
+	* há coisas que precisam de ser explicadas previamente (ex: estados in_header, in_tune, ...) para se poder mencionar no ABC::DT by example
+[*] global evaluation
+	* tempos de execucao
+	* **aceitam abc real?**
+[x] falar que o toabc() já faz correcoes automaticas a erros como A' => a
+[*] limpar packages tex desnecessarias (zamith)
+
+== 08/29/2013 ==
+[x] ABC::DT no cpan?
+[*] wc e detect_errors, mencionar no proprio capitulo e no future work que há elementos que podem vir a ser acrescentados
+	[*] detect_errors, ha errors do tipo:
+		* corrigidos
+		* comentar o que está mal e pôr FIXME
+		* warning
+	[*] no detect errors, mencionar que pode haver um restauro de coisas futuramente (compassos incompletos => pôr pausas, barra final => pôr barra, compassos overflowing => anotar, por em comentario ou algo assim um FIXME) mas que por questoes de tempo ficamos apenas no aviso de errors
+[*] find_chords => por ^ nas anotacoes
+[*] canon_abc => por em anexo o pachelbel
+[*] working together => acrescentar learning
+
+[*] test e evaluation
+	[*] uma avalicao é importante para que se possa dizer se é ou nao verdade o que se afirma
+	[*] uma avaliacao completa  nao foi possivel fazer pois iria afetar o resto
+	[*] verificar que as ferramenas sao usaveis com abc real (descrever e medir o comportamento das ferramentas e a dimensao)
+	[*] pode-se vir a detetar alguns problemas
+	[*] comparacao entre o resultado obtido e o esperado
+	[*] wc para ver compassos e notas
+	[*] calcular tempo do canon
+	[*] a unica parte problematica é a terminação que é ao gosto do compositor. como é abc é facilmente alteravel
+	[x] com pequenas modificacoes pode-se fazer um esqueleto inicial de uma fuga, existindo depois a necessidade de alterar depois
+	[*] tabela com tempo do
+		* canon_abc
+		* wc_abc (nota a dizer que tb calcula o numero de ocorrencias de cada nota)
+		[*] footnote a dizer que se usou o time com X processador, Y memoria e com 5 anos de idade
+	[*] esta operacao ainda que nao muito complexo, involve muitas travessias ecalculo auxiliar, mostra que esta atividade de geracao de coisas com varios **minutos** de reproducao é viavel. (nao sendo um testo exaustivo)
+
+[*] abcm2ps features:
+	[*] é utilizado em duas ferrametnas (citar)
+[*] From abcm2ps parser's IR to Perl
+	[*] a atualizacao para novas versoes torna-se facil devido a nossa abordagem de isolamento do parser
+	[*] nao entrar em demasiados detalhes, mas dar a abordagem
+		* abordagem faz sentido
+		* reutilizavael para outras situacoes
+		* tentou-se buscar partes que sejam auto contidas para que a atualizacao para novas versoes seja de facil utilizacao
+		* foi feita especificacao em Haskell da IR (anexo: pôr, nem que seja uma visao macro, da estrutura gerada pelo abcm2ps)
+[*] dt é usado em
+	[*] gramaticas de atributos
+	[*] stratego
+
+referencias
+	[*] por artigo slate; citar no Working Together
+
+conclusoes:
+	[*] reforcar claims
+	[*] o que é que fizemos que é bom para o mundo
+
+[*] verbum carum (vilancico de natal) veio do wiki::score
+
+pensar para a altura da apresentacao: 
+	[ ] o módulo está disponível em ...
+	[ ] README com a explicacao de instalacao
+
+[*] por pach canon com dados mais profissionais (data, ...)
+	* precisa disto **%%titleformat T0 C1, H1**
+
+== 08/31/2013 ==
+[*] mostrar TODOS da tese ao jj
+[*] onde citar o artigo do slate => no capitulo 4 dizer que é uma expansao do que ja foi feito no artigo (citar)
+[*] o canon de pach para ter o ano e nao sei que mais implicaria estar a mexer no canon_abc para aceitar o %%titleformat
+[x] onde falar que o toabc() já faz correcoes automaticas a erros como A' => a
+[x] nao me sinto a vontade para falar disto: case studies => musica parcialmente instanciada
+[x] reler tese e "sublinhar" claims
+[*] abstract (en e pt)
+
+== 09/04/2013 ==
+[*] validar exemplo lilypond (state of the art)
+[*] por intro nos apendices
+[*] rever referencias
+	[*] Bilmes1992 => journal
+[*] JJ: validar internal representation todo (pelo menos 2.2.2 e 2.2.3)
+	* usar seta magra em vez de gorda (longarrow acho eu)
+[*] JJ: document structure => ABC::DT and ABC processing tools
+[*] mais referencias (ver mendeley)
+[*] num algoritmo como representar **.=** (perl)
+[*] concatenacao com ++

@@ -1,0 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2013-01-08T14:36:16+00:00
+
+====== Papers ======
+Created Tuesday 08 January 2013
+
+1. [[./A_Brief_Survey_of_Music_Representation_Issues,_Techniques,_and_Systems.txt|A Brief Survey of Music Representation Issues, Techniques, and Systems]]
+2. [[./Representing_Music_for_Analysis_and_Composition.txt|Representing Music for Analysis and Composition]]
+3. [[./A_Data_Structure_for_Computer_Analysis_of_Musical_Scores.txt|A Data Structure for Computer Analysis of Musical Scores]]
+4. [[./A_Model_for_Musical_Rhythm.txt|A Model for Musical Rhythm]]

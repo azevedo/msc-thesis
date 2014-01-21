@@ -1,0 +1,11 @@
+#!/bin/sh
+# -*- tcl -*- \
+exec wish "$0" "$@"
+
+set prefix @prefix@
+set exec_prefix @exec_prefix@
+set abclib @libdir@/tclabc/
+lappend auto_path $abclib
+set abcversion @VERSION@
+source $abclib/tkabc.tcl
+

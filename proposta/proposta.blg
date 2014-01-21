@@ -1,0 +1,55 @@
+This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
+The top-level auxiliary file: proposta.aux
+The style file: plain.bst
+Database file #1: proposta.bib
+Warning--empty journal in almeida2012wiki
+Warning--empty journal in antonopoulos2007music
+Warning--can't use both volume and number fields in chai2001folk
+Warning--empty journal in cuthbert2011feature
+Warning--empty journal in dannenberg1993brief
+Warning--empty journal in laursonintroduction
+Warning--empty year in laursonintroduction
+Warning--can't use both volume and number fields in magalhaes2011functional
+Warning--can't use both volume and number fields in manaris2007corpus
+You've used 13 entries,
+            2118 wiz_defined-function locations,
+            570 strings with 6211 characters,
+and the built_in function-call counts, 4457 in all, are:
+= -- 429
+> -- 212
+< -- 7
++ -- 87
+- -- 70
+* -- 288
+:= -- 727
+add.period$ -- 42
+call.type$ -- 13
+change.case$ -- 73
+chr.to.int$ -- 0
+cite$ -- 22
+duplicate$ -- 190
+empty$ -- 347
+format.name$ -- 70
+if$ -- 946
+int.to.chr$ -- 0
+int.to.str$ -- 13
+missing$ -- 13
+newline$ -- 67
+num.names$ -- 26
+pop$ -- 96
+preamble$ -- 1
+purify$ -- 60
+quote$ -- 0
+skip$ -- 139
+stack$ -- 0
+substring$ -- 205
+swap$ -- 54
+text.length$ -- 7
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 52
+warning$ -- 9
+while$ -- 39
+width$ -- 15
+write$ -- 138
+(There were 9 warnings)

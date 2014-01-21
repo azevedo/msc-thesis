@@ -1,0 +1,56 @@
+\ProvidesPackageRCS $Header: /cvsroot/latex-beamer/latex-beamer/themes/color/beamercolorthemeorange.sty,v 1.2 2004/10/07 20:53:09 tantau Exp $
+
+\mode<presentation>
+
+\xdefinecolor{tijolo}{rgb}{.82,.32,.11}
+
+\setbeamercolor*{structure}{fg=tijolo}
+
+% Colocar isto no template beamer
+\usepackage{color}
+\definecolor{orange}{rgb}{0.72,0.22,.01} 
+\newcommand{\orange}[1]{\textcolor{orange}{#1}}
+
+\definecolor{red}{rgb}{8.0,0.0,0.0} 
+%\newcommand{\red}[1]{\textcolor{red}{#1}}
+
+\definecolor{green}{rgb}{0.0,0.5,0.0} 
+%\newcommand{\green}[1]{\textcolor{green}{#1}}
+
+\definecolor{blue}{rgb}{0.0,0.0,8.0} 
+%\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+
+\renewcommand{\emph}[1]{\orange{#1}}
+
+
+\setbeamercolor{block title}{use=structure,fg=white,bg=structure.fg!75!black}
+\setbeamercolor{block title alerted}{use=alerted text,fg=white,bg=alerted text.fg!75!black}
+\setbeamercolor{block title example}{use=example text,fg=white,bg=example text.fg!75!black}
+
+\setbeamercolor{block body}{parent=normal text,use=block title,bg=block title.bg!10!bg}
+\setbeamercolor{block body alerted}{parent=normal text,use=block title alerted,bg=block title alerted.bg!10!bg}
+\setbeamercolor{block body example}{parent=normal text,use=block title example,bg=block title example.bg!10!bg}
+
+
+
+\setbeamercolor*{palette primary}{use=structure,fg=white,bg=structure.fg}
+
+\setbeamercolor*{palette secondary}{use=structure,fg=white,bg=structure.fg!75!black}
+\setbeamercolor*{palette tertiary}{use=structure,fg=white,bg=structure.fg!50!black}
+\setbeamercolor*{palette quaternary}{fg=white,bg=black}
+
+\setbeamercolor*{sidebar}{use=structure,bg=structure.fg}
+  
+\setbeamercolor*{palette sidebar primary}{use=structure,fg=structure.fg!10}
+\setbeamercolor*{palette sidebar secondary}{fg=white}
+\setbeamercolor*{palette sidebar tertiary}{use=structure,fg=structure.fg!50}
+\setbeamercolor*{palette sidebar quaternary}{fg=white}
+
+\setbeamercolor*{titlelike}{parent=palette primary}
+
+\setbeamercolor*{separation line}{}
+\setbeamercolor*{fine separation line}{}
+
+
+\mode
+<all>

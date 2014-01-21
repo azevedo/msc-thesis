@@ -1,0 +1,41 @@
+pach_canon.abc
+	Voice count: 4
+	Voice: 1
+		Measure count: 168
+		Note count: 378
+			D-natural: 76
+			F-natural: 59
+			A-natural: 58
+			B-natural: 50
+			G-natural: 48
+			E-natural: 44
+			C-natural: 43
+	Voice: 2
+		Measure count: 168
+		Note count: 378
+			D-natural: 76
+			F-natural: 59
+			A-natural: 58
+			B-natural: 50
+			G-natural: 48
+			E-natural: 44
+			C-natural: 43
+	Voice: 3
+		Measure count: 168
+		Note count: 378
+			D-natural: 76
+			F-natural: 59
+			A-natural: 58
+			B-natural: 50
+			G-natural: 48
+			E-natural: 44
+			C-natural: 43
+	Voice: 4
+		Measure count: 168
+		Note count: 168
+			A-natural: 42
+			G-natural: 42
+			D-natural: 42
+			F-natural: 21
+			B-natural: 21
+

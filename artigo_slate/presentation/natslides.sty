@@ -1,0 +1,51 @@
+%% -*- latex -*-
+
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+%\usepackage[latin1]{inputenc}
+\usepackage[mathletters]{ucs}
+\usepackage[utf8x]{inputenc}
+% \usepackage{aeguill}
+%\usepackage{cam2tex}
+\usepackage{fancyvrb}
+\usepackage{graphicx}
+
+%\def\red#1{\color{red}#1\color{red}}
+%\def\green#1{\color{green}#1\color{black}}
+%\def\blue#1{\color{blue}#1\color{blue}}
+
+\renewcommand{\maketitle}{\frame{\titlepage}}
+\newcommand{\claim}[2][Claim]{\begin{block}{#1} #2 \end{block}}
+
+\newcommand{\demoo}[2][...]{\begin{block}{\includegraphics[width=.06\textwidth]{demo2.jpg}#1} #2 \end{block}}
+
+\newcommand{\demo}[2][...]{
+  \includegraphics[width=0.12\textwidth]{demo2.jpg}
+  \raisebox{2mm}{\emph{\Large #1}}\\[-3mm]
+\begin{block}{}
+#2 
+\end{block}
+}
+\newcommand{\pdfslides}[2][pages={*}]{{
+  \setbeamercolor{background canvas}{bg=}
+  \includepdf[#1]{#2}
+ }
+}
+
+\usetheme{Nat}
+\usecolortheme{crane}
+\setbeamertemplate{navigation symbols}{} %no nav symbols
+\setbeamercovered{transparent}
+\beamertemplateheadempty
+\usepackage{beamercolorthemeorange}
+\setbeamersize{text margin left=0.5cm}
+\setbeamersize{text margin right=0.5cm}
+
+\def\alg#1{\mbox{}\\[0.4em]
+ \begin{raggedright} \(#1\) \end{raggedright}\\[0.4em]
+}
+\def\lcom#1{\Acom{\hfill ...#1}}
+\def\bex#1{\fbox{#1}}
+\def\bexx#1{\begin{block}{}#1\end{block}}
+\def\fixme#1{{\color{red} \fbox{\textsc{FixMe}}:} #1}

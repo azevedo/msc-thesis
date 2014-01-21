@@ -1,0 +1,175 @@
+#!/usr/bin/perl
+package Music::Abc::WC 0.1;
+
+use 5.01400;
+use Music::Abc::DT;
+use Readonly;
+use Data::Dumper;
+
+use strict;
+use warnings;
+
+Readonly my $GLOBAL => 'global';    # refers to global and in header states
+Readonly my $NONE   => 'none';
+
+my @file_names   = @ARGV;     # abc filename
+my %file_info    = ();
+my $c_voice_id   = $GLOBAL;
+my $c_file       = $NONE;
+my $result       = q{};
+
+wc();
+$result = create_output();
+
+print $result;
+
+
+############## Subroutines ##############
+
+sub wc {
+  my $ret  = q{};
+  my %rule = (
+    'V:'    => sub { update_voice_count() },
+    'note'  => sub { update_note_count() },
+    'bar'   => sub { update_measure_count() },
+  );
+
+  foreach my $file (@file_names) {
+    $c_file = $file;
+    $file_info{$c_file}{voice_count} = 0;
+
+    dt( $file, %rule );
+
+    # in case the tune doesn't have voices (V:)
+    $file_info{$c_file}{voice_count} ||= 1;
+  }
+
+  return;
+}
+
+=pod
+(
+  'simple_voices.abc' => (
+                           'voice_count' => 2,
+                           'voices'      => (
+                                         'A' => (
+                                                  'notes'    => 7,
+                                                  'measures' => 4,
+                                                  'pitches'  => (
+                                                               'B-natural' => 3,
+                                                               'D-natural' => 2,
+                                                               'F-sharp'   => 2,
+                                                  )
+                                                ),
+                                         'B' => (
+                                                  'notes'    => 6,
+                                                  'measures' => 4,
+                                                  'pitches'  => (
+                                                               'D-natural' => 3,
+                                                               'F-sharp'   => 1,
+                                                               'G-natural' => 2,
+                                                  )
+                                                )
+                                       )
+                         )
+)
+=cut
+sub create_output {
+  my $res = q{};
+
+  for my $file ( keys %file_info ) {
+    my %file_stuff = %{$file_info{$file}};
+    $res .= "$file\n";
+    $res .= "\tVoice count: $file_stuff{voice_count}\n";
+    for my $voice ( sort keys $file_stuff{voices} ) {
+      my %voice_stuff = %{$file_stuff{voices}{$voice}};
+      $res .= "\tVoice: $voice\n";
+      $res .= "\t\tMeasure count: $voice_stuff{measures}\n";
+      $res .= "\t\tNote count: $voice_stuff{notes}\n";
+
+      my %pitches = %{$voice_stuff{pitches}};
+      # Sorts pitches decreasingly by occurrence
+      for my $pitch ( reverse sort { $pitches{$a} <=> $pitches{$b} } keys %pitches ) {
+        $res .= "\t\t\t$pitch: $pitches{$pitch}\n";
+      }
+    }
+    $res .= "\n";
+  }
+
+  return $res;
+}
+
+# Updates a voice's measure count
+sub update_measure_count {
+
+  $file_info{$c_file}{voices}{$c_voice_id}{measures} = $sym->{info}->{bar_num} - 1;
+
+  return;
+}
+
+# Updates a voice's note count
+sub update_note_count {
+  # total number of notes
+  $file_info{$c_file}{voices}{$c_voice_id}{notes}++;
+
+  # number of times a pitch appears
+  my $pitch = get_pitch_name($sym);
+  $file_info{$c_file}{voices}{$c_voice_id}{pitches}{$pitch}++;
+
+  return;
+}
+
+# Updates a file's voice count
+sub update_voice_count {
+  $c_voice_id = $sym->{info}->{id};
+
+  # increments the voice count if it's the first time it appears
+  if ( not $file_info{$c_file}{voices}{$c_voice_id}{measures} ) {
+    $file_info{$c_file}{voice_count}++;
+  }
+  $file_info{$c_file}{voices}{$c_voice_id}{measures} ||= 0;
+
+  return;
+}
+
+1;
+__END__
+
+=head1 NAME
+
+wc_abc - print voice, measures and notes/pitch per voice counts for each ABC file
+
+=head1 SYNOPSIS
+
+wc_abc [FILE]...
+
+=head1 USAGE
+
+wc_abc tune1.abc tune2.abc
+  Prints voice, measure and notes per voice counts for tune1.abc and tune2.abc
+
+=head1 DESCRIPTION
+
+Print voice, measures and notes/pitch per voice counts for each ABC file
+
+=head1 REQUIRED ARGUMENTS
+
+=head1 OPTIONS
+
+=head1 DIAGNOSTICS
+
+=head1 EXIT STATUS
+
+=head1 CONFIGURATION
+
+=head1 DEPENDENCIES
+
+=head1 INCOMPATIBILITIES
+
+=head1 BUGS AND LIMITATIONS
+
+=head1 AUTHOR
+
+  Bruno Azevedo
+
+=head1 LICENSE AND COPYRIGHT

@@ -1,0 +1,108 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-10-29T17:28:55+00:00
+
+====== Plano de Trabalhos ======
+Created Monday 29 October 2012
+
+(Aluno+Orientador) Elaboração do plano de trabalhos (tipicamente, 5-7 páginas A4), de acordo com a seguinte estrutura:
+ 
+
+==== Tema ====
+	ABC Music Analysis
+	(toolkit ou algo parecido pode vir a ser introduzido no nome da tese se ajudar)
+	musix, um toolkit para restauro e analise musical ??
+	musicologia
+	
+	(Criação de um)? toolkit para análise e restauro musical
+
+
+==== Resumo (100-200 palavras) ====
+	álgebra heterogéna
+	ferramenta para analise e restauro dinamico de musica???
+	sabemos que ha uma grande variedade
+	pensar numa representacao que me permita tirar conclusoes inteligentes
+	corpus
+	micro ferramentas => analises[[/transformacoes]] parcias
+	detetar erros especifico para restauros gerais
+	arranjar situacoes em que consiga detetar surpresa de vária ordem e que me permita procurar e reagir a certas anomalias
+	
+	tencologia: criar biblioteca/conjunto de comandos que consiga falar com outras ferramentas externas
+		framework que cosiga importar formatos de musica...
+
+
+==== Enquadramento/Motivação ====
+Metáfora Unix (vamos fazer algo semelhante ao Unix) o que nos leva a partir do unix e construir comandos semelhantes
+Capacidade e raciocínio da música em formatos mais simbólicos e abstratos é muito maior. ha maior riqueza na musica quando mastigada.
+Pretendemos:
+1. melhorar o nivel simbolico
+2. fazer melhor analise, detecao de erros, restauro, musicologia
+
+quem sabe entrar na faceta de composicao?
+
+=== Áreas de aplicação ===
+	* wiki musicais
+	* voluntariado cultural, cooperativo
+	* melhorar qualidade de transcrições
+	* apoio a legados musicais
+	* análise e composição simples
+	* publishing musicais (criacao de vistas)
+
+=== Dificuldades ===
+(que poderão vir a ser encontradas)
+
+
+==== Objetivos ====
+* Validação automática/deteção de erros 
+	* sintáticos (compassos desiguais, ...)
+	* léxicos (nomenclatura errada, ...)
+	* erros de desalinhamento (alinhador)
+	* lint (aviso de provável erro (salto demasiado grande; acorde fora do contexto))
+* Criação de **comandos**, baseadas em variadas funcões da shell, que tenham como input documentos ABC e que façam pequenas ações e que depois possam ser articuladas, compostas. (unix vem introduzir algo escansaloso para a altura: nos nao queremos ferrramentas fortes e grandes. quremos coisas mais pequenas que facam tudo muito bem e que depois as possamos compor com outras) Por exemplo:
+	* abcgrep : imprime linhas melódicas (pode ter outros outputs) dado um padrão (este pode ser uma sequência melódica (A b 2d), uma sequência de intervalos de uma melodia (+2M -3m -2m +4P), entre outros)
+	* abcdiff : compara ficheiros (voz a voz; ...)
+	* cut
+	* paste
+	* cat
+	* join
+	* sed
+	* nl??
+	* ...
+* algumas ferramentas podem tirar partido de informação retirada da análise de corpora
+* construção de corpus abc com metadados ricos
+* construção de um survey (relacionar e comparar) de representações internas
+* estudo de várias ferramentas que ...
+	* music21
+
+
+**pretende**-se criar toolkit que seja: 
+* composicional
+* unix (lidar com coisas pequenas)
+* reconheça um tipo de notação musical (abc)
+
+**para quê**
+* aumentar a //simbolicidade//, abstraçao, granularidade (a partir de infrmação passar a conhecimento)
+* criar vistas/visualizacoes elegantes sobre informacao simbolica
+
+==== Métodos de trabalho/investigação ====
+Para o desenvolvimento do sistema e para a escrita da dissertação serão utilizados os seguintes métodos:
+1. Pesquisa bibliográfica;
+**Completar**
+3. − Metodologias ágeis de desenvolvimento;
+− Criação de modelos das funções e estruturas de dados que possam servir para discutir e prototipar antes da
+implementação;
+− Desenvolvimento suportado por testes;
+− Criação de métodos de avaliação das ferramentas a serem desenvolvidas em paralelo.
+
+
+
+==== Calendarização ====
+1. Pesquisa bibliográfica;
+2. Redação do relatório de Pré-dissertação
+3. Redação da dissertação de mestrado
+
+
+==== Bibliografia ====
+(alguma bibliografia recmendada; o que ando a ler ou vou; separar em documentos escritos, ferramentas e projetos)
+http://method-behind-the-music.com/theory/notation
+http://abcnotation.com/

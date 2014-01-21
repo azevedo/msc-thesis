@@ -1,0 +1,96 @@
+X:101
+T:Tuti
+C:Anonimous, 16th century
+M:3/4
+L:1/8
+K:G
+V:1 name="Soprano" sname="S." clef=treble
+%%MIDI program 1 1
+G4 G2| G4 F2| A4 A2| B4 z2|: \
+w: Ver- bum | ca- ro | fac- tum | est |
+B3 A GF| E2 D2 EF| G4 F2| G6!fine!:|
+w: Por - que *| to - dos * | hos sal-|veis
+V:2 name="Contralto" sname="C." clef=treble
+%%MIDI program 1 1
+D4 D2| E4 D2| E4 F2| G4 z2|: \
+w: Ver- bum | ca- ro | fac- tum | est |
+G4 G2| G4 G2| E2 D4| D6:|
+w: Por- que | to- dos  | hos sal-|veis
+V:3 name="Tenor" sname="T." clef=treble-8
+%%MIDI control 7 50
+%%MIDI program 1 1
+G3 A B2| c4 A2| c4 c2| d4 z2|: \
+w: Ver - bum | ca- ro | fac- tum | est |
+d2 B4| c2 B4| c2 A4| G6:|
+w: Por- que | to- dos  | hos sal-|veis
+V:4 name="Baixo" sname="B." clef=bass
+%%MIDI program 1 1
+G,4 G,2| C,4 D,2| A,4 A,2| G,4 z2|: \
+w: Ver- bum | ca- ro | fac- tum | est |
+G,3 F, E,D,| C,2 G,2 E,2| C,2 D,4| G,,6:|
+w: Por - que | to - dos  | hos sal-|veis
+V:1
+%%MIDI program 1 1
+B4c2| B2 A2> G2| G4 F2| G4 G2|
+w: 1.~Y la | Vir-gen * | le de-| zi-a:
+w: 2.~O ri-| que-zas * | te-rre-|na-les.
+V:2
+%%MIDI program 1 1
+G3 FE2| D2C2B,2| G,2 A,4| G,4 G,2|
+V:3
+%%MIDI control 7 50
+%%MIDI program 1 1
+Z4|
+V:4
+%%MIDI program 1 1
+Z4|
+V:1
+%%MIDI program 1 1
+Z4|
+V:2
+%%MIDI program 1 1
+V:3
+%%MIDI control 7 50
+%%MIDI program 1 1
+d4 e2| d2c2> B2|AGA4| G4 G2|
+w: 1.~'Vi-da | de la * | vi - da | mi-a,
+w: 2.~No da-| reis u - | nos * pa-|ña-kes
+V:4
+%%MIDI program 1 1
+G,4 E,2| F,G,A,2>G,2| G,4F,2| G,4G,2|
+V:2
+Z4|
+V:1
+%%MIDI program 1 1
+G4 G2| G2 G2 F2| A4 A2| B4 A2|
+w: 1.~Hi-jo | mi-o que | os ha-|ri-a. |
+w: 2.~A Je-|su * que~en-|tre~a- ni-|ma-les
+V:2
+%%MIDI program 1 1
+V:3
+%%MIDI control 7 50
+%%MIDI program 1 1
+V:4
+%%MIDI program 1 1
+V:2
+Z4|
+V:3
+%%MIDI control 7 50
+Z4|
+V:4
+Z4|
+V:1
+%%MIDI program 1 1
+B3 A GF| E2 D2 EF| G4 F2| G6!D.C.!||
+w: 1.~Que * no * | ten -go~en* | que~os e-|cheis?'
+w: 2.~Es * na - |sci -do * | se-gun | vies
+V:2
+%%MIDI program 1 1
+G4 G2| G4 G2| E2 D2 D2| D6||
+V:3
+%%MIDI control 7 50
+%%MIDI program 1 1
+B4 B2| c2 B4| c2 A4| G6||
+V:4
+%%MIDI program 1 1
+G,3 F, E,D,| C,2 G,2 E,2| C,2 D,4| G,,6||

@@ -1,0 +1,512 @@
+This appendix presents \abcdtrules{}' list of existing actuators and a list of the functions that
+\abcdt{} provides.
+
+\section{ABC::DT Rules' Actuators}
+\label{sec:abcdt_rules_actuators}
+
+This appendix presents \abcdtrules{}' list of existing actuators.
+
+\begin{center}
+  \begin{tabular}{|p{2cm}|p{4.5cm}|p{3.5cm}|p{5cm}|}
+    \hline
+    Scope & Actuator & Example & Description \\
+    \hline
+    \hline
+    \multirow{4}{*}{GENERAL}
+    & <state>
+    & 'in\_header'
+    & Selects all \abc{} elements that appear in context <state> (in\_global, in\_header, in\_tune, in\_header)
+    \\ \cline{2-4}
+    \hline
+
+    \hline
+    \multirow{3}{*}{SPECIAL}
+    & '-default'
+    &
+    & Default transformation for unselected \abc{} elements
+    \\ \cline{2-4}
+
+    & '-end'
+    &
+    & General post processing
+    \\ \cline{2-4}
+    \hline
+
+    \hline
+    \multirow{8}{*}{PSCOM}
+    & 'pscom'
+    &
+    & Selects all formatting commands; Any element starting with '\%\%'
+    \\ \cline{2-4}
+
+    & 'FORMAT'
+    &
+    & Selects all formatting commands
+    \\ \cline{2-4}
+
+    & 'FORMAT::' . <formatting\_command>
+    & 'FORMAT::staves'
+    & Selects a specific formatting command
+    \\ \cline{2-4}
+
+    & 'MIDI'
+    &
+    & Selects all abcMIDI commands
+    \\ \cline{2-4}
+
+    & 'MIDI::' . <abc\_midi>
+    & 'MIDI::channel'
+    & Selects a specific abcMIDI command
+    \\ \cline{2-4}
+    \hline
+
+  \end{tabular}
+\end{center}
+
+\begin{center}
+  \begin{tabular}{|p{1.75cm}|p{4cm}|p{3cm}|p{6cm}|}
+    \hline
+    Scope & Actuator & Example & Description \\
+    \hline
+    \hline
+    \multirow{15}{*}{NOTE}
+    & 'note'
+    &
+    & Selects all \abc{} elements that are notes
+    \\ \cline{2-4}
+
+    & 'note::' . <note>
+    & 'note::C'
+    & Selects a specific note
+    \\ \cline{2-4}
+
+    & 'V:' . <voice\_name> . '::' . 'note'
+    & 'V:Tenor::note'
+    & Selects a note that appears in the context of a voice with name <voice\_name>
+    \\ \cline{2-4}
+
+    & 'V:' . <voice\_id> . '::' . 'note'
+    & 'V:2::note'
+    & Selects a note that appears in the context of a voice with id <voice\_id>
+    \\ \cline{2-4}
+
+    & 'V:' . <voice\_name> . '::' . 'note::' . <note>
+    & 'V:Tenor::note::C'
+    & Selects a specific note that appears in the context of a voice with name <voice\_name>
+    \\ \cline{2-4}
+
+    & 'V:' . <voice\_id> . '::' . 'note::' . <note>
+    & 'V:2::note::C'
+    & Selects a specific note that appears in the context of a voice with id <voice\_id>
+    \\ \cline{2-4}
+    \hline
+
+    \hline
+    \multirow{8}{*}{REST}
+    & 'rest'
+    &
+    & Selects all \abc{} elements that are rests
+    \\ \cline{2-4}
+
+    & 'V:' . <voice\_name> . '::' . 'rest'
+    & 'V:Tenor::rest'
+    & Selects a rest that appears in the context of a voice with name <voice\_name>
+    \\ \cline{2-4}
+
+    & 'V:' . <voice\_id> . '::' . 'rest'
+    & 'V:2::rest'
+    & Selects a rest that appears in the context of a voice with id <voice\_id>
+    \\ \cline{2-4}
+    \hline
+
+    \hline
+    \multirow{9}{*}{BAR}
+    & 'bar'
+    &
+    & Selects all \abc{} elements that are bars
+    \\ \cline{2-4}
+
+    & <bar>
+    & ':|'
+    & Selects a specific bar
+    \\ \cline{2-4}
+
+    & 'V:' . <voice\_name> . '::' . 'bar'
+    & 'V:Tenor::bar'
+    & Selects a bar that appears in the context of a voice with name <voice\_name>
+    \\ \cline{2-4}
+
+    & 'V:' . <voice\_id> . '::' . 'bar'
+    & 'V:2::bar'
+    & Selects a bar that appears in the context of a voice with id <voice\_id>
+    \\ \cline{2-4}
+    \hline
+
+  \end{tabular}
+\end{center}
+
+\begin{center}
+  \begin{tabular}{|p{1.75cm}|p{3.5cm}|p{3cm}|p{7cm}|}
+    \hline
+    Scope & Actuator & Example & Description \\
+    \hline
+    \hline
+    \multirow{11}{*}{GCHORD}
+    & 'gchord'
+    &
+    & Selects all \abc{} elements that are accompaniment chords
+    \\ \cline{2-4}
+
+    & 'gchord::' . <gchord>
+    & 'gchord::F'
+    & Selects a specific accompaniment chord
+    \\ \cline{2-4}
+
+    & <type> . '::gchord'
+    & 'note::gchord'
+    & Selects an accompaniment chord that is associated with a <type> (note, rest or bar)
+    \\ \cline{2-4}
+
+    & <type> . '::gchord' . <gchord>
+    & 'note::gchord::F'
+    & Selects a specific accompaniment chord that is associated with a <type> (note, rest or bar)
+    \\ \cline{2-4}
+    \hline
+
+    \hline
+    \multirow{9}{*}{DECO}
+    & 'deco'
+    &
+    & Selects all \abc{} elements that are decorations/ornaments
+    \\ \cline{2-4}
+
+    & <deco>
+    & '!ff!'
+    & Selects a specific decoration
+    \\ \cline{2-4}
+
+    & <type> . '::deco'
+    & 'note::deco'
+    & Selects a decoration that is associated with a <type> (note, rest or bar)
+    \\ \cline{2-4}
+
+    & <type> . '::' . <deco>
+    &  'note::!ff!'
+    & Selects a specific decoration that is associated with a <type> (note, rest or bar)
+    \\ \cline{2-4}
+    \hline
+
+    \hline
+    \multirow{5}{*}{CLEF}
+    & 'clef'
+    &
+    & Selects all \abc{} elements that are clefs
+    \\ \cline{2-4}
+
+    & <state> . '::clef'
+    & 'in\_tune::clef'
+    & Selects a clef that appears in context <state> (in\_global, in\_header, in\_tune, in\_header)
+    \\ \cline{2-4}
+    \hline
+
+  \end{tabular}
+\end{center}
+
+
+\begin{center}
+  \begin{tabular}{|p{1.5cm}|p{3.5cm}|p{3.25cm}|p{7cm}|}
+    \hline
+    Scope & Actuator & Example & Description \\
+    \hline
+    \hline
+    \multirow{23}{*}{INFO}
+    & 'info'
+    &
+    & Selects all \abc{} elements that are info/headers (key, length, meter, voice, ...)
+    \\ \cline{2-4}
+
+    & <info>
+    & 'K:'
+    & Selects a specific info/header (key, length, meter, voice, ...)
+    \\ \cline{2-4}
+
+    & <state> . '::info'
+    & 'in\_line::info'
+    & Selects an info/header (key, length, meter, voice, ...) that appears in context <state>
+    (in\_global, in\_header, in\_tune, in\_header)
+    \\ \cline{2-4}
+
+    & <state> . '::' . <info> . ':'
+    & 'in\_line::K:'
+    & Selects a specific info/header (key, length, meter, voice, ...) that appears in context
+    <state> (in\_global, in\_header, in\_tune, in\_header)
+    \\ \cline{2-4}
+
+    & 'M:' . <meter>
+    & 'M:3/4'
+    & Selects a meter with text <meter>
+    \\ \cline{2-4}
+
+    & <state> . '::M:' . <meter>
+    & 'in\_line::M:3/4'
+    & Selects a meter with text <meter> that appears in context <state> (in\_global, in\_header, in\_tune, in\_header)
+    \\ \cline{2-4}
+
+
+    & 'V:' . <voice\_name>
+    & 'V:Tenor'
+    & Selects a voice with name <voice\_name>
+    \\ \cline{2-4}
+
+    & 'V:' . <voice\_id>
+    & 'V:2'
+    & Selects a voice with id <voice\_id>
+    \\ \cline{2-4}
+
+    & <state> . '::V:' . <voice\_name>
+    & 'in\_line::V:Tenor'
+    & Selects a voice with name <voice\_name> that appears in context <state> (in\_global, in\_header, in\_tune, in\_header)
+    \\ \cline{2-4}
+
+    & <state> . '::V:' . <voice\_id>
+    & 'in\_line::V:2'
+    & Selects a voice with id <voice\_id> that appears in context <state> (in\_global, in\_header, in\_tune, in\_header)
+    \\ \cline{2-4}
+    \hline
+
+    \hline
+    \multirow{5}{*}{OTHER}
+    & <type>
+    & 'tuplet'
+    & Selects all \abc{} elements that are <type> (eoln (end of line), mrest (measure rest), mrep (measure
+      repeat), v\_over (voice overlay) or tuplet)
+    \\ \cline{2-4}
+    \hline
+  \end{tabular}
+\end{center}
+
+
+\section{ABC::DT Functions}
+\label{sec:abcdt_functions}
+
+This appendix presents a list of the functions that \abcdt{} provides.
+
+\begin{center}
+  \begin{tabular}{|p{3.5cm}|p{2cm}|p{5.5cm}|p{4cm}|}
+    \hline
+    Function & Arguments & Description & Notes \\
+    \hline
+    \hline
+    \emph{dt()}
+    & \emph{\$abc\_file}, \emph{\%rules}
+    & Processes \abc{} tunes. Receives the filename of an \abc{} tune and a set of functions
+    (\emph{\%rules}) defining the processing and associated values for each \abc{} element.
+    &
+    \\
+    \hline
+
+    \hline
+    \emph{dt\_string()}
+    & \emph{\$abc\_string}, \emph{\%rules}
+    & Processes \abc{} tunes. Receives an \abc{} tune in string format and a set of functions
+    (\emph{\%rules}) defining the processing and associated values for each \abc{} element.
+    &
+    \\
+    \hline
+
+    \hline
+    \multirow{5}{*}{\emph{toabc()}}
+    & \multirow{5}{*}{\emph{\$sym}}
+    & \abcdt{} main processor's default function. The identity function. It produces the original
+    \abc{} for a given \ac{IR} element (\abc{} element)
+    & Inspired on Jean-François Moine's \tclabc{} \symdumpi{} function.
+    \\
+    \hline
+
+    \hline
+    \multirow{4}{*}{\emph{get\_chords()}}
+    & \multirow{4}{*}{\emph{\$sym}}
+    & Produces the guitar/accompaniment chords that come associated with a note, rest or bar.
+    &
+    \\
+    \hline
+
+    \hline
+    \multirow{2}{*}{\emph{get\_key()}}
+    &
+    & Returns the current voice's key
+    &
+    \\
+    \hline
+
+    \hline
+    \multirow{2}{*}{\emph{get\_length()}}
+    &
+    & Returns the current voice's note length
+    &
+    \\
+    \hline
+
+    \hline
+    \multirow{2}{*}{\emph{get\_meter()}}
+    &
+    & Returns the current voice's tune meter
+    &
+    \\
+    \hline
+
+  \end{tabular}
+\end{center}
+
+\begin{center}
+  \begin{tabular}{|p{2.75cm}|p{2.25cm}|p{5.5cm}|p{4.5cm}|}
+    \hline
+    Function & Arguments & Description & Notes \\
+    \hline
+    \hline
+    \multirow{2}{*}{\emph{get\_wmeasure()}}
+    &
+    & Returns the current voice's expected measure duration
+    &
+    \\
+    \hline
+
+    \hline
+    \multirow{4}{*}{\emph{get\_time()}}
+    &
+    & Returns the elapsed time (in the internal time representation) until the current element.
+    &
+    \\
+    \hline
+
+    \hline
+    \multirow{3}{*}{\emph{get\_time\_ql()}}
+    &
+    & Returns the elapsed time (in quarter notes) until the current element.
+    &
+    \\
+    \hline
+
+    \hline
+    \multirow{4}{*}{\emph{get\_chord\_step()}}
+    & \multirow{4}{3cm}{\emph{\$sym}, \emph{\$chord\_step}, \emph{\$test\_root}}
+    & Returns the (first) note structure found on the chord (\emph{\$sym}) (\abc{} element
+    \emph{note}) at the provided scale degree (\emph{\$chord\_step}). Returns \texttt{undef} if none
+    can be found.
+    & Inspired in Music21 \texttt{music21.chord} module's \emph{getChordStep()} method.
+    \\
+    \hline
+
+    \hline
+    \multirow{3}{*}{\emph{get\_fifth()}}
+    & \multirow{3}{*}{\emph{\$sym}}
+    & Returns a note structure describing the fifth of the chord (\emph{\$sym}) (\abc{} element
+    \emph{note}).  Shortcut for \emph{get\_chord\_step(5)}.
+    & Inspired in Music21 \texttt{music21.chord} module's \emph{getFifth()} method.
+    \\
+    \hline
+
+    \hline
+    \multirow{4}{*}{\emph{get\_third()}}
+    & \multirow{4}{*}{\emph{\$sym}}
+    & Returns a note structure describing the third of the chord (\emph{\$sym}) (\abc{} element
+    \emph{note}).  Shortcut for \emph{get\_chord\_step(3)}.
+    & Inspired in Music21 \texttt{music21.chord} module's \emph{getThird()} method.
+    \\
+    \hline
+
+    \hline
+    \multirow{4}{*}{\emph{get\_seventh()}}
+    & \multirow{4}{*}{\emph{\$sym}}
+    & Returns a note structure describing the seventh of the chord (\emph{\$sym}) (\abc{} element
+    \emph{note}).  Shortcut for \emph{get\_chord\_step(7)}.
+    & Inspired in Music21 \texttt{music21.chord} module's \emph{getSeventh()} method.
+    \\
+    \hline
+
+  \end{tabular}
+\end{center}
+
+\begin{center}
+  \begin{tabular}{|p{2.75cm}|p{2cm}|p{5.75cm}|p{4.5cm}|}
+    \hline
+    Function & Arguments & Description & Notes \\
+    \hline
+    \hline
+    \multirow{12}{*}{\emph{is\_major\_triad()}}
+    & \multirow{12}{*}{\emph{\$sym}}
+    & Returns True if the chord (\emph{\$sym}) (\abc{} element \emph{note}) is a Major Triad, that
+    is, if it contains only notes that are either in unison with the root, a major third above the
+    root, or a perfect fifth above the root. Additionally, it must contain at least one of each
+    third and fifth above the root. The chord must be spelled correctly. Otherwise returns False.
+    & Inspired in Music21 \texttt{music21.chord} module's \emph{isMajorTriad()} method.
+    \\
+    \hline
+
+    \hline
+    \multirow{12}{*}{\emph{is\_minor\_triad()}}
+    & \multirow{12}{*}{\emph{\$sym}}
+    & Returns True if the chord (\emph{\$sym}) (\abc{} element \emph{note}) is a Minor Triad, that
+    is, if it contains only notes that are either in unison with the root, a minor third above the
+    root, or a perfect fifth above the root. Additionally, it must contain at least one of each
+    third and fifth above the root. The chord must be spelled correctly. Otherwise returns False.
+    & Inspired in Music21 \texttt{music21.chord} module's \emph{isMinor()} method.
+    \\
+    \hline
+
+    \hline
+    \multirow{9}{3cm}{\emph{is\_dominant\_ seventh()}}
+    & \multirow{9}{*}{\emph{\$sym}}
+    & Returns True if the chord (\emph{\$sym}) (\abc{} element \emph{note}) is a Dominant Seventh,
+    that is, if it contains only notes that are either in unison with the root, a major third above
+    the root, a perfect fifth, or a major seventh above the root. Additionally, must contain at
+    least one of each third and fifth above the root. Chord must be spelled correctly. Otherwise
+    returns false.
+    & Inspired in Music21 \texttt{music21.chord} module's \emph{isDominantSeventh()} method.
+    \\
+    \hline
+
+  \end{tabular}
+\end{center}
+
+\begin{center}
+  \begin{tabular}{|p{3.25cm}|p{2cm}|p{5.25cm}|p{4.5cm}|}
+    \hline
+    Function & Arguments & Description & Notes \\
+    \hline
+    \hline
+    \multirow{5}{3cm}{\emph{find\_consecutive\_
+    notes\_in\_measure()}}
+    & \multirow{5}{*}{\emph{\$args}}
+    & Returns a list of consecutive note structures belonging to the same measure. Receives an hash
+    of options to filter the search (\emph{\$args}).
+    & Inspired in Music21 \texttt{music21.stream} module's \emph{findConsecutiveNotes()} method.
+    \\
+    \hline
+
+    \hline
+    \multirow{3}{*}{\emph{root()}}
+    & \multirow{3}{*}{\emph{\$sym}}
+    & Looks for the chord's (\emph{\$sym}) root by finding the note with the most 3rds above it.
+    & Inspired in Music21 \texttt{music21.chord} module's \emph{root()} method.
+    \\
+    \hline
+
+    \hline
+    \multirow{4}{*}{\emph{get\_pitch\_class()}}
+    & \multirow{4}{*}{\emph{\$note}}
+    & Returns the pitch class of the note. The pitch\_class is a number from 0-11, where 0 = C, 1 =
+    C\#/D-, etc.
+    & Inspired in Music21 \texttt{music21.pitch} module's \emph{pitchClass} attribute.
+    \\
+    \hline
+
+    \hline
+    \multirow{2}{*}{\emph{get\_pitch\_name()}}
+    & \multirow{2}{*}{\emph{\$note}}
+    & Returns the pitch name of a note: A-flat, C-sharp.
+    & Inspired in Music21 \texttt{music21.pitch} module.
+    \\
+    \hline
+  \end{tabular}
+\end{center}

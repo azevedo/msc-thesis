@@ -1,0 +1,10 @@
+X: 1
+T: Brother John
+C: Traditional
+L: 1/4
+V:RH1 clef=treble name="Soprano" sname="S" merge stem=up gstem=down dyn=auto lyrics=up gchord=up scale=0.6 staffscale=0.5 stafflines=6
+V:RH2 clef=treble name="Contralto" sname="VB"
+K:E
+V:RH1
+EFGE|GABz
+[V:RH2] Z1 |EFGE

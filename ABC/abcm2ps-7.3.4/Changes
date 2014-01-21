@@ -1,0 +1,371 @@
+---- Version 7.3.4 - 13/01/08 ----
+
+%%abcm2ps added.
+Bad octave in overlay voices when "octave=" in main voice
+	(reported by Colin Hume).
+Let more slurs under the tuplets
+	(asked by David Lacroix).
+Don't keep the K:'s with same key signature when %%keywarn is set
+	(reported by Henry Bley-Vroman).
+
+---- Version 7.3.3 - 12/12/14 ----
+
+Remove some example files from the distribution.
+Draw the staves with spaces ('y') only and "%%staffnonote 1".
+Fix %%alignbars which was broken in 7.2.1.
+Set as tune global some info fields (K:, M: and Q:) and pseudo-comments
+	after the first K: and middle-tune T:.
+Better note shifts of 3rd voice of a same staff.
+Change %%shiftunisson to %%shiftunison.
+In unison, shift the note with a down stem
+	(reported by Paolo Minazzi).
+Fix bad output file when note head decoration since 7.3.2.
+%%voicescale added.
+Fix loss of %%indent since 7.2.2
+	(reported by David Lacroix).
+Remove the horizontal space of empty key signatures
+	(reported by David Lacroix).
+Fix bad beam at end of voice overlay since 7.3.0
+	(reported by David Lacroix).
+
+---- Version 7.3.2 - 12/12/07 ----
+
+Don't do a page break after the tune title when %%scale after 1st K:.
+Fix clash of beams with grace notes when down stems.
+Display better slurs on grace notes with down stems.
+Fix abnormal error on w: ending with '\' (continuation).
+Fix loss of tempo (Q: in tune header) when %%scale/%%rightmargin/...
+	after first K:.
+Fix again clash of slurs with decorations/tuplets/...
+Fix bad slurs when inside the staff since 7.3.0
+	(reported by David Lacroix).
+Fix %%select when tunes have blank lines (%%begintext..)
+	(reported by Henry Bley-Vroman).
+
+---- Version 7.3.1 - 12/11/28 ----
+
+Fix left width of heads in flute.fmt.
+Fix the documentation about flute.fmt.
+Do %%ornament work.
+Add "hidden" in %%dynamic, %%gchord, %%ornament, %%vocal and %%volume.
+Don't do an error on the information field "r:".
+Fix no output when lack of "%%multicol end"
+	(reported by Henry Bley-Vroman).
+Fix crash on "%%multicol end" with -E or -g.
+Handle "%% endxx" (space after %%)
+	(reported by Henry Bley-Vroman).
+Check again if not enough words in lyrics (w:)
+	(asked by Steve West).
+Handle ties from notes to grace notes
+	(asked by David Lacroix).
+Fix bad width of hole on %%staffbreak multi-voice.
+Fix bad offset of the slurs since previous version
+	(reported by David Lacroix).
+Don't display a key signature on %%transpose from K:none
+	(reported by David Lacroix).
+
+---- Version 7.3.0 - 12/11/17 ----
+
+Don't let annotations move the next key or time signature to the right.
+Fix lack of key/time warnings at end of line
+	(reported by Jean-Luc Zins).
+Don't continue beaming in voice overlay
+	(reported by Jean-Luc Zins).
+Don't shift notes with guitar chord after repeat bracket with long text
+	(reported by Norman Bearon).
+Fix bad ties from grace notes
+	(reported by David Lacroix).
+!! Change %%stretchlast to a floating point value. !!
+Fix clash of slurs with decorations/tuplets/...
+	(reported by John Walsh).
+
+---- Version 7.2.2 - 12/11/07 ----
+
+Fix bad bars between staves with %%score.
+Fix bad explicit line breaks after notes.
+Don't try to stretch the last music line when %%stretchlast 0
+	(reported by Chuck Boody).
+Fix too much space above the staff when scaled staff and P: or Q:.
+Fix left indentation when empty staves and %%staffnonote.
+Fix bad offset of measure numbers when 1st staff empty and %%staffnonote.
+Fix bad offset of measure numbers when 1st staff is scaled
+	(reported by Hudson Flávio Meneses Lacerda).
+Change default value of %%hyphencont to 1
+	(asked by David Webber).
+Don't draw repeat brackets when bar between 2 staves
+	(reported by David Webber).
+
+---- Version 7.2.1 - 12/10/30 ----
+
+Fix crash when centered decoration under staff at start of new staff system.
+Add %%breaklimit.
+Change the internal algorithm of automatic line breaking.
+	(reported by Steve West).
+Fix loss of gchord/annot or bad font when scaled staves
+	(reported by Hudson Flávio Meneses Lacerda).
+Fix bad vertical offset of lyrics when scaled staves and slurs in lower voice.
+Fix bad horizontal offset of lyrics on scaled staves.
+Handle the line breaks of the top voice only.
+Add %%staffscale and %%stafflines.
+Fix bad handling of '=' in M:none.
+Fix bad handling of %%barsperline when M:none
+	(reported by David Lacroix).
+
+---- Version 7.2.0 - 12/10/25 ----
+
+Fix crash when mid-staff decoration in new voice at start of line
+	(reported by David Lacroix).
+Add "ignore" as special U: value.
+Extend %%linebreak to * ; ? and @.
+!! Put the output annotations (-A) after the symbols. !!
+Add more symbols in output annotations (-A).
+Adjust the width scale of all fonts when set in %%font.
+Fix "error w: without music" in secondary voices when ABC version >= 2.1
+	(reported by Frédéric Aupépin).
+
+---- Version 7.1.3 - 12/10/18 ----
+
+Fix bad slur vertical offsets on scaled staves.
+Fix loss of key/time warning when preceeded by %%stave
+	(reported by Mike Scott).
+Fix bad left side of staff systems when some %%score in the line.
+Handle the line breaks of all primary voices.
+Fix internal linkage errors.
+Fix error "w: without music" when Q: in tune header
+	(reported by Frédéric Aupépin).
+Fix bad line width after some decorations in SVG output.
+Bad measure number after time signature change
+	(reported by Jean-Luc Zins).
+Bad clef when P: or Q: between first K: and %%staves
+	followed by K: or V: with a clef != treble
+	(reported by Jean-Luc Zins).
+
+---- Version 7.1.2 - 12/10/09 ----
+
+Treat "%%writefield M 0".
+Add %%dblrepbar and draw :|: and :||: as ::
+	(asked by Nils Liberg).
+Fix bad parsing of the "%abc-<version>" at start of file.
+Do more control of ties between two different notes.
+Add %%keywarn
+	(asked by John Chambers).
+Fix clash of subtitle and guitar chord since 7.1.1.
+Fix bad staff key signature when "| $ [P:] [K:] |"
+	(reported by John Chambers).
+Fix bad staff key/time signatures when P: or Q: before K:/M: in tune
+	(reported by John Chambers).
+Fix crash when %%continueall and music line cut on a bar with !beamon!
+	(also when %%breakoneoln 0) and handle beams on two music lines
+	(reported by Guido Gonzato).
+
+---- Version 7.1.1 - 12/09/29 ----
+
+Convert multi-rests of one measure to rests
+	(reported by David Webber).
+Move the decorations to the last rest on multi-rest expand
+	(reported by David Webber).
+Remove the test messages 'y_set i:-xx'.
+May change the guitar chord position (%%gchord) inside the tunes
+	(and internal change of guitar chord / annotation handling).
+Add %%user.
+Add !beam-accel! and !beam-rall!
+	(asked by Hudson Flávio Meneses Lacerda).
+Reduce a bit the space before the measure bars.
+
+---- Version 7.1.0 - 12/09/13 ----
+
+Fix bad accidentals when clef one octave higher or lower than normal.
+Add a letter to select a repeated measure in tune selection
+	(asked by Hudson Flávio Meneses Lacerda).
+Fix bad music position in tune selection (%%break / %%clip)
+	(reported by Hudson Flávio Meneses Lacerda).
+Fix lack of tune selection (%%break / %%clip) of the first measures (0 and 1)
+	(reported by Hudson Flávio Meneses Lacerda).
+Remove extra vertical space between staves after a staff with no note
+	(reported by Chuck Boody).
+Add "%%tune end" and authorize blank lines in %%tune sequences
+	!! compatibility !!
+	(asked by Hudson Flávio Meneses Lacerda).
+Change %%acccancel to %%cancelkey !! compatibility !!.
+Accept time signatures as "M:5 ((2+3)/4)" and "M:5 (2/4+3/4)".
+Display the parenthesis of "M:7/8 (3+2+2)"
+	(reported by Guido Gonzato).
+
+---- Version 7.0.16 - 12/09/06 ----
+
+Fix bad measure numbering when contbarnb and "y" between "|" and "[number"
+	(reported by Hudson Flávio Meneses Lacerda).
+Fix clash of measure numbering with key signature.
+Add 'microscale= in K: and V:.
+Fix bad handling of '/symbol' for "cvx" in the mini PS interpreter.
+Add %%micronewps.
+Fix abnormal new music line when Q: or P: followed by [V:x] and grace notes.
+Fix loss of tempo when second voice starting with grace notes
+	(reported by Wim Rotty).
+
+---- Version 7.0.15 - 12/08/27 ----
+
+Fix %%transpose ignored in file or tune header
+	(reported by David Webber).
+Fix octave= ignored when no clef= in K: and V:
+	(reported by Alex Scheutzow).
+Add %%acccancel.
+
+---- Version 7.0.14 - 12/07/22 ----
+
+Fix crash with floating point sensitive machines as ARM.
+Remove the 'title only' selection in %%select.
+Extend the %%tune filter to the whole tune header.
+Fix bad file date in header/footer ('$d') when %%format in the ABC file
+	(reported by D. Glenn Arthur Jr.).
+
+---- Version 7.0.13 - 12/06/17 ----
+
+Fix array overflow on %%writefields Q.
+Fix bad note heads when both normal and percussion voices in a same staff
+	(reported by Frédéric Boulanger).
+Don't transpose the percussion voices.
+Fix bad expansion of 'Xn' when multi-staves
+	(reported by Jose Joao Dias de Almeida).
+
+---- Version 7.0.12 - 12/06/10 ----
+
+Fix bad tie when at end of repeat and start of new repeat ("c- :|2 c")
+	(reported by Nils Liberg).
+Fix crash when PS code at end of line since 7.0.11
+	(reported by David Lacroix).
+Fix loss of next lyric lines when error found in a w: line
+	(reported by Nils Liberg).
+
+---- Version 7.0.11 - 12/06/02 ----
+
+Better hyphen in lyrics lines when big space between notes
+	(reported by Nils Liberg).
+Fix presence of tempo when "%%writefields Q 0" before first K:
+	(reported by Nils Liberg).
+Fix abnormal line with one note when line cut should be on a clef change
+	(reported by Alex Scheutzow).
+Fix presence of meter at start of line when empty voice.
+Don't remove '%%' in %%beginps/%%endps sequences.
+Fix array overflow and possible crash with empty %%beginxxx/%endxxx
+	(reported by Nils Liberg).
+
+---- Version 7.0.10 - 12/05/28 ----
+
+Extend %%voice to any options.
+Fix crash when K: without more symbol at end of tune
+	(reported by Nils Liberg).
+Add %%stemdir, %%gstemdir and %%clef.
+Fix clash of '8' in clef with octave +/-8
+	(reported by David Lacroix).
+
+---- Version 7.0.9 - 12/05/23 ----
+
+Fix program loop when width of measure bigger than staff width.
+Fix bad last measure bar position again
+	(reported by many people).
+Fix loss of music line break when line ending with grace note(s),
+		note and no bar
+	(reported by John Chambers).
+
+---- Version 7.0.8 - 12/05/21 ----
+
+Fix loss of paragraph break on empty lines.
+Fix crash in %%begintext with fill/justify and pango on an empty line.
+Fix bad offset of lyrics after tune when new page
+	(reported by Christian Schnarr).
+Fix bad last measure bar position since 7.0.6.
+Handle 'X' (invisible multi-rest).
+Don't do "titletrim" when the length of last word of the title
+	is greater than 4.
+Fix lack of tempo at start of tune when "%%writefields Q 0" is declared
+	further in the tune.
+
+---- Version 7.0.7 - 12/05/16 ----
+
+Fix bad line numbers in errors and svg annotations
+	(reported by Nils Liberg).
+
+---- Version 7.0.6 - 12/05/13 ----
+
+Fix lack of key signature when K: + clef inside music line.
+Fix lack of accidentals when spaces in the accidental list of K:.
+Fix placement errors when scaled voice or staff
+	(reported by D. Glenn Arthur Jr.).
+Don't put a measure bar at end of line when the measure is incomplete
+	(reported by Christian Schnarr).
+Fix ps2pdf error when unknown UTF-8 characters
+	(reported by Nils Liberg).
+
+---- Version 7.0.5 - 12/04/30 ----
+
+Update the documentation: there is no %%ignore
+	(reported-by D. Glenn Arthur Jr.).
+Bad offset of %%EPS since version 5.x.x
+	(reported-by D. Glenn Arthur Jr.).
+Handle more lowercase to uppercase letters when %%titlecaps
+	(reported by Christian Schnarr).
+
+---- Version 7.0.4 - 12/03/31 ----
+
+Fix loss of music after abc 2.0 continuation ('\').
+Fix a loss of voices when appearing in a new %%staves/%%score.
+Handle the ABC 2.1 "w:" behaviour (with "+:").
+Fix misplaced part (P:) when followed by K:, or M:
+	(reported by Richard Walker).
+Accept 'K' in %%titleformat and (text) notes after tune.
+Crash when misplaced dble repeat bar in second voice at end of tune
+	(reported by Simon Wascher).
+Fix X: value in title when ', The' at end of T:
+	(reported by Paul Hardy).
+
+---- Version 7.0.3 - 12/03/03 ----
+
+Don't print the tempo in tune when '%%writefields Q 0'
+	(reported by Martin Tarenskeen).
+Let less space at end of line when key signature change.
+Fix a scanning problem with the command line parameter '--header'.
+Update the %%staves/%%score in tune(s) when defined in %%tune.
+
+---- Version 7.0.2 - 12/02/21 ----
+
+Don't add the %%transpose values
+	(reported by Alex Scheutzow).
+Accept empty K: as K:none.
+Fix lack of key signature change when exp accidental list of the same size.
+Fix bad slur on grace notes when staffscale != 1
+	(reported by Pete Showman).
+Treat 'I:' as '%%' (accept I:abc-include and I:abc-charset).
+Ignore %%sep and %%vskip when global and -E or -g.
+Accept any format parameter in %%tune sequences.
+Fix crash when some output needed in format files by ignoring %%text...
+Stop %%tune/%%voice options on empty lines.
+Fix %%abc2pscompat again.
+Fix some errors "??? buffer not empty:".
+Fix vertical offset problems on page breaks with %%multicol.
+Fix bad page header when %%multicol outside and inside tunes.
+Don't use pango when only accidentals in string
+	(reported by John Collins).
+Ignore %%writefields when outputting %%titleformat
+	(reported by Pete S).
+Reset the default standard title format when %%titleformat is empty.
+
+---- Version 7.0.1 - 12/02/06 ----
+
+Fix loss of music when voices disappear and reappear by %%score
+	(reported by John Collins).
+Fix some warnings in slre.c compilation
+	(reported by Chuck Boody).
+Add %%custos.
+Fix some cases of error "Line too much shrunk".
+Bad computation of the page height letting to much space in (portrait)
+	or going out of (landscape) the bottom of the page when
+	using %%multicol.
+
+---- Version 7.0.0 - 12/02/02 ----
+
+Permit more pseudo-comments to be defined at command-line level.
+Add %%tune, %%voice, %%break, %%clip and %%select.
+Add tune selection with '-e' by regular expression.
+Permit the clefs to go under or above the notes/rests.
+Creation from abcm2ps version 6.6.4.

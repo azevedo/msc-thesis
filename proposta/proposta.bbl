@@ -1,0 +1,80 @@
+\begin{thebibliography}{10}
+
+\bibitem{almeida2012wiki}
+J.J. Almeida, N.R. Carvalho, and J.N. Oliveira.
+\newblock Wiki:: Score-a collaborative environment for music transcription and
+  publishing.
+\newblock 2012.
+
+\bibitem{antonopoulos2007music}
+I.~Antonopoulos, A.~Pikrakis, S.~Theodoridis, O.~Cornelis, D.~Moelants, and
+  M.~Leman.
+\newblock Music retrieval by rhythmic similarity applied on greek and african
+  traditional music.
+\newblock 2007.
+
+\bibitem{ariza2011music21}
+C.~Ariza and M.S. Cuthbert.
+\newblock The music21 stream: A new object model for representing, filtering,
+  and transforming symbolic musical structures.
+\newblock In {\em Proceedings of the International Computer Music Conference},
+  pages 61--68, 2011.
+
+\bibitem{chai2001folk}
+W.~Chai and B.~Vercoe.
+\newblock Folk music classification using hidden markov models.
+\newblock In {\em Proceedings of International Conference on Artificial
+  Intelligence}, volume~6. Citeseer, 2001.
+
+\bibitem{cuthbert2010music21}
+M.S. Cuthbert and C.~Ariza.
+\newblock music21: A toolkit for computer-aided musicology and symbolic music
+  data.
+\newblock In {\em Int. Society for Music Information Retrieval Conf.(ISMIR
+  2010)}, 2010.
+
+\bibitem{cuthbert2011feature}
+M.S. Cuthbert, C.~Ariza, and L.~Friedland.
+\newblock Feature extraction and machine learning.
+\newblock 2011.
+
+\bibitem{dannenberg1993brief}
+R.B. Dannenberg et~al.
+\newblock A brief survey of music representation issues.
+\newblock 1993.
+
+\bibitem{deutsch1981internal}
+D.~Deutsch and J.~Feroe.
+\newblock The internal representation of pitch sequences in tonal music.
+\newblock {\em Psychological Review}, 88(6):503, 1981.
+
+\bibitem{laursonintroduction}
+M.~Laurson, M.~Kuuskankare, and K.~Kuitunen.
+\newblock Introduction to computer-assited music analysis in pwgl.
+
+\bibitem{magalhaes2011functional}
+J.P. Magalh{\~a}es and W.B. de~Haas.
+\newblock Functional modelling of musical harmony: an experience report.
+\newblock In {\em ACM SIGPLAN Notices}, volume~46, pages 156--162. ACM, 2011.
+
+\bibitem{manaris2007corpus}
+B.~Manaris, P.~Roos, P.~Machado, D.~Krehbiel, L.~Pellicoro, and J.~Romero.
+\newblock A corpus-based hybrid approach to music analysis and composition.
+\newblock In {\em Proceedings of the National Conference on Artificial
+  Intelligence}, volume~22, page 839. Menlo Park, CA; Cambridge, MA; London;
+  AAAI Press; MIT Press; 1999, 2007.
+
+\bibitem{oliwa2008genetic}
+T.M. Oliwa.
+\newblock Genetic algorithms and the abc music notation language for rock music
+  composition.
+\newblock In {\em Proceedings of the 10th annual conference on Genetic and
+  evolutionary computation}, pages 1603--1610. ACM, 2008.
+
+\bibitem{prather1996harmonic}
+R.E. Prather.
+\newblock Harmonic analysis from the computer representation of a musical
+  score.
+\newblock {\em Commun. ACM}, 39(12es):239--255, 1996.
+
+\end{thebibliography}

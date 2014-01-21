@@ -1,0 +1,30 @@
+\header {
+  title = "Verbum caro factum est"
+  composer = "Anonimous, 16th century"
+}
+\score {
+  \new Staff {
+    \set Staff.instrumentName = #"Soprano"
+    \set Staff.shortInstrumentName = #"S."
+    \time 3/4
+    \clef treble
+    \key g \major
+    \relative c'' {
+      g2 g4 g2 fis4 a2 a4 b2 r4
+      \bar "|:"
+      b4.
+      \autoBeamOff
+      a8
+      \autoBeamOn
+      g8 fis e4 d e8 fis g2 fis4
+      g2. \bar ":|"
+      \override Score.RehearsalMark #'break-visibility = #begin-of-line-invisible
+      \override Score.RehearsalMark #'self-alignment-X = #RIGHT
+      \mark "Fine"
+    }
+    \addlyrics {
+      Ver -- bum ca -- ro fac -- tum est
+      Por -_ que _ to -_ dos _ hos sal -- veis
+    }
+  }
+}

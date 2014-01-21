@@ -1,0 +1,23 @@
+X:1
+T:Frere Jacques
+M:4/4
+L:1/4
+K:C
+V:1
+ Z2 |c d e c| c d e c| e f g2| e f g2| g/2a/2 g/2f/2 e c| g/2a/2 g/2f/2 e c|
+ c G c2| c G c2|
+Z6||
+V:2
+Z4 | c d e c| c d e c| e f g2| e f g2| g/2a/2 g/2f/2 e c| g/2a/2 g/2f/2 e c|
+ c G c2| c G c2| Z4 ||
+V:3
+Z6 | c d e c| c d e c| e f g2| e f g2| g/2a/2 g/2f/2 e c| g/2a/2 g/2f/2 e c|
+ c G c2| c G c2| Z2 ||
+V:4
+Z8 | c d e c| c d e c| e f g2| e f g2| g/2a/2 g/2f/2 e c| g/2a/2 g/2f/2 e c|
+ c G c2| c G c2||
+V:5
+C/E/G/E/ C/E/G/E/ | C/E/G/E/ C/E/G/E/ |C/E/G/E/ C/E/G/E/ |C/E/G/E/ C/E/G/E/ |
+C/E/G/E/ C/E/G/E/ |C/E/G/E/ C/E/G/E/ |C/E/G/E/ C/E/G/E/ |C/E/G/E/ C/E/G/E/ |
+C/E/G/E/ C/E/G/E/ |C/E/G/E/ C/E/G/E/ |C/E/G/E/ C/E/G/E/ |C/E/G/E/ C/E/G/E/|
+C/E/G/E/ C/E/G/E/ |C/E/G/E/ C/E/G/E/ | C/E/G/E/ C/E/G/E/ |C/E/G/E/ C/E/G/E/ ||

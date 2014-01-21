@@ -1,0 +1,87 @@
+			tclabc - 0.18.13
+			================
+
+tclabc is designed to help on writing music in ABC notation, especially on
+Unix systems. It requires Tcl/Tk (8.0 or newer), and a C compiler.
+
+It contains two main parts:
+
+  - a Tcl extension, written in C, which translates ABC to/from
+    TCL variables, and helps for tune navigation/modification.
+
+  - a Tk graphical interface which permits creation or modification
+    of tunes, using the previous extension.
+
+
+Installation
+============
+
+tclabc uses the standard GNU configure scheme, so, after untaring, run
+'./configure', 'make'  and then 'make install'.
+
+If Tcl/Tk is not at a standard place (/usr or /usr/local), use the option
+'--with-tcltk=' with the directory where the file 'tclConfig.sh' is installed.
+
+Example:
+	./configure -with-tcltk=/usr/share/tcltk/tcl8.3/
+	make
+	make install
+
+Before 'make install', you may try the GUI in the installation
+directory by:
+		wish tkabc.tcl
+
+Win32 users without the GNU tools should compile the tclabc.dll from
+all .c files and run tkabc.tcl from the installation directory.
+
+
+Usage
+=====
+
+When installed, start the GUI calling 'tkabc' with 0 or 1 argument.
+If present, the argument must be an ABC or MIDI file name.
+
+To use the tcl extension, load it into tclsh or wish from its installation
+directory in a normal way ('load', 'package require'... - have a look at
+the script 'tkabc' or at one of the example scripts).
+
+
+Scripts
+=======
+
+As examples in using the tclabc library, I included the following tcl
+scripts:
+
+- abcbarchk: Check if there is a correct number of notes per measure.
+
+- abctrans: Transpose ABC tunes.
+
+- mid2abc: Convert MIDI files to ABC.
+
+
+Current status
+==============
+
+The actual version is still basic, but evolves as I have some time...
+
+Important: as the program does not implement all ABC features, some
+information may be lost on tune saving.
+
+
+Copyright
+=========
+
+tclabc is copyrighted (C) 1999-2005 by Jean-François Moine. It is free
+software, licensed through the GNU General Public License.
+Please read the LICENSE file.
+
+
+Contact:
+	Jean-Francois Moine (mailto:moinejf@free.fr)
+
+Original place:
+	http://moinejf.free.fr/
+
+Thanks to Jan Wuerthner (wuerthne@x4u2.desy.de) for giving
+the basic material and the ideas for this implementation
+(MISC: http://lienhard.desy.de/mackag/homepages/jan/misc.shtml)

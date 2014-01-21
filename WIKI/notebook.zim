@@ -1,0 +1,11 @@
+[Notebook]
+name=WIKI
+home=:Home
+icon=None
+document_root=None
+shared=False
+endofline=unix
+disable_trash=False
+profile=None
+version=0.4
+

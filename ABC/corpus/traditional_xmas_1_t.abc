@@ -1,0 +1,32 @@
+X:1
+T:The First Noel
+C: traditional English carol
+M:3/4
+Q:1/4=88
+L:1/4
+%%staves [(1 2) (3 4)]
+K:D
+V:1 clef=treble
+F/E/ | (D>E) F/G/ | A2 B/c/ | (d c) B | A2 (B/ c/) | (d c) B | (A B) c |
+w: The* first_ No-*el, the* an-gel did say, Was to cer-tain poor shep-herds in
+w: They* look-*ed* up and* saw* a star Shin-ing in_ the east,* be-
+w: And* by_ the* light of* that* same star Three* wise* men came* from
+w: This* star_ drew* nigh to* the* north-west, O'-er Beth-*le-hem* it
+w: Then* let* us* all with* one* ac-cord Sing* prais-*es to* our
+V:2 clef=treble
+D | A,2 D | E2 E | A2 G | F2 (D/E/) | (A F) G | (A D) G |
+V:3 clef=bass
+%%MIDI transpose -12
+a/g/ | f2 d' | c'2 b | a2 b/c'/ | d'2 (b/ a/) | a2 c' | (d' b) g |
+V:4 clef=bass
+%%MIDI transpose -12
+d | d2 B | (A a) g | f2 g | d2 g | (f d) e | (f g) e |
+[M:2/4] [K:F#]
+V:1 clef=treble
+ab | a b | a
+V:2 clef=treble
+ab | 
+V:3 clef=bass
+ab | 
+V:4 clef=bass
+a,b, | 

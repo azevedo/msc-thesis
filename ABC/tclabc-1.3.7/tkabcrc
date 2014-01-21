@@ -1,0 +1,15 @@
+# sample for .tkabcrc
+
+# this file is sourced into wish from tkabc.tcl
+# at initialization time just before the windows are created
+
+# post-initialization command
+# if defined, it is executed after the windows are created
+# you may put here your preferred key-bindings
+#proc post-init {} {
+#}
+
+# USER SETTINGS
+# everything between here and the END OF USER SETTINGS
+# comment line will be rewritten on a Preference Save
+# END OF USER SETTINGS

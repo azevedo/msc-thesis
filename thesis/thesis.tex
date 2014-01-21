@@ -1,0 +1,117 @@
+\documentclass[12pt,a4paper,twoside]{book} % article, report or essay
+
+\usepackage{thesis}
+
+\begin{document}
+
+%%%%%% Formal begining of the thesis
+\pagenumbering{roman}
+  
+%% cover
+\includepdf[pages=-]{img/cover_mei} %  insert the whole pdf
+
+\thispagestyle{plain}
+\input{sections/permission.tex}
+\newpage
+\thispagestyle{plain}
+
+%% resumo
+\chapter*{Resumo}
+\input{sections/resumo.tex}
+\newpage
+\thispagestyle{plain}
+
+%% abstract
+\chapter*{Abstract}
+\input{sections/abstract.tex}
+\newpage
+\thispagestyle{plain}
+
+%% acknowledgements
+\chapter*{Acknowledgments}
+\input{sections/ack.tex}
+\newpage
+\thispagestyle{plain}
+
+%% table of contents
+\tableofcontents{}
+\thispagestyle{plain}
+
+%% list of figures
+\listoffigures
+\newpage
+\thispagestyle{plain}
+
+%% list of tables
+\listoftables
+\newpage
+\thispagestyle{plain}
+
+\listof{lstlisting}{List of Examples}
+  
+\chapter*{List of Acronyms}
+\input{sections/acronyms.tex}
+\newpage
+\thispagestyle{plain}
+\cleardoublepage
+  
+%%%%%% Content
+\pagenumbering{arabic}
+  \acresetall
+  
+  %% chapters
+  % Why am I doing it? What do I hope to discover?
+  \chapter{Introduction}
+  \label{chap:intro}
+  \input{sections/introduction.tex}
+
+  % What is known?  What is unknown?
+  \chapter{State of the Art}
+  \label{chap:state_art}
+  \input{sections/state_of_the_art.tex}
+
+  % How am I going to discover it?
+  % This study was based on the approach of…
+  % This approach was chosen because…
+  % It was likely to achieve the project aims by…
+  % Others have used this method to…
+  \chapter{ABC::DT and ABC processing tools}
+  \input{sections/abc_dt}
+
+  % What have I found? What does it mean?
+  \chapter{ABC::DT by example}
+  \label{chap:abc_dt_by_example}
+  \input{sections/abc_dt_by_example.tex}
+
+  \chapter{Test and Evaluation}
+  \label{chap:test_eval}
+  \input{sections/test_evaluation.tex}
+
+  % So what?
+  % What are the possible applications or recommendations?
+  % What contribution does it make to knowledge?
+  % What next?
+  \chapter{Conclusions and Future Work}
+  \label{chap:conclusions_future_work}
+  \input{sections/conclusions_future_work.tex}
+
+  \bibliographystyle{plain}
+
+  \cleardoublepage
+  \renewcommand\bibname{References}
+
+  \nocite{*}
+  \bibliography{references}
+  
+  \appendix
+\thispagestyle{plain}
+  \chapter{abcm2ps's parser IR}
+  \input{appendix/abcm2ps_parser_ir.tex}
+
+  \chapter{ABC::DT}
+  \input{appendix/abcdt.tex}
+
+  \chapter{Pachelbel's Canon}
+  \input{appendix/pach_canon.tex}
+
+\end{document}

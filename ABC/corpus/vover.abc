@@ -1,0 +1,12 @@
+X:1
+T:Overtura
+C:Pugnani, Gaetano (1731-1798)
+M:C 
+L:1/4 
+Q: "Allegro" 1/2=70
+K:D
+V: 11 clef=treble+8 name="Violini I" sname="Vl.I" auto
+V: 12 clef=bass name="Cello" sname="Cl"
+%
+[V: 11] D z/> F/ F z/> A/ | A A z z/> d/  | a a z d' & A2 z A | c' d' c' d' & A4 |
+[V: 12] C>CE>E|G>GG2 & G,2E,2 |C>CE>E|G>GG2 & x2E2|

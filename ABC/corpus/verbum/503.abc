@@ -1,0 +1,10 @@
+X:503
+T:Tuti final
+C:Anon, 16th century
+M:3/4
+L:1/8
+K:G
+V:3 clef=treble-8 name="Tenor" sname="T."
+%%MIDI program 1 1
+%%staves [ 3 ]
+B4 B2 | c2 B4 | c2 A4 | G6 ||

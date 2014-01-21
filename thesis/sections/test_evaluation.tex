@@ -1,0 +1,83 @@
+This chapter's goal is to help measure and analyze the behavior of \abcpt{}s created with \abcdt{}
+with real world tasks and to support some claims that have been made throughout this dissertation. A
+thorough evaluation was not possible mainly because of time limitations, although it's planned to
+happen in the near future.
+
+The \abcpt{} being evaluated is \canonabc{} which will process a real world \abc{} score -
+\emph{Pachelbel's Canon}, a canon belonging Pachelbel's \emph{Canon and Gigue for 3 violins and
+basso continuo}.
+
+The melodic part (here called \textbf{violini.abc}) can be seen in appendix \ref{sec:pcanon_melody}
+and the accompaniment (here called \textbf{basso.abc}) in \ref{sec:pcanon_accomp}.
+
+Listing \ref{lst:canonabc_pach} shows how \canonabc{} is called.\\
+
+\begin{lstlisting}[caption={\canonabc{} for Pachelbel's Canon},label={lst:canonabc_pach},captionpos=t,abovecaptionskip=-\medskipamount]
+canon_abc violini.abc+8 violini.abc+16 violini.abc+24 basso.abc++
+\end{lstlisting}
+
+The output generated is shown in appendix \ref{sec:pcanon}.\\
+
+Using \wcabc{} on the generated canon (see listing \ref{lst:canon_wc}, the pitch counts were removed
+since they are not needed for this explanation), there are 4 voices, each with 168 measures. The
+individual melody (\textbf{violini.abc}) has 144 measures (see listing \ref{lst:melody_wc}, pitch
+counts removed) and considering that the biggest number of \measurerests{} that are inserted to each
+melody is 24 (as can be seen on \ref{lst:canonabc_pach} and \ref{fig:pcanon_scheme}), the number of
+expected measures per voice in the canon is 168 (144+24), which matches the count produced in
+listing \ref{lst:canon_wc}.\\
+
+\lstinputlisting[caption={\wcabc{} on Pachelbel's Canon},label={lst:canon_wc},captionpos=t,abovecaptionskip=-\medskipamount]{misc/canonwc.tex}
+
+\lstinputlisting[caption={\wcabc{} on Pachelbel's Canon Melody},label={lst:melody_wc},captionpos=t,abovecaptionskip=-\medskipamount]{misc/melodywc.tex}
+
+Furthermore, the number of notes in each of the first three voices (melody parts) is the same as in
+the original melody as expected considering that the only thing that \canonabc{} inserts into
+melodic parts is \measurerests{}.
+
+The accompaniment part (\textbf{basso.abc}) has 8 notes and 8 measures (see listing
+\ref{lst:accomp_wc}, pitch counts removed). Since it is repeated until it has the same number of
+measures as the melody, the expected result is 168 notes in 168 measures which matches the count
+produced in listing \ref{lst:canon_wc}.\\
+
+\lstinputlisting[caption={\wcabc{} on Pachelbel's Canon Accompaniment},label={lst:accomp_wc},captionpos=t,abovecaptionskip=-\medskipamount]{misc/accompwc.tex}
+
+The execution time for this test's case rounds the 2.3 seconds (see table
+\ref{tab:execution_times}). It's quite acceptable since it has 4 voices and 168 measures each which
+translates into a lot of external calls to \catabc{} and \pasteabc{} in order to gradually build
+each individual voice and finally put them all together.
+
+\begin{center}
+  \begin{table}[h]
+    \begin{tabular}{|p{10cm}|p{4cm}|}
+      \hline
+      Tool & Execution Time\footnotemark[1]\\
+      \hline
+      \hline
+      \canonabc{} violini.abc+8 ... ... ... > canon.abc & ~2.3 s
+      \\
+      \hline
+
+      \hline
+      \wcabc{} canon.abc & ~0.4 s
+      \\
+      \hline
+    \end{tabular}
+    \caption{Execution times}
+    \label{tab:execution_times}
+  \end{table}
+\end{center}
+
+\footnotetext[1]{The times presented were measured in a 5 year old laptop with the following
+features: Processor: 2x Intel(R) Core(TM)2 Duo CPU T9400 \@ 2.53GHz; Memory: 3GB; Operating System:
+Linux Mint 13 Maya}
+
+The tool itself wasn't very hard to complete. It has around 85 lines of Perl code (not counting
+empty lines), excluding \catabc{} and \pasteabc{} and it was quite quick to put together from the
+moment the algorithm was designed.
+
+All in all, this test with a real \abc{} score, even though not being an exhaustive one,
+demonstrates that generating scores with many measures, notes and with a few minutes of length is
+viable. This operation doesn't involve complex calculations, however there are several traversals to
+the \abc{} structure as well as a few auxiliary calculations which affect the overall performance.
+In the end it produces the expected result proving that an \abcpt{} built using \abcdt{} can deal
+with real \abc{} and not with just some controlled testing tunes.

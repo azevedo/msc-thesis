@@ -1,0 +1,201 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html> <head>
+<title>tkabc help keys</title>
+</head>
+<body>
+
+<h1>Key bindings</h1>
+
+<ul>
+  <li>Displacement
+      <dl>
+	<dt>Mouse left-button
+	<dd>Select a symbol (see also 'selection' below).
+	<dt>Home
+	<dd>Go to the beginning of the current voice.
+	<dt>End
+	<dd>Go to the end of the current voice.
+	<dt>Right or MouseWheel down
+	<dd>Go to the next symbol.
+	<dt>Left or MouseWheel up
+	<dd>Go to the previous symbol.
+	<dt>Shift-right
+	<dd>Go to the symbol after the next bar.
+	<dt>Shift-left
+	<dd>Go to the symbol after the previous bar.
+	<dt>Down
+	<dd>Go to the next voice.
+	<dt>Up
+	<dd>Go to the previous voice.
+	<dt>j
+	<dd>Go to a measure number.
+      </dl>
+  <li>Insert symbol
+      <dl>
+	<dt>Q
+	<dd>Insert a tempo indication.
+	<dt>n
+	<dd>Insert a note.
+	<dt>z
+	<dd>Insert a rest.
+	<dt>| (bar) or b
+	<dd>Insert a bar.
+	<dt>Return
+	<dd>Insert an 'extra newline'.
+	<dt>Z
+	<dd>Insert a multi-measure rest.
+      </dl>
+  <li>Length change
+      <dl>
+	<dt>+ (plus)
+	<dd>Multiply the note length by 2.
+	<dt>- (minus)
+	<dd>Divide the note length by 2.
+	<dt>. (dot)
+	<dd>Change the note length to a dotted note (toggle).
+	<dt>: (colon)
+	<dd>Change the note length to a double dotted note (toggle).
+      </dl>
+    When the selection is active, if the current symbol is the last one
+    of the selection, 'plus' and 'minus' work on all selected notes and
+    rests.
+  <li>Pitch change
+      <dl>
+	<dt>Prior or PgUp
+	<dd>Increment the note pitch.
+	<dt>Next or PgDn
+	<dd>Decrement the note pitch.
+	<dt>' (apostrophe)
+	<dd>Set the note pitch one octave higher.
+	<dt>, (comma)
+	<dd>Set the note pitch one octave lower.
+	<dt>^ (circumflex) and _ (underscore)
+	<dd>Set the note accidental: sharp or flat.
+	<dt>= (equal)
+	<dd>Toggle (no accidental) or natural sign.
+      </dl>
+    When the selection is active, if the current symbol is the last one
+    of the selection, 'Next', 'Prior', 'apostrophe' and 'comma' work on
+    all selected notes and grace notes.
+  <li>Miscellaneous changes
+      <dl>
+	<dt>Space
+	<dd>Toggle the space indicator (beam breaking).
+	<dt>c
+	<dd>Toggle chord edition.
+	<dt>e
+	<dd>Edit the symbol details.
+	<dt>h
+	<dd>Edit the tune header.
+	<dt>i
+	<dd>Edit the MIDI parameters.
+	<dt>l
+	<dd>Edit the lyrics (under staff).
+	<dt>M
+	<dd>Insert or delete measure bars to have full measures.
+	<dt>R
+	<dd>Raw symbol edition.<br>
+	      Press:
+	      <dl>
+		<dd>'Return' to change the symbol (should be the same type).
+		<dd>'Insert' to insert a new symbol.
+		<dd>'Escape' to cancel.
+	      </dl>
+	<dt>t
+	<dd>Tie toggle.
+	<dt>v
+	<dd>Edit the characteristics of the voices.
+	<dt>w
+	<dd>Edit the lyrics (after tune).
+	<dt>( (left parenthesis)
+	<dd>Starting slur toggle.
+	<dt>) (right parenthesis)
+	<dd>Ending slur toggle.
+      </dl>
+  <li>Deletion
+      <dl>
+	<dt>Backspace
+	<dd>Delete the current symbol or selection and go to the previous
+		symbol.
+	<dt>Delete
+	<dd>Delete the current symbol or selection.
+      </dl>
+    When the selection is active, if the current symbol is the last one
+    of the selection, deletion occurs on all symbols of the selection.
+  <li>Recording/playing
+      <dl>
+	<dt>k
+	<dd>Activate the virtual piano keyboard.
+      </dl>
+      The next keys work only when MIDI output or input is enabled.
+      <dl>
+	<dt>m
+	<dd>Voice mute toggle.
+	<dt>p
+	<dd>Start or stop playing.
+	<dt>r
+	<dd>Start or stop MIDI recording.
+      </dl>
+  <li>Program control
+      <dl>
+	<dt>? or F1
+	<dd>Display the help window.
+	<dt>Control-l
+	<dd>Redisplay.
+	<dt>a
+	<dd>Set the 'preview' arguments.
+	<dt>d
+	<dd>Toggle displaying the symbol details.
+<!--	<dt>Insert
+	<dd>Toggle insert/overwrite mode (see 'insert symbol' above).-->
+	<dt>o
+	<dd>Open a new file.
+	<dt>O
+	<dd>Reload the same file.
+	<dt>p
+	<dd>Preview.
+	<dt>q
+	<dd>Quit the program.
+	<dt>s
+	<dd>Save the tune.
+	<dt>x
+	<dd>Export as a MIDI file.
+      </dl>
+  <li>Selection and mark
+      <dl>
+	<dt>Mouse left-button (1) and drag.
+	<dd>Set the selection clipboard.
+	<dt>Mouse right-button (3).
+	<dd>Extend/reduce the selection clipboard.
+	<dt>Mouse middle-button (2).
+	<dd>Insert the selection clipboard.
+	<dt>Control-space
+	<dd>Set the mark at the current symbol.
+	<dt>Control-w (and Control-x on MS Windows)
+	<dd>Delete the selection or from mark to current if no selection.
+	<dt>Control-x Control-x
+	<dd>Set the mark at the current symbol and go to the previous mark
+		(does not work on MS Windows or with the 'two sel' option).
+	<dt>Control-y (and Control-v on MS Windows)
+	<dd>Insert the selection clipboard.
+	<dt>Escape w (and Control-c on MS Windows)
+	<dd>Select from mark to the current symbol.
+      </dl>
+	When the option 'two selections' is set, the system clipboard
+	(PRIMARY on X window) is not accessed by the previous keys.
+	Instead, the following keys must be used:
+      <dl>
+	<dt>Control-c
+	<dd>Copy the current selection to the system clipboard.
+	<dt>Control-v
+	<dd>Insert the system clipboard.
+	<dt>Control-x
+	<dd>Copy the current selection to the system clipboard and
+		delete the selection.
+      </dl>
+</ul>
+
+<!-- hhmts start -->
+Kemm diwezhañ: 5 a viz Meurzh 2007
+<!-- hhmts end -->
+</body> </html>

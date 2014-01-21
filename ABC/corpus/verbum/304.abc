@@ -1,0 +1,10 @@
+X:304
+T:Solo Tenor
+C:Anon, 16th century
+M:3/4
+L:1/8
+K:G
+V:4 clef=bass name="Baixo" sname="B."
+%%MIDI program 1 1
+%%staves [ 4 ]
+G,4 E,2| F,G,A,2>G,2| G,4F,2| G,4G,2|

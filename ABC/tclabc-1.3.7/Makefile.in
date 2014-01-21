@@ -1,0 +1,108 @@
+# Makefile source for tclabc
+
+VERSION = @VERSION@
+
+CC = @CC@
+SHLIB_LD = @TCL_SHLIB_LD@
+SHLIB_LD_LIBS = @SHLIB_LD_LIBS@ @TCL_LIB_SPEC@
+SHLIB_SUFFIX = @TCL_SHLIB_SUFFIX@
+
+INSTALL = @INSTALL@
+INSTALL_DATA = @INSTALL_DATA@
+INSTALL_PROGRAM = @INSTALL_PROGRAM@
+
+CPPFLAGS = @CFLAGS@ @DEFS@ -I. @TCL_INCLUDE_SPEC@ @SHLIB_CFLAGS@
+
+prefix = @prefix@
+exec_prefix = @exec_prefix@
+
+srcdir = @srcdir@
+VPATH = @srcdir@
+bindir = @bindir@
+libdir = @libdir@
+datadir = @datarootdir@
+
+OBJS = tclabc.o abcparse.o change.o front.o midi.o
+
+all: tclabc${SHLIB_SUFFIX}
+
+tclabc${SHLIB_SUFFIX}: $(OBJS)
+	$(SHLIB_LD) $(OBJS) -o tclabc${SHLIB_SUFFIX} $(SHLIB_LD_LIBS)
+
+$(OBJS): $(srcdir)/abcparse.h config.h
+tclabc.o change.o midi.o: $(srcdir)/tclabc.h
+
+clean:	
+	echo "cleaning up..."; \
+	rm tclabc$(SHLIB_SUFFIX) *.o
+
+install: tclabc${SHLIB_SUFFIX}
+	mkdir -p $(bindir) $(libdir)/tclabc; \
+	$(INSTALL_PROGRAM) tkabc $(bindir); \
+	$(INSTALL_PROGRAM) abcbarchk $(bindir); \
+	$(INSTALL_PROGRAM) abctrans $(bindir); \
+	$(INSTALL_PROGRAM) mid2abc $(bindir); \
+	$(INSTALL_PROGRAM) tclabc${SHLIB_SUFFIX} \
+		$(libdir)/tclabc; \
+	$(INSTALL_DATA) pkgIndex.tcl $(libdir)/tclabc/pkgIndex.tcl
+	for f in `ls $(srcdir)/*.tcl $(srcdir)/*.html`; do \
+		$(INSTALL_DATA) $$f $(libdir)/tclabc; \
+	done
+
+uninstall:
+	echo "uninstalling..."; \
+	rm -f $(bindir)/tkabc $(bindir)/mid2abc; \
+	rm -rf $(libdir)/tclabc
+
+DIST_FILES = \
+	tclabc-$(VERSION)/Changes \
+	tclabc-$(VERSION)/LICENSE \
+	tclabc-$(VERSION)/Makefile.in \
+	tclabc-$(VERSION)/README \
+	tclabc-$(VERSION)/abcparse.c \
+	tclabc-$(VERSION)/abcbarchk.in \
+	tclabc-$(VERSION)/abcparse.h \
+	tclabc-$(VERSION)/abctrans.in \
+	tclabc-$(VERSION)/change.c \
+	tclabc-$(VERSION)/change.tcl \
+	tclabc-$(VERSION)/config.h \
+	tclabc-$(VERSION)/config.h.in \
+	tclabc-$(VERSION)/configure \
+	tclabc-$(VERSION)/configure.ac \
+	tclabc-$(VERSION)/detail.tcl \
+	tclabc-$(VERSION)/front.c \
+	tclabc-$(VERSION)/help.tcl \
+	tclabc-$(VERSION)/index.html \
+	tclabc-$(VERSION)/install-sh \
+	tclabc-$(VERSION)/instr.html \
+	tclabc-$(VERSION)/keys.html \
+	tclabc-$(VERSION)/keyboard.html \
+	tclabc-$(VERSION)/lang-de.tcl \
+	tclabc-$(VERSION)/lang-en.tcl \
+	tclabc-$(VERSION)/lang-fr.tcl \
+	tclabc-$(VERSION)/lang-fr-utf8.tcl \
+	tclabc-$(VERSION)/lang-nl.tcl \
+	tclabc-$(VERSION)/lang-ptBR.tcl \
+	tclabc-$(VERSION)/lang-se.tcl \
+	tclabc-$(VERSION)/midi.c \
+	tclabc-$(VERSION)/midi.h \
+	tclabc-$(VERSION)/mid2abc.in \
+	tclabc-$(VERSION)/pkgIndex.tcl.in \
+	tclabc-$(VERSION)/play.tcl \
+	tclabc-$(VERSION)/pref.tcl \
+	tclabc-$(VERSION)/select.tcl \
+	tclabc-$(VERSION)/songs \
+	tclabc-$(VERSION)/tclabc.c \
+	tclabc-$(VERSION)/tclabc.h \
+	tclabc-$(VERSION)/tclabc.html \
+	tclabc-$(VERSION)/tkabc.in \
+	tclabc-$(VERSION)/tkabc.tcl \
+	tclabc-$(VERSION)/tkabcrc \
+	tclabc-$(VERSION)/tkorgan.tcl \
+	tclabc-$(VERSION)/win32 \
+	tclabc-$(VERSION)/www.tcl
+
+dist:
+	ln -s . tclabc-$(VERSION); \
+	tar -zcvf tclabc-$(VERSION).tar.gz $(DIST_FILES);\
+	rm tclabc-$(VERSION)

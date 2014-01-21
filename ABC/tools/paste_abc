@@ -1,0 +1,297 @@
+#!/usr/bin/perl
+package Music::Abc::Paste 0.1;
+
+use 5.01400;
+use Music::Abc::DT;
+use Data::Dumper;
+use Readonly;
+use Getopt::Long;
+
+use strict;
+use warnings;
+
+Readonly my $MAX_DEFAULT => -1;          # default value for max
+Readonly my $GLOBAL      => 'global';    # refers to global and in header states
+
+my $string_mode = 0;
+
+GetOptions( 'strmode' => \$string_mode );
+
+my @tunes        = @ARGV;     # abc tunes
+my %tune_info    = ();
+my $c_voice_id   = $GLOBAL;
+my $old_voice_id = $GLOBAL;
+my $result       = q{};
+
+#TODO garantir abc sem erros utilizando o detec_errors_abc
+$result = get_main_header_info();
+$result .= paste_tunes();
+$result .= fill_empty_measures();
+print $result;
+
+
+############## Subroutines ##############
+
+# retrieves the header of the first tune that has melody
+sub get_main_header_info {
+  my $main_info = q{};
+  my $has_tune  = 0;
+
+  my %rule = (
+    'in_tune'       => sub { q{} },
+    'in_line'       => sub { q{} },
+    'note'          => sub { $has_tune = 1; q{} },
+    'in_header::M:' => sub { $tune_info{$c_voice_id}{meter}  = $sym->{text}; toabc() },
+    'in_header::L:' => sub { $tune_info{$c_voice_id}{length} = $sym->{text}; toabc() },
+    'in_header::K:' => sub { $tune_info{$c_voice_id}{key}    = $sym->{text}; toabc() },
+    'in_header::Q:' => sub { $tune_info{$c_voice_id}{tempo}  = $sym->{text}; toabc() },
+  );
+
+  foreach my $tune (@tunes) {
+    %tune_info = ();
+    $main_info  = $string_mode ?  dt_string( $tune, %rule )
+                :                 dt( $tune, %rule );
+    # when a note is found then it means this tune's header should be the global one
+    last if $has_tune;
+  }
+
+  return $main_info;
+}
+
+#
+sub paste_tunes {
+  my $key_to_be_dup = q{};
+  my %rule = (
+    'in_global::info' => sub { q{} },
+    'in_header::info' => sub { q{} },
+    'staves'          => sub { q{} },
+    'score'           => sub { q{} },
+    'bar'             => sub { update_measure_count(); toabc() },
+    'V:'              => sub { print_voice( \$key_to_be_dup ) },
+    'K:'              => sub { print_key() },
+    'M:'              => sub { print_meter() },
+    'Q:'              => sub { print_tempo() },
+    'L:'              => sub { print_length() },
+  );
+
+  my $res = q{};
+
+  # the remaining tunes are processed and printed
+  foreach my $tune (@tunes) {
+
+    $c_voice_id = $GLOBAL;
+    # appends the current tune
+    $res .= $string_mode ?  dt_string( $tune, %rule )
+          :                 dt( $tune, %rule );
+  }
+  return $res;
+}
+
+# A final processing is done so that some final components can be appended to the pasted tune
+# Based on the biggest number of measures in a voice, if there is any which has less then
+# multi-measure rests will be appended for each one
+sub fill_empty_measures {
+  my $max = $MAX_DEFAULT;
+  my $res = q{};
+
+  delete $tune_info{$GLOBAL};
+  foreach my $v (
+          reverse sort { $tune_info{$a}{measures} <=> $tune_info{$b}{measures} }
+          keys %tune_info
+    )
+  {
+    if ( $tune_info{$v}{measures} > $max ) {
+      $max = $tune_info{$v}{measures};
+    }
+    my $measures_short = $max - $tune_info{$v}{measures};
+    if ($measures_short) {
+      $res .= "V:$v\nZ$measures_short |\n";
+    }
+  }
+
+  return $res;
+}
+
+# Prints the key info only if it is different from the current global one
+sub print_key {
+  my $ret = q{};
+
+  if ( $sym->{state} != Music::Abc::DT::ABC_S_HEAD ) {
+
+#TODO verificar necessidade de fazer isto para os outros 3; pelos visto quando in_tune, a info so tem efeito depois da statement da voice
+    # if the key is in the header then it's stored for further duplication
+    # if ($sym->{state} == Music::Abc::DT::ABC_S_HEAD ) {
+    #    $key_to_be_duplicated = $sym->{text};
+    # }
+    my $new_key     = $sym->{text} =~ tr/ //dsr;
+    my $current_key = $tune_info{$c_voice_id}{key} =~ tr/ //dsr;
+
+    # prints the key only if it is different from the current global/voice key
+    if ( $new_key ne $current_key ) {
+      $ret = toabc();
+      $tune_info{$c_voice_id}{key} = $sym->{text};
+    }
+  }
+
+  return $ret;
+}
+
+# prints the length only if it is different from the current global one
+sub print_length {
+  my $ret = q{};
+  if ( $sym->{state} != Music::Abc::DT::ABC_S_HEAD ) {
+    my $new_length = $sym->{text} =~ tr/ //dsr;
+    my $current_length = $tune_info{$c_voice_id}{length} =~ tr/ //dsr;
+
+    if ( $new_length ne $current_length ) {
+      $tune_info{$c_voice_id}{length} = $sym->{text};
+      $ret = toabc();
+    }
+  }
+
+  return $ret;
+}
+
+# Prints the meter info only if it is different from the current global one
+sub print_meter {
+  my $ret = q{};
+  if ( $sym->{state} != Music::Abc::DT::ABC_S_HEAD ) {
+    my $new_meter     = $sym->{text} =~ tr/ //dsr;
+    my $current_meter = $tune_info{$c_voice_id}{meter} =~ tr/ //dsr;
+
+    if ( $new_meter ne $current_meter ) {
+      $tune_info{$c_voice_id}{meter} = $sym->{text};
+      $ret = toabc();
+    }
+  }
+
+  return $ret;
+}
+
+
+# Prints the tempo only if it is different from the current global one
+sub print_tempo {
+  my $ret = q{};
+  if ( $sym->{state} != Music::Abc::DT::ABC_S_HEAD ) {
+    my $new_tempo = $sym->{text} =~ tr/ //dsr;
+    my $current_tempo = $tune_info{$c_voice_id}{tempo} =~ tr/ //dsr;
+
+    if ( $new_tempo ne $current_tempo ) {
+      $tune_info{$c_voice_id}{tempo} = $sym->{text};
+      $ret = toabc();
+    }
+  }
+
+  return $ret;
+}
+
+sub print_voice {
+  my $key_to_be_dup_ref = shift;
+  my $ret = q{};
+
+  $c_voice_id = $sym->{info}->{id};
+
+  # if it's a different voice from the previous
+  if ( $old_voice_id ne $c_voice_id ) {
+    # if it's a voice previously defined in the tune, then prints the short
+      # version, else prints the symbol
+    $ret .= $tune_info{$c_voice_id} ? "V:$c_voice_id\n" : toabc();
+  }
+
+  # updates tune info
+  update_voice_info($sym);
+
+  # prints the key after the voice declaration
+  # if ( $$key_to_be_dup_ref
+  #      && ( $$key_to_be_dup_ref =~ tr/ //dsr ) ne ( $tune_info{$c_voice_id}{key} =~ tr/ //dsr )
+  # )
+  # {
+  #   $ret .= $$key_to_be_dup_ref . "\n";
+  # }
+  # $$key_to_be_dup_ref = q{};
+
+  return $ret;
+}
+
+# Updates a voice's measure count
+sub update_measure_count {
+  $tune_info{$c_voice_id}{measures} = $sym->{info}->{bar_num} - 1;
+
+  return;
+}
+
+# Updates a voice's information
+sub update_voice_info {
+  my $sym = shift;
+
+  $old_voice_id = $c_voice_id;
+
+  # updates tune info
+  $tune_info{$c_voice_id}{measures} ||= 0;
+  $tune_info{$c_voice_id}{meter}    ||= $tune_info{$GLOBAL}{meter};
+  $tune_info{$c_voice_id}{length}   ||= $tune_info{$GLOBAL}{length};
+  $tune_info{$c_voice_id}{key}      ||= $tune_info{$GLOBAL}{key};
+  $tune_info{$c_voice_id}{tempo}    ||= $tune_info{$GLOBAL}{tempo};
+
+  return;
+}
+
+1;
+__END__
+
+=head1 NAME
+
+paste_abc - merge voices of ABC files, or standard input, and print on the standard output
+
+=head1 SYNOPSIS
+
+paste_abc [FILE]...
+paste_abc -s [STRING]...
+
+=head1 USAGE
+
+paste_abc a.abc b.abc
+  Merges tunes a.abc and b.abc
+
+paste_abc -s "
+X:1
+K:G
+V:1
+GB DB G4| G8|
+" "
+X:1
+K:G
+V:2
+G4 D4 | G2 D2 G4|
+"
+
+=head1 DESCRIPTION
+
+Merge ABC files, or standard input, and print on the standard output
+This tool merges voices parallel to each other in the time perspective. In other words, each voice
+starts at the beginning of the resulting tune.
+
+=head1 REQUIRED ARGUMENTS
+
+=head1 OPTIONS
+
+-s, --strmode
+  ABC tunes are text streams instead of file names
+
+=head1 DIAGNOSTICS
+
+=head1 EXIT STATUS
+
+=head1 CONFIGURATION
+
+=head1 DEPENDENCIES
+
+=head1 INCOMPATIBILITIES
+
+=head1 BUGS AND LIMITATIONS
+
+=head1 AUTHOR
+
+  Bruno Azevedo
+
+=head1 LICENSE AND COPYRIGHT

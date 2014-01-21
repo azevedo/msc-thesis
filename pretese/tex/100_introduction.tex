@@ -1,0 +1,34 @@
+\documentclass[main.tex]{subfiles}
+\begin{document}
+
+\chapter{Introduction}
+
+In this chapter the purpose and goals of this document will be stated, describing what are the main
+concerns and motivations for the development of such work.
+
+\section{Context and Motivation}
+\subfile{tex/110_context_motivation}
+
+\section{Project Overview}
+\subfile{tex/120_project_overview}
+
+\section{Document Structure}
+\subfile{tex/130_document_structure}
+
+
+\section{Summary}
+
+A toolkit for the processing and analysis of abc scores was presented as the solution to a problem
+arisen in the context of the Wiki::Score - a Wiki for cooperative edition of Abc scores. This
+problem revolved around the fact that the manual edition of scores could originate errors in the
+score transcribed.
+
+So the toolkit proposes a solution by providing a set of tools that individually solve a single
+problem, like correcting a word that was misspelled, and whose output can serve as the input to
+another tool. The approach used by this solution follows the Unix philosophy.
+
+Additionally, an analytic feature is given by the toolkit by granting a set of tools that allows the
+musical and statistical analysis of a score through the use of musical corpus. This corpus will be
+comprised of Abc musical scores and can contain annotations that might help the analysis process.
+
+\end{document}

@@ -1,0 +1,63 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-10-11T11:32:42+01:00
+
+====== Home ======
+
+==== Validação ====
+
+Pretende-se estudar a viabilidade de testes automáticos sobre documentos ABC, nomeadamente no contexto do WikiScore:
+
+=== Mono-voz ===
+1. Correção dos tempos por compasso
+	a. Exemplo juntar pausas...
+	b. erros de repetição + anacrusa
+	c. erros de anacrusa rep1 rep2
+2. sistema de reescrita de erros comuns:
+	a. !Fermata! => !fermata!
+	b. !fim! => !fine!
+
+=== Multi-voz ===
+1. mudança de armação coerente   (v1 muda armação de clave => vn tb muda)
+2. repetições, fermata, nao tou a dizer que é importante, só que 
+3. algoritmos de ressincronização (?) (avançado)
+
+
+
+==== Análise ====
+
+Análise (parsing/semântica) de Abc com objectivo de validar invariantes e verificar coerência de Abc, validar não só o Abc gerado mas também o Abc que é editado através do Wiki.
+
+=== Sincronismo ===
+Análise de sincronismo com transcrições multi-voz, tentar detectar vozes que estejam a falhar ou a comprometer a integridade da peça.
+
+
+
+
+==== Modelos ====
+Desenvolver modelos sobre ABC: Técnicas de análise estatística para criar modelos por obras/autores.
+
+=== Monovoz ===
+1. ngrams de notas / intervalos
+2. cada Nota...
+3. (do-re 40; do-mi-sol 30)
+4. (B+3M+5) 40;
+5. ngrams de ritmos (contemplando Fraco/forte)
+
+== Multivoz ==
+* Acordes
+* ngrams acordes
+
+Exemplo de áreas de aplicação: classificação automática de obras, verificar autoria de obras (da mesma maneira que analisam se é provável que determinado autor tenha escrito um dado texto através do tipo de linguagem usada),
+
+
+
+
+=== Geração ===
+
+geração automática de música (treinar um programa para gerar uma obra que siga um determinado estilo, autor ou características); 
+* markov
+* modelos evolucionários
+* propostas de boas sugestões...
+
+validação de transcrição de pautas.

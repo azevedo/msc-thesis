@@ -1,0 +1,23 @@
+X:401
+T:Solo Soprano
+C:Anon, 16th century
+M:3/4
+L:1/8
+K:G
+V:1 name="Soprano" sname="S." clef=treble
+%%MIDI program 1 1
+G4 G2| G2 G2 F2| A4 A2| B4 A2| 
+w: 1.~Hi-jo | mi-o que | os ha-|ri-a. |
+w: 2.~A Je-|su * que~en-|tre~a- ni-|ma-les
+V:2 name="Contralto" sname="C." clef=treble
+%%MIDI program 1 1
+V:3 name="Tenor" sname="T." clef=treble-8
+%%MIDI program 1 1
+V:4 name="Baixo" sname="B." clef=alto
+%%MIDI program 1 1
+V:2
+Z4 |
+V:3
+Z4 |
+V:4
+Z4 |

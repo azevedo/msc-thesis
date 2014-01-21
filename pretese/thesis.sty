@@ -1,0 +1,62 @@
+\ProvidesPackage{thesis}
+
+\usepackage[utf8]{inputenc} % encoding
+\usepackage[T1]{fontenc}    % font encoding
+\usepackage[english]{babel} % language
+
+%
+% page geometry
+%
+\usepackage[paper=a4paper,top=3cm,left=2.5cm,right=2.5cm,bottom=3cm,foot=1cm]{geometry}
+
+%
+% images and plots stuff
+%
+\usepackage{graphicx} 
+
+%
+% look-up paths
+%
+\graphicspath{ {./} {./img} }
+
+%
+% references
+%
+\usepackage{varioref}
+\usepackage[breaklinks,pdftex,bookmarks=true,colorlinks=true,linkcolor=blue,citecolor=blue]{hyperref}
+% \usepackage[noabbrev,capitalise]{cleveref}
+%\usepackage[hyperpageref]{backref}
+\usepackage{csquotes} % biblatex asks for this
+\usepackage[hyperref=true,backref=true,url=true]{biblatex}    % better references
+% \usepackage{natbib}
+
+%
+% other
+%
+\usepackage{subfiles}     % for modular documents
+\usepackage{pdfpages}     % enables \includepdf
+\usepackage{fancyhdr}     % headers and footers
+\usepackage{acronym}      % list of acronyms
+\usepackage{float}
+\usepackage{color}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+
+%
+% code
+%
+\usepackage{listings}     % to include the source code of any programming language
+% settings fot listings
+\lstset{frame=single, keywordstyle=\color{blue}, stringstyle=\color{mauve}, tabsize=2, numbers=left,
+numberstyle=\color{gray}, showspaces=false, showstringspaces=false}
+
+\usepackage[generate,ps2eps]{abc}
+
+\usepackage{fancyvrb} 
+\DefineVerbatimEnvironment{code}{Verbatim}{fontsize=\small} % code environment
+% environment (used for text that should be formatted as code but should not be checked by the compiler)
+\DefineVerbatimEnvironment{example}{Verbatim}{fontsize=\small} 
+% useful to remove code that does not belong to the paper but is still necessary for the rest of the implementation to work
+\newcommand{\ignore}[1]{}

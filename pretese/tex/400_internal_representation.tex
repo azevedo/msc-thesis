@@ -1,0 +1,205 @@
+\documentclass[main.tex]{files}
+\begin{document}
+
+\chapter{Internal Representation of Musical Information}
+% Music is the art that intrigues researchers the most. A few puzzling questions arise from
+% studying it like the meaning of music, we cannot retrieve meaning from it as we do from language
+% and yet many listeners describe it as meaningful.
+% 
+% The metaphores related to music, there are some features of music that we cannot tell whether
+% they are part of it or can only be described metaphorically, i.e. expressions like "music moves
+% forward" shouldn't make sense when music is just a sequence of sounds.
+
+The internal representation of musical information is an area of research that has been receiving
+a lot of contributions throughout time and there will never be a consensus about the structure
+it should have. One of the most influent matters to the making of such representation is the
+final purpose it will have. There are different purposes like rendering of music, play back,
+printing, music analysis, composition, among others.
+
+The scope of this thesis includes only rendering and analysis of music, therefore the
+representation will have a well defined orientation and a set of music properties will
+automatically be discarded. There are many models, data structures, paradigms, techniques,
+systems and theories proposed by many authors and none can be labeled as a "true" representation as
+there will never be a closed definition of music and it is still difficult to represent all aspects
+of music.
+
+\section{Structure and Musical Entities Modeling}
+In this section we will focus on a discussion about some kinds of structures and their benefits and
+also different ways to represent a musical entity.
+
+% \begin{itemize}
+%   \item \textbf{Structure}
+\subsubsection{Structure}
+
+    In the beginning computer music systems represented music as a simple sequence of notes. This
+    was a simple approach, thus making it difficult to encode structural relationships between
+    notes such as enveloping a group of notes to apply some kind of property.
+
+    It is widely accepted that music is best described at higher levels in terms of some sort
+    of hierarchical structure [Balaban 88]. This structure should deal with events that can be
+    either a single note or a whole score, applying operators to them in the same manner. Given
+    the temporal nature of music, a score is defined as a sequence of those events allowing
+    the existence of nested structures.
+
+    This kind of structure has the benefit of isolating different components of the score
+    therefore allowing for transformations to be applied to each of them. It also represents a
+    set of instructions for how to put the score together, hence enabling to reassemble it as
+    it was. This is a notion that many composition languages support.\\
+    Musical events can spread behavior to other events through the binary relation \textit{part-of}
+    relation which denotes relations like "measures part-of phrase" and inherit behavior and
+    characteristics from other events through the \textit{is-a} relation which designates relations
+    like "a dominant chord being a special kind of seventh chord".\cite{Honing1993}
+
+    A single hierarchy scheme is not enough because music frequently contains multiple hierarchies.
+    For instance a sequence of notes can belong simultaneously to a phrase marking and a section
+    (like a movement), so the need of a multilevel hierarchy appears. There are some other possible
+    hierarchies: voices, sections (movement, section, measure), phrases, and chords, all of which
+    are ways of grouping and structuring music.
+
+    A few representations have been proposed that support multiple hierarchies through named
+    links relating musical events and through instances of hierarchies. Others where tags are
+    assigned to events to designate grouping such as all notes under a slur.
+
+  % \item \textbf{Musical Entities Modeling}
+\subsubsection{Musical Entities Modeling}
+
+    Musical entities, like a note, differ in the matter of being independent or serving as updates
+    to some other entity, in other words being handled by some resource. Entities often have both
+    characteristics at the same time.
+
+    Some languages support the instance model where a copy or instance of a musical event that
+    is independent of others is made. This model allows to take the redundancies that exist in
+    musical structures and save memory space as well as simplify working with them.
+
+    Other languages support resource-instance model\cite{Dannenberg1991} where events can be viewed
+    as updates to some shared resource, like the notes of a melodic instrument that are not instances
+    of the instrument tones, but updates to a shared instrument resource.
+
+    Typically, a sequence of events is called a stream and it is subject to many operations like
+    transposition. This notation is used by some music sequencers\footnote{A device or application
+    software that can record, edit, or play back music, by handling note and performance information
+    in several forms}.
+
+    Components indexed by ordinal position rather than time are a concept related to streams
+    and are called sequences. They are also used in a sequence-oriented compositional environment.
+    
+% \end{itemize}
+
+\section{Melodic and Harmonic Structures} 
+
+In polyphonic music there are materials besides melody that are combined in a score: rhythm
+and harmony. Those three determine the global quality of a score[Benward \& Saker 2003] and their
+combination is usually called a texture. When there's only one voice (melody) accompanied or not
+by chords in a score it is called monophony, but when there's two or more independent voices
+it is polyphony.
+
+The study of independent melodies is relatively simple compared with the analysis
+of polyphony. Each voice moving through the horizontal dimension creates other effects by
+overlapping with notes in other voices. The necessity of representing this vertical structures
+arises so that the harmonic motion can be analyzed.
+
+Associated with this subject, one issue about the variability of the score's texture appears. A score
+usually has different densities of notes per part for example. Since it is required that all
+events that occur at the same time are vertically aligned a solution is required.
+
+Brinkman\cite{Brinkman1984} suggests a solution that uses a linked representation of a sparse
+matrix, where each row references a part and each column the onset of the elapsed time, which would
+allow traversing the score in any direction (vertical and horizontal) required. Thus a perception of
+the context of what's happening in a specific part appears, a feature that can't be achieved when
+dealing with representations of only one dimension. Moreover it makes the task of score segmentation
+by part and time easier.
+
+\section{abcm2ps's approach} 
+\label{sec:abcm2ps_approach}
+
+The program abcm2ps was chosen to be the basis of a proof of concept. Mainly because it is one of
+the most widely used programs for working with Abc, not just as a standalone software but as being
+incorporated in many applications. The latter implies that it's not a piece of software that was
+casually made. It was designed to process Abc in the best way possible therefore its quality is
+acknowledged.\\
+It is actively maintained and well documented which facilitates the analysis of the structures it
+generates. Moreover, its author, Jeff Moine, was and still is a preponderant influence for the
+evolution of the Abc notation and standard.\\
+In the end, it seemed like a good starting point to do some preliminary experiments aiming to attain
+a successful proof of concept. This proof of concept will be discussed thoroughly in chapter
+\ref{chap:scripting_abc}.
+
+As described before, abcm2ps converts Abc to music sheet. The conversion process uses a parser that
+analyzes an Abc document and generates an internal representation.\\
+This internal representation follows the sequential representation theory, in other words, each
+symbol captured by the parser is simply appended to an ordered list. A symbol represents any kind of
+component existing in the Abc notation, from header information - like the key or initial meter - to
+a note, bar or a tuplet. After an initial analysis, its internal structure revealed itself as being
+very rich with information from the original abc source, holding every single piece of information.
+
+Since abcm2ps was designed to print abc notation its internal representation is not really suited
+for music analysis or composition. Therefore it lacks all the benefits inherent to the other
+representations described before like the sharing and inheriting of behavior and characteristics
+between musical events.\\
+Still it can be easily organized as a set of monophonic voices. This set might, for instance, be
+used as starting point to describe relationships between vertical musical entities of a polyphonic
+score.
+%TODO talvez criar seccao sobre verticalidade. de como se pode juntar as varias vistas no processamento. talvez criar um funcao de verticalizacao no processador, ou outra coisa...
+
+As the aim is for a toolkit built with scripts, the sequential structure reveals itself as an
+appropriate structure that meet our requirements. The sequence of symbols the structure provides can
+easily be mapped to an array or a hash. These data types are part of the common, yet powerful, data
+types of a scripting language like Perl.
+
+\section{Summary} 
+
+The internal representation's types of structures were discussed and it showed that there are mainly
+two types that are most commonly approached by researchers: sequential and hierarchic. However the
+decision of what type of structure one should choose relies on the purpose the internal
+representation will have: rendering of music, printing, music analysis, composition, etc.\\
+
+Two kinds of binary relations inherent to a hierarchy were described: part-of and is-a but other
+kinds of relations are needed as well. Honing\cite{Honing1993} suggests other relations:
+\begin{itemize}
+  \item Binary:
+    \begin{itemize}
+      \item \textbf{associative:}
+        e.g.: "A theme with its variations"
+      \item \textbf{functional:}
+        e.g.: "The function of a particular chord in a scale"
+      \item \textbf{referential:}
+        e.g.: "A theme referring to a previously presented or already known motif"
+    \end{itemize}
+  \item N-ary:
+    These relations can structure more complex types of relation.\\
+    e.g.: "the dependency of a certain chord on scale, mode and the context in which it is used is a
+    ternary relation"
+\end{itemize}
+
+Related to music analysis and composition purposes and regarding the horizontal and vertical
+dimensions of polyphonic music, a solution to enable the harmonic analysis of a score was suggested.
+A perfect representation would be one that was sufficiently general and complete to be useful in
+many different analytic tasks in many styles of music\cite{Honing1993} like expressing common
+abstract musical patterns.\\
+
+An assessment that is taken after a not so thorough research on representations and their pros and
+cons is that sequential and hierarchical structures are more suited to horizontal readings and tasks
+such as re-rendering the Abc text since they preserve the original order of an Abc score's
+symbols.\\
+Whereas structures like sparse matrices allow both horizontal and vertical readings. That fact
+provides a representation more suited to purposes that require a way of accessing to vertical events
+on a score. Yet, it does not maintain the original order of symbols, for instance, in Abc it is
+common to write a voice's music alternately with other voices like (voice A, voice B, voice A, voice B),
+meaning that a part of voice A's music is written first, followed by that of voice B and after that
+voice A and voice B again. When representing a score oriented to a vertical axis the order of events
+is lost, thus preventing tasks like re-rendering Abc text.
+
+Summarizing, the completeness of a structure depends on what purpose it is intended for and the
+ability to fulfill all its tasks.\\
+
+Different ways of modeling musical entities were discussed and two models were highlighted:
+instance and resource-instance models.\\
+
+At last the internal representation of abcm2ps was presented but not thoroughly described as it
+will be in chapter \ref{chap:scripting_abc}.\\
+
+Music has a lot to offer for the study of representations. Music contains complex structures of many
+interrelated dimensions and since music and its representations are continuously evolving an ongoing
+research on these areas is required.
+
+\end{document}

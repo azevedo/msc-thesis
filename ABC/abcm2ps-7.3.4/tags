@@ -1,0 +1,1465 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ABC_F_ERROR	abcparse.h	86;"	d
+ABC_F_GRACE	abcparse.h	91;"	d
+ABC_F_GR_END	abcparse.h	92;"	d
+ABC_F_INVIS	abcparse.h	87;"	d
+ABC_F_LYRIC_START	abcparse.h	90;"	d
+ABC_F_SAPPO	abcparse.h	93;"	d
+ABC_F_SPACE	abcparse.h	88;"	d
+ABC_F_STEMLESS	abcparse.h	89;"	d
+ABC_S_GLOBAL	abcparse.h	81;"	d
+ABC_S_HEAD	abcparse.h	82;"	d
+ABC_S_TUNE	abcparse.h	83;"	d
+ABC_T_BAR	abcparse.h	74;"	d
+ABC_T_CLEF	abcparse.h	71;"	d
+ABC_T_EOLN	abcparse.h	75;"	d
+ABC_T_INFO	abcparse.h	69;"	d
+ABC_T_MREP	abcparse.h	77;"	d
+ABC_T_MREST	abcparse.h	76;"	d
+ABC_T_NOTE	abcparse.h	72;"	d
+ABC_T_NULL	abcparse.h	68;"	d
+ABC_T_PSCOM	abcparse.h	70;"	d
+ABC_T_REST	abcparse.h	73;"	d
+ABC_T_TUPLET	abcparse.h	79;"	d
+ABC_T_V_OVER	abcparse.h	78;"	d
+ALTO	abcparse.h	162;"	d
+ANNOTATIONFONT	abc2ps.h	277;"	d
+ANY	slre.c	/^enum {END, BRANCH, ANY, EXACT, ANYOF, ANYBUT, OPEN, CLOSE, BOL, EOL,$/;"	e	enum:__anon3	file:
+ANYBUT	slre.c	/^enum {END, BRANCH, ANY, EXACT, ANYOF, ANYBUT, OPEN, CLOSE, BOL, EOL,$/;"	e	enum:__anon3	file:
+ANYOF	slre.c	/^enum {END, BRANCH, ANY, EXACT, ANYOF, ANYBUT, OPEN, CLOSE, BOL, EOL,$/;"	e	enum:__anon3	file:
+AREANASZ	abc2ps.c	79;"	d	file:
+AT_LEAST	music.c	35;"	d	file:
+A_ANNOT	abc2ps.h	579;"	d
+A_CENTER	abc2ps.h	575;"	d
+A_DF	abcparse.h	/^	A_DF		\/* double flat *\/$/;"	e	enum:accidentals
+A_DS	abcparse.h	/^	A_DS,		\/* double sharp *\/$/;"	e	enum:accidentals
+A_FT	abcparse.h	/^	A_FT,		\/* flat *\/$/;"	e	enum:accidentals
+A_GCHEXP	abc2ps.h	580;"	d
+A_GCHORD	abc2ps.h	578;"	d
+A_LEFT	abc2ps.h	574;"	d
+A_LYRIC	abc2ps.h	577;"	d
+A_NT	abcparse.h	/^	A_NT,		\/* natural *\/$/;"	e	enum:accidentals
+A_NULL	abcparse.h	/^	A_NULL,		\/* none *\/$/;"	e	enum:accidentals
+A_RIGHT	abc2ps.h	576;"	d
+A_SH	abcparse.h	/^	A_SH,		\/* sharp *\/$/;"	e	enum:accidentals
+BAGPIPE	abcparse.h	108;"	d
+BAR	abc2ps.h	151;"	d
+BASE_LEN	abcparse.h	12;"	d
+BASS	abcparse.h	163;"	d
+BEAM	draw.c	/^struct BEAM {			\/* packages info on one beam *\/$/;"	s	file:
+BEAM_DEPTH	abc2ps.h	44;"	d
+BEAM_FLATFAC	abc2ps.h	48;"	d
+BEAM_OFFSET	abc2ps.h	45;"	d
+BEAM_SHIFT	abc2ps.h	46;"	d
+BEAM_SLOPE	abc2ps.h	50;"	d
+BEAM_STUB	abc2ps.h	51;"	d
+BEAM_THRESH	abc2ps.h	49;"	d
+BETA_C	abc2ps.h	57;"	d
+BETA_X	abc2ps.h	58;"	d
+BOL	slre.c	/^enum {END, BRANCH, ANY, EXACT, ANYOF, ANYBUT, OPEN, CLOSE, BOL, EOL,$/;"	e	enum:__anon3	file:
+BRANCH	slre.c	/^enum {END, BRANCH, ANY, EXACT, ANYOF, ANYBUT, OPEN, CLOSE, BOL, EOL,$/;"	e	enum:__anon3	file:
+BREVE	abc2ps.h	75;"	d
+BRK	svg.c	/^	BRK,			\/* [..] *\/$/;"	e	enum:elt_t	file:
+BSIZE	abc2ps.h	72;"	d
+BUFFLN	buffer.c	31;"	d	file:
+BUFFSZ	abc2ps.h	73;"	d
+B_BAR	abcparse.h	27;"	d
+B_CBRA	abcparse.h	29;"	d
+B_COL	abcparse.h	30;"	d
+B_DASH	abc2ps.h	247;"	d
+B_DOUBLE	abc2ps.h	241;"	d
+B_DREP	abc2ps.h	246;"	d
+B_LREP	abc2ps.h	244;"	d
+B_OBRA	abcparse.h	28;"	d
+B_RREP	abc2ps.h	245;"	d
+B_SINGLE	abc2ps.h	240;"	d
+B_THICK_THIN	abc2ps.h	243;"	d
+B_THIN_THICK	abc2ps.h	242;"	d
+CHAR_ACC	abcparse.c	76;"	d	file:
+CHAR_BAD	abcparse.c	72;"	d	file:
+CHAR_BAR	abcparse.c	82;"	d	file:
+CHAR_BRHY	abcparse.c	88;"	d	file:
+CHAR_BSLASH	abcparse.c	80;"	d	file:
+CHAR_CPAR	abcparse.c	87;"	d	file:
+CHAR_DECO	abcparse.c	78;"	d	file:
+CHAR_DECOS	abcparse.c	89;"	d	file:
+CHAR_GCHORD	abcparse.c	79;"	d	file:
+CHAR_GR_EN	abcparse.c	91;"	d	file:
+CHAR_GR_ST	abcparse.c	77;"	d	file:
+CHAR_IGN	abcparse.c	73;"	d	file:
+CHAR_LINEBREAK	abcparse.c	92;"	d	file:
+CHAR_MINUS	abcparse.c	86;"	d	file:
+CHAR_NOTE	abcparse.c	74;"	d	file:
+CHAR_OBRA	abcparse.c	81;"	d	file:
+CHAR_OPAR	abcparse.c	83;"	d	file:
+CHAR_REST	abcparse.c	75;"	d	file:
+CHAR_SLASH	abcparse.c	90;"	d	file:
+CHAR_SPAC	abcparse.c	85;"	d	file:
+CHAR_VOV	abcparse.c	84;"	d	file:
+CLEF	abc2ps.h	152;"	d
+CLOSE	slre.c	/^enum {END, BRANCH, ANY, EXACT, ANYOF, ANYBUT, OPEN, CLOSE, BOL, EOL,$/;"	e	enum:__anon3	file:
+CLOSE_BRACE	abc2ps.h	437;"	d
+CLOSE_BRACE2	abc2ps.h	445;"	d
+CLOSE_BRACKET	abc2ps.h	439;"	d
+CLOSE_BRACKET2	abc2ps.h	447;"	d
+CLOSE_PARENTH	abc2ps.h	441;"	d
+CM	abc2ps.h	16;"	d
+COMBINEV	music.c	334;"	d	file:
+COMBINEV	music.c	347;"	d	file:
+COMBINEV	music.c	357;"	d	file:
+COMBINEV	music.c	368;"	d	file:
+COMPOSERFONT	abc2ps.h	278;"	d
+CROTCHET	abc2ps.h	78;"	d
+CUSTOS	abc2ps.h	163;"	d
+C_EQ	svg.c	837;"	d	file:
+C_GE	svg.c	840;"	d	file:
+C_GT	svg.c	839;"	d	file:
+C_LE	svg.c	842;"	d	file:
+C_LT	svg.c	841;"	d	file:
+C_NE	svg.c	838;"	d	file:
+C_XFLAGS	abc2ps.h	427;"	d
+DEFAULT_FDIR	config.h	5;"	d
+DEF_NOEN	abc2ps.h	323;"	d
+DEF_NOST	abc2ps.h	322;"	d
+DEF_STEMUP	abc2ps.h	324;"	d
+DE_BELOW	deco.c	41;"	d	file:
+DE_GRACE	deco.c	42;"	d	file:
+DE_INV	deco.c	43;"	d	file:
+DE_LDEN	deco.c	45;"	d	file:
+DE_LDST	deco.c	44;"	d	file:
+DE_UP	deco.c	40;"	d	file:
+DE_VAL	deco.c	39;"	d	file:
+DIGIT	slre.c	/^	STAR, PLUS, STARQ, PLUSQ, QUEST, SPACE, NONSPACE, DIGIT};$/;"	e	enum:__anon3	file:
+DIRSEP	abc2ps.h	11;"	d
+DIRSEP	abc2ps.h	13;"	d
+DOTSHIFT	abc2ps.h	53;"	d
+D_HD	svg.c	191;"	d	file:
+D_HDD	svg.c	200;"	d	file:
+D_Hd	svg.c	184;"	d	file:
+D_accent	svg.c	474;"	d	file:
+D_bclef	svg.c	141;"	d	file:
+D_brace	svg.c	91;"	d	file:
+D_breve	svg.c	205;"	d	file:
+D_cclef	svg.c	173;"	d	file:
+D_coda	svg.c	541;"	d	file:
+D_cpu	svg.c	511;"	d	file:
+D_csig	svg.c	417;"	d	file:
+D_ctsig	svg.c	427;"	d	file:
+D_custos	svg.c	599;"	d	file:
+D_dft0	svg.c	382;"	d	file:
+D_dnb	svg.c	521;"	d	file:
+D_dplus	svg.c	546;"	d	file:
+D_dsh0	svg.c	379;"	d	file:
+D_emb	svg.c	501;"	d	file:
+D_ft0	svg.c	373;"	d	file:
+D_ft1	svg.c	397;"	d	file:
+D_ft513	svg.c	401;"	d	file:
+D_ghd	svg.c	215;"	d	file:
+D_ghl	svg.c	454;"	d	file:
+D_grm	svg.c	489;"	d	file:
+D_hd	svg.c	181;"	d	file:
+D_hl	svg.c	448;"	d	file:
+D_hl1	svg.c	450;"	d	file:
+D_hl2	svg.c	452;"	d	file:
+D_hld	svg.c	503;"	d	file:
+D_iMsig	svg.c	443;"	d	file:
+D_imsig	svg.c	440;"	d	file:
+D_lmrd	svg.c	484;"	d	file:
+D_longa	svg.c	210;"	d	file:
+D_lphr	svg.c	549;"	d	file:
+D_ltr	svg.c	593;"	d	file:
+D_mphr	svg.c	552;"	d	file:
+D_mrep	svg.c	463;"	d	file:
+D_mrep2	svg.c	468;"	d	file:
+D_mrest	svg.c	277;"	d	file:
+D_nt0	svg.c	376;"	d	file:
+D_opend	svg.c	558;"	d	file:
+D_pMsig	svg.c	435;"	d	file:
+D_pclef	svg.c	179;"	d	file:
+D_pfthd	svg.c	412;"	d	file:
+D_pmsig	svg.c	432;"	d	file:
+D_pshhd	svg.c	408;"	d	file:
+D_r0	svg.c	222;"	d	file:
+D_r00	svg.c	219;"	d	file:
+D_r1	svg.c	225;"	d	file:
+D_r128	svg.c	268;"	d	file:
+D_r16	svg.c	247;"	d	file:
+D_r2	svg.c	228;"	d	file:
+D_r32	svg.c	253;"	d	file:
+D_r4	svg.c	231;"	d	file:
+D_r64	svg.c	260;"	d	file:
+D_r8	svg.c	242;"	d	file:
+D_r8e	svg.c	237;"	d	file:
+D_rdots	svg.c	456;"	d	file:
+D_sbclef	svg.c	144;"	d	file:
+D_scclef	svg.c	176;"	d	file:
+D_sgno	svg.c	526;"	d	file:
+D_sh0	svg.c	370;"	d	file:
+D_sh1	svg.c	385;"	d	file:
+D_sh513	svg.c	391;"	d	file:
+D_showerror	svg.c	605;"	d	file:
+D_sld	svg.c	496;"	d	file:
+D_snap	svg.c	561;"	d	file:
+D_sphr	svg.c	555;"	d	file:
+D_srep	svg.c	461;"	d	file:
+D_stc	svg.c	494;"	d	file:
+D_stclef	svg.c	124;"	d	file:
+D_tclef	svg.c	121;"	d	file:
+D_thumb	svg.c	567;"	d	file:
+D_turn	svg.c	573;"	d	file:
+D_turnx	svg.c	586;"	d	file:
+D_ubclef	svg.c	127;"	d	file:
+D_ucclef	svg.c	147;"	d	file:
+D_udbleflat	svg.c	348;"	d	file:
+D_udblesharp	svg.c	329;"	d	file:
+D_uflat	svg.c	300;"	d	file:
+D_umrd	svg.c	478;"	d	file:
+D_unat	svg.c	312;"	d	file:
+D_upb	svg.c	516;"	d	file:
+D_usharp	svg.c	282;"	d	file:
+D_utclef	svg.c	101;"	d	file:
+D_wedge	svg.c	591;"	d	file:
+END	slre.c	/^enum {END, BRANCH, ANY, EXACT, ANYOF, ANYBUT, OPEN, CLOSE, BOL, EOL,$/;"	e	enum:__anon3	file:
+EOL	slre.c	/^enum {END, BRANCH, ANY, EXACT, ANYOF, ANYBUT, OPEN, CLOSE, BOL, EOL,$/;"	e	enum:__anon3	file:
+EXACT	slre.c	/^enum {END, BRANCH, ANY, EXACT, ANYOF, ANYBUT, OPEN, CLOSE, BOL, EOL,$/;"	e	enum:__anon3	file:
+FE_ABC	front.h	4;"	d
+FE_FMT	front.h	5;"	d
+FE_PS	front.h	6;"	d
+FL_VOICE	abc2ps.h	443;"	d
+FMTCHG	abc2ps.h	160;"	d
+FONTSPEC	abc2ps.h	/^struct FONTSPEC {$/;"	s
+FONT_DYN	abc2ps.h	294;"	d
+FONT_DYNX	abc2ps.h	295;"	d
+FONT_MAX	abc2ps.h	296;"	d
+FONT_UMAX	abc2ps.h	276;"	d
+FOOTERFONT	abc2ps.h	279;"	d
+FORMAT	abc2ps.h	/^struct FORMAT { 		\/* struct for page layout *\/$/;"	s
+FORMAT_B	format.c	49;"	d	file:
+FORMAT_F	format.c	47;"	d	file:
+FORMAT_I	format.c	45;"	d	file:
+FORMAT_P	format.c	51;"	d	file:
+FORMAT_R	format.c	46;"	d	file:
+FORMAT_S	format.c	50;"	d	file:
+FORMAT_U	format.c	48;"	d	file:
+GCHORDFONT	abc2ps.h	280;"	d
+GCHPRE	abc2ps.h	61;"	d
+GRACE	abc2ps.h	159;"	d
+GSTEM	abc2ps.h	54;"	d
+GSTEM_XOFF	abc2ps.h	55;"	d
+HAVE_MALLOC_H	config.h	11;"	d
+HEADERFONT	abc2ps.h	281;"	d
+HISTORYFONT	abc2ps.h	282;"	d
+H_EMPTY	abc2ps.h	202;"	d
+H_FULL	abc2ps.h	201;"	d
+H_OVAL	abc2ps.h	203;"	d
+H_SQUARE	abc2ps.h	204;"	d
+IN	abc2ps.h	18;"	d
+INFO	abc2ps.h	/^typedef struct SYMBOL *INFO[26]; \/* information fields ('A' .. 'Z') *\/$/;"	t	typeref:struct:SYMBOL
+INFOFONT	abc2ps.h	283;"	d
+KEYSIG	abc2ps.h	154;"	d
+LY_HYPH	abc2ps.h	103;"	d
+LY_UNDER	abc2ps.h	104;"	d
+MAJOR	abcparse.h	106;"	d
+MARGIN	abc2ps.h	24;"	d
+MARGIN	abc2ps.h	28;"	d
+MAXAREAL	abc2ps.c	77;"	d	file:
+MAXAREANASZ	abc2ps.c	80;"	d	file:
+MAXCMDTBLT	abc2ps.h	355;"	d
+MAXDC	abcparse.h	9;"	d
+MAXFONTS	abc2ps.h	82;"	d
+MAXGCH	abc2ps.h	117;"	d
+MAXHD	abcparse.h	8;"	d
+MAXLY	abc2ps.h	105;"	d
+MAXMICRO	abcparse.h	10;"	d
+MAXSTAFF	abc2ps.h	71;"	d
+MAXTBLT	abc2ps.h	342;"	d
+MAXVOICE	abcparse.h	6;"	d
+MAX_MEASURE	abcparse.h	123;"	d
+MEASUREFONT	abc2ps.h	284;"	d
+MINIM	abc2ps.h	77;"	d
+MINOR	abcparse.h	107;"	d
+MREST	abc2ps.h	157;"	d
+NELTS	svg.c	52;"	d	file:
+NFLAGS_SZ	abc2ps.h	426;"	d
+NONSPACE	slre.c	/^	STAR, PLUS, STARQ, PLUSQ, QUEST, SPACE, NONSPACE, DIGIT};$/;"	e	enum:__anon3	file:
+NOTEREST	abc2ps.h	149;"	d
+NO_OCTAVE	abcparse.h	112;"	d
+NO_TYPE	abc2ps.h	148;"	d
+NSYMS	svg.c	53;"	d	file:
+NSYMTYPES	abc2ps.h	164;"	d
+OPEN	slre.c	/^enum {END, BRANCH, ANY, EXACT, ANYOF, ANYBUT, OPEN, CLOSE, BOL, EOL,$/;"	e	enum:__anon3	file:
+OPEN_BRACE	abc2ps.h	436;"	d
+OPEN_BRACE2	abc2ps.h	444;"	d
+OPEN_BRACKET	abc2ps.h	438;"	d
+OPEN_BRACKET2	abc2ps.h	446;"	d
+OPEN_PARENTH	abc2ps.h	440;"	d
+OUTPUTFILE	abc2ps.h	9;"	d
+O_TUNE	parse.c	71;"	d	file:
+O_VOICE	parse.c	72;"	d	file:
+PAGEHEIGHT	abc2ps.h	22;"	d
+PAGEHEIGHT	abc2ps.h	26;"	d
+PAGEWIDTH	abc2ps.h	23;"	d
+PAGEWIDTH	abc2ps.h	27;"	d
+PART	abc2ps.h	158;"	d
+PARTSFONT	abc2ps.h	285;"	d
+PERC	abcparse.h	164;"	d
+PG_SCALE	subs.c	299;"	d	file:
+PLUS	slre.c	/^	STAR, PLUS, STARQ, PLUSQ, QUEST, SPACE, NONSPACE, DIGIT};$/;"	e	enum:__anon3	file:
+PLUSQ	slre.c	/^	STAR, PLUS, STARQ, PLUSQ, QUEST, SPACE, NONSPACE, DIGIT};$/;"	e	enum:__anon3	file:
+PSSEQ	abc2ps.h	214;"	d
+PT	abc2ps.h	17;"	d
+QUAVER	abc2ps.h	79;"	d
+QUEST	slre.c	/^	STAR, PLUS, STARQ, PLUSQ, QUEST, SPACE, NONSPACE, DIGIT};$/;"	e	enum:__anon3	file:
+REPEAT	abc2ps.h	216;"	d
+REPEATFONT	abc2ps.h	286;"	d
+SEMIBREVE	abc2ps.h	76;"	d
+SEMIQUAVER	abc2ps.h	80;"	d
+SEQ	svg.c	/^	SEQ,			\/* {..} *\/$/;"	e	enum:elt_t	file:
+SLRE_HEADER_DEFINED	slre.h	50;"	d
+SLUR_SLOPE	abc2ps.h	52;"	d
+SL_ABOVE	abcparse.h	33;"	d
+SL_AUTO	abcparse.h	35;"	d
+SL_BELOW	abcparse.h	34;"	d
+SL_DOTTED	abcparse.h	36;"	d
+SL_HIDDEN	abc2ps.h	130;"	d
+SPACE	abc2ps.h	150;"	d
+SPACE	slre.c	/^	STAR, PLUS, STARQ, PLUSQ, QUEST, SPACE, NONSPACE, DIGIT};$/;"	e	enum:__anon3	file:
+STAFF_S	abc2ps.h	/^struct STAFF_S {$/;"	s
+STAR	slre.c	/^	STAR, PLUS, STARQ, PLUSQ, QUEST, SPACE, NONSPACE, DIGIT};$/;"	e	enum:__anon3	file:
+STARQ	slre.c	/^	STAR, PLUS, STARQ, PLUSQ, QUEST, SPACE, NONSPACE, DIGIT};$/;"	e	enum:__anon3	file:
+STAVES	abc2ps.h	156;"	d
+STBRK	abc2ps.h	162;"	d
+STEM	abc2ps.h	35;"	d
+STEM_CH_MIN	abc2ps.h	40;"	d
+STEM_CH_MIN2	abc2ps.h	41;"	d
+STEM_CH_MIN3	abc2ps.h	42;"	d
+STEM_CH_MIN4	abc2ps.h	43;"	d
+STEM_MIN	abc2ps.h	36;"	d
+STEM_MIN2	abc2ps.h	37;"	d
+STEM_MIN3	abc2ps.h	38;"	d
+STEM_MIN4	abc2ps.h	39;"	d
+STEM_XOFF	abc2ps.h	34;"	d
+STEM_YOFF	abc2ps.h	33;"	d
+STOP_BAR	abc2ps.h	442;"	d
+STR	svg.c	/^	STR,$/;"	e	enum:elt_t	file:
+STRL1	abc2ps.h	70;"	d
+SUBTITLEFONT	abc2ps.h	287;"	d
+SVGSEQ	abc2ps.h	215;"	d
+SYMBOL	abc2ps.h	/^struct SYMBOL { 		\/* struct for a drawable symbol *\/$/;"	s
+SYSTEM	abc2ps.h	/^struct SYSTEM {			\/* staff system *\/$/;"	s
+S_BEAM_BR1	abc2ps.h	174;"	d
+S_BEAM_BR2	abc2ps.h	175;"	d
+S_BEAM_END	abc2ps.h	176;"	d
+S_BEAM_ON	abc2ps.h	182;"	d
+S_BEAM_ST	abc2ps.h	173;"	d
+S_EOLN	abc2ps.h	172;"	d
+S_FEATHERED_BEAM	abc2ps.h	188;"	d
+S_FLOATING	abc2ps.h	193;"	d
+S_IN_TUPLET	abc2ps.h	178;"	d
+S_NL	abc2ps.h	190;"	d
+S_NOREPBRA	abc2ps.h	194;"	d
+S_OTHER_HEAD	abc2ps.h	177;"	d
+S_PERC	abc2ps.h	186;"	d
+S_RBSTOP	abc2ps.h	187;"	d
+S_REPEAT	abc2ps.h	189;"	d
+S_RRBAR	abc2ps.h	180;"	d
+S_SECOND	abc2ps.h	192;"	d
+S_SEQST	abc2ps.h	191;"	d
+S_SL1	abc2ps.h	183;"	d
+S_SL2	abc2ps.h	184;"	d
+S_TI1	abc2ps.h	185;"	d
+S_TREM1	abc2ps.h	195;"	d
+S_TREM2	abc2ps.h	179;"	d
+S_XSTEM	abc2ps.h	181;"	d
+TEMPO	abc2ps.h	155;"	d
+TEMPOFONT	abc2ps.h	288;"	d
+TEXTFONT	abc2ps.h	289;"	d
+TEX_BUF_SZ	abc2ps.h	586;"	d
+TIMESIG	abc2ps.h	153;"	d
+TITLEFONT	abc2ps.h	290;"	d
+TREBLE	abcparse.h	161;"	d
+TUPLET	abc2ps.h	161;"	d
+T_CENTER	abc2ps.h	87;"	d
+T_FILL	abc2ps.h	86;"	d
+T_JUSTIFY	abc2ps.h	85;"	d
+T_LEFT	abc2ps.h	84;"	d
+T_RIGHT	abc2ps.h	89;"	d
+T_SKIP	abc2ps.h	88;"	d
+VAL	svg.c	/^	VAL,$/;"	e	enum:elt_t	file:
+VDATE	config.h	20;"	d
+VERSION	config.h	19;"	d
+VOCALFONT	abc2ps.h	291;"	d
+VOCPRE	abc2ps.h	60;"	d
+VOICEFONT	abc2ps.h	292;"	d
+VOICE_ID_SZ	abcparse.h	14;"	d
+VOICE_NAME_SZ	abcparse.c	54;"	d	file:
+VOICE_S	abc2ps.h	/^struct VOICE_S {$/;"	s
+V_OVER_E	abcparse.h	185;"	d
+V_OVER_S	abcparse.h	184;"	d
+V_OVER_V	abcparse.h	183;"	d
+WORDSFONT	abc2ps.h	293;"	d
+YSTEP	abc2ps.h	91;"	d
+a	draw.c	/^	float a, b;$/;"	m	struct:BEAM	file:
+a2b	buffer.c	/^void a2b(char *fmt, ...)$/;"	f
+abc2pscompat	abc2ps.h	/^	int abc2pscompat, alignbars, aligncomposer, autoclef;$/;"	m	struct:FORMAT
+abc2win	parse.c	/^static int abc2win;$/;"	v	file:
+abc_delete	abcparse.c	/^void abc_delete(struct abcsym *as)$/;"	f
+abc_fn	abc2ps.c	/^static char abc_fn[FILENAME_MAX]; \/* buffer for ABC file name *\/$/;"	v	file:
+abc_free	abcparse.c	/^void abc_free(struct abctune *t)$/;"	f
+abc_init	abcparse.c	/^void abc_init(void *alloc_f_api(int size),$/;"	f
+abc_insert	abcparse.c	/^void abc_insert(char *file_api,$/;"	f
+abc_line	abcparse.c	/^static char *abc_line;		\/* line being parsed *\/$/;"	v	file:
+abc_new	abcparse.c	/^struct abcsym *abc_new(struct abctune *t,$/;"	f
+abc_parse	abcparse.c	/^struct abctune *abc_parse(char *file_api)$/;"	f
+abc_state	abcparse.c	/^static short abc_state;		\/* parse state *\/$/;"	v	file:
+abc_vers	abcparse.c	/^static int abc_vers;		\/* abc version *\/$/;"	v	file:
+abc_vers	abcparse.h	/^	int abc_vers;		\/* ABC version = (H << 16) + (M << 8) + L *\/$/;"	m	struct:abctune
+abcsym	abcparse.h	/^struct abcsym {$/;"	s
+abctune	abcparse.h	/^struct abctune {$/;"	s
+acc_tb	draw.c	/^static char *acc_tb[] = { "", "sh", "nt", "ft", "dsh", "dft" };$/;"	v	file:
+acciac	svg.c	/^static void acciac(char *op)$/;"	f	file:
+accidentals	abcparse.h	/^enum accidentals {$/;"	g
+accs	abcparse.h	/^			unsigned char accs[8];$/;"	m	struct:abcsym::__anon10::key_s
+accs	abcparse.h	/^	unsigned char accs[MAXHD]; \/* code for accidentals & index in micro_tb *\/$/;"	m	struct:note
+active	abc2ps.h	/^	short active;		\/* activate or not *\/$/;"	m	struct:cmdtblt_s
+acute	front.c	/^static unsigned char acute[] = "AÁEÉIÍOÓUÚYÝaáeéiíoóuúyýSŚZŹsśzźRŔLĹCĆNŃrŕlĺcćnń";$/;"	v	file:
+add_lnum	front.c	/^static void add_lnum(int nline)$/;"	f	file:
+alfa_last	music.c	/^static float alfa_last, beta_last;	\/* for last short short line.. *\/$/;"	v	file:
+alignbars	abc2ps.h	/^	int abc2pscompat, alignbars, aligncomposer, autoclef;$/;"	m	struct:FORMAT
+aligncomposer	abc2ps.h	/^	int abc2pscompat, alignbars, aligncomposer, autoclef;$/;"	m	struct:FORMAT
+all_notes	abcparse.c	/^static const char all_notes[] = "CDEFGABcdefgab";$/;"	v	file:
+alloc_f	abcparse.c	/^static void *(*alloc_f)(int size);$/;"	v	file:
+anchored	slre.h	/^	unsigned char	anchored;	\/* Must match from string start	*\/$/;"	m	struct:slre
+anf	abc2ps.h	/^	unsigned char gcf, anf, vof;	\/* fonts for guitar chords,$/;"	m	struct:FORMAT
+anno_out	draw.c	/^static void anno_out(struct SYMBOL *s, char type)$/;"	f	file:
+annotate	abc2ps.c	/^int annotate;			\/* output source references *\/$/;"	v
+anyof	slre.c	/^anyof(struct slre *r, const char *re)$/;"	f	file:
+arp_ltr	svg.c	/^static void arp_ltr(char type)$/;"	f	file:
+as	abc2ps.h	/^	struct abcsym as;	\/* abc symbol !!must be the first field!! *\/$/;"	m	struct:SYMBOL	typeref:struct:SYMBOL::abcsym
+assert	slre.c	19;"	d	file:
+attrs	subs.c	/^static PangoAttrList *attrs;$/;"	v	file:
+autoclef	abc2ps.h	/^	int abc2pscompat, alignbars, aligncomposer, autoclef;$/;"	m	struct:FORMAT
+b	draw.c	/^	float a, b;$/;"	m	struct:BEAM	file:
+b_pos	draw.c	/^static float b_pos(int grace,$/;"	f	file:
+bar	abc2ps.h	/^	char *bar;		\/* PS bar function *\/$/;"	m	struct:tblt_s
+bar	abcparse.h	/^		} bar;$/;"	m	union:abcsym::__anon10	typeref:struct:abcsym::__anon10::__anon15
+bar	parse.c	/^	short bar;$/;"	m	struct:symsel_s	file:
+bar_cnv	draw.c	/^static int bar_cnv(int bar_type)$/;"	f	file:
+bar_gch	abc2ps.h	/^	struct gch *bar_gch;	\/* bar text *\/$/;"	m	struct:VOICE_S	typeref:struct:VOICE_S::gch
+bar_repeat	abc2ps.h	/^	unsigned bar_repeat:1;	\/* bar at start of staff is a repeat bar *\/$/;"	m	struct:VOICE_S
+bar_set	draw.c	/^static void bar_set(float *bar_height)$/;"	f	file:
+bar_start	abc2ps.h	/^	short bar_start;	\/* bar type at start of staff \/ 0 *\/$/;"	m	struct:VOICE_S
+bar_text	abc2ps.h	/^	char *bar_text;		\/* bar text at start of staff when bar_start *\/$/;"	m	struct:VOICE_S
+barsperstaff	abc2ps.h	/^	int barsperstaff, breakoneoln, bstemdown, cancelkey, comball;$/;"	m	struct:FORMAT
+base_length	abcparse.h	/^			int base_length;	\/* basic note length *\/$/;"	m	struct:abcsym::__anon10::__anon11
+beta_last	music.c	/^static float alfa_last, beta_last;	\/* for last short short line.. *\/$/;"	v	file:
+bgcolor	abc2ps.h	/^	char *bgcolor, *dateformat, *header, *footer, *titleformat;$/;"	m	struct:FORMAT
+bot	abc2ps.h	/^	float top[YSTEP], bot[YSTEP];	\/* top\/bottom y offsets *\/$/;"	m	struct:STAFF_S
+bot	abcparse.h	/^				char bot[2];	\/* bottom value *\/$/;"	m	struct:abcsym::__anon10::meter_s::__anon12
+botbar	abc2ps.h	/^	short botbar, topbar;	\/* bottom and top of bar *\/$/;"	m	struct:STAFF_S
+botmargin	abc2ps.h	/^	float topmargin, botmargin, leftmargin, rightmargin;$/;"	m	struct:FORMAT
+box	abc2ps.h	/^	char box;		\/* 1 if in box *\/$/;"	m	struct:gch
+boxend	svg.c	/^static int boxend;$/;"	v	file:
+bposy	buffer.c	/^static float bposy;		\/* current position in buffered data *\/$/;"	v	file:
+breaklimit	abc2ps.h	/^	float breaklimit, maxshrink, lineskipfac, parskipfac, stemheight;$/;"	m	struct:FORMAT
+breakoneoln	abc2ps.h	/^	int barsperstaff, breakoneoln, bstemdown, cancelkey, comball;$/;"	m	struct:FORMAT
+breve	front.c	/^static unsigned char breve[] = "AĂaăEĔeĕGĞgğIĬiĭOŎoŏUŬuŭ";$/;"	v	file:
+brhythm	abcparse.h	/^	signed char brhythm;	\/* broken rhythm *\/$/;"	m	struct:note
+brk_s	parse.c	/^struct brk_s {				\/* music line break *\/$/;"	s	file:
+brks	parse.c	/^	struct brk_s *brks;$/;"	m	struct:tune_opt_s	typeref:struct:tune_opt_s::brk_s	file:
+broken_rhythm	abcparse.c	/^static void broken_rhythm(struct note *note,$/;"	f	file:
+bskip	buffer.c	/^void bskip(float h)$/;"	f
+bstemdown	abc2ps.h	/^	int barsperstaff, breakoneoln, bstemdown, cancelkey, comball;$/;"	m	struct:FORMAT
+buffer_eob	buffer.c	/^void buffer_eob(void)$/;"	f
+bug	subs.c	/^void bug(char *msg, int fatal)$/;"	f
+calculate_beam	draw.c	/^static int calculate_beam(struct BEAM *bm,$/;"	f	file:
+cancelkey	abc2ps.h	/^	int barsperstaff, breakoneoln, bstemdown, cancelkey, comball;$/;"	m	struct:FORMAT
+cap	slre.h	/^struct cap {$/;"	s
+cap_str	subs.c	/^static void cap_str(char *p)$/;"	f	file:
+caron	front.c	/^static unsigned char caron[] = "LĽSŠTŤZŽlľsštťzžCČEĚDĎNŇRŘcčeědďnňrř";$/;"	v	file:
+cde2fcg	parse.c	/^static signed char cde2fcg[7] = {0, 2, 4, -1, 1, 3, 5};$/;"	v	file:
+cedilla	front.c	/^static unsigned char cedilla[] = "CÇcçSŞsşTŢtţRŖLĻGĢrŗlļgģNŅKĶnņkķ";$/;"	v	file:
+cfmt	format.c	/^struct FORMAT cfmt;		\/* current format for output *\/$/;"	v	typeref:struct:FORMAT
+cgd2cde	parse.c	/^static char cgd2cde[7] = {0, 4, 1, 5, 2, 6, 3};$/;"	v	file:
+char_tb	abcparse.c	/^static char char_tb[256] = {$/;"	v	file:
+check_bar	music.c	/^static void check_bar(struct SYMBOL *s)$/;"	f	file:
+check_buffer	buffer.c	/^void check_buffer(void)$/;"	f
+check_nl	abcparse.c	/^static int check_nl(char *p)$/;"	f	file:
+check_pitch	abcparse.h	/^			char check_pitch;	\/* check if old abc2ps transposition *\/$/;"	m	struct:abcsym::__anon10::clef_s
+chlen	abcparse.h	/^	short chlen;		\/* chord length *\/$/;"	m	struct:note
+circumflex	front.c	/^static unsigned char circumflex[] = "AÂEÊIÎOÔUÛaâeêiîoôuûHĤJĴhĥjĵCĈGĜSŜcĉgĝsŝ";$/;"	v	file:
+ckey	abc2ps.h	/^	struct key_s ckey;	\/* key signature while parsing *\/$/;"	m	struct:VOICE_S	typeref:struct:VOICE_S::key_s
+clear_buffer	buffer.c	/^void clear_buffer(void)$/;"	f
+clef	abc2ps.h	/^		struct clef_s clef;$/;"	m	struct:SYSTEM::__anon8	typeref:struct:SYSTEM::__anon8::clef_s
+clef	abc2ps.h	/^		struct clef_s clef;$/;"	m	struct:SYSTEM::__anon9	typeref:struct:SYSTEM::__anon9::clef_s
+clef	abc2ps.h	/^	struct clef_s clef;	\/* base clef *\/$/;"	m	struct:STAFF_S	typeref:struct:STAFF_S::clef_s
+clef	abc2ps.h	/^	struct clef_s clef;	\/* current clef *\/$/;"	m	struct:VOICE_S	typeref:struct:VOICE_S::clef_s
+clef	abcparse.h	/^		} clef;$/;"	m	union:abcsym::__anon10	typeref:struct:abcsym::__anon10::clef_s
+clef_def	parse.c	/^static void clef_def(struct SYMBOL *s)$/;"	f	file:
+clef_s	abcparse.h	/^		struct clef_s {		\/* clef (and staff!) *\/$/;"	s	union:abcsym::__anon10
+client_data	abcparse.h	/^	void *client_data;	\/* client data *\/$/;"	m	struct:abctune
+client_sz	abcparse.c	/^static int client_sz;$/;"	v	file:
+clip_end	parse.c	/^	struct symsel_s clip_start, clip_end;$/;"	m	struct:tune_opt_s	typeref:struct:tune_opt_s::	file:
+clip_start	parse.c	/^	struct symsel_s clip_start, clip_end;$/;"	m	struct:tune_opt_s	typeref:struct:tune_opt_s::symsel_s	file:
+clone	abc2ps.h	/^	signed char clone;	\/* duplicate from this voice number *\/$/;"	m	struct:VOICE_S
+close_fout	buffer.c	/^static void close_fout(void)$/;"	f	file:
+close_output_file	buffer.c	/^void close_output_file(void)$/;"	f
+close_page	buffer.c	/^void close_page(void)$/;"	f
+clrarena	abc2ps.c	/^void clrarena(int level)$/;"	f
+cmdtblt_parse	abc2ps.c	/^static struct cmdtblt_s *cmdtblt_parse(char *p)$/;"	f	file:
+cmdtblt_s	abc2ps.h	/^struct cmdtblt_s {$/;"	s
+cmdtblts	abc2ps.c	/^struct cmdtblt_s cmdtblts[MAXCMDTBLT];$/;"	v	typeref:struct:cmdtblt_s
+cnv_date	buffer.c	/^static void cnv_date(time_t *ltime)$/;"	f	file:
+code	slre.h	/^	unsigned char	code[256];$/;"	m	struct:slre
+code_size	slre.h	/^	unsigned char	code_size;$/;"	m	struct:slre
+colnum	abcparse.c	/^static int colnum;		\/* current source column number *\/$/;"	v	file:
+colnum	abcparse.h	/^	unsigned short colnum;	\/* ABC source column number *\/$/;"	m	struct:abcsym
+comball	abc2ps.h	/^	int barsperstaff, breakoneoln, bstemdown, cancelkey, comball;$/;"	m	struct:FORMAT
+combine_voices	music.c	/^static void combine_voices(void)$/;"	f	file:
+combinevoices	abc2ps.h	/^	int combinevoices, contbarnb, continueall, custos;$/;"	m	struct:FORMAT
+comment	abcparse.h	/^	char *comment;		\/* comment part (when keep_comment) *\/$/;"	m	struct:abcsym
+compile	slre.c	/^compile(struct slre *r, const char *re)$/;"	f	file:
+composerspace	abc2ps.h	/^	float composerspace, musicspace, vocalspace, textspace;$/;"	m	struct:FORMAT
+cond	svg.c	/^static void cond(int type)$/;"	f	file:
+contbarnb	abc2ps.h	/^	int combinevoices, contbarnb, continueall, custos;$/;"	m	struct:FORMAT
+continueall	abc2ps.h	/^	int combinevoices, contbarnb, continueall, custos;$/;"	m	struct:FORMAT
+cstaff	abc2ps.h	/^	unsigned char cstaff;	\/* staff while parsing *\/$/;"	m	struct:VOICE_S
+cur_lmarg	buffer.c	/^static float cur_lmarg = 0;	\/* current left margin *\/$/;"	v	file:
+cur_scale	buffer.c	/^static float cur_scale = 1.0;	\/* current scale *\/$/;"	v	file:
+cur_scale	draw.c	/^static float cur_scale = 1;	\/* voice or staff scale *\/$/;"	v	file:
+cur_staff	draw.c	/^static float cur_staff = 1;	\/* current scaled staff *\/$/;"	v	file:
+cur_trans	draw.c	/^static float cur_trans = 0;	\/* != 0 when scaled staff *\/$/;"	v	file:
+cur_tune_opts	parse.c	/^static struct tune_opt_s *tune_opts, *cur_tune_opts;$/;"	v	typeref:struct:	file:
+curft	subs.c	/^static int curft;		\/* current (wanted) font *\/$/;"	v	file:
+cursys	abc2ps.h	/^struct SYSTEM *cursys;		\/* current staff system *\/$/;"	v	typeref:struct:SYSTEM
+cursys	parse.c	/^struct SYSTEM *cursys;			\/* current system *\/$/;"	v	typeref:struct:SYSTEM
+curvoice	abcparse.c	/^} voice_tb[MAXVOICE], *curvoice;$/;"	v	typeref:struct:__anon1	file:
+curvoice	parse.c	/^static struct VOICE_S *curvoice;	\/* current voice while parsing *\/$/;"	v	typeref:struct:VOICE_S	file:
+custos	abc2ps.h	/^	int combinevoices, contbarnb, continueall, custos;$/;"	m	struct:FORMAT
+custos_add	music.c	/^static void custos_add(struct SYMBOL *s)$/;"	f	file:
+cut_symbols	music.c	/^static void cut_symbols(void)$/;"	f	file:
+cut_tune	music.c	/^static void cut_tune(float lwidth, float indent)$/;"	f	file:
+cutext	buffer.c	/^static void cutext(char *fid)$/;"	f	file:
+cw_tb	subs.c	/^static short cw_tb[] = {$/;"	v	file:
+cwid	subs.c	/^float cwid(unsigned short c)$/;"	f
+cx	svg.c	/^	float cx, cy;$/;"	m	struct:__anon6	file:
+cx	svg.c	/^static float cx, cy;			\/* current point *\/$/;"	v	file:
+cy	svg.c	/^	float cx, cy;$/;"	m	struct:__anon6	file:
+cy	svg.c	/^static float cx, cy;			\/* current point *\/$/;"	v	file:
+d_arp	deco.c	/^static draw_f d_arp, d_cresc, d_near, d_slide, d_upstaff, d_pf, d_trill;$/;"	v	file:
+d_arp	deco.c	/^static void d_arp(struct deco_elt *de)$/;"	f	file:
+d_cresc	deco.c	/^static draw_f d_arp, d_cresc, d_near, d_slide, d_upstaff, d_pf, d_trill;$/;"	v	file:
+d_cresc	deco.c	/^static void d_cresc(struct deco_elt *de)$/;"	f	file:
+d_near	deco.c	/^static draw_f d_arp, d_cresc, d_near, d_slide, d_upstaff, d_pf, d_trill;$/;"	v	file:
+d_near	deco.c	/^static void d_near(struct deco_elt *de)$/;"	f	file:
+d_pf	deco.c	/^static draw_f d_arp, d_cresc, d_near, d_slide, d_upstaff, d_pf, d_trill;$/;"	v	file:
+d_pf	deco.c	/^static void d_pf(struct deco_elt *de)$/;"	f	file:
+d_slide	deco.c	/^static draw_f d_arp, d_cresc, d_near, d_slide, d_upstaff, d_pf, d_trill;$/;"	v	file:
+d_slide	deco.c	/^static void d_slide(struct deco_elt *de)$/;"	f	file:
+d_trill	deco.c	/^static draw_f d_arp, d_cresc, d_near, d_slide, d_upstaff, d_pf, d_trill;$/;"	v	file:
+d_trill	deco.c	/^static void d_trill(struct deco_elt *de)$/;"	f	file:
+d_upstaff	deco.c	/^static draw_f d_arp, d_cresc, d_near, d_slide, d_upstaff, d_pf, d_trill;$/;"	v	file:
+d_upstaff	deco.c	/^static void d_upstaff(struct deco_elt *de)$/;"	f	file:
+dash	svg.c	/^	char dash[64];$/;"	m	struct:gc	file:
+data	slre.h	/^	unsigned char	data[256];$/;"	m	struct:slre
+data_size	slre.h	/^	unsigned char	data_size;$/;"	m	struct:slre
+dateformat	abc2ps.h	/^	char *bgcolor, *dateformat, *header, *footer, *titleformat;$/;"	m	struct:FORMAT
+dblrepbar	abc2ps.h	/^	int dblrepbar, dynalign, flatbeams;$/;"	m	struct:FORMAT
+dc	abcparse.c	/^static struct deco dc;		\/* decorations *\/$/;"	v	typeref:struct:deco	file:
+dc	abcparse.h	/^			struct deco dc;		\/* decorations *\/$/;"	m	struct:abcsym::__anon10::__anon15	typeref:struct:abcsym::__anon10::__anon15::deco
+dc	abcparse.h	/^	struct deco dc;		\/* decorations *\/$/;"	m	struct:note	typeref:struct:note::deco
+deco	abcparse.h	/^struct deco {		\/* decorations *\/$/;"	s
+deco_add	deco.c	/^void deco_add(char *s)$/;"	f
+deco_build	deco.c	/^static unsigned char deco_build(char *text)$/;"	f	file:
+deco_cnv	deco.c	/^void deco_cnv(struct deco *dc,$/;"	f
+deco_cont	abcparse.c	/^static struct abcsym *deco_cont; \/* current symbol when d: \/ s: continuation *\/$/;"	v	typeref:struct:abcsym	file:
+deco_create	deco.c	/^static void deco_create(struct SYMBOL *s,$/;"	f	file:
+deco_def_s	deco.c	/^static struct deco_def_s {$/;"	s	file:
+deco_def_tb	deco.c	/^} deco_def_tb[128];$/;"	v	typeref:struct:deco_def_s	file:
+deco_define	deco.c	/^static unsigned char deco_define(char *name)$/;"	f	file:
+deco_elt	deco.c	/^static struct deco_elt {$/;"	s	file:
+deco_glob	abc2ps.c	/^unsigned char deco_glob[256], deco_tune[256];$/;"	v
+deco_head	deco.c	/^} *deco_head, *deco_tail;$/;"	v	typeref:struct:deco_elt	file:
+deco_intern	deco.c	/^unsigned char deco_intern(unsigned char deco)$/;"	f
+deco_start	abcparse.c	/^static struct abcsym *deco_start; \/* 1st note of the line for d: \/ s: *\/$/;"	v	typeref:struct:abcsym	file:
+deco_tail	deco.c	/^} *deco_head, *deco_tail;$/;"	v	typeref:struct:deco_elt	file:
+deco_tb	abcparse.c	/^char *deco_tb[128];		\/* decoration names *\/$/;"	v
+deco_tune	abc2ps.c	/^unsigned char deco_glob[256], deco_tune[256];$/;"	v
+deco_update	deco.c	/^void deco_update(struct SYMBOL *s, float dx)$/;"	f
+deco_width	deco.c	/^float deco_width(struct SYMBOL *s)$/;"	f
+decomment_line	abcparse.c	/^static char *decomment_line(char *p)$/;"	f	file:
+decs	abcparse.h	/^	unsigned char decs[MAXHD]; \/* head decorations (index: 5 bits, len: 3 bits) *\/$/;"	m	struct:note
+def	svg.c	/^	char *def;$/;"	m	struct:__anon7	file:
+def_fmt_done	abc2ps.c	/^static int def_fmt_done = 0;	\/* default format read *\/$/;"	v	file:
+def_font_enc	format.c	/^static char def_font_enc[MAXFONTS];	\/* default font encoding *\/$/;"	v	file:
+def_tb	svg.c	/^} def_tb[] = {$/;"	v	typeref:struct:__anon7	file:
+def_use	svg.c	/^static void def_use(int def)$/;"	f	file:
+defft	subs.c	/^static int defft;		\/* default font *\/$/;"	v	file:
+defg1	svg.c	/^static void defg1(void)$/;"	f	file:
+define_cmap	syms.c	/^void define_cmap(void)$/;"	f
+define_font	syms.c	/^void define_font(char name[],$/;"	f
+define_fonts	format.c	/^void define_fonts(void)$/;"	f
+define_svg_symbols	svg.c	/^void define_svg_symbols(char *title, float w, float h)$/;"	f
+define_symbols	syms.c	/^void define_symbols(void)$/;"	f
+defined	svg.c	/^	char defined;$/;"	m	struct:__anon7	file:
+defl	deco.c	/^	unsigned char defl;	\/* decorations flags - see DEF_xx *\/$/;"	m	struct:deco_elt	file:
+defl	deco.c	/^int defl;		\/* decoration flags *\/$/;"	v
+delayed_output	music.c	/^static float delayed_output(float indent)$/;"	f	file:
+desc_font	subs.c	/^static void desc_font(int fnum)$/;"	f	file:
+desc_tb	subs.c	/^static PangoFontDescription *desc_tb[MAXFONTS];$/;"	v	file:
+dfmt	parse.c	/^struct FORMAT dfmt;			\/* current global format *\/$/;"	v	typeref:struct:FORMAT
+dfont_set	format.c	/^static int dfont_set(struct FONTSPEC *f)$/;"	f	file:
+display_version	abc2ps.c	/^static void display_version(int full)$/;"	f	file:
+do_clip	parse.c	/^static void do_clip(void)$/;"	f	file:
+do_combine	music.c	/^static void do_combine(struct SYMBOL *s)$/;"	f	file:
+do_tune	parse.c	/^void do_tune(struct abctune *t)$/;"	f
+dot	front.c	/^static unsigned char dot[] = "ZŻzżIİiıCĊcċGĠgġEĖeė";$/;"	v	file:
+dots	abc2ps.h	/^	char dots;		\/* number of dots *\/$/;"	m	struct:SYMBOL
+dotted	abcparse.h	/^			char dotted;$/;"	m	struct:abcsym::__anon10::__anon15
+doty	abc2ps.h	/^	signed char doty;	\/* NOTEREST: y pos of dot when voices overlap$/;"	m	struct:SYMBOL
+draw_all_deco	deco.c	/^void draw_all_deco(void)$/;"	f
+draw_all_deco_head	deco.c	/^void draw_all_deco_head(struct SYMBOL *s, float x, float y)$/;"	f
+draw_all_lyrics	draw.c	/^static void draw_all_lyrics(void)$/;"	f	file:
+draw_all_slurs	draw.c	/^static void draw_all_slurs(struct VOICE_S *p_voice)$/;"	f	file:
+draw_all_symb	draw.c	/^void draw_all_symb(void)$/;"	f
+draw_all_ties	draw.c	/^static void draw_all_ties(struct VOICE_S *p_voice)$/;"	f	file:
+draw_bar	draw.c	/^static void draw_bar(struct SYMBOL *s)$/;"	f	file:
+draw_basic_note	draw.c	/^static void draw_basic_note(float x,$/;"	f	file:
+draw_beam	draw.c	/^static void draw_beam(float x1,$/;"	f	file:
+draw_beams	draw.c	/^static void draw_beams(struct BEAM *bm)$/;"	f	file:
+draw_deco_head	deco.c	/^int draw_deco_head(int deco, float x, float y, int stem)$/;"	f
+draw_deco_near	deco.c	/^void draw_deco_near(void)$/;"	f
+draw_deco_note	deco.c	/^void draw_deco_note(void)$/;"	f
+draw_deco_staff	deco.c	/^void draw_deco_staff(void)$/;"	f
+draw_f	deco.c	/^typedef void draw_f(struct deco_elt *de);$/;"	t	file:
+draw_gchord	deco.c	/^static void draw_gchord(struct SYMBOL *s,$/;"	f	file:
+draw_gracenotes	draw.c	/^static void draw_gracenotes(struct SYMBOL *s)$/;"	f	file:
+draw_keysig	draw.c	/^static void draw_keysig(struct VOICE_S *p_voice,$/;"	f	file:
+draw_lstaff	draw.c	/^static void draw_lstaff(float x)$/;"	f	file:
+draw_lyrics	draw.c	/^static float draw_lyrics(struct VOICE_S *p_voice,$/;"	f	file:
+draw_measnb	deco.c	/^void draw_measnb(void)$/;"	f
+draw_note	draw.c	/^static void draw_note(float x,$/;"	f	file:
+draw_note_ties	draw.c	/^static void draw_note_ties(struct SYMBOL *k1,$/;"	f	file:
+draw_notempo	deco.c	/^static void draw_notempo(struct SYMBOL *s, int len, float sc)$/;"	f	file:
+draw_partempo	deco.c	/^float draw_partempo(int staff,$/;"	f
+draw_rest	draw.c	/^static void draw_rest(struct SYMBOL *s)$/;"	f	file:
+draw_slur	draw.c	/^static int draw_slur(struct SYMBOL *k1,$/;"	f	file:
+draw_slurs	draw.c	/^static void draw_slurs(struct SYMBOL *first,$/;"	f	file:
+draw_staff	draw.c	/^static void draw_staff(int staff,$/;"	f	file:
+draw_sym_near	draw.c	/^void draw_sym_near(void)$/;"	f
+draw_symbols	draw.c	/^static void draw_symbols(struct VOICE_S *p_voice)$/;"	f	file:
+draw_sysbra	draw.c	/^static void draw_sysbra(float x, int staff, int flag)$/;"	f	file:
+draw_systems	draw.c	/^float draw_systems(float indent)$/;"	f
+draw_tblt_p	draw.c	/^static void draw_tblt_p(struct VOICE_S *p_voice,$/;"	f	file:
+draw_tblt_w	draw.c	/^static void draw_tblt_w(struct VOICE_S *p_voice,$/;"	f	file:
+draw_ties	draw.c	/^static void draw_ties(struct SYMBOL *k1,$/;"	f	file:
+draw_timesig	draw.c	/^static void draw_timesig(float x,$/;"	f	file:
+draw_tuplet	draw.c	/^static struct SYMBOL *draw_tuplet(struct SYMBOL *t,	\/* tuplet in extra *\/$/;"	f	file:
+draw_vname	draw.c	/^static void draw_vname(float indent)$/;"	f	file:
+dst	front.c	/^static unsigned char *dst;$/;"	v	file:
+dum	abc2ps.h	/^		char dum;$/;"	m	struct:SYSTEM::__anon8
+dum	abc2ps.h	/^		char dum;$/;"	m	struct:SYSTEM::__anon9
+dum	deco.c	/^	unsigned char dum;$/;"	m	struct:deco_def_s	file:
+dur	abc2ps.h	/^	int dur;		\/* main note duration *\/$/;"	m	struct:SYMBOL
+dyn	abc2ps.h	/^	unsigned short dyn:2;	\/* %%dynamic *\/$/;"	m	struct:posit_s
+dyn	abcparse.h	/^			signed char dyn;	\/* have dynamic marks above or below the staff *\/$/;"	m	struct:abcsym::__anon10::__anon14
+dynalign	abc2ps.h	/^	int dblrepbar, dynalign, flatbeams;$/;"	m	struct:FORMAT
+e	svg.c	/^		struct elt_s *e;$/;"	m	union:elt_s::__anon5	typeref:struct:elt_s::__anon5::elt_s	file:
+e	svg.c	/^	struct elt_s *e;	\/* value *\/$/;"	m	struct:ps_sym_s	typeref:struct:ps_sym_s::elt_s	file:
+elt_dump	svg.c	/^static void elt_dump(struct elt_s *e)$/;"	f	file:
+elt_dup	svg.c	/^static struct elt_s *elt_dup(struct elt_s *e)$/;"	f	file:
+elt_free	svg.c	/^static void elt_free(struct elt_s *e)$/;"	f	file:
+elt_lst_dump	svg.c	/^static void elt_lst_dump(struct elt_s *e)$/;"	f	file:
+elt_new	svg.c	/^static struct elt_s *elt_new(void)$/;"	f	file:
+elt_s	svg.c	/^struct elt_s {$/;"	s	file:
+elt_t	svg.c	/^enum elt_t {			\/* element types *\/$/;"	g	file:
+elts	svg.c	/^static struct elt_s *elts;$/;"	v	typeref:struct:elt_s	file:
+emit	slre.c	/^emit(struct slre *r, int code)$/;"	f	file:
+empty	abc2ps.h	/^		char empty;$/;"	m	struct:SYSTEM::__anon8
+empty	abc2ps.h	/^	char empty;		\/* no symbol on this staff *\/$/;"	m	struct:STAFF_S
+empty	abcparse.h	/^			char empty;		\/* clef alone if 1, 'none' if 2 *\/$/;"	m	struct:abcsym::__anon10::key_s
+eol0	front.c	/^static void eol0(void)$/;"	f	file:
+eol1	front.c	/^static void eol1(void)$/;"	f	file:
+eol2	front.c	/^static void eol2(void)$/;"	f	file:
+eol_chars	front.c	/^static const unsigned char eol_chars[2] = {'\\r', '\\n'};$/;"	v	file:
+eol_tb	front.c	/^static void (*eol_tb[3])(void) = {eol0, eol1, eol2};$/;"	v	file:
+eoln	abcparse.h	/^		} eoln;$/;"	m	union:abcsym::__anon10	typeref:struct:abcsym::__anon10::__anon17
+epsf	abc2ps.c	/^int epsf;			\/* for EPSF (1) or SVG (2) output *\/$/;"	v
+epsf_fn_adj	buffer.c	/^static void epsf_fn_adj(char *p)$/;"	f	file:
+epsf_title	buffer.c	/^static void epsf_title(char *p, int sz)$/;"	f	file:
+err_str	slre.h	/^	const char	*err_str;	\/* Error string			*\/$/;"	m	struct:slre
+error	subs.c	/^void error(int sev,	\/* 0: warning, 1: error *\/$/;"	f
+error_show	music.c	/^static void error_show(void)$/;"	f	file:
+exact	slre.c	/^exact(struct slre *r, const char *re)$/;"	f	file:
+exact_one_char	slre.c	/^exact_one_char(struct slre *r, int ch)$/;"	f	file:
+exec	svg.c	/^	int exec;		\/* current number of execution *\/$/;"	m	struct:ps_sym_s	file:
+exp	abcparse.h	/^			char exp;		\/* exp (1) or mod (0) *\/$/;"	m	struct:abcsym::__anon10::key_s
+expdur	abcparse.h	/^			char expdur;		\/* explicit measure duration *\/$/;"	m	struct:abcsym::__anon10::meter_s
+extra	abc2ps.h	/^	struct SYMBOL *extra;	\/* extra symbols (grace notes, tempo... *\/$/;"	m	struct:SYMBOL	typeref:struct:SYMBOL::SYMBOL
+f	abc2ps.h	/^	struct FONTSPEC *f;	\/* font *\/$/;"	m	struct:lyl	typeref:struct:lyl::FONTSPEC
+fields	abc2ps.h	/^	unsigned int fields[2];	\/* info fields to print$/;"	m	struct:FORMAT
+file	abcparse.c	/^static char *file;		\/* remaining abc file *\/$/;"	v	file:
+file_initialized	abc2ps.c	/^int file_initialized;		\/* for output file *\/$/;"	v
+first_note	deco.c	/^static struct SYMBOL *first_note;	\/* first note\/rest of the line *\/$/;"	v	typeref:struct:SYMBOL	file:
+first_sym	abcparse.h	/^	struct abcsym *first_sym; \/* first symbol *\/$/;"	m	struct:abctune	typeref:struct:abctune::abcsym
+first_voice	parse.c	/^struct VOICE_S *first_voice;		\/* first voice *\/$/;"	v	typeref:struct:VOICE_S
+fixup_branch	slre.c	/^fixup_branch(struct slre *r, int fixup)$/;"	f	file:
+flags	abc2ps.h	/^		short flags;$/;"	m	struct:SYSTEM::__anon8
+flags	abcparse.h	/^	unsigned short flags;$/;"	m	struct:abcsym
+flags	deco.c	/^	unsigned char flags;$/;"	m	struct:deco_elt	file:
+flags	parse.c	/^	short flags;$/;"	m	struct:staff_s	file:
+flags	slre.c	/^	const char	*flags;	$/;"	m	struct:__anon4	file:
+flatbeams	abc2ps.h	/^	int dblrepbar, dynalign, flatbeams;$/;"	m	struct:FORMAT
+floating	abc2ps.h	/^	unsigned floating:1;	\/* floating voice in a brace system *\/$/;"	m	struct:VOICE_S
+fmtime	abc2ps.c	/^static time_t fmtime;		\/*	"	"	of all files *\/$/;"	v	file:
+fname	abcparse.h	/^			char *fname;		\/* full name *\/$/;"	m	struct:abcsym::__anon10::__anon14
+fnnp	abc2ps.h	66;"	d
+fnum	abc2ps.h	/^	int fnum;		\/* index to font tables in format.c *\/$/;"	m	struct:FONTSPEC
+font	abc2ps.h	/^	unsigned char font;	\/* font *\/$/;"	m	struct:gch
+font_enc	format.c	/^static char font_enc[MAXFONTS];		\/* font encoding *\/$/;"	v	file:
+font_n	svg.c	/^	char font_n[64];$/;"	m	struct:gc	file:
+font_s	svg.c	/^	float font_s;$/;"	m	struct:gc	file:
+font_tb	abc2ps.h	/^	struct FONTSPEC font_tb[FONT_MAX];$/;"	m	struct:FORMAT	typeref:struct:FORMAT::FONTSPEC
+fontnames	format.c	/^char *fontnames[MAXFONTS];		\/* list of font names *\/$/;"	v
+fontspec	format.c	/^static void fontspec(struct FONTSPEC *f,$/;"	f	file:
+footer	abc2ps.h	/^	char *bgcolor, *dateformat, *header, *footer, *titleformat;$/;"	m	struct:FORMAT
+forced_clef	abc2ps.h	/^	char forced_clef;	\/* explicit clef *\/$/;"	m	struct:STAFF_S
+forced_clef	abc2ps.h	/^	unsigned forced_clef:1;	\/* explicit clef *\/$/;"	m	struct:VOICE_S
+format	format.c	/^static struct format {$/;"	s	file:
+format_hf	buffer.c	/^static void format_hf(char *d, char *p)$/;"	f	file:
+format_tb	format.c	/^} format_tb[] = {$/;"	v	typeref:struct:format	file:
+fout	abc2ps.c	/^FILE *fout;			\/* output file *\/$/;"	v
+free_brk	parse.c	/^static void free_brk(struct brk_s *brk)$/;"	f	file:
+free_elt	svg.c	/^static struct elt_s *stack, *free_elt;$/;"	v	typeref:struct:	file:
+free_f	abcparse.c	/^static void (*free_f)(void *);$/;"	v	file:
+free_voice_opt	parse.c	/^static void free_voice_opt(struct voice_opt_s *opt)$/;"	f	file:
+front_init	front.c	/^void front_init(int edit,	\/* for edition - keep comments *\/$/;"	f
+frontend	front.c	/^unsigned char *frontend(unsigned char *s,$/;"	f
+func	deco.c	/^	unsigned char func;	\/* function index *\/$/;"	m	struct:deco_def_s	file:
+func_tb	deco.c	/^static draw_f *func_tb[] = {$/;"	v	file:
+g	svg.c	/^static int g;			\/* current container *\/$/;"	v	file:
+g_fspc	format.c	/^static void g_fspc(char *p,$/;"	f	file:
+g_logv	format.c	/^static int g_logv(char *p)$/;"	f	file:
+gc	svg.c	/^	struct gc gc;$/;"	m	struct:__anon6	typeref:struct:__anon6::gc	file:
+gc	svg.c	/^static struct gc {$/;"	s	file:
+gcf	abc2ps.h	/^	unsigned char gcf, anf, vof;	\/* fonts for guitar chords,$/;"	m	struct:FORMAT
+gch	abc2ps.h	/^	struct gch *gch;	\/* guitar chords \/ annotations *\/$/;"	m	struct:SYMBOL	typeref:struct:SYMBOL::gch
+gch	abc2ps.h	/^	unsigned short gch:2;	\/* %%gchord *\/$/;"	m	struct:posit_s
+gch	abc2ps.h	/^struct gch {$/;"	s
+gch_build	parse.c	/^static void gch_build(struct SYMBOL *s)$/;"	f	file:
+gch_transpose	parse.c	/^static void gch_transpose(struct SYMBOL *s)$/;"	f	file:
+gchord	abcparse.c	/^static char *gchord;		\/* guitar chord *\/$/;"	v	file:
+gchord	abcparse.h	/^			signed char gchord;	\/* have gchord above or below the staff *\/$/;"	m	struct:abcsym::__anon10::__anon14
+gchord_width	music.c	/^static float gchord_width(struct SYMBOL *s,$/;"	f	file:
+gchordbox	abc2ps.h	/^	int infoline, gchordbox, graceslurs, gracespace, hyphencont;$/;"	m	struct:FORMAT
+gcur	svg.c	/^} gcur, gold;$/;"	v	typeref:struct:gc	file:
+gen_init	music.c	/^static void gen_init(void)$/;"	f	file:
+gen_ly	parse.c	/^static void gen_ly(int eob)$/;"	f	file:
+generate	parse.c	/^static void generate(void)$/;"	f	file:
+get_bar	parse.c	/^static void get_bar(struct SYMBOL *s)$/;"	f	file:
+get_beat	deco.c	/^static int get_beat(struct meter_s *m)$/;"	f	file:
+get_bposy	buffer.c	/^float get_bposy(void)$/;"	f
+get_clef	parse.c	/^static void get_clef(struct SYMBOL *s)$/;"	f	file:
+get_dblrepbar	format.c	/^static int get_dblrepbar(char *p)$/;"	f	file:
+get_deco	abcparse.c	/^static char *get_deco(char *p,$/;"	f	file:
+get_encoding	format.c	/^static int get_encoding(char *p)$/;"	f	file:
+get_escape_char	slre.c	/^get_escape_char(char c)$/;"	f	file:
+get_font	format.c	/^static int get_font(char *fname, int encoding)$/;"	f	file:
+get_global	parse.c	/^static struct abcsym *get_global(struct abcsym *as,$/;"	f	file:
+get_info	parse.c	/^static struct abcsym *get_info(struct abcsym *as,$/;"	f	file:
+get_key	parse.c	/^static void get_key(struct SYMBOL *s)$/;"	f	file:
+get_len	abcparse.c	/^static char *get_len(char *p,$/;"	f	file:
+get_line	abcparse.c	/^static char *get_line(void)$/;"	f	file:
+get_lyric	parse.c	/^static struct abcsym *get_lyric(struct abcsym *as)$/;"	f	file:
+get_meter	parse.c	/^static void get_meter(struct SYMBOL *s)$/;"	f	file:
+get_note	parse.c	/^static void get_note(struct SYMBOL *s)$/;"	f	file:
+get_over	parse.c	/^static void get_over(struct SYMBOL *s)$/;"	f	file:
+get_posit	format.c	/^static int get_posit(char *p)$/;"	f	file:
+get_staves	parse.c	/^static void get_staves(struct SYMBOL *s)$/;"	f	file:
+get_str	abcparse.c	/^char *get_str(char *d,		\/* destination *\/$/;"	f
+get_str_font	subs.c	/^void get_str_font(int *cft, int *dft)$/;"	f
+get_symsel	parse.c	/^static char *get_symsel(struct symsel_s *symsel, char *p)$/;"	f	file:
+get_textopt	format.c	/^int get_textopt(char *p)$/;"	f
+get_user	abcparse.c	/^static char *get_user(char *p,$/;"	f	file:
+get_vers	abcparse.c	/^static void get_vers(char *p)$/;"	f	file:
+get_voice	parse.c	/^static void get_voice(struct SYMBOL *s)$/;"	f	file:
+getarena	abc2ps.c	/^void *getarena(int len)$/;"	f
+go_global_time	parse.c	/^static struct SYMBOL *go_global_time(struct SYMBOL *s,$/;"	f	file:
+gold	svg.c	/^} gcur, gold;$/;"	v	typeref:struct:gc	file:
+graceslurs	abc2ps.h	/^	int infoline, gchordbox, graceslurs, gracespace, hyphencont;$/;"	m	struct:FORMAT
+gracespace	abc2ps.h	/^	int infoline, gchordbox, graceslurs, gracespace, hyphencont;$/;"	m	struct:FORMAT
+grave	front.c	/^static unsigned char grave[] = "AÀEÈIÌOÒUÙaàeèiìoòuù";$/;"	v	file:
+gsave	svg.c	/^} gsave[8];$/;"	v	typeref:struct:__anon6	file:
+gsd	abc2ps.h	/^	unsigned short gsd:2;	\/* %%gstemdir *\/$/;"	m	struct:posit_s
+gstem	abcparse.h	/^			signed char gstem;	\/* have grace stems up or down (2 = auto) *\/$/;"	m	struct:abcsym::__anon10::__anon14
+h	abcparse.h	/^	char h;			\/* start of head decorations *\/$/;"	m	struct:deco
+h	deco.c	/^	unsigned char h;	\/* height *\/$/;"	m	struct:deco_def_s	file:
+ha	abc2ps.h	/^	float ha;		\/* height above the staff *\/$/;"	m	struct:tblt_s
+have_ly	abc2ps.h	/^	unsigned have_ly:1;	\/* some lyrics in this voice *\/$/;"	m	struct:VOICE_S
+head	abc2ps.h	/^	char *head;		\/* PS head function *\/$/;"	m	struct:tblt_s
+head	abc2ps.h	/^	unsigned char head;	\/* head type *\/$/;"	m	struct:SYMBOL
+header	abc2ps.h	/^	char *bgcolor, *dateformat, *header, *footer, *titleformat;$/;"	m	struct:FORMAT
+headfooter	buffer.c	/^static float headfooter(int header,$/;"	f	file:
+hu	abc2ps.h	/^	float hu;		\/* height under the staff *\/$/;"	m	struct:tblt_s
+hungumlaut	front.c	/^static unsigned char hungumlaut[] = "OŐUŰoőuű";$/;"	v	file:
+hy_st	abc2ps.h	/^	unsigned hy_st;		\/* lyrics hyphens at start of line (bit array) *\/$/;"	m	struct:VOICE_S
+hyphencont	abc2ps.h	/^	int infoline, gchordbox, graceslurs, gracespace, hyphencont;$/;"	m	struct:FORMAT
+id	abc2ps.h	/^	char id[VOICE_ID_SZ];	\/* voice id *\/$/;"	m	struct:VOICE_S
+id	abcparse.c	/^	char id[VOICE_ID_SZ];		\/* voice ID *\/$/;"	m	struct:__anon1	file:
+id	abcparse.h	/^			char id[VOICE_ID_SZ];	\/* voice ID *\/$/;"	m	struct:abcsym::__anon10::__anon14
+identify_note	parse.c	/^void identify_note(struct SYMBOL *s,$/;"	f
+idx	abc2ps.h	/^	unsigned char idx;	\/* index in as.text *\/$/;"	m	struct:gch
+ignore	abc2ps.h	/^	unsigned ignore:1;	\/* ignore this voice (%%staves) *\/$/;"	m	struct:VOICE_S
+in_cnt	svg.c	/^static int in_cnt;			\/* in [..] or {..} *\/$/;"	v	file:
+in_fname	abc2ps.c	/^char *in_fname;			\/* current input file name *\/$/;"	v
+in_page	buffer.c	/^int in_page;			\/* filling a PostScript page *\/$/;"	v
+in_path	svg.c	/^static int in_path;$/;"	v	file:
+include_cb	abc2ps.c	/^static void include_cb(unsigned char *fn)$/;"	f	file:
+include_f	front.c	/^static void (*include_f)(unsigned char *fn);$/;"	v	file:
+indent	abc2ps.h	/^	float indent, infospace, slurheight, notespacingfactor, scale;$/;"	m	struct:FORMAT
+index	abc2ps.h	/^	short index;		\/* tablature number *\/$/;"	m	struct:cmdtblt_s
+info	abc2ps.c	/^INFO info;$/;"	v
+info_glob	parse.c	/^static INFO info_glob;			\/* global info definitions *\/$/;"	v	file:
+infoline	abc2ps.h	/^	int infoline, gchordbox, graceslurs, gracespace, hyphencont;$/;"	m	struct:FORMAT
+infospace	abc2ps.h	/^	float indent, infospace, slurheight, notespacingfactor, scale;$/;"	m	struct:FORMAT
+init_music_line	music.c	/^static void init_music_line(void)$/;"	f	file:
+init_page	buffer.c	/^static void init_page(void)$/;"	f	file:
+init_ps	buffer.c	/^static void init_ps(char *str)$/;"	f	file:
+init_svg	buffer.c	/^static void init_svg(char *str)$/;"	f	file:
+insert_clef	music.c	/^static void insert_clef(struct SYMBOL *s,$/;"	f	file:
+insert_meter	music.c	/^static int insert_meter;	\/* insert time signature (1) and indent 1st line (2) *\/$/;"	v	file:
+instr	abc2ps.h	/^	char instr[2];		\/* instrument pitch *\/$/;"	m	struct:tblt_s
+interpret_fmt_line	format.c	/^void interpret_fmt_line(char *w,		\/* keyword *\/$/;"	f
+invis	abcparse.h	/^			char invis;$/;"	m	struct:abcsym::__anon10::clef_s
+is_any_but	slre.c	/^is_any_but(const unsigned char *p, int len, const char *s, int *ofs)$/;"	f	file:
+is_any_of	slre.c	/^is_any_of(const unsigned char *p, int len, const char *s, int *ofs)$/;"	f	file:
+is_latin	subs.c	/^static int is_latin(unsigned char *p)$/;"	f	file:
+is_tune_sig	parse.c	/^static int is_tune_sig(void)$/;"	f	file:
+keep_comment	abcparse.c	/^static int keep_comment;$/;"	v	file:
+keep_comments	front.c	/^static int offset, size, keep_comments;$/;"	v	file:
+key	abc2ps.h	/^	struct key_s key;	\/* current key signature *\/$/;"	m	struct:VOICE_S	typeref:struct:VOICE_S::key_s
+key	abcparse.h	/^		} key;$/;"	m	union:abcsym::__anon10	typeref:struct:abcsym::__anon10::key_s
+key_s	abcparse.h	/^		struct key_s {		\/* K: info *\/$/;"	s	union:abcsym::__anon10
+key_transpose	parse.c	/^static void key_transpose(struct key_s *key)$/;"	f	file:
+keywarn	abc2ps.h	/^	int keywarn, landscape, linewarn;$/;"	m	struct:FORMAT
+l	music.c	/^	char u, l;$/;"	m	struct:__anon2	file:
+landscape	abc2ps.h	/^	int keywarn, landscape, linewarn;$/;"	m	struct:FORMAT
+last_note	abcparse.c	/^	struct abcsym *last_note;	\/* last note or rest *\/$/;"	m	struct:__anon1	typeref:struct:__anon1::abcsym	file:
+last_sym	abc2ps.h	/^	struct SYMBOL *last_sym; \/* last symbol while scanning *\/$/;"	m	struct:VOICE_S	typeref:struct:VOICE_S::SYMBOL
+last_sym	abcparse.c	/^static struct abcsym *last_sym;	\/* last symbol for errors *\/$/;"	v	typeref:struct:abcsym	file:
+last_sym	abcparse.h	/^	struct abcsym *last_sym; \/* last symbol *\/$/;"	m	struct:abctune	typeref:struct:abctune::abcsym
+latin	front.c	/^static int latin, skip;$/;"	v	file:
+latin2	front.c	/^static unsigned char latin2[] = {$/;"	v	file:
+latin3	front.c	/^static unsigned char latin3[] = {$/;"	v	file:
+latin4	front.c	/^static unsigned char latin4[] = {$/;"	v	file:
+latin5	front.c	/^static unsigned char latin5[] = {$/;"	v	file:
+latin6	front.c	/^static unsigned char latin6[] = {$/;"	v	file:
+latin_tb	front.c	/^static unsigned char *latin_tb[5] = {$/;"	v	file:
+layout	subs.c	/^static PangoLayout *layout = (PangoLayout *) -1;$/;"	v	file:
+ld_end	deco.c	/^	unsigned char ld_end;	\/* index of end of long decoration *\/$/;"	m	struct:deco_def_s	file:
+leftmargin	abc2ps.h	/^	float topmargin, botmargin, leftmargin, rightmargin;$/;"	m	struct:FORMAT
+len	abcparse.h	/^			char len;		\/* len if mrest or mrep *\/$/;"	m	struct:abcsym::__anon10::__anon15
+len	slre.h	/^	int		len;		\/* Substring length		*\/$/;"	m	struct:cap
+length	abcparse.h	/^			short length[4];	\/* up to 4 note lengths *\/$/;"	m	struct:abcsym::__anon10::__anon13
+length	abcparse.h	/^		} length;$/;"	m	union:abcsym::__anon10	typeref:struct:abcsym::__anon10::__anon11
+lens	abcparse.h	/^	short lens[MAXHD];	\/* note lengths (# pts in [1] if space) *\/$/;"	m	struct:note
+level_f	abcparse.c	/^static void (*level_f)(int level);$/;"	v	file:
+ligature	front.c	/^static unsigned char ligature[] = "AAÅaaåAEÆaeæccçcCÇDHÐdhðngŋOEŒoeœssßTHÞthþ";$/;"	v	file:
+line	abcparse.h	/^			char line;$/;"	m	struct:abcsym::__anon10::clef_s
+linenum	abcparse.c	/^static int linenum;		\/* current source line number *\/$/;"	v	file:
+linenum	abcparse.h	/^	int linenum;		\/* ABC source line number *\/$/;"	m	struct:abcsym
+lineskipfac	abc2ps.h	/^	float breaklimit, maxshrink, lineskipfac, parskipfac, stemheight;$/;"	m	struct:FORMAT
+linewarn	abc2ps.h	/^	int keywarn, landscape, linewarn;$/;"	m	struct:FORMAT
+linewidth	svg.c	/^	float linewidth, rotate;$/;"	m	struct:gc	file:
+lmarg	parse.c	/^static float lmarg, rmarg;$/;"	v	file:
+ln_buf	buffer.c	/^static char *ln_buf[BUFFLN];	\/* buffer location of buffered lines *\/$/;"	v	file:
+ln_font	buffer.c	/^static signed char ln_font[BUFFLN];	\/* font of buffered lines *\/$/;"	v	file:
+ln_lmarg	buffer.c	/^static float ln_lmarg[BUFFLN];	\/* left margin of buffered lines *\/$/;"	v	file:
+ln_num	buffer.c	/^static int ln_num;		\/* number of lines in buffer *\/$/;"	v	file:
+ln_pos	buffer.c	/^static float ln_pos[BUFFLN];	\/* vertical positions of buffered lines *\/$/;"	v	file:
+ln_scale	buffer.c	/^static float ln_scale[BUFFLN];	\/* scale of buffered lines *\/$/;"	v	file:
+lock	format.c	/^	short lock;$/;"	m	struct:format	file:
+lock_fmt	format.c	/^void lock_fmt(void *fmt)$/;"	f
+loop_greedy	slre.c	/^loop_greedy(const struct slre *r, int pc, const char *s, int len, int *ofs)$/;"	f	file:
+loop_non_greedy	slre.c	/^loop_non_greedy(const struct slre *r, int pc, const char *s,int len, int *ofs)$/;"	f	file:
+lvlarena	abc2ps.c	/^int lvlarena(int level)$/;"	f
+ly	abc2ps.h	/^	struct lyrics *ly;	\/* lyrics *\/$/;"	m	struct:SYMBOL	typeref:struct:SYMBOL::lyrics
+ly_width	music.c	/^static float ly_width(struct SYMBOL *s, float wlw)$/;"	f	file:
+lyl	abc2ps.h	/^	struct lyl *lyl[MAXLY];	\/* ptr to lyric lines *\/$/;"	m	struct:lyrics	typeref:struct:lyrics::lyl
+lyl	abc2ps.h	/^struct lyl {$/;"	s
+lyric_start	abc2ps.h	/^	struct SYMBOL *lyric_start;	\/* start of lyrics while scanning *\/$/;"	m	struct:VOICE_S	typeref:struct:VOICE_S::SYMBOL
+lyric_started	abcparse.c	/^static char lyric_started;	\/* lyric started *\/$/;"	v	file:
+lyrics	abc2ps.h	/^struct lyrics {$/;"	s
+lyrics	abcparse.h	/^			signed char lyrics;	\/* have lyrics above or below the staff *\/$/;"	m	struct:abcsym::__anon10::__anon14
+macron	front.c	/^static unsigned char macron[] = "AĀDĐEĒHĦIĪOŌTŦUŪaādđeēhħiīoōtŧuū"; \/* and stroke! *\/$/;"	v	file:
+main	abc2ps.c	/^int main(int argc, char **argv)$/;"	f
+main	front.c	/^int main(int argc, char **argv)$/;"	f
+main	slre.c	/^int main(int argc, char *argv[])$/;"	f
+make_font_list	format.c	/^void make_font_list(void)$/;"	f
+marg_init	buffer.c	/^void marg_init(void)$/;"	f
+match	slre.c	/^match(const struct slre *r, int pc, const char *s, int len,$/;"	f	file:
+max_rmarg	buffer.c	/^static float min_lmarg, max_rmarg;	\/* for eps (-E) and svg (-g) *\/$/;"	v	file:
+maxsep	abc2ps.h	/^		float sep, maxsep;$/;"	m	struct:SYSTEM::__anon8
+maxsep	abc2ps.h	/^		float sep, maxsep;$/;"	m	struct:SYSTEM::__anon9
+maxshrink	abc2ps.h	/^	float breaklimit, maxshrink, lineskipfac, parskipfac, stemheight;$/;"	m	struct:FORMAT
+maxstaffsep	abc2ps.h	/^	float staffsep, sysstaffsep, maxstaffsep, maxsysstaffsep, stretchlast;$/;"	m	struct:FORMAT
+maxsysstaffsep	abc2ps.h	/^	float staffsep, sysstaffsep, maxstaffsep, maxsysstaffsep, stretchlast;$/;"	m	struct:FORMAT
+maxy	buffer.c	/^static float maxy;		\/* remaining vertical space in page *\/$/;"	v	file:
+may_combine	music.c	/^static int may_combine(struct SYMBOL *s)$/;"	f	file:
+mbf	buffer.c	/^char *mbf;			\/* where to a2b() *\/$/;"	v
+mc_in_tune	parse.c	/^static int mc_in_tune;			\/* multicol started in tune *\/$/;"	v	file:
+measurebox	abc2ps.h	/^	int measurebox, measurefirst, measurenb, micronewps, microscale;$/;"	m	struct:FORMAT
+measurefirst	abc2ps.h	/^	int measurebox, measurefirst, measurenb, micronewps, microscale;$/;"	m	struct:FORMAT
+measurenb	abc2ps.h	/^	int measurebox, measurefirst, measurenb, micronewps, microscale;$/;"	m	struct:FORMAT
+merge	abcparse.h	/^			char merge;		\/* merge with previous voice *\/$/;"	m	struct:abcsym::__anon10::__anon14
+meta_chars	slre.c	/^static const char *meta_chars = "|.^$*+?()[\\\\";$/;"	v	file:
+meter	abc2ps.h	/^	struct meter_s meter;	\/* current time signature *\/$/;"	m	struct:VOICE_S	typeref:struct:VOICE_S::meter_s
+meter	abcparse.c	/^static short meter;		\/* upper value of time sig for n-plets *\/$/;"	v	file:
+meter	abcparse.h	/^			} meter[MAX_MEASURE];$/;"	m	struct:abcsym::__anon10::meter_s	typeref:struct:abcsym::__anon10::meter_s::__anon12
+meter	abcparse.h	/^		} meter;$/;"	m	union:abcsym::__anon10	typeref:struct:abcsym::__anon10::meter_s
+meter_s	abcparse.h	/^		struct meter_s {	\/* M: info *\/$/;"	s	union:abcsym::__anon10
+micro_tb	abcparse.h	/^	unsigned short micro_tb[MAXMICRO]; \/* microtone values [ (n-1) | (d-1) ] *\/$/;"	m	struct:abctune
+micro_tb	parse.c	/^unsigned short *micro_tb;		\/* ptr to the microtone table of the tune *\/$/;"	v
+micronewps	abc2ps.h	/^	int measurebox, measurefirst, measurenb, micronewps, microscale;$/;"	m	struct:FORMAT
+microscale	abc2ps.h	/^	int measurebox, measurefirst, measurenb, micronewps, microscale;$/;"	m	struct:FORMAT
+microscale	abcparse.c	/^	short microscale;		\/* microtone scale *\/$/;"	m	struct:__anon1	file:
+microscale	abcparse.c	/^static short microscale;	\/* current microtone scale *\/$/;"	v	file:
+min_lmarg	buffer.c	/^static float min_lmarg, max_rmarg;	\/* for eps (-E) and svg (-g) *\/$/;"	v	file:
+mode	abcparse.h	/^			char mode;		\/* mode *\/$/;"	m	struct:abcsym::__anon10::key_s
+mrest_expand	parse.c	/^static void mrest_expand(struct SYMBOL *s)$/;"	f	file:
+mtime	abc2ps.c	/^time_t mtime;			\/* last modification time of the input file *\/$/;"	v
+multi	abc2ps.h	/^	signed char multi;	\/* multi voice in the staff (+1, 0, -1) *\/$/;"	m	struct:SYMBOL
+multicol_max	parse.c	/^static float multicol_max;$/;"	v	file:
+multicol_start	parse.c	/^float multicol_start;			\/* (for multicol) *\/$/;"	v
+musicspace	abc2ps.h	/^	float composerspace, musicspace, vocalspace, textspace;$/;"	m	struct:FORMAT
+mvoice	abcparse.c	/^	unsigned char mvoice;		\/* main voice when voice overlay *\/$/;"	m	struct:__anon1	file:
+n	abc2ps.c	/^	struct str_a *n;	\/* next area *\/$/;"	m	struct:str_a	typeref:struct:str_a::str_a	file:
+n	abcparse.h	/^	char n;			\/* whole number of decorations *\/$/;"	m	struct:deco
+n	svg.c	/^	char *n;		\/* name *\/$/;"	m	struct:ps_sym_s	file:
+n_sym	svg.c	/^static int n_sym;$/;"	v	file:
+nacc	abcparse.h	/^			signed char nacc;	\/* number  of explicit accidentals *\/$/;"	m	struct:abcsym::__anon10::key_s
+name	abcparse.h	/^			char *name;		\/* PS drawing function *\/$/;"	m	struct:abcsym::__anon10::clef_s
+name	deco.c	/^	char *name;$/;"	m	struct:deco_def_s	file:
+name	format.c	/^	char *name;$/;"	m	struct:format	file:
+name	slre.c	/^	const char	*name;$/;"	m	struct:__anon4	file:
+narg	slre.c	/^	int		narg;$/;"	m	struct:__anon4	file:
+nbar	parse.c	/^int nbar;				\/* current measure number *\/$/;"	v
+nbpages	buffer.c	/^static int nbpages;		\/* number of pages in the output file *\/$/;"	v	file:
+ncmdtblt	abc2ps.c	/^int ncmdtblt;$/;"	v
+ndfont	abc2ps.h	/^	char ndfont;		\/* current index of dynamic fonts *\/$/;"	m	struct:FORMAT
+nepsf	buffer.c	/^static int nepsf;		\/* counter for epsf\/svg output files *\/$/;"	v	file:
+new_name	abc2ps.h	/^	unsigned new_name:1;	\/* redisplay the voice name *\/$/;"	m	struct:VOICE_S
+newpage	buffer.c	/^static void newpage(void)$/;"	f	file:
+next	abc2ps.h	/^	struct SYMBOL *next, *prev;	\/* voice linkage *\/$/;"	m	struct:SYMBOL	typeref:struct:SYMBOL::SYMBOL
+next	abc2ps.h	/^	struct SYSTEM *next;$/;"	m	struct:SYSTEM	typeref:struct:SYSTEM::SYSTEM
+next	abc2ps.h	/^	struct VOICE_S *next;	\/* link *\/$/;"	m	struct:VOICE_S	typeref:struct:VOICE_S::VOICE_S
+next	abcparse.h	/^	struct abcsym *next, *prev; \/* next \/ previous symbol *\/$/;"	m	struct:abcsym	typeref:struct:abcsym::abcsym
+next	abcparse.h	/^	struct abctune *next;	\/* next tune *\/$/;"	m	struct:abctune	typeref:struct:abctune::abctune
+next	deco.c	/^	struct deco_elt *next, *prev;	\/* next\/previous decoration *\/$/;"	m	struct:deco_elt	typeref:struct:deco_elt::deco_elt	file:
+next	deco.c	/^	struct u_deco *next;$/;"	m	struct:u_deco	typeref:struct:u_deco::u_deco	file:
+next	parse.c	/^	struct brk_s *next;$/;"	m	struct:brk_s	typeref:struct:brk_s::brk_s	file:
+next	parse.c	/^	struct tune_opt_s *next;$/;"	m	struct:tune_opt_s	typeref:struct:tune_opt_s::tune_opt_s	file:
+next	parse.c	/^	struct voice_opt_s *next;$/;"	m	struct:voice_opt_s	typeref:struct:voice_opt_s::voice_opt_s	file:
+next	subs.c	/^	struct u_ps *next;$/;"	m	struct:u_ps	typeref:struct:u_ps::u_ps	file:
+next	svg.c	/^	struct elt_s *next;$/;"	m	struct:elt_s	typeref:struct:elt_s::elt_s	file:
+next_lyric_note	parse.c	/^static struct SYMBOL *next_lyric_note(struct SYMBOL *s)$/;"	f	file:
+next_scut	draw.c	/^static struct SYMBOL *next_scut(struct SYMBOL *s)$/;"	f	file:
+nflags	abc2ps.h	/^	signed char nflags;	\/* number of note flags when > 0 *\/$/;"	m	struct:SYMBOL
+nflags	draw.c	/^	short nflags;$/;"	m	struct:BEAM	file:
+nfontnames	format.c	/^static int nfontnames;$/;"	v	file:
+nhd	abc2ps.h	/^	unsigned char nhd;	\/* number of notes in chord - 1 *\/$/;"	m	struct:SYMBOL
+nhd	abcparse.h	/^	char nhd;		\/* number of notes in chord - 1 *\/$/;"	m	struct:note
+nm	abc2ps.h	/^	char *nm;		\/* voice name *\/$/;"	m	struct:VOICE_S
+nmeter	abcparse.h	/^			unsigned char nmeter;	\/* number of meter elements *\/$/;"	m	struct:abcsym::__anon10::meter_s
+nname	abcparse.h	/^			char *nname;		\/* nick name *\/$/;"	m	struct:abcsym::__anon10::__anon14
+nohdix	abc2ps.h	/^	signed char nohdix;	\/* no head index (for unison) *\/$/;"	m	struct:SYMBOL
+norepbra	abc2ps.h	/^	unsigned norepbra:1;	\/* don't display the repeat brackets *\/$/;"	m	struct:VOICE_S
+note	abc2ps.h	/^	char *note;		\/* PS note function *\/$/;"	m	struct:tblt_s
+note	abcparse.h	/^		struct note note;	\/* note, rest *\/$/;"	m	union:abcsym::__anon10	typeref:struct:abcsym::__anon10::note
+note	abcparse.h	/^struct note {		\/* note or rest *\/$/;"	s
+note_transpose	parse.c	/^static void note_transpose(struct SYMBOL *s)$/;"	f	file:
+notespacingfactor	abc2ps.h	/^	float indent, infospace, slurheight, notespacingfactor, scale;$/;"	m	struct:FORMAT
+notitle	abc2ps.c	/^static struct SYMBOL notitle;$/;"	v	typeref:struct:SYMBOL	file:
+nsave	svg.c	/^static int nsave;$/;"	v	file:
+nstaff	abc2ps.h	/^	short nstaff;$/;"	m	struct:SYSTEM
+nstaff	parse.c	/^int nstaff;				\/* (0..MAXSTAFF-1) *\/$/;"	v
+num_caps	slre.h	/^	unsigned char	num_caps;	\/* Number of bracket pairs	*\/$/;"	m	struct:slre
+nvoice	abcparse.c	/^static short nvoice;		\/* number of voices (0..n-1) *\/$/;"	v	file:
+octave	abc2ps.h	/^	signed char octave;	\/* octave while parsing *\/$/;"	m	struct:VOICE_S
+octave	abcparse.h	/^			signed char octave;	\/* 'octave=' *\/$/;"	m	struct:abcsym::__anon10::key_s
+octave	abcparse.h	/^			signed char octave;	\/* 'octave=' - same as in K: *\/$/;"	m	struct:abcsym::__anon10::__anon14
+octave	abcparse.h	/^			signed char octave;$/;"	m	struct:abcsym::__anon10::clef_s
+offset	front.c	/^static int offset, size, keep_comments;$/;"	v	file:
+ogonek	front.c	/^static unsigned char ogonek[] = "AĄEĘIĮUŲaąeęiįuų";$/;"	v	file:
+okey	abc2ps.h	/^	struct key_s okey;	\/* original key signature while parsing *\/$/;"	m	struct:VOICE_S	typeref:struct:VOICE_S::key_s
+oneperpage	abc2ps.h	/^	int oneperpage;$/;"	m	struct:FORMAT
+opcodes	slre.c	/^} opcodes[] = {$/;"	v	typeref:struct:__anon4	file:
+open_ext	abc2ps.c	/^static FILE *open_ext(char *fn, char *ext)$/;"	f	file:
+open_file	abc2ps.c	/^FILE *open_file(char *fn,	\/* file name *\/$/;"	f
+open_fout	buffer.c	/^static void open_fout(void)$/;"	f	file:
+option_state	parse.c	/^static int option_state;$/;"	v	file:
+orn	abc2ps.h	/^	unsigned short orn:2;	\/* %%ornament *\/$/;"	m	struct:posit_s
+out_pg_ft	subs.c	/^static int out_pg_ft = -1;		\/* current pango font *\/$/;"	v	file:
+outbuf	buffer.c	/^char *outbuf;			\/* output buffer.. should hold one tune *\/$/;"	v
+outfn	abc2ps.c	/^char outfn[FILENAME_MAX];	\/* output file name *\/$/;"	v
+outfnam	buffer.c	/^static char outfnam[FILENAME_MAX]; \/* internal file name for open\/close *\/$/;"	v	file:
+outft	subs.c	/^int outft = -1;			\/* last font in the output file *\/$/;"	v
+output	abc2ps.h	/^int (*output)(FILE *out, const char *fmt, ...)$/;"	v
+output	buffer.c	/^int (*output)(FILE *out, const char *fmt, ...);$/;"	v
+output_music	music.c	/^void output_music(void)$/;"	f
+output_ps	draw.c	/^void output_ps(struct SYMBOL *s, int state)$/;"	f
+over_bar	parse.c	/^static short over_bar;			\/* voice overlay in a measure *\/$/;"	v	file:
+over_mxtime	parse.c	/^static int over_mxtime;			\/* voice overlay max time *\/$/;"	v	file:
+over_time	parse.c	/^static int over_time;			\/* voice overlay start time *\/$/;"	v	file:
+over_voice	parse.c	/^static short over_voice;		\/* main voice in voice overlay *\/$/;"	v	file:
+p	abc2ps.c	/^	char	*p;		\/* pointer in area *\/$/;"	m	struct:str_a	file:
+p_fmt	buffer.c	/^static struct FORMAT *p_fmt;	\/* current format while treating a new page *\/$/;"	v	typeref:struct:FORMAT	file:
+p_micro	abcparse.c	/^static unsigned short *p_micro;	\/* ptr to the microtone table of the tune *\/$/;"	v	file:
+p_plet	abcparse.h	/^			char p_plet, q_plet, r_plet;$/;"	m	struct:abcsym::__anon10::__anon19
+pageheight	abc2ps.h	/^	float pageheight, pagewidth;$/;"	m	struct:FORMAT
+pagenum	abc2ps.c	/^int pagenum = 1;		\/* current page in output file *\/$/;"	v
+pagenumbers	abc2ps.c	/^int pagenumbers;		\/* write page numbers *\/$/;"	v
+pagewidth	abc2ps.h	/^	float pageheight, pagewidth;$/;"	m	struct:FORMAT
+pango	abc2ps.h	/^	int pango;$/;"	m	struct:FORMAT
+parse_acc	abcparse.c	/^static char *parse_acc(char *p,$/;"	f	file:
+parse_bar	abcparse.c	/^static char *parse_bar(struct abctune *t,$/;"	f	file:
+parse_basic_note	abcparse.c	/^static char *parse_basic_note(char *p,$/;"	f	file:
+parse_clef	abcparse.c	/^static void parse_clef(struct abcsym *s,$/;"	f	file:
+parse_deco	abcparse.c	/^char *parse_deco(char *p,$/;"	f
+parse_decoline	abcparse.c	/^static char *parse_decoline(char *p)$/;"	f	file:
+parse_extra	abcparse.c	/^static char *parse_extra(char *p,$/;"	f	file:
+parse_gchord	abcparse.c	/^static char *parse_gchord(char *p)$/;"	f	file:
+parse_info	abcparse.c	/^static int parse_info(struct abctune *t,$/;"	f	file:
+parse_key	abcparse.c	/^static void parse_key(char *p,$/;"	f	file:
+parse_len	abcparse.c	/^static char *parse_len(char *p,$/;"	f	file:
+parse_line	abcparse.c	/^static int parse_line(struct abctune *t,$/;"	f	file:
+parse_meter	abcparse.c	/^static char *parse_meter(char *p,$/;"	f	file:
+parse_note	abcparse.c	/^static char *parse_note(struct abctune *t,$/;"	f	file:
+parse_octave	abcparse.c	/^static int parse_octave(char *p)$/;"	f	file:
+parse_staves	parse.c	/^static void parse_staves(struct SYMBOL *s,$/;"	f	file:
+parse_tempo	abcparse.c	/^static char *parse_tempo(char *p,$/;"	f	file:
+parse_voice	abcparse.c	/^static char *parse_voice(char *p,$/;"	f	file:
+parskipfac	abc2ps.h	/^	float breaklimit, maxshrink, lineskipfac, parskipfac, stemheight;$/;"	m	struct:FORMAT
+parsys	parse.c	/^static struct SYSTEM *parsys;		\/* current system while parsing *\/$/;"	v	typeref:struct:SYSTEM	file:
+partsbox	abc2ps.h	/^	int partsbox, pdfmark;$/;"	m	struct:FORMAT
+partsspace	abc2ps.h	/^	float topspace, wordsspace, titlespace, subtitlespace, partsspace;$/;"	m	struct:FORMAT
+path_def	svg.c	/^static void path_def(void)$/;"	f	file:
+pdfmark	abc2ps.h	/^	int partsbox, pdfmark;$/;"	m	struct:FORMAT
+perc	abc2ps.h	/^	unsigned perc:1;	\/* percussion *\/$/;"	m	struct:VOICE_S
+pg_init	subs.c	/^void pg_init(void)$/;"	f
+pg_line_output	subs.c	/^static void pg_line_output(PangoLayoutLine *line)$/;"	f	file:
+pg_para_output	subs.c	/^static void pg_para_output(int job)$/;"	f	file:
+pg_reset_font	subs.c	/^void pg_reset_font(void)$/;"	f
+pg_str	subs.c	/^static GString *pg_str;$/;"	v	file:
+pg_write_text	subs.c	/^static void pg_write_text(char *s, int job, float baseskip)$/;"	f	file:
+pitch	abc2ps.h	/^	short pitch;		\/* pitch when no associated 'w:' \/ 0 *\/$/;"	m	struct:tblt_s
+pits	abc2ps.h	/^	signed char pits[MAXHD]; \/* pitches for notes *\/$/;"	m	struct:SYMBOL
+pits	abcparse.h	/^			signed char pits[8];$/;"	m	struct:abcsym::__anon10::key_s
+pits	abcparse.h	/^	signed char pits[MAXHD]; \/* pitches *\/$/;"	m	struct:note
+pop	svg.c	/^static struct elt_s *pop(int type)$/;"	f	file:
+pop_free_str	svg.c	/^static char *pop_free_str(void)$/;"	f	file:
+pop_free_val	svg.c	/^static float pop_free_val(void)$/;"	f	file:
+posit	abc2ps.h	/^	struct posit_s posit;	\/* positions \/ directions *\/$/;"	m	struct:FORMAT	typeref:struct:FORMAT::posit_s
+posit	abc2ps.h	/^	struct posit_s posit;	\/* positions \/ directions *\/$/;"	m	struct:SYMBOL	typeref:struct:SYMBOL::posit_s
+posit	abc2ps.h	/^	struct posit_s posit;	\/* positions \/ directions *\/$/;"	m	struct:VOICE_S	typeref:struct:VOICE_S::posit_s
+posit_s	abc2ps.h	/^struct posit_s {$/;"	s
+prefix	front.c	/^static char prefix = '%';$/;"	v	file:
+prev	abc2ps.h	/^	struct SYMBOL *next, *prev;	\/* voice linkage *\/$/;"	m	struct:SYMBOL	typeref:struct:SYMBOL::
+prev	abcparse.h	/^	struct abcsym *next, *prev; \/* next \/ previous symbol *\/$/;"	m	struct:abcsym	typeref:struct:abcsym::
+prev	deco.c	/^	struct deco_elt *next, *prev;	\/* next\/previous decoration *\/$/;"	m	struct:deco_elt	typeref:struct:deco_elt::	file:
+prev_scut	draw.c	/^static struct SYMBOL *prev_scut(struct SYMBOL *s)$/;"	f	file:
+print_character_set	slre.c	/^print_character_set(FILE *fp, const unsigned char *p, int len)$/;"	f	file:
+print_error	abcparse.c	/^static void print_error(char *s, int col)$/;"	f	file:
+print_format	format.c	/^void print_format(void)$/;"	f
+process_pscomment	parse.c	/^static struct abcsym *process_pscomment(struct abcsym *as)$/;"	f	file:
+ps_def	parse.c	/^static void ps_def(struct SYMBOL *s,$/;"	f	file:
+ps_error	svg.c	/^static int ps_error;$/;"	v	file:
+ps_exec	svg.c	/^static void ps_exec(char *op)$/;"	f	file:
+ps_func	deco.c	/^	signed char ps_func;	\/* postscript function index *\/$/;"	m	struct:deco_def_s	file:
+ps_func_tb	deco.c	/^static char *ps_func_tb[128];$/;"	v	file:
+ps_head	syms.c	/^static char ps_head[] =$/;"	v	file:
+ps_sym	svg.c	/^static struct ps_sym_s ps_sym[NSYMS];$/;"	v	typeref:struct:ps_sym_s	file:
+ps_sym_def	svg.c	/^static void ps_sym_def(char *name, struct elt_s *e)$/;"	f	file:
+ps_sym_lookup	svg.c	/^static struct ps_sym_s *ps_sym_lookup(char *name)$/;"	f	file:
+ps_sym_s	svg.c	/^struct ps_sym_s {$/;"	s	file:
+ptr	slre.h	/^	const char	*ptr;		\/* Pointer to the substring	*\/$/;"	m	struct:cap
+push	svg.c	/^static void push(struct elt_s *e)$/;"	f	file:
+put_history	subs.c	/^void put_history(void)$/;"	f
+put_inf	subs.c	/^static void put_inf(struct SYMBOL *s)$/;"	f	file:
+put_inf2r	subs.c	/^static void put_inf2r(struct SYMBOL *s1,$/;"	f	file:
+put_pdfmark	parse.c	/^static void put_pdfmark(char *p)$/;"	f	file:
+put_str	subs.c	/^void put_str(char *str, int action)$/;"	f
+put_wline	subs.c	/^static int put_wline(char *p,$/;"	f	file:
+put_words	subs.c	/^void put_words(struct SYMBOL *words)$/;"	f
+putf	draw.c	/^void putf(float v)$/;"	f
+putx	draw.c	/^void putx(float x)$/;"	f
+putxy	draw.c	/^void putxy(float x, float y)$/;"	f
+puty	draw.c	/^void puty(float y)$/;"	f
+q_plet	abcparse.h	/^			char p_plet, q_plet, r_plet;$/;"	m	struct:abcsym::__anon10::__anon19
+quantifier	slre.c	/^quantifier(struct slre *r, int prev, int op)$/;"	f	file:
+quiet	abc2ps.c	/^int quiet;			\/* quiet mode *\/$/;"	v
+r	abc2ps.c	/^	int	r;		\/* remaining space in area *\/$/;"	m	struct:str_a	file:
+r_plet	abcparse.h	/^			char p_plet, q_plet, r_plet;$/;"	m	struct:abcsym::__anon10::__anon19
+range	abc2ps.h	/^		signed char range;$/;"	m	struct:SYSTEM::__anon9
+read_def_format	abc2ps.c	/^static void read_def_format(void)$/;"	f	file:
+read_file	abc2ps.c	/^static char *read_file(char *fn, char *ext)$/;"	f	file:
+realwidth	music.c	/^float realwidth;		\/* real staff width while generating *\/$/;"	v
+relocate	slre.c	/^relocate(struct slre *r, int begin, int shift)$/;"	f	file:
+repeat_bar	abcparse.h	/^			char repeat_bar;$/;"	m	struct:abcsym::__anon10::__anon15
+reset_deco	deco.c	/^void reset_deco(void)$/;"	f
+reset_gen	music.c	/^void reset_gen(void)$/;"	f
+rest_sp	music.c	/^} rest_sp[NFLAGS_SZ] = {$/;"	v	typeref:struct:__anon2	file:
+rgb	svg.c	/^	int rgb;$/;"	m	struct:gc	file:
+rightmargin	abc2ps.h	/^	float topmargin, botmargin, leftmargin, rightmargin;$/;"	m	struct:FORMAT
+ring	front.c	/^static unsigned char ring[] = "AÅaåUŮuů";$/;"	v	file:
+rmarg	parse.c	/^static float lmarg, rmarg;$/;"	v	file:
+rnd6	draw.c	/^static float rnd6(float y)$/;"	f	file:
+rotate	svg.c	/^	float linewidth, rotate;$/;"	m	struct:gc	file:
+rtie	abc2ps.h	/^	struct SYMBOL *rtie;	\/* note with ties before 1st repeat bar *\/$/;"	m	struct:VOICE_S	typeref:struct:VOICE_S::SYMBOL
+s	abc2ps.h	/^	float s;		\/* shift \/ note *\/$/;"	m	struct:lyl
+s	abcparse.h	/^	char s;			\/* start of decorations from s: (d:) *\/$/;"	m	struct:deco
+s	deco.c	/^	struct SYMBOL *s;	\/* symbol *\/$/;"	m	struct:deco_elt	typeref:struct:deco_elt::SYMBOL	file:
+s	parse.c	/^	struct SYMBOL *s;		\/* list of options (%%xxx) *\/$/;"	m	struct:tune_opt_s	typeref:struct:tune_opt_s::SYMBOL	file:
+s	parse.c	/^	struct SYMBOL *s;		\/* list of options (%%xxx) *\/$/;"	m	struct:voice_opt_s	typeref:struct:voice_opt_s::SYMBOL	file:
+s	svg.c	/^		char *s;$/;"	m	union:elt_s::__anon5	file:
+s1	draw.c	/^	struct SYMBOL *s1, *s2;$/;"	m	struct:BEAM	typeref:struct:BEAM::SYMBOL	file:
+s2	draw.c	/^	struct SYMBOL *s1, *s2;$/;"	m	struct:BEAM	typeref:struct:BEAM::	file:
+s_argc	abc2ps.c	/^int s_argc;			\/* command line arguments *\/$/;"	v
+s_argv	abc2ps.c	/^char **s_argv;$/;"	v
+scale	abc2ps.h	/^	float indent, infospace, slurheight, notespacingfactor, scale;$/;"	m	struct:FORMAT
+scale	abc2ps.h	/^	float scale;		\/* scale *\/$/;"	m	struct:VOICE_S
+scale	abcparse.h	/^			float scale;		\/* != 0 when change *\/$/;"	m	struct:abcsym::__anon10::__anon14
+scale_voice	draw.c	/^static int scale_voice;		\/* staff (0) or voice(1) scaling *\/$/;"	v	file:
+scan_u	subs.c	/^float scan_u(char *str)$/;"	f
+second	abc2ps.h	/^		char second;$/;"	m	struct:SYSTEM::__anon9
+second	abc2ps.h	/^	unsigned second:1;	\/* secondary voice in a brace\/parenthesis *\/$/;"	m	struct:VOICE_S
+secure	abc2ps.c	/^int secure;			\/* secure mode *\/$/;"	v
+selection	front.c	/^static unsigned char *selection;$/;"	v	file:
+selfont	svg.c	/^static void selfont(int back)$/;"	f	file:
+sep	abc2ps.h	/^		float sep, maxsep;$/;"	m	struct:SYSTEM::__anon8
+sep	abc2ps.h	/^		float sep, maxsep;$/;"	m	struct:SYSTEM::__anon9
+seq	parse.c	/^	char seq;$/;"	m	struct:symsel_s	file:
+seq_exec	svg.c	/^static int seq_exec(struct elt_s *e)$/;"	f	file:
+set_acc	parse.c	/^static void set_acc(struct SYMBOL *s)$/;"	f	file:
+set_allsymwidth	music.c	/^static void set_allsymwidth(struct SYMBOL *last_s)$/;"	f	file:
+set_bar_num	parse.c	/^static void set_bar_num(void)$/;"	f	file:
+set_beams	music.c	/^static void set_beams(struct SYMBOL *sym)$/;"	f	file:
+set_clef	music.c	/^static void set_clef(int staff)$/;"	f	file:
+set_defl	deco.c	/^void set_defl(int new_defl)$/;"	f
+set_feathered_beam	deco.c	/^static void set_feathered_beam(struct SYMBOL *s1)$/;"	f	file:
+set_float	music.c	/^static void set_float(void)$/;"	f	file:
+set_font	format.c	/^void set_font(int ft)$/;"	f
+set_format	format.c	/^void set_format(void)$/;"	f
+set_global	music.c	/^static void set_global(void)$/;"	f	file:
+set_graceoffs	music.c	/^static float set_graceoffs(struct SYMBOL *s)$/;"	f	file:
+set_head_directions	music.c	/^static void set_head_directions(struct SYMBOL *s)$/;"	f	file:
+set_indent	music.c	/^static float set_indent(int keep)$/;"	f	file:
+set_infoname	format.c	/^static void set_infoname(char *p)$/;"	f	file:
+set_jump_offset	slre.c	/^set_jump_offset(struct slre *r, int pc, int offset)$/;"	f	file:
+set_lines	music.c	/^static struct SYMBOL *set_lines(struct SYMBOL *first,	\/* first symbol *\/$/;"	f	file:
+set_nl	music.c	/^static struct SYMBOL *set_nl(struct SYMBOL *s)$/;"	f	file:
+set_opt	abc2ps.c	/^static void set_opt(char *w, char *v)$/;"	f	file:
+set_overlap	music.c	/^static void set_overlap(void)$/;"	f	file:
+set_piece	music.c	/^static void set_piece(void)$/;"	f	file:
+set_pitch	music.c	/^static void set_pitch(struct SYMBOL *last_s)$/;"	f	file:
+set_repeat	music.c	/^static void set_repeat(struct SYMBOL *g,$/;"	f	file:
+set_rest_offset	music.c	/^static void set_rest_offset(void)$/;"	f	file:
+set_scale	draw.c	/^void set_scale(struct SYMBOL *s)$/;"	f
+set_space	music.c	/^static float set_space(struct SYMBOL *s)$/;"	f	file:
+set_sscale	draw.c	/^void set_sscale(int staff)$/;"	f
+set_staff	draw.c	/^static float set_staff(void)$/;"	f	file:
+set_stem_dir	music.c	/^static void set_stem_dir(void)$/;"	f	file:
+set_stems	music.c	/^static void set_stems(void)$/;"	f	file:
+set_str_font	subs.c	/^void set_str_font(int cft, int dft)$/;"	f
+set_sym_glue	music.c	/^static void set_sym_glue(float width)$/;"	f	file:
+set_tblt	parse.c	/^static void set_tblt(struct VOICE_S *p_voice)$/;"	f	file:
+set_tie_dir	draw.c	/^static void set_tie_dir(struct SYMBOL *sym)$/;"	f	file:
+set_tie_room	draw.c	/^static void set_tie_room(void)$/;"	f	file:
+set_tuplet	parse.c	/^static void set_tuplet(struct SYMBOL *t)$/;"	f	file:
+set_width	music.c	/^static void set_width(struct SYMBOL *s)$/;"	f	file:
+set_yval	music.c	/^static void set_yval(struct SYMBOL *s)$/;"	f	file:
+setdefl	abc2ps.h	/^	int setdefl, shiftunison, splittune, squarebreve;$/;"	m	struct:FORMAT
+setdoty	draw.c	/^static void setdoty(struct SYMBOL *s,$/;"	f	file:
+setg	svg.c	/^static void setg(int newg)$/;"	f	file:
+setmap	draw.c	/^static void setmap(int sf,	\/* number of sharps\/flats in key sig (-7 to +7) *\/$/;"	f	file:
+setxysym	svg.c	/^static void setxysym(char *op, int use)$/;"	f	file:
+severity	abcparse.c	/^int severity;			\/* error severity *\/$/;"	v
+sf	abcparse.h	/^			signed char sf;		\/* sharp (> 0) flats (< 0) *\/$/;"	m	struct:abcsym::__anon10::key_s
+sflags	abc2ps.h	/^	unsigned int sflags;	\/* symbol flags *\/$/;"	m	struct:SYMBOL
+shac	abc2ps.h	/^	float shac[MAXHD];	\/* horizontal shift for accidentals *\/$/;"	m	struct:SYMBOL
+shhd	abc2ps.h	/^	float shhd[MAXHD];	\/* horizontal shift for heads *\/$/;"	m	struct:SYMBOL
+shiftunison	abc2ps.h	/^	int setdefl, shiftunison, splittune, squarebreve;$/;"	m	struct:FORMAT
+show	svg.c	/^static void show(char type)$/;"	f	file:
+showerror	abc2ps.c	/^int showerror;			\/* show the errors *\/$/;"	v
+shrink	abc2ps.h	/^	float shrink;		\/* minimum space before symbol *\/$/;"	m	struct:SYMBOL
+size	abc2ps.h	/^	float size;$/;"	m	struct:FONTSPEC
+size	front.c	/^static int offset, size, keep_comments;$/;"	v	file:
+skip	front.c	/^static int latin, skip;$/;"	v	file:
+sl1	abcparse.h	/^	unsigned char sl1[MAXHD]; \/* slur start per head *\/$/;"	m	struct:note
+sl2	abcparse.h	/^	char sl2[MAXHD];	\/* number of slur end per head *\/$/;"	m	struct:note
+slash	front.c	/^static unsigned char slash[] = "OØoøDĐdđLŁlł";$/;"	v	file:
+slre	slre.h	/^struct slre {$/;"	s
+slre_compile	slre.c	/^slre_compile(struct slre *r, const char *re)$/;"	f
+slre_dump	slre.c	/^slre_dump(const struct slre *r, FILE *fp)$/;"	f
+slre_match	slre.c	/^slre_match(const struct slre *r, const char *buf, int len,$/;"	f
+slur_direction	draw.c	/^static int slur_direction(struct SYMBOL *k1,$/;"	f	file:
+slur_end	abcparse.h	/^	char slur_end;		\/* number of slurs ending here *\/$/;"	m	struct:note
+slur_multi	draw.c	/^static int slur_multi(struct SYMBOL *k1,$/;"	f	file:
+slur_out	draw.c	/^static void slur_out(float x1,$/;"	f	file:
+slur_st	abc2ps.h	/^	unsigned char slur_st;	\/* slurs at start of staff *\/$/;"	m	struct:VOICE_S
+slur_st	abcparse.h	/^	unsigned char slur_st;	\/* slurs starting here (2 bits array) *\/$/;"	m	struct:note
+slurheight	abc2ps.h	/^	float indent, infospace, slurheight, notespacingfactor, scale;$/;"	m	struct:FORMAT
+smallest_duration	music.c	/^static int smallest_duration;$/;"	v	file:
+snm	abc2ps.h	/^	char *snm;		\/* voice subname *\/$/;"	m	struct:VOICE_S
+sort_all	parse.c	/^static void sort_all(void)$/;"	f	file:
+space	abc2ps.h	/^	float space;		\/* natural space before symbol *\/$/;"	m	struct:SYMBOL
+space	abc2ps.h	/^	unsigned space:1;	\/* have a space before the next note (parsing) *\/$/;"	m	struct:VOICE_S
+space_tb	music.c	/^float space_tb[NFLAGS_SZ] = {$/;"	v
+splittune	abc2ps.h	/^	int setdefl, shiftunison, splittune, squarebreve;$/;"	m	struct:FORMAT
+squarebreve	abc2ps.h	/^	int setdefl, shiftunison, splittune, squarebreve;$/;"	m	struct:FORMAT
+stack	svg.c	/^static struct elt_s *stack, *free_elt;$/;"	v	typeref:struct:elt_s	file:
+stack_dump	svg.c	/^static void stack_dump(void)$/;"	f	file:
+staff	abc2ps.h	/^		unsigned char staff;$/;"	m	struct:SYSTEM::__anon9
+staff	abc2ps.h	/^	unsigned char staff;	\/* staff (0..n-1) *\/$/;"	m	struct:VOICE_S
+staff	abc2ps.h	/^	unsigned char staff;	\/* staff (0..nstaff) *\/$/;"	m	struct:SYMBOL
+staff	abc2ps.h	/^	} staff[MAXSTAFF];$/;"	m	struct:SYSTEM	typeref:struct:SYSTEM::__anon8
+staff	deco.c	/^	unsigned char staff;	\/* staff *\/$/;"	m	struct:deco_elt	file:
+staff_s	parse.c	/^struct staff_s {$/;"	s	file:
+staff_tb	parse.c	/^struct STAFF_S staff_tb[MAXSTAFF];	\/* staff table *\/$/;"	v	typeref:struct:STAFF_S
+stafflines	abcparse.h	/^			signed char stafflines;	\/* >= 0 when change *\/$/;"	m	struct:abcsym::__anon10::clef_s
+staffnonote	abc2ps.h	/^	int staffnonote, straightflags, stretchstaff;$/;"	m	struct:FORMAT
+staffscale	abcparse.h	/^			float staffscale;	\/* != 0 when change *\/$/;"	m	struct:abcsym::__anon10::clef_s
+staffsep	abc2ps.h	/^	float staffsep, sysstaffsep, maxstaffsep, maxsysstaffsep, stretchlast;$/;"	m	struct:FORMAT
+staffwidth	format.c	/^static float staffwidth;$/;"	v	file:
+start	deco.c	/^	struct deco_elt *start;	\/* start a long decoration ending here *\/$/;"	m	struct:deco_elt	typeref:struct:deco_elt::deco_elt	file:
+state	abcparse.h	/^	char state;		\/* symbol state in file\/tune *\/$/;"	m	struct:abcsym
+staves_found	parse.c	/^static int staves_found;		\/* time of the last %%staves *\/$/;"	v	file:
+staves_init	parse.c	/^static void staves_init(void)$/;"	f	file:
+std	abc2ps.h	/^	unsigned short std:2;	\/* %%stemdir *\/$/;"	m	struct:posit_s
+std_deco_tb	deco.c	/^static char *std_deco_tb[] = {$/;"	v	file:
+stem	abc2ps.h	/^	signed char stem;	\/* 1 \/ -1 for stem up \/ down *\/$/;"	m	struct:SYMBOL
+stem	abcparse.h	/^			signed char stem;	\/* have stems up or down (2 = auto) *\/$/;"	m	struct:abcsym::__anon10::__anon14
+stem	svg.c	/^static void stem(char *op)$/;"	f	file:
+stemheight	abc2ps.h	/^	float breaklimit, maxshrink, lineskipfac, parskipfac, stemheight;$/;"	m	struct:FORMAT
+store_char_in_data	slre.c	/^store_char_in_data(struct slre *r, int ch)$/;"	f	file:
+str	abc2ps.c	/^	char	str[2];		\/* start of memory area *\/$/;"	m	struct:str_a	file:
+str	deco.c	/^	char *str;		\/* string \/ 0 *\/$/;"	m	struct:deco_elt	file:
+str1	abcparse.h	/^			char *str1;		\/* string before *\/$/;"	m	struct:abcsym::__anon10::__anon13
+str2	abcparse.h	/^			char *str2;		\/* string after *\/$/;"	m	struct:abcsym::__anon10::__anon13
+str_a	abc2ps.c	/^static struct str_a {$/;"	s	file:
+str_c	abc2ps.c	/^} *str_r[MAXAREAL], *str_c[MAXAREAL];	\/* root and current area pointers *\/$/;"	v	typeref:struct:str_a	file:
+str_font	subs.c	/^void str_font(int ft)$/;"	f
+str_font_change	subs.c	/^static void str_font_change(int start,$/;"	f	file:
+str_ft_out	subs.c	/^void str_ft_out(char *p, int end)$/;"	f
+str_ft_out1	subs.c	/^static void str_ft_out1(char *p, int l)$/;"	f	file:
+str_level	abc2ps.c	/^static int str_level;		\/* current arena level *\/$/;"	v	file:
+str_out	subs.c	/^void str_out(char *p, int action)$/;"	f
+str_pg_out	subs.c	/^static void str_pg_out(char *p, int action)$/;"	f	file:
+str_r	abc2ps.c	/^} *str_r[MAXAREAL], *str_c[MAXAREAL];	\/* root and current area pointers *\/$/;"	v	typeref:struct:str_a	file:
+str_set_font	subs.c	/^static void str_set_font(char *p)$/;"	f	file:
+str_tb	deco.c	/^static char *str_tb[32];$/;"	v	file:
+straightflags	abc2ps.h	/^	int staffnonote, straightflags, stretchstaff;$/;"	m	struct:FORMAT
+strcasecmp	abcparse.h	205;"	d
+stretchlast	abc2ps.h	/^	float staffsep, sysstaffsep, maxstaffsep, maxsysstaffsep, stretchlast;$/;"	m	struct:FORMAT
+stretchstaff	abc2ps.h	/^	int staffnonote, straightflags, stretchstaff;$/;"	m	struct:FORMAT
+strext	abc2ps.c	/^void strext(char *fn, char *ext)$/;"	f
+strlw	subs.c	/^static float strlw;		\/* line width *\/$/;"	v	file:
+strncasecmp	abcparse.h	206;"	d
+strop	subs.c	/^static char *strop;		\/* current string output operation *\/$/;"	v	file:
+strtx	subs.c	/^static int strtx;		\/* PostScript text outputing *\/$/;"	v	file:
+strw	svg.c	/^static float strw(char *s)$/;"	f	file:
+strx	deco.c	/^	unsigned char strx;	\/* string index - 255=deco name *\/$/;"	m	struct:deco_def_s	file:
+styd	abc2ps.c	/^static char *styd = DEFAULT_FDIR; \/* format search directory *\/$/;"	v	file:
+subtitlespace	abc2ps.h	/^	float topspace, wordsspace, titlespace, subtitlespace, partsspace;$/;"	m	struct:FORMAT
+subtype	format.c	/^	char subtype;		\/* special cases - see code *\/$/;"	m	struct:format	file:
+svg	abc2ps.c	/^int svg;			\/* SVG (1) or XML (2 - HTML + SVG) output *\/$/;"	v
+svg_close	svg.c	/^void svg_close(void)$/;"	f
+svg_output	svg.c	/^int svg_output(FILE *out, const char *fmt, ...)$/;"	f
+svg_write	svg.c	/^void svg_write(char *buf, int len)$/;"	f
+swfac	abc2ps.h	/^	float swfac;$/;"	m	struct:FONTSPEC
+swfac_font	format.c	/^static float swfac_font[MAXFONTS];	\/* width scale *\/$/;"	v	file:
+sym	abc2ps.c	/^struct SYMBOL *sym;		\/* (points to the symbols of the current voice) *\/$/;"	v	typeref:struct:SYMBOL
+sym	abc2ps.h	/^	struct SYMBOL *sym;	\/* associated symbols *\/$/;"	m	struct:VOICE_S	typeref:struct:VOICE_S::SYMBOL
+sym_add	parse.c	/^struct SYMBOL *sym_add(struct VOICE_S *p_voice, int type)$/;"	f
+sym_dup	draw.c	/^static struct SYMBOL *sym_dup(struct SYMBOL *s_orig)$/;"	f	file:
+sym_link	parse.c	/^static void sym_link(struct SYMBOL *s, int type)$/;"	f	file:
+sym_new	music.c	/^static struct SYMBOL *sym_new(int type,$/;"	f	file:
+symbol	abcparse.h	/^			unsigned char symbol;$/;"	m	struct:abcsym::__anon10::__anon16
+symsel	parse.c	/^	struct symsel_s symsel;$/;"	m	struct:brk_s	typeref:struct:brk_s::symsel_s	file:
+symsel_s	parse.c	/^struct symsel_s {			\/* symbol selection *\/$/;"	s	file:
+syntax	abcparse.c	/^static void syntax(char *msg,$/;"	f	file:
+sysstaffsep	abc2ps.h	/^	float staffsep, sysstaffsep, maxstaffsep, maxsysstaffsep, stretchlast;$/;"	m	struct:FORMAT
+system_init	parse.c	/^static void system_init(void)$/;"	f	file:
+system_new	parse.c	/^static void system_new(void)$/;"	f	file:
+sz	abc2ps.c	/^	int	sz;		\/* size of str[] *\/$/;"	m	struct:str_a	file:
+t	abc2ps.h	/^	char t[1];		\/* word *\/$/;"	m	struct:lyl
+t	abcparse.h	/^	unsigned char t[MAXDC];	\/* decoration type *\/$/;"	m	struct:deco
+t	deco.c	/^	unsigned char t;	\/* decoration index *\/$/;"	m	struct:deco_elt	file:
+tbl_out	draw.c	/^static void tbl_out(char *s, float x, int j, char *f)$/;"	f	file:
+tblt_parse	format.c	/^struct tblt_s *tblt_parse(char *p)$/;"	f
+tblt_s	abc2ps.h	/^struct tblt_s {$/;"	s
+tblts	abc2ps.c	/^struct tblt_s *tblts[MAXTBLT];$/;"	v	typeref:struct:tblt_s
+tblts	abc2ps.h	/^	struct tblt_s *tblts[2]; \/* tablatures *\/$/;"	m	struct:VOICE_S	typeref:struct:VOICE_S::tblt_s
+tempo	abcparse.h	/^		} tempo;$/;"	m	union:abcsym::__anon10	typeref:struct:abcsym::__anon10::__anon13
+tempo_width	deco.c	/^float tempo_width(struct SYMBOL *s)$/;"	f
+tex_buf	subs.c	/^char tex_buf[TEX_BUF_SZ];	\/* result of tex_str() *\/$/;"	v
+tex_str	subs.c	/^float tex_str(char *s)$/;"	f
+text	abcparse.h	/^	char *text;		\/* main text (INFO, PSCOM),$/;"	m	struct:abcsym
+text	deco.c	/^	char text[2];$/;"	m	struct:u_deco	file:
+text	subs.c	/^	char text[2];$/;"	m	struct:u_ps	file:
+textoption	abc2ps.h	/^	int textoption, titlecaps, titleleft, titletrim;$/;"	m	struct:FORMAT
+textspace	abc2ps.h	/^	float composerspace, musicspace, vocalspace, textspace;$/;"	m	struct:FORMAT
+ti1	abcparse.h	/^	char ti1[MAXHD];	\/* flag to start tie here *\/$/;"	m	struct:note
+tie	abc2ps.h	/^	struct SYMBOL *tie;	\/* note with ties of previous line *\/$/;"	m	struct:VOICE_S	typeref:struct:VOICE_S::SYMBOL
+tilde	front.c	/^static unsigned char tilde[] = "AÃNÑOÕaãnñoõIĨiĩUŨuũ";$/;"	v	file:
+time	abc2ps.h	/^	int time;		\/* current time while parsing *\/$/;"	m	struct:VOICE_S
+time	abc2ps.h	/^	int time;		\/* starting time *\/$/;"	m	struct:SYMBOL
+time	parse.c	/^	short time;$/;"	m	struct:symsel_s	file:
+timewarn	abc2ps.h	/^	int timewarn, transpose, tuplets;$/;"	m	struct:FORMAT
+titlecaps	abc2ps.h	/^	int textoption, titlecaps, titleleft, titletrim;$/;"	m	struct:FORMAT
+titleformat	abc2ps.h	/^	char *bgcolor, *dateformat, *header, *footer, *titleformat;$/;"	m	struct:FORMAT
+titleleft	abc2ps.h	/^	int textoption, titlecaps, titleleft, titletrim;$/;"	m	struct:FORMAT
+titlespace	abc2ps.h	/^	float topspace, wordsspace, titlespace, subtitlespace, partsspace;$/;"	m	struct:FORMAT
+titletrim	abc2ps.h	/^	int textoption, titlecaps, titleleft, titletrim;$/;"	m	struct:FORMAT
+top	abc2ps.h	/^	float top[YSTEP], bot[YSTEP];	\/* top\/bottom y offsets *\/$/;"	m	struct:STAFF_S
+top	abcparse.h	/^				char top[8];	\/* top value *\/$/;"	m	struct:abcsym::__anon10::meter_s::__anon12
+top_voice	abc2ps.h	/^	short top_voice;	\/* first voice in the staff system *\/$/;"	m	struct:SYSTEM
+topbar	abc2ps.h	/^	short botbar, topbar;	\/* bottom and top of bar *\/$/;"	m	struct:STAFF_S
+topmargin	abc2ps.h	/^	float topmargin, botmargin, leftmargin, rightmargin;$/;"	m	struct:FORMAT
+topspace	abc2ps.h	/^	float topspace, wordsspace, titlespace, subtitlespace, partsspace;$/;"	m	struct:FORMAT
+transpose	abc2ps.h	/^	int timewarn, transpose, tuplets;$/;"	m	struct:FORMAT
+transpose	abc2ps.h	/^	short transpose;	\/* transposition while parsing *\/$/;"	m	struct:VOICE_S
+transpose	abcparse.h	/^			signed char transpose;$/;"	m	struct:abcsym::__anon10::clef_s
+treat_file	abc2ps.c	/^static void treat_file(char *fn, char *ext)$/;"	f	file:
+trim_title	subs.c	/^char *trim_title(char *p, struct SYMBOL *title)$/;"	f
+ts_next	abc2ps.h	/^	struct SYMBOL *ts_next, *ts_prev; \/* time linkage *\/$/;"	m	struct:SYMBOL	typeref:struct:SYMBOL::SYMBOL
+ts_prev	abc2ps.h	/^	struct SYMBOL *ts_next, *ts_prev; \/* time linkage *\/$/;"	m	struct:SYMBOL	typeref:struct:SYMBOL::
+tsfirst	parse.c	/^struct SYMBOL *tsfirst;			\/* first symbol in the time sorted list *\/$/;"	v	typeref:struct:SYMBOL
+tsnext	music.c	/^struct SYMBOL *tsnext;		\/* next line when cut *\/$/;"	v	typeref:struct:SYMBOL
+tune	abcparse.h	/^	struct abctune *tune;	\/* tune *\/$/;"	m	struct:abcsym	typeref:struct:abcsym::abctune
+tune_filter	parse.c	/^static void tune_filter(struct abcsym *as)$/;"	f	file:
+tune_header_rebuild	parse.c	/^static char *tune_header_rebuild(struct abcsym *as)$/;"	f	file:
+tune_opt_s	parse.c	/^struct tune_opt_s {			\/* tune options *\/$/;"	s	file:
+tune_opts	parse.c	/^static struct tune_opt_s *tune_opts, *cur_tune_opts;$/;"	v	typeref:struct:tune_opt_s	file:
+tune_select	front.c	/^static int tune_select(unsigned char *s)$/;"	f	file:
+tunenum	abc2ps.c	/^int tunenum;			\/* number of current tune *\/$/;"	v
+tuplet	abcparse.h	/^		} tuplet;$/;"	m	union:abcsym::__anon10	typeref:struct:abcsym::__anon10::__anon19
+tuplets	abc2ps.h	/^	int timewarn, transpose, tuplets;$/;"	m	struct:FORMAT
+txt_add	front.c	/^static void txt_add(unsigned char *s, int sz)$/;"	f	file:
+txt_add_cnv	front.c	/^static void txt_add_cnv(unsigned char *s, int sz)$/;"	f	file:
+txt_add_eol	front.c	/^static void (*txt_add_eol)(void);$/;"	v	file:
+type	abc2ps.h	/^	char type;		\/* ann. char, 'g' gchord, 'r' repeat, '\\0' end *\/$/;"	m	struct:gch
+type	abc2ps.h	/^	unsigned char type;	\/* symbol type *\/$/;"	m	struct:SYMBOL
+type	abcparse.h	/^			char type;	\/* 0: end of line$/;"	m	struct:abcsym::__anon10::__anon17
+type	abcparse.h	/^			char type;$/;"	m	struct:abcsym::__anon10::__anon18
+type	abcparse.h	/^			int type;$/;"	m	struct:abcsym::__anon10::__anon15
+type	abcparse.h	/^			signed char type;	\/* no clef if < 0 *\/$/;"	m	struct:abcsym::__anon10::clef_s
+type	abcparse.h	/^	char type;		\/* symbol type *\/$/;"	m	struct:abcsym
+type	format.c	/^	char type;$/;"	m	struct:format	file:
+type	svg.c	/^	char type;$/;"	m	struct:elt_s	file:
+u	abc2ps.h	/^	short u;		\/* auxillary information:$/;"	m	struct:SYMBOL
+u	abcparse.h	/^	} u;$/;"	m	struct:abcsym	typeref:union:abcsym::__anon10
+u	music.c	/^	char u, l;$/;"	m	struct:__anon2	file:
+u	svg.c	/^	} u;$/;"	m	struct:elt_s	typeref:union:elt_s::__anon5	file:
+u_deco	deco.c	/^static struct u_deco {$/;"	s	file:
+u_ps	subs.c	/^static struct u_ps {$/;"	s	file:
+ulen	abcparse.c	/^	short ulen;			\/* unit note length *\/$/;"	m	struct:__anon1	file:
+ulen	abcparse.c	/^static short ulen;		\/* unit note length set by M: or L: *\/$/;"	v	file:
+umlaut	front.c	/^static unsigned char umlaut[] = "AÄEËIÏOÖUÜYŸaäeëiïoöuüyÿ";$/;"	v	file:
+unlksym	music.c	/^static void unlksym(struct SYMBOL *s)$/;"	f	file:
+up_p	deco.c	/^static int up_p(struct SYMBOL *s, int pos)$/;"	f	file:
+update_clefs	music.c	/^static void update_clefs(void)$/;"	f	file:
+usage	abc2ps.c	/^static void usage(void)$/;"	f	file:
+usage	front.c	/^static void usage(void)$/;"	f	file:
+use	svg.c	/^	char use;$/;"	m	struct:__anon7	file:
+use_buffer	buffer.c	/^int use_buffer;			\/* 1 if lines are being accumulated *\/$/;"	v
+used_font	format.c	/^static char used_font[MAXFONTS];	\/* used fonts *\/$/;"	v	file:
+user	abcparse.h	/^		} user;$/;"	m	union:abcsym::__anon10	typeref:struct:abcsym::__anon10::__anon16
+user_deco	deco.c	/^} *user_deco;$/;"	v	typeref:struct:u_deco	file:
+user_deco_define	deco.c	/^static unsigned char user_deco_define(char *name)$/;"	f	file:
+user_ps	subs.c	/^} *user_ps;$/;"	v	typeref:struct:u_ps	file:
+user_ps_add	subs.c	/^void user_ps_add(char *s, char use)$/;"	f
+user_ps_write	subs.c	/^void user_ps_write(void)$/;"	f
+v	deco.c	/^	float v;		\/* extra value *\/$/;"	m	struct:deco_elt	file:
+v	format.c	/^	void *v;$/;"	m	struct:format	file:
+v	svg.c	/^		double v;$/;"	m	union:elt_s::__anon5	file:
+v_over	abcparse.h	/^		} v_over;$/;"	m	union:abcsym::__anon10	typeref:struct:abcsym::__anon10::__anon18
+value	abcparse.h	/^			char *value;		\/* tempo value *\/$/;"	m	struct:abcsym::__anon10::__anon13
+value	abcparse.h	/^			unsigned char value;$/;"	m	struct:abcsym::__anon10::__anon16
+vn	abc2ps.h	/^	char *vn;		\/* voice name *\/$/;"	m	struct:cmdtblt_s
+voc	abc2ps.h	/^	unsigned short voc:2;	\/* %%vocal *\/$/;"	m	struct:posit_s
+vocalspace	abc2ps.h	/^	float composerspace, musicspace, vocalspace, textspace;$/;"	m	struct:FORMAT
+vof	abc2ps.h	/^	unsigned char gcf, anf, vof;	\/* fonts for guitar chords,$/;"	m	struct:FORMAT
+voice	abc2ps.h	/^	unsigned char voice;	\/* voice (0..nvoice) *\/$/;"	m	struct:SYMBOL
+voice	abc2ps.h	/^	} voice[MAXVOICE];$/;"	m	struct:SYSTEM	typeref:struct:SYSTEM::__anon9
+voice	abcparse.h	/^			unsigned char voice;	\/* voice number *\/$/;"	m	struct:abcsym::__anon10::__anon14
+voice	abcparse.h	/^			unsigned char voice;$/;"	m	struct:abcsym::__anon10::__anon18
+voice	abcparse.h	/^		} voice;$/;"	m	union:abcsym::__anon10	typeref:struct:abcsym::__anon10::__anon14
+voice	parse.c	/^	short voice;$/;"	m	struct:staff_s	file:
+voice_compress	parse.c	/^static void voice_compress(void)$/;"	f	file:
+voice_dup	parse.c	/^static void voice_dup(void)$/;"	f	file:
+voice_filter	parse.c	/^static void voice_filter(void)$/;"	f	file:
+voice_init	parse.c	/^static void voice_init(void)$/;"	f	file:
+voice_link	parse.c	/^static void voice_link(struct VOICE_S *p_voice)$/;"	f	file:
+voice_opt_s	parse.c	/^struct voice_opt_s {			\/* voice options *\/$/;"	s	file:
+voice_opts	parse.c	/^	struct voice_opt_s *voice_opts;$/;"	m	struct:tune_opt_s	typeref:struct:tune_opt_s::voice_opt_s	file:
+voice_opts	parse.c	/^static struct voice_opt_s *voice_opts;$/;"	v	typeref:struct:voice_opt_s	file:
+voice_tb	abcparse.c	/^} voice_tb[MAXVOICE], *curvoice;$/;"	v	typeref:struct:__anon1	file:
+voice_tb	parse.c	/^struct VOICE_S voice_tb[MAXVOICE];	\/* voice table *\/$/;"	v	typeref:struct:VOICE_S
+vol	abc2ps.h	/^	unsigned short vol:2;	\/* %%volume *\/$/;"	m	struct:posit_s
+vover	abcparse.c	/^static signed char vover;	\/* voice overlay (1: single bar, -1: multi-bar *\/$/;"	v	file:
+vover_new	abcparse.c	/^static void vover_new(void)$/;"	f	file:
+w	abc2ps.h	/^	float w;		\/* width *\/$/;"	m	struct:gch
+w	abc2ps.h	/^	float w;		\/* width *\/$/;"	m	struct:lyl
+w_tb	parse.c	/^static signed char w_tb[NSYMTYPES] = {	\/* !! index = symbol type !! *\/$/;"	v	file:
+wh	abc2ps.h	/^	float wh;		\/* width of head *\/$/;"	m	struct:tblt_s
+wherefmtdir	abc2ps.c	/^static void wherefmtdir(void)$/;"	f	file:
+wl	abc2ps.h	/^	float wl, wr;		\/* left, right min width *\/$/;"	m	struct:SYMBOL
+wl	deco.c	/^	unsigned char wl;	\/* width *\/$/;"	m	struct:deco_def_s	file:
+wmeasure	abc2ps.h	/^	short wmeasure;		\/* measure duration while parsing *\/$/;"	m	struct:VOICE_S
+wmeasure	abcparse.h	/^			short wmeasure;		\/* duration of a measure *\/$/;"	m	struct:abcsym::__anon10::meter_s
+wordsspace	abc2ps.h	/^	float topspace, wordsspace, titlespace, subtitlespace, partsspace;$/;"	m	struct:FORMAT
+wr	abc2ps.h	/^	float wl, wr;		\/* left, right min width *\/$/;"	m	struct:SYMBOL
+wr	deco.c	/^	unsigned char wr;$/;"	m	struct:deco_def_s	file:
+write_buffer	buffer.c	/^void write_buffer(void)$/;"	f
+write_eps	buffer.c	/^void write_eps(void)$/;"	f
+write_headform	subs.c	/^static void write_headform(float lwidth)$/;"	f	file:
+write_heading	subs.c	/^void write_heading(struct abctune *t)$/;"	f
+write_tempo	deco.c	/^void write_tempo(struct SYMBOL *s,$/;"	f
+write_text	subs.c	/^void write_text(char *cmd, char *s, int job)$/;"	f
+write_title	subs.c	/^void write_title(struct SYMBOL *s)$/;"	f
+x	abc2ps.h	/^	float x, y;		\/* x y offset \/ note + (top or bottom) of staff *\/$/;"	m	struct:gch
+x	abc2ps.h	/^	float x;		\/* x offset *\/$/;"	m	struct:SYMBOL
+x	deco.c	/^	float x, y;		\/* x, y *\/$/;"	m	struct:deco_elt	file:
+x_rot	svg.c	/^	float x_rot, y_rot;$/;"	m	struct:__anon6	file:
+x_rot	svg.c	/^static float x_rot, y_rot;	\/* save x and y offset when rotate != 0 *\/$/;"	v	file:
+xch	parse.c	3722;"	d	file:
+xch	parse.c	3733;"	d	file:
+xmax	abc2ps.h	/^	float xmax;		\/* max x offset *\/$/;"	m	struct:SYMBOL
+xml_str_out	svg.c	/^static void xml_str_out(char *p)$/;"	f	file:
+xmx	abc2ps.h	/^	float xmx;		\/* max h-pos of a head rel to top$/;"	m	struct:SYMBOL
+xoffs	svg.c	/^	float xoffs, yoffs;$/;"	m	struct:__anon6	file:
+xoffs	svg.c	/^static float xoffs, yoffs;$/;"	v	file:
+xs	abc2ps.h	/^	float xs, ys;		\/* coord of stem end \/ bar height *\/$/;"	m	struct:SYMBOL
+xscale	svg.c	/^	float xscale, yscale;$/;"	m	struct:gc	file:
+xysym	svg.c	/^static void xysym(char *op, int use)$/;"	f	file:
+y	abc2ps.h	/^	float x, y;		\/* x y offset \/ note + (top or bottom) of staff *\/$/;"	m	struct:gch
+y	abc2ps.h	/^	float y;		\/* y position *\/$/;"	m	struct:STAFF_S
+y	abc2ps.h	/^	signed char y;		\/* y offset of note head *\/$/;"	m	struct:SYMBOL
+y	deco.c	/^	float x, y;		\/* x, y *\/$/;"	m	struct:deco_elt	file:
+y_get	deco.c	/^float y_get(int staff,$/;"	f
+y_rot	svg.c	/^	float x_rot, y_rot;$/;"	m	struct:__anon6	file:
+y_rot	svg.c	/^static float x_rot, y_rot;	\/* save x and y offset when rotate != 0 *\/$/;"	v	file:
+y_set	deco.c	/^void y_set(int staff,$/;"	f
+yav	abc2ps.h	/^	signed char ymn, ymx, yav; \/* min, max, avg note head y offset *\/$/;"	m	struct:SYMBOL
+ymn	abc2ps.h	/^	signed char ymn, ymx, yav; \/* min, max, avg note head y offset *\/$/;"	m	struct:SYMBOL
+ymx	abc2ps.h	/^	signed char ymn, ymx, yav; \/* min, max, avg note head y offset *\/$/;"	m	struct:SYMBOL
+yoffs	svg.c	/^	float xoffs, yoffs;$/;"	m	struct:__anon6	file:
+yoffs	svg.c	/^static float xoffs, yoffs;$/;"	v	file:
+ys	abc2ps.h	/^	float xs, ys;		\/* coord of stem end \/ bar height *\/$/;"	m	struct:SYMBOL
+yscale	svg.c	/^	float xscale, yscale;$/;"	m	struct:gc	file:

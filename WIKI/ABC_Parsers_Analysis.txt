@@ -1,0 +1,163 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2013-01-12T14:55:40+00:00
+
+====== ABC Parsers Analysis ======
+Created Saturday 12 January 2013
+
+===== abcm2ps =====
+
+=== Parser Output / Internal Representation Structure ===
+
+[[~/Documents/mei/dissertacao/abc-bruno/ABC/jjabcm2ps/analysis/structures_analysis.hs|Haskell Data Type Definition]]
+
+== Mapeamento entre abcsym->type e a union u: ==
+1: info => [u.key , u.length , u.meter , u.tempo , u.voice , u.user]
+2: pscom => 
+3: clef => u.clef
+4: note => u.note
+5: rest => u.note
+6: bar => u.bar
+7: eoln => u.eoln
+8: mrest => u.bar
+9: mrep => u.bar
+10: v_over => u.v_over
+11: tuplet => u.tuplet
+
+== struct note ==
+**Campos que interessam**
+{
+pits :: [SignedChar],		-- ^ pitches
+lens :: [Short],              	-- ^ note lengths (# pts in [1] if space)
+accs :: [UnsignedChar],	-- ^ code for accidentals & index in micro_tb
+? sl1 :: [UnsignedChar],        -- ^ slur start per head
+? sl2 :: [Char],                -- ^ number of slur end per head
+ti1 :: [Char],                -- ^ flag to start tie here
+chlen :: Short,			-- ^ chord length
+nhd :: Char,			-- ^ number of notes in chord - 1
+slur_st :: UnsignedChar,      -- ^ slurs starting here (2 bits array)
+slur_end :: Char,             -- ^ number of slurs ending here
+brhythm :: SignedChar,	-- ^ broken rhythm
+} **type=4 (note)**
+{
+lens :: [Short],              	-- ^ note lengths (# pts in [1] if space)
+brhythm :: SignedChar,	-- ^ broken rhythm
+} **type=5 (rest)**
+
+**Codigo dos pitches em Note.pits**
+-7		=> A,,,,
+0		=> A,,,
+7		=> A,,
+14		=> A,
+16		=> C
+21		=> A
+23		=> c
+28		=> a
+35		=> a'
+42		=> a''
+
+**Codigo dos acidentes em Note.accs**
+none 	=> 	0
+^		=> 	1
+=		=> 	2
+_		=> 	3
+^^		=>	4
+__		=>	5
+^/		=> 	9
+_/		=>	11
+^3/2	=>	17
+_3/2		=>	19
+
+**Codigo dos note lengths em Note.lens, Length.base_length, Meter.wmeasure**
+4		(longa)		=>	6144
+2		(breve)		=>	3072
+1		(semibreve)	=>	1536
+1/2 		(minima)		=>	768	(1536/2)
+1/4 		(seminima)	=>	384 	(768/2)
+1/8 		(colcheia)		=>	192 	(384/2)
+1/16 	(semicolceia)	=>	96 	(192/2)
+1/32 	(fusa)		=>	48	(96/2)
+1/64 	(semifusa)	=>	24	(48/2)
+1/128	(carrapateia)	=>	12	(24/2)
+
+== struct clef ==
+**Campos que interessam**
+type :: SignedChar,           -- ^ no clef if < 0; 0: 'treble' | 1: 'alto' | 2: 'bass' | 3: 'perc'
+line :: Char,
+octave :: SignedChar
+
+== struct key ==
+**Campos que interessam**
+sf :: SignedChar,             -- ^ sharp (> 0) flats (< 0)
+empty :: Char,                -- ^ clef alone if 1, 'none' if 2
+? exp :: Char,                  -- ^ exp (1) or mod (0)
+mode :: Char,                 -- ^ mode; 0: Ionian, 1: Dorian, 2: Phrygian, 3: Lydian, 4: Mixolydian, 5: Aeolian, 6: Locrian, 7: major, 8:minor, 9: HP, 10: Hp
+? nacc :: SignedChar,           -- ^ number of explicit accidentals, (-1) if no accidental
+? octave :: SignedChar,         -- ^ 'octave='
+? pits :: [SignedChar],
+? accs :: [UnsignedChar]
+
+== struct length ==
+**Campos que interessam**
+base_length :: Int            -- ^ basic note length
+
+== struct meter ==
+**Campos que interessam**
+wmeasure :: Short,            -- ^ duration of a measure
+nmeter :: UnsignedChar,       -- ^ number of meter elements
+expdur :: Char,               -- ^ explicit measure duration
+meter :: [MeterDef]
+
+== struct tempo ==
+**Nota**
+nao sei se o parse funciona bem para esta struct. Problemas encontrados:
+* Quando o input é o x.abc, o campo str1 é alocado out of bonds e dá seg fault quando se tenta imprimir na altura em que sym corresponde à linha do M:....
+* Quando tento imprimir o campo value, umas vezes dá seg fault, outras não, também no sym correspondente ao M: ...
+
+**Campos que interessam**
+str1 :: String,               -- ^ string before
+length :: [Short],            -- ^ up to 4 note lengths
+value :: String,              -- ^ tempo value
+str2 :: String                -- ^ string after
+
+== struct voice ==
+**Campos que interessam**
+id :: String,                 -- ^ voice ID 
+fname :: String,              -- ^ full name
+nname :: String,              -- ^ nick name
+voice :: UnsignedChar,        -- ^ voice number
+octave :: SignedChar,         -- ^ 'octave=' - same as in K:
+
+== struct bar ==
+**Campos que interessam**
+{
+type :: Int,
+repeat_bar :: Char,
+len :: Char,                  -- ^ len if mrest or mrep
+?  dotted :: Char,
+} **type=6 (bar)**
+{
+type :: Int,
+len :: Char,                  -- ^ len if mrest or mrep
+} **type=8 (mrest)**
+{
+?
+} **type=9 (mrep)**
+
+== struct user ==
+**Nao sei para o que é**
+
+== struct eoln ==
+**Campos que interessam**
+type :: Char		-- ^ 0: end of line; 1: continuation ('\'); 2: line break ('!')
+
+== struct v_over ==
+**Campos que interessam**
+type :: Char,                 -- ^ 0: '&' | 1: '(&' | 2: '&)'
+voice :: UnsignedChar
+
+== struct tuplet ==
+**Campos que interessam**
+ p_plet :: Char,               -- ^ number printed over the tuplet; put <n> notes
+q_plet :: Char,               -- ^ time; into the time of <t>
+r_plet :: Char                -- ^ number of notes; for the next <x> notes

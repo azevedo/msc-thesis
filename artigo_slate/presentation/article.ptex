@@ -1,0 +1,391 @@
+\documentclass[serif]{beamer}
+\usepackage{natslides}
+\usepackage{listings}
+\usepackage{color}
+% \usepackage{attachfile}
+% \usepackage{graphicx}
+% \usepackage{teximporter}
+\usepackage{multimedia}
+% \inlinepin
+
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\newcommand{\abc}{\textsc{abc}}
+\newcommand{\abcdt}{\textsc{abc::dt}}
+\newcommand{\abcpt}{\abc{} processing tool}
+\newcommand{\unix}{\textsc{unix}}
+\newcommand{\midi}{\textsc{midi}}
+\newcommand{\abcmtops}{\texttt{abcm2ps}}
+\newcommand{\abctomidi}{\texttt{abc2midi}}
+
+\title{ ABC with a UNIX flavor }
+\author[Bruno Azevedo \& JJ]{Bruno M. Azevedo\\J. João Almeida}
+\institute{Departament of Informatics,\\Universidade do Minho,\\Portugal}
+
+\begin{document}
+\maketitle
+
+=. Structure of this presentation
+
+\tableofcontents
+
+=.= Introduction
+
+:
+. \abc{}
+  \begin{Verbatim}[fontsize=\scriptsize]
+    Textual music notation
+  \end{Verbatim}
+. \unix{} metaphor
+  \begin{Verbatim}[fontsize=\scriptsize]
+    Simple music programs
+    Universal music stream type
+    Compositionality
+    Development Language
+  \end{Verbatim}
+. \abcdt{}
+  \begin{Verbatim}[fontsize=\scriptsize]
+    Rule-based DSL
+    ABC oriented ?
+    Compact specification
+    Deals with real ABC music
+    Surgical processing
+    Rich embedding mechanisms (Perl)
+  \end{Verbatim}
+#
+
+=.= Related Projects and Tools
+
+:
+. \abcmtops{}
+  \begin{Verbatim}[fontsize=\scriptsize]
+    Translates ABC music into sheet music scores in PostScript or SVG
+  \end{Verbatim}
+. \abctomidi{}
+  \begin{Verbatim}[fontsize=\scriptsize]
+    Converts ABC music into a MIDI file
+  \end{Verbatim}
+. Music21
+  \begin{Verbatim}[fontsize=\scriptsize]
+    A Python-based toolkit for computer-aided musicology
+  \end{Verbatim}
+. Haskore
+  \begin{Verbatim}[fontsize=\scriptsize]
+    Haskell modules for creating, analyzing and manipulating music
+  \end{Verbatim}
+#
+
+=.= Internal Representation
+
+\begin{block}{Partwise Structure}
+  The score is organized by the part;
+
+  Eg: Direct access to a part's measures;
+\end{block}
+
+\begin{block}{Timewise Structure}
+  The score is organized by a vertical element;
+
+  A perception of the context in a vertical moment is attained;
+
+  Eg: Direct access to a measure's parts;
+\end{block}
+
+\begin{block}{Sourcewise Structure}
+  The score is organized as it is in the \abc{} source file;
+
+  Enables the easy reconstruction of the original \abc{};
+  % Eg: Direct access to a measure's parts;
+\end{block}
+
+=.= From \abcdt{} to an \abcpt{}
+
+An \abcpt{} follows a traditional compiler's structure:
+
+:
+. Parse \abc{} input
+. Transform the generated representation
+. Generate the output
+#
+
+\begin{figure}[htb]
+  \centering 
+  \includegraphics[width=0.8\textwidth]{../img/abc_dt.pdf} 
+  \caption{\abcpt{} architecture}
+  \label{fig:process_stages}
+\end{figure}
+
+=. Parse \abc{} Input
+
+% An \abcpt{} must be able to deal with real \abc{} music, therefore its parser has to be robust.
+\abcmtops{}' parser is the parser currently being used by an \abcpt{}. Its generated IR is a
+sequential structure, in which each element corresponds to an \abc{} element.
+
+That structure - a list of C data structures - has to be adapted to Perl.
+
+\begin{figure}[htb]
+  \centering 
+  \includegraphics[width=\textwidth]{../img/parse_abc_input_stage.pdf} 
+  \caption{\emph{Parse \abc{} Input} stage}
+  \label{fig:parse_abc_input_stage}
+\end{figure}
+
+=. Transform the generated representation
+
+A traversal of the IR applying \abcdt{} rules to each element.
+
+Any element not covered by the rule's actuators is kept unchanged.
+
+Effective in building tools that do simple transformations - it's only needed to provide what is to
+be changed.
+
+=. \abcdt{} Rules
+
+\begin{block}{\abcdt{} Rule}
+A correspondence between an actuator and a transformation.
+\end{block}
+
+An =actuator= selects a specific \abc{} element or a group of elements.
+
+A =transformation= is specified by the user and it defines how each element should be processed
+according to its internal values.
+
+\begin{block}{}
+  \begin{Verbatim}[fontsize=\scriptsize]
+  in_line::K:
+  note::!f!
+  V:Tenor::note::_B
+  \end{Verbatim}
+\end{block}
+
+*Special Actuators*
+:
+. \emph{-default}
+  Describes how to transform each \abc{} element which is not covered in the traversal
+. \emph{-end}
+  Enables a general post processing of the final \abc{}, hence, making possible to attain different
+  output formats
+#
+
+=. Processor Algorithm
+
+During the structure's traversal, when an element matches an actuator, the corresponding
+transformation is applied.
+
+Furthermore, the current element's state is calculated.
+
+=. Generate the output
+
+The transformed IR is outputted.
+
+The identity function - \texttt{toabc()} - is based on \texttt{tclabc}'s implementation.
+
+=.= \abcdt{} by example
+
+\emph{All But One}
+
+Generates an \abc{} score whose goal is to help musicians in individual rehearsal of multi-voice
+music.
+
+The goal is to add a \midi{} directive to reduce the volume of the voice.
+
+\lstset{basicstyle=\footnotesize}
+\begin{block}{All But One \abcdt{} rules}
+  \lstinputlisting[]{../misc/handler.tex}
+\end{block}
+
+
+=. \abcdt{} by example
+
+\lstset{basicstyle=\tiny}
+\sound[label=100]{}{100.mid}
+
+\begin{center}
+  \begin{minipage}{.49\textwidth}
+    \lstinputlisting[]{100.abc}
+%     \inline_abc{
+% X:100
+% T:Tuti
+% C:Anonimous, 16th century
+% M:3/4
+% L:1/8
+% K:G
+% V:1 name="Soprano" clef=treble
+% G4 G2|G4 F2|A4 A2|B4 z2|:
+% w: Ver- bum|ca- ro|fac- tum|est|
+% V:2 name="Contralto" clef=treble
+% D4 D2|E4 D2|E4 F2|G4 z2|:
+% w: Ver- bum|ca- ro|fac- tum|est|
+% V:3 name="Tenor" clef=treble-8
+% G3 A B2|c4 A2|c4 c2|d4 z2|:
+% w: Ver - bum|ca- ro|fac- tum|est|
+% V:4 name="Baixo" clef=bass
+% G,4 G,2|C,4 D,2|A,4 A,2|G,4 z2|:
+% w: Ver- bum|ca- ro|fac- tum|est|
+%     }
+  \end{minipage}
+  \begin{minipage}{.49\textwidth}
+    \begin{center}
+      \includegraphics[width=\textwidth, clip=true, trim = 19mm 175mm 9mm 15mm]{100.pdf} 
+    \end{center}
+    \hyperlinksound[]{100}{Play}
+  \end{minipage}
+\end{center}
+
+=. \abcdt{} by example
+
+\lstset{basicstyle=\tiny}
+\sound[label=100_but_tenor]{}{100_but_tenor.mid}
+
+\begin{center}
+  \begin{minipage}{.49\textwidth}
+    \lstinputlisting[]{100_but_tenor.abc}
+    % \import_abc[midi]{100_but_tenor.abc}
+    % \inline_abc[midi]{\lstinputlisting[]{100_but_tenor.abc}}
+  \end{minipage}
+  \begin{minipage}{.49\textwidth}
+    \begin{center}
+      \includegraphics[width=\textwidth, clip=true, trim = 19mm 175mm 9mm 15mm]{100.pdf} 
+    \end{center}
+    \hyperlinksound[]{100_but_tenor}{Play}
+  \end{minipage}
+\end{center}
+
+% \hyperlinkmute{para}
+
+=. \abcdt{} by example
+
+\emph{\abc{} Paste}
+
+Merges the voices of tunes parallel to each other in the time perspective.
+
+\begin{block}{Algorithm}
+:
+.1 Retrieving the header for the resulting score
+\begin{Verbatim}
+First tune with at least on note written;
+\end{Verbatim}
+.2 Pasting the tunes
+\begin{Verbatim}
+Keeps track of each voice's id, measures, meter (M),
+  length (L), key (K) and tempo (Q);
+\end{Verbatim}
+.3 Appending any necessary rests
+\begin{Verbatim}
+Appends a multi-measure rest to each voice with fewer
+  measures than the voice with most measures;
+\end{Verbatim}
+#
+\end{block}
+
+=. \abcdt{} by example
+
+\emph{... \abc{} Paste}
+
+\lstset{language=Perl, basicstyle=\tiny, keywordstyle=\color{blue}, stringstyle=\color{mymauve}, frame=single}
+\lstinputlisting[lastline=4]{cat.pl}
+\lstinputlisting[firstline=6, lastline=24]{cat.pl}
+
+=. \abcdt{} by example
+
+\emph{... \abc{} Paste} 
+
+\lstset{language=Perl, basicstyle=\tiny, keywordstyle=\color{blue}, stringstyle=\color{mymauve}, frame=single}
+\lstinputlisting[firstline=26, lastline=44]{cat.pl}
+
+=. \abcdt{} by example
+
+\emph{... \abc{} Paste}
+
+\lstset{language=Perl, basicstyle=\tiny, keywordstyle=\color{blue}, stringstyle=\color{mymauve}, frame=single, showstringspaces=false}
+\lstinputlisting[firstline=46, lastline=65]{cat.pl}
+
+=. \abcdt{} by example
+
+\emph{\abc{} Cat}
+
+Concatenates each tune one after the other in the time perspective.
+
+\begin{block}{Algorithm}
+:
+.1 Retrieving the header for the resulting score
+\begin{Verbatim}
+First tune with at least on note written;
+\end{Verbatim}
+.2 For each tune, printing the tune and aditional rests
+\begin{Verbatim}
+Keeps track of each voice's id, measures, meter (M),
+  length (L), key (K) and tempo (Q);
+Appends rests to any voice that isn't present in the
+  current tune;
+Appends rests to any voice belonging to the current tune
+  that is not is not present in previous tunes;
+\end{Verbatim}
+#
+\end{block}
+
+=. \abcdt{} by example
+
+\emph{Composition of \abc{} Paste and Cat}
+
+Assemble the whole score by composing \abc{} Paste with \abc{} Cat.
+
+\begin{block}{Score}
+=Verbum caro factum est=
+\end{block}
+
+The main ideia is to assemble three sections of the score (1, 2 and 3) for two parts only (Soprano
+and Tenor). Each part and section is written in single files.
+
+=. \abcdt{} by example
+
+\emph{Applying \abc{} Paste to Section 1 - Both Parts}
+
+\begin{block}{\abc{} Paste}
+\lstinputlisting[]{abc_paste_by_example.tex}
+\end{block}
+
+% \import_abc[width=\textwidth,midi]{101.abc}
+% \import_abc[width=\textwidth,midi]{103.abc}
+
+=. \abcdt{} by example
+
+\emph{Applying \abc{} Cat to Section 2 - Part Soprano and Section 3 - Part Tenor}
+
+\begin{block}{\abc{} Cat}
+\lstinputlisting[]{abc_cat_by_example.tex}
+\end{block}
+
+% \import_abc[width=\textwidth,midi]{201.abc}
+% \import_abc[width=\textwidth,midi]{303.abc}
+
+=. \abcdt{} by example
+
+\emph{Applying \abc{} Cat to previous outputs}
+% \import_abc[width=1mm,midi]{verbum.abc}
+
+\begin{block}{\abc{} Cat}
+\lstinputlisting[]{cat_paste_by_example_simple.tex}
+\end{block}
+
+  \includegraphics[width=\textwidth, clip=true, trim = 0mm 105mm 0mm 76mm]{../img/c_letters.pdf} 
+
+=.= Conclusions
+
+:
+. Reusing \abcmtops{}'s parser was very important to help guarantee this work's quality, coverage and
+developing time.% The generated IR is source oriented which allows obtaining valid \abc{} and robust
+%tools - it knows how to deal with unknown elements.
+. Using Perl as the language embedded into \abcdt{} provides a rich environment to allow easier
+processing of text. Furthermore, through the use of data structures, like hashes, the user has
+bigger expressive power to specify transformations.
+. We believe that the rule based processor makes it possible to write very compact tools.
+. %One of our main goals is to build an \abc{} operating system. Moreover, presently, there is a lack
+%of music notation general processing tools, particularly for \abc{}. Thus, 
+The existence of DSL's
+like \abcdt{} helps to the simplification of crafting new \abc{} processing tools.
+#
+
+=.= The End
+
+\end{document}

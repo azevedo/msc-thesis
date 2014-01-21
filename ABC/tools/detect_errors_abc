@@ -1,0 +1,236 @@
+#!/usr/bin/perl
+package Music::Abc::DetectErrors 0.1;
+
+use 5.01400;
+use Music::Abc::DT;
+use Readonly;
+use Data::Dumper;
+
+use strict;
+use warnings;
+
+Readonly my $fst_meas  => $Music::Abc::DT::FIRST_MEASURE;
+Readonly my $fst_voice => $Music::Abc::DT::IMPLICIT_VOICE;
+
+my @file_names   = @ARGV;     # abc filename
+my $result       = q{};
+my %data         = ();
+
+foreach my $file (@file_names) {
+  $result .= "$file\n";
+  $result .= detect_errors($file);
+  $result .= "\n";
+}
+
+print $result;
+
+
+############## Subroutines ##############
+
+# Checks for the existence of syntactical errors and produce an error message if there is any
+sub detect_errors {
+  my $file = shift;
+
+  my $ret     = q{};
+  my $ignore  = 0;
+  my %rule = (
+    'in_tune' => sub { update_data( {} ) },
+    'note'    => sub { update_data( { meas_dur => 1, n_meas => 1 } ) },
+    'rest'    => sub { update_data( { meas_dur => 1, n_meas => 1 } ) },
+    'mrest'   => sub {
+      $ignore = 1;
+      update_data( { key => 1 } );
+    },
+    'bar' => sub {
+      $ret .= check_measure_length($ignore);
+      $ignore = 0;
+      update_data( { n_meas => 1, key => 1 } );
+    },
+    'eoln' => sub { q{} },
+  );
+
+  dt( $file, %rule );
+
+  $ret .= check_other_syntactic_errors();
+  if ($ret eq q{} ) { $ret .= check_key() }
+
+  return $ret;
+}
+
+# Update data for each voice
+# * Last symbol
+# * Current Measure duration
+# * Number of measures
+# * Key per measure
+sub update_data {
+  my $args = shift;
+
+  # sets the the current element as current voice's last symbol
+  $data{$c_voice}{last_sym} = $sym->{type};
+
+  if ( $args->{meas_dur} ) {
+    $data{$c_voice}{meas_dur}{ $sym->{info}->{bar_num} } += $sym->{info}->{dur};
+  }
+
+  if ( $args->{n_meas} ) {
+    my $bar_num = $sym->{info}->{bar_num};
+
+    # if it's a mrest then set the bar num to all the corresponding measures
+    if ( $sym->{type} == Music::Abc::DT::ABC_T_MREST ) {
+      for my $bar_num ( $bar_num .. $bar_num + $sym->{info}->{len} ) {
+        $data{$c_voice}{n_meas} = $bar_num;
+      }
+    }
+    # if it's a bar then set the bar num to the previous measure
+    elsif ( $sym->{type} == Music::Abc::DT::ABC_T_BAR ) {
+      $data{$c_voice}{n_meas} = $bar_num - 1;
+    }
+    # notes, rests then set the bar num to the current measure
+    else {
+      $data{$c_voice}{n_meas} = $bar_num;
+    }
+  }
+  if ( $args->{key} ) {
+    my $key     = get_key();
+    my $bar_num = $sym->{info}->{bar_num};
+
+    # if it's a mrest then set the key to all the corresponding measures
+    if ( $sym->{type} == Music::Abc::DT::ABC_T_MREST ) {
+      for my $m ( $bar_num .. $bar_num + $sym->{info}->{len} ) {
+        $data{$c_voice}{keys}{$m} = $key;
+      }
+    }
+    # if it's a bar then set the key to the previous measure
+    elsif ( $sym->{type} == Music::Abc::DT::ABC_T_BAR ) {
+      $data{$c_voice}{keys}{ $bar_num - 1 } = $key;
+    }
+  }
+
+  return;
+}
+
+# Checks if a measure is complete 
+sub check_measure_length {
+  my $ignore = shift;
+
+  my $c_meas   = $sym->{info}->{bar_num} - 1;
+  my $ret      = q{};
+  my $wmeasure = get_wmeasure();
+
+  if (     not $ignore            # not a mrest
+       and $c_meas > $fst_meas    # not anacrusis
+       and $data{$c_voice}{meas_dur}{$c_meas} != $wmeasure )
+  {
+    my $v = $voice_struct{$c_voice}{id} ne q{}
+          ? "in voice $voice_struct{$c_voice}{id} "
+          : q{};
+    $ret  = $data{$c_voice}{meas_dur}{$c_meas} < $wmeasure
+          ? "Measure $c_meas $v" . "isn't complete!\n"
+          : "Measure $c_meas $v" . "is overflowing!\n";
+  }
+
+  return $ret;
+}
+
+# checks:
+# * if the last symbol for each voice is a bar
+# * if all voices have the same number of measures
+sub check_other_syntactic_errors  {
+  my $ret                 = q{};
+  my $diff_meas_per_voice = 0;
+  my $meas_per_voice;
+
+  for my $voice (keys %data) {
+    ## checks number of measures
+    my $n_meas = $data{$voice}{n_meas};
+    $meas_per_voice ||= $n_meas;
+
+    if ( $meas_per_voice != $n_meas ) { $diff_meas_per_voice = 1 }
+
+    ## checks if the last symbol for $voice is a bar
+    my $v = $voice_struct{$voice}{id} ne q{}
+            ? "Voice $voice_struct{$voice}{id}"
+            : 'The tune';
+
+    if ( $data{$voice}{last_sym} != Music::Abc::DT::ABC_T_BAR ) {
+      $ret .= "$v must finish with a bar!\n";
+    }
+  }
+
+  if ($diff_meas_per_voice) {
+    $ret .= "The number of measures per voice is different!\n";
+  }
+
+  return $ret;
+}
+
+# This check must be made only if no errors were found until now
+# Checks if the the key is the same at the end of each measure for all voices
+sub check_key {
+  my $ret      = q{};
+  my $n_meas   = $data{$fst_voice}{n_meas};
+  my @voices   = keys %data;
+   
+  # checks the key for every measure
+  for my $m ( $fst_meas .. $n_meas ) {
+    my ( $prev_key, $cur_key );
+    my $same_key = 1;
+
+    # the key is checked for all voices
+    for my $v ( @voices ) {
+      $cur_key = $data{$v}{keys}{$m};
+      $prev_key ||= $cur_key;
+      $same_key &= $cur_key eq $prev_key;
+
+      if ( not $same_key ) {
+        $ret = "The key is different in measure $m\n";
+        last;
+      }
+    }
+    last if not $same_key;
+  }
+
+  return $ret;
+}
+
+1;
+__END__
+
+=head1 NAME
+
+detect_errors_abc - detects syntactical errors
+
+=head1 SYNOPSIS
+
+detect_errors_abc [FILE]...
+
+=head1 USAGE
+
+detect_errors_abc tune1.abc tune2.abc
+  Detects syntactic errors and outputs error messages
+
+=head1 DESCRIPTION
+
+Detect syntactic errors and warns the user
+
+=head1 REQUIRED ARGUMENTS
+
+=head1 OPTIONS
+
+=head1 DIAGNOSTICS
+
+=head1 EXIT STATUS
+
+=head1 CONFIGURATION
+
+=head1 DEPENDENCIES
+
+=head1 INCOMPATIBILITIES
+
+=head1 BUGS AND LIMITATIONS
+
+=head1 AUTHOR
+
+  Bruno Azevedo
+
+=head1 LICENSE AND COPYRIGHT

@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html> <head>
+<title>tkabc MIDI/virtual keyboards</title>
+</head>
+<body>
+
+<h1>MIDI keyboard</h1>
+
+The MIDI keyboard works only when you have a MIDI keyboard connected to
+a sound board on Linux/FreeBSD. If you have not such a configuration
+but you want to use the virtual piano keyboard, please, read the following
+lines.
+
+<h2>Keyboard entry mode</h2>
+
+This mode permits to enter music elements without time constraints.
+<p>
+It is activated when the virtual piano is displayed.
+<p>
+Pressing a key generates a note. The note length depends on the pressing
+duration, as if the tempo was 60 beats/mn, i.e. pressing a key for 1 second
+gives a crotchet.
+<p>
+The lowest keys have special meanings:
+<dl>
+  <dt>C
+  <dd>Generate a rest.
+  <dt>C#
+  <dd>Generate a bar (note length doesn't matter).
+</dl>
+
+<h2>Recording mode</h2>
+
+This mode is activated from the graphical interface or by the key <b>r</b>.
+<p>
+Effective recording starts on the first MIDI event. At the end of
+recording, the MIDI events are translated to ABC and inserted in
+the current tune.
+
+<h1>Virtual piano keyboard</h1>
+
+The virtual piano keyboard offers 4 octaves and its behaviour is the
+same as the MIDI keyboard.
+<p>
+It also accepts events from the computer keyboard. Each keyboard row gives
+different octave: the upper row (digits) gives the higher pitches. On a row,
+each key is a half-tone distance from the next one. For example, with a US
+keyboard, 'A' gives the middle C, and 'K' is G, and the lowest notes ('Z'
+and 'X') generate a rest and a bar.
+<p>
+There may be problems while key repeat is enabled. On X window systems,
+it's safe to disable it with the command <i>xset r off</i>.
+<p>
+To remove the virtual keyboard, just press <i>Escape</i>.
+
+<hr>
+<address><a href="mailto:moinejf@free.fr">Jean-François Moine</a></address>
+<!-- hhmts start -->
+Kemm diwezhañ: 8 a viz C'hwevrer 2003
+<!-- hhmts end -->
+</body> </html>

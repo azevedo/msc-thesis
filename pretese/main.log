@@ -1,0 +1,1393 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Arch Linux) (format=pdflatex 2014.1.21)  21 JAN 2014 10:25
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**main
+(./main.tex
+LaTeX2e <2011/06/27>
+Babel <3.9f> and hyphenation patterns for 78 languages loaded.
+(/usr/share/texmf-dist/tex/latex/koma-script/scrreprt.cls
+Document Class: scrreprt 2012/07/29 v3.11b KOMA-Script document class (report)
+(/usr/share/texmf-dist/tex/latex/koma-script/scrkbase.sty
+Package: scrkbase 2012/07/29 v3.11b KOMA-Script package (KOMA-Script-dependent 
+basics and keyval usage)
+
+(/usr/share/texmf-dist/tex/latex/koma-script/scrbase.sty
+Package: scrbase 2012/07/29 v3.11b KOMA-Script package (KOMA-Script-independent
+ basics and keyval usage)
+
+(/usr/share/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/share/texmf-dist/tex/latex/koma-script/scrlfile.sty
+Package: scrlfile 2012/06/15 v3.12 KOMA-Script package (loading files)
+
+Package scrlfile, 2012/06/15 v3.12 KOMA-Script package (loading files)
+                  Copyright (C) Markus Kohm
+
+))) (/usr/share/texmf-dist/tex/latex/koma-script/tocbasic.sty
+Package: tocbasic 2012/04/04 v3.10b KOMA-Script package (handling toc-files)
+)
+Package tocbasic Info: omitting babel extension for `toc'
+(tocbasic)             because of feature `nobabel' available
+(tocbasic)             for `toc' on input line 117.
+Package tocbasic Info: omitting babel extension for `lof'
+(tocbasic)             because of feature `nobabel' available
+(tocbasic)             for `lof' on input line 118.
+Package tocbasic Info: omitting babel extension for `lot'
+(tocbasic)             because of feature `nobabel' available
+(tocbasic)             for `lot' on input line 119.
+Class scrreprt Info: File `scrsize11pt.clo' used instead of
+(scrreprt)           file `scrsize11.clo' to setup font sizes on input line 136
+7.
+
+(/usr/share/texmf-dist/tex/latex/koma-script/scrsize11pt.clo
+File: scrsize11pt.clo 2012/07/29 v3.11b KOMA-Script font size class option (11p
+t)
+)
+(/usr/share/texmf-dist/tex/latex/koma-script/typearea.sty
+Package: typearea 2012/07/29 v3.11b KOMA-Script package (type area)
+
+Package typearea, 2012/07/29 v3.11b KOMA-Script package (type area)
+                  Copyright (C) Frank Neukam, 1992-1994
+                  Copyright (C) Markus Kohm, 1994-
+
+\ta@bcor=\skip41
+\ta@div=\count79
+Package typearea Info: You've used standard option `a4paper'.
+(typearea)             This is correct!
+(typearea)             Internally I'm using `paper=a4'.
+(typearea)             If you'd like to set the option with \KOMAoptions,
+(typearea)             you'd have to use `paper=a4' there
+(typearea)             instead of `a4paper', too.
+\ta@hblk=\skip42
+\ta@vblk=\skip43
+\ta@temp=\skip44
+Package typearea Info: These are the values describing the layout:
+(typearea)             DIV  = 10
+(typearea)             BCOR = 0.0pt
+(typearea)             \paperwidth      = 597.50793pt
+(typearea)              \textwidth      = 418.25555pt
+(typearea)              DIV departure   = -6%
+(typearea)              \evensidemargin = 47.2316pt
+(typearea)              \oddsidemargin  = -12.5192pt
+(typearea)             \paperheight     = 845.04694pt
+(typearea)              \textheight     = 595.80026pt
+(typearea)              \topmargin      = -25.16531pt
+(typearea)              \headheight     = 17.0pt
+(typearea)              \headsep        = 20.40001pt
+(typearea)              \topskip        = 11.0pt
+(typearea)              \footskip       = 47.60002pt
+(typearea)              \baselineskip   = 13.6pt
+(typearea)              on input line 1213.
+)
+\c@part=\count80
+\c@chapter=\count81
+\c@section=\count82
+\c@subsection=\count83
+\c@subsubsection=\count84
+\c@paragraph=\count85
+\c@subparagraph=\count86
+\abovecaptionskip=\skip45
+\belowcaptionskip=\skip46
+\c@pti@nb@sid@b@x=\box26
+\c@figure=\count87
+\c@table=\count88
+\bibindent=\dimen102
+) (./thesis.sty
+Package: thesis 
+ (/usr/share/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2008/03/30 v1.1d Input encoding file
+\inpenc@prehook=\toks15
+\inpenc@posthook=\toks16
+
+(/usr/share/texmf-dist/tex/latex/base/utf8.def
+File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
+Now handling font encoding OML ...
+... no UTF-8 mapping file for font encoding OML
+Now handling font encoding T1 ...
+... processing UTF-8 mapping file for font encoding T1
+
+(/usr/share/texmf-dist/tex/latex/base/t1enc.dfu
+File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
+   defining Unicode char U+00A1 (decimal 161)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00AB (decimal 171)
+   defining Unicode char U+00BB (decimal 187)
+   defining Unicode char U+00BF (decimal 191)
+   defining Unicode char U+00C0 (decimal 192)
+   defining Unicode char U+00C1 (decimal 193)
+   defining Unicode char U+00C2 (decimal 194)
+   defining Unicode char U+00C3 (decimal 195)
+   defining Unicode char U+00C4 (decimal 196)
+   defining Unicode char U+00C5 (decimal 197)
+   defining Unicode char U+00C6 (decimal 198)
+   defining Unicode char U+00C7 (decimal 199)
+   defining Unicode char U+00C8 (decimal 200)
+   defining Unicode char U+00C9 (decimal 201)
+   defining Unicode char U+00CA (decimal 202)
+   defining Unicode char U+00CB (decimal 203)
+   defining Unicode char U+00CC (decimal 204)
+   defining Unicode char U+00CD (decimal 205)
+   defining Unicode char U+00CE (decimal 206)
+   defining Unicode char U+00CF (decimal 207)
+   defining Unicode char U+00D0 (decimal 208)
+   defining Unicode char U+00D1 (decimal 209)
+   defining Unicode char U+00D2 (decimal 210)
+   defining Unicode char U+00D3 (decimal 211)
+   defining Unicode char U+00D4 (decimal 212)
+   defining Unicode char U+00D5 (decimal 213)
+   defining Unicode char U+00D6 (decimal 214)
+   defining Unicode char U+00D8 (decimal 216)
+   defining Unicode char U+00D9 (decimal 217)
+   defining Unicode char U+00DA (decimal 218)
+   defining Unicode char U+00DB (decimal 219)
+   defining Unicode char U+00DC (decimal 220)
+   defining Unicode char U+00DD (decimal 221)
+   defining Unicode char U+00DE (decimal 222)
+   defining Unicode char U+00DF (decimal 223)
+   defining Unicode char U+00E0 (decimal 224)
+   defining Unicode char U+00E1 (decimal 225)
+   defining Unicode char U+00E2 (decimal 226)
+   defining Unicode char U+00E3 (decimal 227)
+   defining Unicode char U+00E4 (decimal 228)
+   defining Unicode char U+00E5 (decimal 229)
+   defining Unicode char U+00E6 (decimal 230)
+   defining Unicode char U+00E7 (decimal 231)
+   defining Unicode char U+00E8 (decimal 232)
+   defining Unicode char U+00E9 (decimal 233)
+   defining Unicode char U+00EA (decimal 234)
+   defining Unicode char U+00EB (decimal 235)
+   defining Unicode char U+00EC (decimal 236)
+   defining Unicode char U+00ED (decimal 237)
+   defining Unicode char U+00EE (decimal 238)
+   defining Unicode char U+00EF (decimal 239)
+   defining Unicode char U+00F0 (decimal 240)
+   defining Unicode char U+00F1 (decimal 241)
+   defining Unicode char U+00F2 (decimal 242)
+   defining Unicode char U+00F3 (decimal 243)
+   defining Unicode char U+00F4 (decimal 244)
+   defining Unicode char U+00F5 (decimal 245)
+   defining Unicode char U+00F6 (decimal 246)
+   defining Unicode char U+00F8 (decimal 248)
+   defining Unicode char U+00F9 (decimal 249)
+   defining Unicode char U+00FA (decimal 250)
+   defining Unicode char U+00FB (decimal 251)
+   defining Unicode char U+00FC (decimal 252)
+   defining Unicode char U+00FD (decimal 253)
+   defining Unicode char U+00FE (decimal 254)
+   defining Unicode char U+00FF (decimal 255)
+   defining Unicode char U+0102 (decimal 258)
+   defining Unicode char U+0103 (decimal 259)
+   defining Unicode char U+0104 (decimal 260)
+   defining Unicode char U+0105 (decimal 261)
+   defining Unicode char U+0106 (decimal 262)
+   defining Unicode char U+0107 (decimal 263)
+   defining Unicode char U+010C (decimal 268)
+   defining Unicode char U+010D (decimal 269)
+   defining Unicode char U+010E (decimal 270)
+   defining Unicode char U+010F (decimal 271)
+   defining Unicode char U+0110 (decimal 272)
+   defining Unicode char U+0111 (decimal 273)
+   defining Unicode char U+0118 (decimal 280)
+   defining Unicode char U+0119 (decimal 281)
+   defining Unicode char U+011A (decimal 282)
+   defining Unicode char U+011B (decimal 283)
+   defining Unicode char U+011E (decimal 286)
+   defining Unicode char U+011F (decimal 287)
+   defining Unicode char U+0130 (decimal 304)
+   defining Unicode char U+0131 (decimal 305)
+   defining Unicode char U+0132 (decimal 306)
+   defining Unicode char U+0133 (decimal 307)
+   defining Unicode char U+0139 (decimal 313)
+   defining Unicode char U+013A (decimal 314)
+   defining Unicode char U+013D (decimal 317)
+   defining Unicode char U+013E (decimal 318)
+   defining Unicode char U+0141 (decimal 321)
+   defining Unicode char U+0142 (decimal 322)
+   defining Unicode char U+0143 (decimal 323)
+   defining Unicode char U+0144 (decimal 324)
+   defining Unicode char U+0147 (decimal 327)
+   defining Unicode char U+0148 (decimal 328)
+   defining Unicode char U+014A (decimal 330)
+   defining Unicode char U+014B (decimal 331)
+   defining Unicode char U+0150 (decimal 336)
+   defining Unicode char U+0151 (decimal 337)
+   defining Unicode char U+0152 (decimal 338)
+   defining Unicode char U+0153 (decimal 339)
+   defining Unicode char U+0154 (decimal 340)
+   defining Unicode char U+0155 (decimal 341)
+   defining Unicode char U+0158 (decimal 344)
+   defining Unicode char U+0159 (decimal 345)
+   defining Unicode char U+015A (decimal 346)
+   defining Unicode char U+015B (decimal 347)
+   defining Unicode char U+015E (decimal 350)
+   defining Unicode char U+015F (decimal 351)
+   defining Unicode char U+0160 (decimal 352)
+   defining Unicode char U+0161 (decimal 353)
+   defining Unicode char U+0162 (decimal 354)
+   defining Unicode char U+0163 (decimal 355)
+   defining Unicode char U+0164 (decimal 356)
+   defining Unicode char U+0165 (decimal 357)
+   defining Unicode char U+016E (decimal 366)
+   defining Unicode char U+016F (decimal 367)
+   defining Unicode char U+0170 (decimal 368)
+   defining Unicode char U+0171 (decimal 369)
+   defining Unicode char U+0178 (decimal 376)
+   defining Unicode char U+0179 (decimal 377)
+   defining Unicode char U+017A (decimal 378)
+   defining Unicode char U+017B (decimal 379)
+   defining Unicode char U+017C (decimal 380)
+   defining Unicode char U+017D (decimal 381)
+   defining Unicode char U+017E (decimal 382)
+   defining Unicode char U+200C (decimal 8204)
+   defining Unicode char U+2013 (decimal 8211)
+   defining Unicode char U+2014 (decimal 8212)
+   defining Unicode char U+2018 (decimal 8216)
+   defining Unicode char U+2019 (decimal 8217)
+   defining Unicode char U+201A (decimal 8218)
+   defining Unicode char U+201C (decimal 8220)
+   defining Unicode char U+201D (decimal 8221)
+   defining Unicode char U+201E (decimal 8222)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2031 (decimal 8241)
+   defining Unicode char U+2039 (decimal 8249)
+   defining Unicode char U+203A (decimal 8250)
+   defining Unicode char U+2423 (decimal 9251)
+)
+Now handling font encoding OT1 ...
+... processing UTF-8 mapping file for font encoding OT1
+
+(/usr/share/texmf-dist/tex/latex/base/ot1enc.dfu
+File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
+   defining Unicode char U+00A1 (decimal 161)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00B8 (decimal 184)
+   defining Unicode char U+00BF (decimal 191)
+   defining Unicode char U+00C5 (decimal 197)
+   defining Unicode char U+00C6 (decimal 198)
+   defining Unicode char U+00D8 (decimal 216)
+   defining Unicode char U+00DF (decimal 223)
+   defining Unicode char U+00E6 (decimal 230)
+   defining Unicode char U+00EC (decimal 236)
+   defining Unicode char U+00ED (decimal 237)
+   defining Unicode char U+00EE (decimal 238)
+   defining Unicode char U+00EF (decimal 239)
+   defining Unicode char U+00F8 (decimal 248)
+   defining Unicode char U+0131 (decimal 305)
+   defining Unicode char U+0141 (decimal 321)
+   defining Unicode char U+0142 (decimal 322)
+   defining Unicode char U+0152 (decimal 338)
+   defining Unicode char U+0153 (decimal 339)
+   defining Unicode char U+2013 (decimal 8211)
+   defining Unicode char U+2014 (decimal 8212)
+   defining Unicode char U+2018 (decimal 8216)
+   defining Unicode char U+2019 (decimal 8217)
+   defining Unicode char U+201C (decimal 8220)
+   defining Unicode char U+201D (decimal 8221)
+)
+Now handling font encoding OMS ...
+... processing UTF-8 mapping file for font encoding OMS
+
+(/usr/share/texmf-dist/tex/latex/base/omsenc.dfu
+File: omsenc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
+   defining Unicode char U+00A7 (decimal 167)
+   defining Unicode char U+00B6 (decimal 182)
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+2020 (decimal 8224)
+   defining Unicode char U+2021 (decimal 8225)
+   defining Unicode char U+2022 (decimal 8226)
+)
+Now handling font encoding OMX ...
+... no UTF-8 mapping file for font encoding OMX
+Now handling font encoding U ...
+... no UTF-8 mapping file for font encoding U
+   defining Unicode char U+00A9 (decimal 169)
+   defining Unicode char U+00AA (decimal 170)
+   defining Unicode char U+00AE (decimal 174)
+   defining Unicode char U+00BA (decimal 186)
+   defining Unicode char U+02C6 (decimal 710)
+   defining Unicode char U+02DC (decimal 732)
+   defining Unicode char U+200C (decimal 8204)
+   defining Unicode char U+2026 (decimal 8230)
+   defining Unicode char U+2122 (decimal 8482)
+   defining Unicode char U+2423 (decimal 9251)
+))
+(/usr/share/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+(/usr/share/texmf-dist/tex/latex/base/t1enc.def
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
+))
+(/usr/share/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2013/05/16 v3.9f The Babel package
+
+(/usr/share/texmf-dist/tex/generic/babel-english/english.ldf
+Language: english 2012/08/20 v3.3p English support from the babel system
+
+(/usr/share/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2013/05/16 v3.9f Babel common definitions
+\babel@savecnt=\count89
+\U@D=\dimen103
+)
+\l@canadian = a dialect from \language\l@american 
+\l@australian = a dialect from \language\l@british 
+\l@newzealand = a dialect from \language\l@british 
+))
+(/usr/share/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+(/usr/share/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+(/usr/share/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+(/usr/share/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count90
+\Gm@cntv=\count91
+\c@Gm@tempcnt=\count92
+\Gm@bindingoffset=\dimen104
+\Gm@wd@mp=\dimen105
+\Gm@odd@mp=\dimen106
+\Gm@even@mp=\dimen107
+\Gm@layoutwidth=\dimen108
+\Gm@layoutheight=\dimen109
+\Gm@layouthoffset=\dimen110
+\Gm@layoutvoffset=\dimen111
+\Gm@dimlist=\toks17
+)
+(/usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(/usr/share/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/share/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/share/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count93
+))
+\Gin@req@height=\dimen112
+\Gin@req@width=\dimen113
+)
+(/usr/share/texmf-dist/tex/latex/tools/varioref.sty
+Package: varioref 2011/10/02 v1.4z package for extended references (FMi)
+\c@vrcnt=\count94
+)
+(/usr/share/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
+
+(/usr/share/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+Package: hobsub-hyperref 2012/05/28 v1.13 Bundle oberdiek, subset hyperref (HO)
+
+
+(/usr/share/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+Package: hobsub-generic 2012/05/28 v1.13 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2012/05/28 v1.13 Construct package bundles (HO)
+Package hobsub Info: Skipping package `infwarerr' (already loaded).
+Package hobsub Info: Skipping package `ltxcmds' (already loaded).
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+Package hobsub Info: Skipping package `ifvtex' (already loaded).
+Package: intcalc 2007/09/27 v1.1 Expandable calculations with integers (HO)
+Package hobsub Info: Skipping package `ifpdf' (already loaded).
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+Package: pdfescape 2011/11/25 v1.13 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2012/04/08 v1.3 Expandable calculations on big integers (HO
+)
+Package: bitset 2011/01/30 v1.1 Handle bit-vector datatype (HO)
+Package: uniquecounter 2011/01/30 v1.2 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
+Package: hopatch 2012/05/28 v1.2 Wrapper for package hooks (HO)
+Package: xcolor-patch 2011/01/30 xcolor patch
+Package: atveryend 2011/06/30 v1.8 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
+Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
+Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
+)
+(/usr/share/texmf-dist/tex/latex/oberdiek/auxhook.sty
+Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
+)
+(/usr/share/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+)
+\@linkdim=\dimen114
+\Hy@linkcounter=\count95
+\Hy@pagecounter=\count96
+
+(/usr/share/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+\Hy@SavedSpaceFactor=\count97
+
+(/usr/share/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Option `breaklinks' set `true' on input line 4319.
+Package hyperref Info: Option `bookmarks' set `true' on input line 4319.
+Package hyperref Info: Option `colorlinks' set `true' on input line 4319.
+Package hyperref Info: Hyper figures OFF on input line 4443.
+Package hyperref Info: Link nesting OFF on input line 4448.
+Package hyperref Info: Hyper index ON on input line 4451.
+Package hyperref Info: Plain pages OFF on input line 4458.
+Package hyperref Info: Backreferencing OFF on input line 4463.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4688.
+\c@Hy@tempcnt=\count98
+
+(/usr/share/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip10
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5041.
+\XeTeXLinkMargin=\dimen115
+\Fld@menulength=\count99
+\Field@Width=\dimen116
+\Fld@charsize=\dimen117
+Package hyperref Info: Hyper figures OFF on input line 6295.
+Package hyperref Info: Link nesting OFF on input line 6300.
+Package hyperref Info: Hyper index ON on input line 6303.
+Package hyperref Info: backreferencing OFF on input line 6310.
+Package hyperref Info: Link coloring ON on input line 6313.
+Package hyperref Info: Link coloring with OCG OFF on input line 6320.
+Package hyperref Info: PDF/A mode OFF on input line 6325.
+LaTeX Info: Redefining \ref on input line 6365.
+LaTeX Info: Redefining \pageref on input line 6369.
+\Hy@abspage=\count100
+\c@Item=\count101
+\c@Hfootnote=\count102
+)
+
+Package hyperref Message: Driver: hpdftex.
+
+(/usr/share/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
+\Fld@listcount=\count103
+\c@bookmark@seq@number=\count104
+
+(/usr/share/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
+)
+\Hy@SectionHShift=\skip47
+)
+(/usr/share/texmf-dist/tex/latex/csquotes/csquotes.sty
+Package: csquotes 2011/10/22 v5.1d context-sensitive quotations
+
+(/usr/share/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2011/01/03 v2.1 e-TeX tools for LaTeX
+
+(/usr/share/texmf-dist/tex/latex/etex-pkg/etex.sty
+Package: etex 1998/03/26 v2.0 eTeX basic definition package (PEB)
+\et@xins=\count105
+)
+\etb@tempcnta=\count106
+)
+\csq@reset=\count107
+\csq@gtype=\count108
+\csq@glevel=\count109
+\csq@qlevel=\count110
+\csq@maxlvl=\count111
+\csq@tshold=\count112
+\csq@ltx@everypar=\toks18
+
+(/usr/share/texmf-dist/tex/latex/csquotes/csquotes.def
+File: csquotes.def 2011/10/22 v5.1d csquotes generic definitions
+)
+Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
+Package csquotes Info: ... configuration file loaded successfully.
+
+(/usr/share/texmf-dist/tex/latex/csquotes/csquotes.cfg
+File: csquotes.cfg 
+))
+(/usr/share/texmf-dist/tex/latex/biblatex/biblatex.sty
+Package: biblatex 2013/07/15 v2.7a programmable bibliographies (PK/JW/AB)
+
+
+Package biblatex Warning: No "backend" specified, using Biber backend.
+(biblatex)                To use BibTeX, load biblatex with 
+(biblatex)                the "backend=bibtex" option.
+
+(/usr/share/texmf-dist/tex/latex/biblatex/biblatex2.sty
+Package: biblatex2 2013/07/15 v2.7a programmable bibliographies (biber) (PK/JW/
+AB)
+
+(/usr/share/texmf-dist/tex/latex/logreq/logreq.sty
+Package: logreq 2010/08/04 v1.0 xml request logger
+\lrq@indent=\count113
+
+(/usr/share/texmf-dist/tex/latex/logreq/logreq.def
+File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
+))
+(/usr/share/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\c@tabx@nest=\count114
+\c@listtotal=\count115
+\c@listcount=\count116
+\c@liststart=\count117
+\c@liststop=\count118
+\c@citecount=\count119
+\c@citetotal=\count120
+\c@multicitecount=\count121
+\c@multicitetotal=\count122
+\c@instcount=\count123
+\c@maxnames=\count124
+\c@minnames=\count125
+\c@maxitems=\count126
+\c@minitems=\count127
+\c@citecounter=\count128
+\c@savedcitecounter=\count129
+\c@uniquelist=\count130
+\c@uniquename=\count131
+\c@refsection=\count132
+\c@refsegment=\count133
+\c@maxextratitle=\count134
+\c@maxextratitleyear=\count135
+\c@maxextrayear=\count136
+\c@maxextraalpha=\count137
+\c@abbrvpenalty=\count138
+\c@highnamepenalty=\count139
+\c@lownamepenalty=\count140
+\c@maxparens=\count141
+\c@parenlevel=\count142
+\blx@tempcnta=\count143
+\blx@tempcntb=\count144
+\blx@tempcntc=\count145
+\blx@maxsection=\count146
+\blx@maxsegment@0=\count147
+\blx@notetype=\count148
+\blx@parenlevel@text=\count149
+\blx@parenlevel@foot=\count150
+\blx@sectionciteorder@0=\count151
+\labelnumberwidth=\skip48
+\labelalphawidth=\skip49
+\shorthandwidth=\skip50
+\biblabelsep=\skip51
+\bibitemsep=\skip52
+\bibnamesep=\skip53
+\bibinitsep=\skip54
+\bibparsep=\skip55
+\bibhang=\skip56
+\blx@bcfin=\read1
+\blx@bcfout=\write3
+\c@mincomprange=\count152
+\c@maxcomprange=\count153
+\c@mincompwidth=\count154
+Package biblatex Info: Trying to load biblatex default data model...
+Package biblatex Info: ... file 'blx-dm.def' found.
+
+(/usr/share/texmf-dist/tex/latex/biblatex/blx-dm.def)
+Package biblatex Info: Trying to load biblatex custom data model...
+Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
+\c@afterword=\count155
+\c@savedafterword=\count156
+\c@annotator=\count157
+\c@savedannotator=\count158
+\c@author=\count159
+\c@savedauthor=\count160
+\c@bookauthor=\count161
+\c@savedbookauthor=\count162
+\c@commentator=\count163
+\c@savedcommentator=\count164
+\c@editor=\count165
+\c@savededitor=\count166
+\c@editora=\count167
+\c@savededitora=\count168
+\c@editorb=\count169
+\c@savededitorb=\count170
+\c@editorc=\count171
+\c@savededitorc=\count172
+\c@foreword=\count173
+\c@savedforeword=\count174
+\c@holder=\count175
+\c@savedholder=\count176
+\c@introduction=\count177
+\c@savedintroduction=\count178
+\c@namea=\count179
+\c@savednamea=\count180
+\c@nameb=\count181
+\c@savednameb=\count182
+\c@namec=\count183
+\c@savednamec=\count184
+\c@shortauthor=\count185
+\c@savedshortauthor=\count186
+\c@shorteditor=\count187
+\c@savedshorteditor=\count188
+\c@translator=\count189
+\c@savedtranslator=\count190
+\c@labelname=\count191
+\c@savedlabelname=\count192
+\c@institution=\count193
+\c@savedinstitution=\count194
+\c@lista=\count195
+\c@savedlista=\count196
+\c@listb=\count197
+\c@savedlistb=\count198
+\c@listc=\count199
+\c@savedlistc=\count200
+\c@listd=\count201
+\c@savedlistd=\count202
+\c@liste=\count203
+\c@savedliste=\count204
+\c@listf=\count205
+\c@savedlistf=\count206
+\c@location=\count207
+\c@savedlocation=\count208
+\c@organization=\count209
+\c@savedorganization=\count210
+\c@origlocation=\count211
+\c@savedoriglocation=\count212
+\c@origpublisher=\count213
+\c@savedorigpublisher=\count214
+\c@publisher=\count215
+\c@savedpublisher=\count216
+\c@language=\count217
+\c@savedlanguage=\count218
+\c@pageref=\count219
+\c@savedpageref=\count220
+Package biblatex Info: Trying to load compatibility code...
+Package biblatex Info: ... file 'blx-compat.def' found.
+
+(/usr/share/texmf-dist/tex/latex/biblatex/blx-compat.def
+File: blx-compat.def 2013/07/15 v2.7a biblatex compatibility (PK/JW/AB)
+)
+Package biblatex Info: Trying to load generic definitions...
+Package biblatex Info: ... file 'biblatex.def' found.
+
+(/usr/share/texmf-dist/tex/latex/biblatex/biblatex.def
+File: biblatex.def 
+\c@textcitecount=\count221
+\c@textcitetotal=\count222
+\c@textcitemaxnames=\count223
+\c@biburlnumpenalty=\count224
+\c@biburlucpenalty=\count225
+\c@biburllcpenalty=\count226
+\c@smartand=\count227
+)
+Package biblatex Info: Trying to load bibliography style 'numeric'...
+Package biblatex Info: ... file 'numeric.bbx' found.
+
+(/usr/share/texmf-dist/tex/latex/biblatex/bbx/numeric.bbx
+File: numeric.bbx 2013/07/15 v2.7a biblatex bibliography style (PK/JW/AB)
+Package biblatex Info: Trying to load bibliography style 'standard'...
+Package biblatex Info: ... file 'standard.bbx' found.
+
+(/usr/share/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
+File: standard.bbx 2013/07/15 v2.7a biblatex bibliography style (PK/JW/AB)
+\c@bbx:relatedcount=\count228
+\c@bbx:relatedtotal=\count229
+))
+Package biblatex Info: Trying to load citation style 'numeric'...
+Package biblatex Info: ... file 'numeric.cbx' found.
+
+(/usr/share/texmf-dist/tex/latex/biblatex/cbx/numeric.cbx
+File: numeric.cbx 2013/07/15 v2.7a biblatex citation style (PK/JW/AB)
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\parencite'.
+Package biblatex Info: Redefining '\footcite'.
+Package biblatex Info: Redefining '\footcitetext'.
+Package biblatex Info: Redefining '\smartcite'.
+Package biblatex Info: Redefining '\supercite'.
+Package biblatex Info: Redefining '\textcite'.
+Package biblatex Info: Redefining '\textcites'.
+Package biblatex Info: Redefining '\cites'.
+Package biblatex Info: Redefining '\parencites'.
+Package biblatex Info: Redefining '\smartcites'.
+)
+Package biblatex Info: Trying to load configuration file...
+Package biblatex Info: ... file 'biblatex.cfg' found.
+
+(/usr/share/texmf-dist/tex/latex/biblatex/biblatex.cfg
+File: biblatex.cfg 
+)))
+(/usr/share/texmf-dist/tex/latex/subfiles/subfiles.sty
+Package: subfiles 2012/05/23 Federico Garcia
+
+(/usr/share/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks19
+\verbatim@line=\toks20
+\verbatim@in@stream=\read2
+))
+(/usr/share/texmf-dist/tex/latex/pdfpages/pdfpages.sty
+Package: pdfpages 2013/08/25 v0.4v Insert pages of external PDF documents (AM)
+
+(/usr/share/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count230
+\calc@Bcount=\count231
+\calc@Adimen=\dimen118
+\calc@Bdimen=\dimen119
+\calc@Askip=\skip57
+\calc@Bskip=\skip58
+LaTeX Info: Redefining \setlength on input line 76.
+LaTeX Info: Redefining \addtolength on input line 77.
+\calc@Ccount=\count232
+\calc@Cskip=\skip59
+)
+(/usr/share/texmf-dist/tex/latex/eso-pic/eso-pic.sty
+Package: eso-pic 2010/10/06 v2.0c eso-pic (RN)
+
+(/usr/share/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+(/usr/share/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+))
+(/usr/share/texmf-dist/tex/latex/pdfpages/pppdftex.def
+File: pppdftex.def 2013/08/25 v0.4v Pdfpages driver for pdfTeX (AM)
+)
+\AM@pagebox=\box27
+\AM@toc@title=\toks21
+\c@AM@survey=\count233
+\AM@templatesizebox=\box28
+)
+(/usr/share/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+\fancy@headwidth=\skip60
+\f@ncyO@elh=\skip61
+\f@ncyO@erh=\skip62
+\f@ncyO@olh=\skip63
+\f@ncyO@orh=\skip64
+\f@ncyO@elf=\skip65
+\f@ncyO@erf=\skip66
+\f@ncyO@olf=\skip67
+\f@ncyO@orf=\skip68
+)
+(/usr/share/texmf-dist/tex/latex/acronym/acronym.sty
+Package: acronym 2012/10/29 v1.38 Support for acronyms (Tobias Oetiker)
+
+(/usr/share/texmf-dist/tex/latex/bigfoot/suffix.sty
+Package: suffix 2006/07/15 1.5 Variant command support
+)
+(/usr/share/texmf-dist/tex/generic/xstring/xstring.sty
+(/usr/share/texmf-dist/tex/generic/xstring/xstring.tex
+\@xs@message=\write4
+Normal \count register pool exhausted, switching to extended pool.
+\integerpart=\count277
+\decimalpart=\count278
+)
+Package: xstring 2013/07/29  v1.7b  String manipulations (C Tellechea)
+)
+\AC@clearlist=\toks22
+)
+(/usr/share/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count279
+\float@exts=\toks23
+\float@box=\box29
+\@float@everytoks=\toks24
+\@floatcapt=\box30
+)
+(/usr/share/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count280
+\lst@gtempboxa=\box31
+\lst@token=\toks25
+\lst@length=\count281
+\lst@currlwidth=\dimen120
+\lst@column=\count282
+\lst@pos=\count283
+\lst@lostspace=\dimen121
+\lst@width=\dimen122
+\lst@newlines=\count284
+\lst@lineno=\count285
+\lst@maxwidth=\dimen123
+
+(/usr/share/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2013/08/26 1.5b (Carsten Heinz)
+\c@lstnumber=\count286
+\lst@skipnumbers=\count287
+\lst@framebox=\box32
+)
+(/usr/share/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2013/08/26 1.5b listings configuration
+))
+Package: listings 2013/08/26 1.5b (Carsten Heinz)
+
+(/usr/share/texmf-dist/tex/latex/abc/abc.sty
+Package: abc 2008/03/03 v2.0 Enrico Gregorio
+\c@abc@count=\count288
+\abc@out=\write5
+)
+(/usr/share/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2008/02/07
+
+Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
+<2008/02/07> (tvz)
+\FV@CodeLineNo=\count289
+\FV@InFile=\read3
+\FV@TabBox=\box33
+\c@FancyVerbLine=\count290
+\FV@StepNumber=\count291
+\FV@OutFile=\write6
+))
+Package csquotes Info: Checking for multilingual support...
+Package csquotes Info: ... found 'babel' package.
+Package csquotes Info: Adjusting default style.
+Package csquotes Info: Redefining alias 'default' -> 'english'.
+Package biblatex Info: Trying to load language 'english'...
+Package biblatex Info: ... file 'english.lbx' found.
+ (/usr/share/texmf-dist/tex/latex/biblatex/lbx/english.lbx
+File: english.lbx 2013/07/15 v2.7a biblatex localization (PK/JW/AB)
+)
+No file main.aux.
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: twoside 
+* h-part:(L,W,R)=(71.13188pt, 455.24411pt, 71.13188pt)
+* v-part:(T,H,B)=(85.35826pt, 674.33032pt, 85.35826pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=455.24411pt
+* \textheight=674.33032pt
+* \oddsidemargin=-1.1381pt
+* \evensidemargin=-1.1381pt
+* \topmargin=-24.31174pt
+* \headheight=17.0pt
+* \headsep=20.40001pt
+* \topskip=11.0pt
+* \footskip=28.45274pt
+* \marginparwidth=89.62619pt
+* \marginparsep=12.8401pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchtrue
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+(/usr/share/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count292
+\scratchdimen=\dimen124
+\scratchbox=\box34
+\nofMPsegments=\count293
+\nofMParguments=\count294
+\everyMPshowfont=\toks26
+\MPscratchCnt=\count295
+\MPscratchDim=\dimen125
+\MPnumerator=\count296
+\makeMPintoPDFobject=\count297
+\everyMPtoPDFconversion=\toks27
+) (/usr/share/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/share/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+)
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+\AtBeginShipoutBox=\box35
+Package hyperref Info: Link coloring ON on input line 21.
+
+(/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
+
+(/usr/share/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
+)
+\c@section@level=\count298
+LaTeX Info: Redefining \Ref on input line 513.
+)
+LaTeX Info: Redefining \ref on input line 21.
+LaTeX Info: Redefining \pageref on input line 21.
+LaTeX Info: Redefining \nameref on input line 21.
+\@outlinefile=\write7
+\openout7 = `main.out'.
+
+LaTeX Info: Redefining \Ref on input line 21.
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Automatic encoding selection.
+(biblatex)             Assuming data encoding 'utf8'.
+\openout3 = `main.bcf'.
+
+Package biblatex Info: Trying to load bibliographic data...
+Package biblatex Info: ... file 'main.bbl' not found.
+
+No file main.bbl.
+Package biblatex Info: Reference section=0 on input line 21.
+Package biblatex Info: Reference segment=0 on input line 21.
+\c@lstlisting=\count299
+<misc/cover_mei.pdf, id=4, 614.295pt x 794.97pt>
+File: misc/cover_mei.pdf Graphic file (type pdf)
+ <use misc/cover_mei.pdf>
+Package pdftex.def Info: misc/cover_mei.pdf used on input line 24.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: misc/cover_mei.pdf Graphic file (type pdf)
+
+<use misc/cover_mei.pdf>
+Package pdftex.def Info: misc/cover_mei.pdf used on input line 24.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+
+<misc/cover_mei.pdf, id=7, page=1, 614.295pt x 794.97pt>
+File: misc/cover_mei.pdf Graphic file (type pdf)
+
+<use misc/cover_mei.pdf, page 1>
+Package pdftex.def Info: misc/cover_mei.pdf, page1 used on input line 24.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: misc/cover_mei.pdf Graphic file (type pdf)
+ <use misc/cover_mei.pdf, page 1>
+Package pdftex.def Info: misc/cover_mei.pdf, page1 used on input line 24.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: misc/cover_mei.pdf Graphic file (type pdf)
+
+<use misc/cover_mei.pdf, page 1>
+Package pdftex.def Info: misc/cover_mei.pdf, page1 used on input line 24.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: misc/cover_mei.pdf Graphic file (type pdf)
+ <use misc/cover_mei.pdf, page 1>
+Package pdftex.def Info: misc/cover_mei.pdf, page1 used on input line 24.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: misc/cover_mei.pdf Graphic file (type pdf)
+
+<use misc/cover_mei.pdf, page 1>
+Package pdftex.def Info: misc/cover_mei.pdf, page1 used on input line 24.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+ [1
+
+ <./misc/cover_mei.pdf{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}>]
+<misc/cover_mei.pdf, id=42, page=2, 614.295pt x 794.97pt>
+File: misc/cover_mei.pdf Graphic file (type pdf)
+
+<use misc/cover_mei.pdf, page 2>
+Package pdftex.def Info: misc/cover_mei.pdf, page2 used on input line 24.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: misc/cover_mei.pdf Graphic file (type pdf)
+ <use misc/cover_mei.pdf, page 2>
+Package pdftex.def Info: misc/cover_mei.pdf, page2 used on input line 24.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: misc/cover_mei.pdf Graphic file (type pdf)
+
+<use misc/cover_mei.pdf, page 2>
+Package pdftex.def Info: misc/cover_mei.pdf, page2 used on input line 24.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+ [2 <./misc/cover_mei.pdf>]
+(./tex/002_abstract.tex
+LaTeX Font Info:    Try loading font information for T1+cmss on input line 6.
+ (/usr/share/texmf-dist/tex/latex/base/t1cmss.fd
+File: t1cmss.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+[3
+
+] [4
+
+]) (./tex/009_before.tex
+\tf@toc=\write8
+\openout8 = `main.toc'.
+
+ [1
+
+] (./tex/acronyms.tex) [2
+
+]
+\tf@lot=\write9
+\openout9 = `main.lot'.
+
+ [3
+
+]
+\tf@lof=\write10
+\openout10 = `main.lof'.
+
+)
+(./tex/100_introduction.tex [4
+
+]
+Chapter 1.
+
+Class scrreprt Warning: \float@addtolists detected!
+(scrreprt)              You should use the features of package `tocbasic'
+(scrreprt)              instead of \float@addtolists.
+(scrreprt)              Support for \float@addtolists may be removed from
+(scrreprt)              `scrreprt' soon .
+
+(./tex/110_context_motivation.tex
+Package acronym Info: Label `acro:SO' newly defined as it shall be overridden
+although it is yet undefined on input line 37.
+
+
+Package acronym Warning: Acronym `SO' is not defined on input line 37.
+
+
+Package acronym Warning: Acronym `SO' is not defined on input line 37.
+
+
+LaTeX Warning: Citation 'raymond2004art' on page 5 undefined on input line 37.
+
+[5
+
+]) (./tex/120_project_overview.tex
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 29.
+
+(/usr/share/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 29.
+ [6] [7]
+
+LaTeX Warning: Citation 'almeida2012wiki' on page 8 undefined on input line 118
+.
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 118.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 118.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 118.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 118.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 118.
+) (./tex/130_document_structure.tex [8])) (./tex/200_related_work.tex [9]
+Chapter 2.
+Package acronym Info: Label `acro:ASCII' newly defined as it shall be overridde
+n
+although it is yet undefined on input line 15.
+
+Package acronym Warning: Acronym `ASCII' is not defined on input line 15.
+
+
+Package acronym Warning: Acronym `ASCII' is not defined on input line 15.
+
+
+LaTeX Warning: Citation 'abcnotation:Online' on page 10 undefined on input line
+ 19.
+
+
+Overfull \hbox (5.64435pt too wide) in paragraph at lines 19--23
+[]\T1/cmr/m/n/10.95 Many text-based no-ta-tions have been in-vented, and one of
+ them was Abc[[]
+ []
+
+
+LaTeX Warning: Reference `fig:abc_example' on page 10 undefined on input line 4
+9.
+
+<img/adeste_abc.png, id=146, 752.8125pt x 311.1625pt>
+File: img/adeste_abc.png Graphic file (type png)
+ <use img/adeste_abc.png>
+Package pdftex.def Info: img/adeste_abc.png used on input line 54.
+(pdftex.def)             Requested size: 364.19667pt x 150.53854pt.
+
+
+LaTeX Warning: Citation 'lilypond:Online' on page 10 undefined on input line 76
+.
+
+[10
+
+]
+
+LaTeX Warning: Reference `fig:lilypond_example' on page 11 undefined on input l
+ine 95.
+
+<img/adeste_ly.png, id=156, 810.02625pt x 350.30875pt>
+File: img/adeste_ly.png Graphic file (type png)
+ <use img/adeste_ly.png>
+Package pdftex.def Info: img/adeste_ly.png used on input line 103.
+(pdftex.def)             Requested size: 364.19667pt x 157.50385pt.
+
+[11pdfTeX warning (ext4): destination with the same identifier (name{figure.2.1
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.121 \newpage
+              pdfTeX warning (ext4): destination with the same identifier (name
+{figure.2.2}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.121 \newpage
+               <./img/adeste_abc.png> <./img/adeste_ly.png>]
+
+LaTeX Warning: Citation 'musicxml:Online' on page 12 undefined on input line 12
+5.
+
+
+LaTeX Warning: Citation 'abcm2ps:Online' on page 12 undefined on input line 141
+.
+
+
+LaTeX Warning: Citation 'abc2midi:Online' on page 12 undefined on input line 15
+8.
+
+
+LaTeX Warning: Citation 'easyabc:Online' on page 12 undefined on input line 166
+.
+
+
+LaTeX Warning: Citation 'abcplus:Online' on page 12 undefined on input line 173
+.
+
+[12]
+
+LaTeX Warning: Citation 'abcp:Online' on page 13 undefined on input line 192.
+
+
+LaTeX Warning: Citation 'music_abc_archive:Online' on page 13 undefined on inpu
+t line 208.
+
+
+Overfull \hbox (9.95045pt too wide) in paragraph at lines 208--210
+[]\T1/cmr/m/n/10.95 [[] ] A Perl mod-ule to parse Abc mu-sic archives. 
+ []
+
+
+LaTeX Warning: Citation 'Music21:Online' on page 13 undefined on input line 216
+.
+
+[13]) (./tex/300_corpora.tex [14]
+Chapter 3.
+
+LaTeX Warning: Citation 'Atkins1992' on page 15 undefined on input line 23.
+
+
+LaTeX Warning: Citation 'wynne2005developing' on page 15 undefined on input lin
+e 23.
+
+
+Overfull \hbox (42.85446pt too wide) in paragraph at lines 22--25
+\T1/cmr/m/n/10.95 This phase, ac-cord-ing to the ex-ist-ing lit-er-a-ture on bu
+ild-ing corpora[[], []
+ []
+
+[15
+
+]
+
+LaTeX Warning: Citation 'hunston2002corpora' on page 16 undefined on input line
+ 58.
+
+
+LaTeX Warning: Citation 'Conklin2002' on page 16 undefined on input line 74.
+
+
+Overfull \hbox (13.37256pt too wide) in paragraph at lines 73--75
+[]\T1/cmr/m/n/10.95 Find sets of ver-ti-cal pat-terns that oc-cur in a large nu
+m-ber of scores in the corpus[[]
+ []
+
+
+LaTeX Warning: Citation 'chai2001folk' on page 16 undefined on input line 76.
+
+
+Overfull \hbox (71.24806pt too wide) in paragraph at lines 75--77
+[]\T1/cmr/m/n/10.95 Find sig-nif-i-cant sta-tis-ti-cal dif-fer-ences be-tween m
+elodies of folk mu-sic from dif-fer-ent countries[[]
+ []
+
+
+LaTeX Warning: Citation 'Knopke' on page 16 undefined on input line 78.
+
+
+LaTeX Warning: Citation 'antonopoulos2007music' on page 16 undefined on input l
+ine 80.
+
+
+LaTeX Warning: Citation 'Ariza' on page 16 undefined on input line 83.
+
+
+LaTeX Warning: Citation 'albrechtemergence' on page 16 undefined on input line 
+85.
+
+
+Overfull \hbox (83.86754pt too wide) in paragraph at lines 84--86
+[]\T1/cmr/m/n/10.95 Identify trends and changes through-out a his-tor-i-cal tim
+e pe-riod through clus-ter analysis[[]
+ []
+
+[16]) (./tex/400_internal_representation.tex [17]
+Chapter 4.
+
+LaTeX Warning: Citation 'Honing1993' on page 18 undefined on input line 51.
+
+[18
+
+]
+
+LaTeX Warning: Citation 'Dannenberg1991' on page 19 undefined on input line 74.
+
+
+
+Overfull \hbox (7.0886pt too wide) in paragraph at lines 96--100
+[]\T1/cmr/m/n/10.95 The study of in-de-pen-dent melodies is rel-a-tively sim-pl
+e com-pared with the anal-y-sis of polyphony.
+ []
+
+
+LaTeX Warning: Citation 'Brinkman1984' on page 19 undefined on input line 105.
+
+
+LaTeX Warning: Reference `chap:scripting_abc' on page 19 undefined on input lin
+e 125.
+
+[19]
+Underfull \hbox (badness 10000) in paragraph at lines 151--155
+
+ []
+
+
+LaTeX Warning: Citation 'Honing1993' on page 20 undefined on input line 157.
+
+
+LaTeX Warning: Citation 'Honing1993' on page 20 undefined on input line 177.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 174--179
+
+ []
+
+[20]
+Underfull \hbox (badness 10000) in paragraph at lines 192--194
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 195--197
+
+ []
+
+
+LaTeX Warning: Reference `chap:scripting_abc' on page 21 undefined on input lin
+e 199.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 198--200
+
+ []
+
+) (./tex/500_abc_scripting.tex [21]
+Chapter 5.
+
+LaTeX Warning: Reference `sec:abcm2ps_approach' on page 22 undefined on input l
+ine 13.
+
+
+LaTeX Warning: Reference `fig:process_stages' on page 22 undefined on input lin
+e 33.
+
+<img/proof_of_concept_general.pdf, id=234, 439.6425pt x 210.7875pt>
+File: img/proof_of_concept_general.pdf Graphic file (type pdf)
+
+<use img/proof_of_concept_general.pdf>
+Package pdftex.def Info: img/proof_of_concept_general.pdf used on input line 37
+.
+(pdftex.def)             Requested size: 364.19667pt x 174.61908pt.
+
+
+LaTeX Warning: Reference `sec:abcm2ps_approach' on page 22 undefined on input l
+ine 44.
+
+[22
+
+pdfTeX warning (ext4): destination with the same identifier (name{figure.5.1}) 
+has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.52 
+      <./img/proof_of_concept_general.pdf>]
+
+LaTeX Warning: Reference `sec:abcm2ps_approach' on page 23 undefined on input l
+ine 58.
+
+
+LaTeX Warning: Reference `sec:generic_structure_of_abcm2ps_parser_internal_repr
+esentation' on page 23 undefined on input line 63.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 65--74
+
+ []
+
+
+LaTeX Warning: Reference `fig:data_extraction' on page 23 undefined on input li
+ne 75.
+
+<img/proof_of_concept_data_extrct.pdf, id=253, 908.39375pt x 193.72375pt>
+File: img/proof_of_concept_data_extrct.pdf Graphic file (type pdf)
+
+<use img/proof_of_concept_data_extrct.

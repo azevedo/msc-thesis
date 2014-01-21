@@ -1,0 +1,435 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html> <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>tkabc help tclabc</title>
+</head>
+
+<body>
+<h1>tclabc commands</h1>
+
+<h2>abc delete</h2>
+
+Delete the current symbol.
+<p>
+The current pointer is set to the next symbol.
+
+<h2>abc dump</h2>
+
+Return the current tune in ABC.
+
+<h2>abc get ?type?</h2>
+
+When no type, return the current symbol type and its associated values.
+<p>
+The values depend on the symbol type:
+<dl>
+  <dt>bar
+  <dd>bar_type repeat_value bar_number<br>
+      The <i>bar_type</i> value is defined in abcparse.h.
+  <dt>clef
+  <dd>clef_type line_number<br>
+      The <i>clef_type</i> value is defined in abcparse.h. <i>line_number</i>
+      is the line on which the clef indicates the main note (2 for treble).
+  <dt>EOT
+  <dd>(no associated value)<br>
+      This symbol indicates the end of the voice.
+  <dt>extra
+  <dd>extra_type ?args?<br>
+      The <i>extra_type</i> may be:
+      <dl>
+	<dt>blen
+	<dd>Change the basic note length for the next symbols. <i>args</i>
+	    contains the length (see note).
+	<dt>info
+	<dd>Information. The <i>args</i> are the information content in
+		ABC.
+	<dt>newline
+	<dd>Start a new line in the ABC file. There no <i>args</i>.
+	<dt>staves
+	<dd>Synchronize the staves. The <i>args</i> are the '%%staves' text.
+	<dt>vover
+	<dd>Switch to a voice overlay. The <i>args</i> are:
+		<dl>
+		<dt>type
+		<dd>Overlay type. It may be:
+			<ul>
+			<li>0: &amp;
+			<li>1: (&amp;
+			<li>2: &amp;)
+			</ul>
+		<dt>voice
+		<dd>Overlay voice number
+		</dl>
+      </dl>
+  <dt>grace
+  <dd>(same as note)
+  <dt>key (key signature)
+  <dd>key_type mode ?exp|add? ?pitch accidental? ...<br>
+	The <i>key_type</i> gives the number of sharps when positive
+	('2' is 'D' with F and C sharps), or the number of flats when
+	negative ('-2' is 'Bb' with B and E flats).
+	<i>mode</i>is the tune mode (major / minor, HP, none..)<br>
+	<i>exp</i> indicates that the normal accidentals of the key signature
+	must be explicitly replaced by the following ones.<br>
+	<i>add</i> gives the list of accidentals to be added to the key signature.
+  <dt>midi
+  <dd>command args<br>
+      The <i>command</i> is the same as the '%%MIDI' ABC pseudo-comment
+      with the following extensions:
+      <dl>
+	<dt>channel
+	<dd>Assign one or many MIDI channels to the voice. <i>args</i>
+	    contains the channel numbers (range 1..32).
+	<dt>program
+	<dd>Assign a MIDI program to a channel.<br>
+	    <i>args</i> may be:
+	    <ul>
+	    <li>program
+	    <li>bank-program
+	    <li>channel program
+	    <li>channel bank-program
+	    <li>channel bank program
+	    </ul>
+		<i>bank</i> and <i>program</i> are numbered from 0 to 127.<br>
+		When ommitted, <i>bank</i> is 0, and <i>channel</i>
+		is the first channel of the current voice.
+      </dl>
+  <dt>mrest
+  <dd>nbars<br>
+       <i>nbars</i> is the number of measures the rest lasts.
+  <dt>note
+  <dd>length pitch accidental ?pitch accidental? ...<br>
+      The note <i>length</i> unit is the same as the MIDI one, that is,
+      a whole note length is 1536.<br>
+      The <i>pitch</i> gives the natural note and its octave (it is not the
+      MIDI note frequency). The middle C value is 16, the upper 'c' is 23.<br>
+      The accidentals are:
+      <dl>
+	<dt>0
+	<dd>No accidental
+	<dt>1
+	<dd>sharp
+	<dt>2
+	<dd>natural
+	<dt>3
+	<dd>flat
+	<dt>4
+	<dd>double sharp
+	<dt>5
+	<dd>double flat
+      </dl>
+      When the accidental has a microtone fraction, this value is added
+      to <i>accidental</i> as
+	<blockquote>
+	((numerator - 1) * 256 + (denominator - 1)) * 8.
+	</blockquote>
+      <i>pitch</i> and <i>accidental</i> may be repeated in case of chord.
+  <dt>rest
+  <dd>length<br>
+      The rest <i>length</i> is the same as the note length.
+  <dt>tempo
+  <dd>string1 note_length0 length1 length2 length3 tempo_value string2
+  <dt>time (time signature)
+  <dd>upper_value lower_value ?upper_value lower_value? ..<br>
+      There may be up to 6 pairs of upper/lower values.
+  <dt>tuplet
+  <dd>p q r
+</dl>
+
+If the type is present, it may be:
+<dl>
+  <dt>channel
+  <dd>Return the last symbol where the MIDI channels of the voice are defined.
+      When empty, the voice channel is the voice number plus 1.
+  <dt>deco
+  <dd>Return the decorations on the current symbol (note, rest or bar).
+  <dt>flags
+  <dd>Return the symbol flags (not musical ones).<br>
+      These ones are indicators in a bit array. They are extracted
+      using the <b>binary AND</b> operator:
+      <dl>
+	<dt>0x01
+	<dd>Put a space before the symbol in the ABC file (beam break).
+	<dt>0x02
+	<dd>Header symbol ('x:').
+	<dt>0x04
+	<dd>Embedded symbol ('[x:]').
+	<dt>0x08
+	<dd>Note/rest in a tuplet sequence.
+	<dt>0x10
+	<dd>Note/rest is the first one in a tuplet sequence.
+	<dt>0x20
+	<dd>Note/rest is the last one in a tuplet sequence.
+	<dt>0x40
+	<dd>Note has starting ties.
+	<dt>0x80
+	<dd>Note has ending ties.
+	<dt>0x100
+	<dd>Some slurs start at this note.
+	<dt>0x200
+	<dd>Some slurs end at this note.
+      </dl>
+  <dt>gchord
+  <dd>Return the guitar chord indication of the current symbol.
+  <dt>header
+  <dd>Return the tune header, including the pseudo-comments.
+  <dt>lyrics
+  <dd>Return the lyric words associated with the note.
+  <dt>program
+  <dd>Return a list of symbols where MIDI programs are defined.
+	This list is indexed by channel number.
+	When the program of a channel is not defined, an empty value
+	appears in the list.
+  <dt>slurs
+  <dd>Return the starting and ending slurs of the chord and of each note
+	of the chord (four values if single note). The returned value
+	is void when there is no slur at all.<br>
+	The starting values are arrays of 2 bits:<br>
+	- 0x01: slur going above the note,<br>
+	- 0x02: slur going below the note,<br>
+	- 0x03: automatic calculation of the slur direction.
+  <dt>staff
+  <dd>Return<br>
+      'staff_number current_clef_sym current_key_sym current_time_sym'<br>
+  <dt>ties
+  <dd>Return a boolean tie indication for each note of the chord (one value if
+      single note). The returned value is void if there is no tie.
+  <dt>time
+  <dd>Return the starting time of the current symbol<br>
+	This time contains two values separated by a dot. The left value
+	is the MIDI time. The right value is a sequence number which
+	distinguishes symbols appearing at the same time (clefs, bars...).
+  <dt>tune
+  <dd>Return the internal index of the current tune (first is 0)
+  <dt>voice
+  <dd>Return the voice number
+  <dt>words
+  <dd>Return the lyric words after the tune (without the W:).
+</dl>
+
+<h2>abc go ?arg1? ?arg2?</h2>
+
+Go to a symbol and return its address.
+<p>
+With no argument, this command returns the current symbol, else,
+<i>arg1</i> may be:
+<dl>
+  <dt>a symbol address (when starting with 's')
+  <dd>Go to the indicated symbol.
+  <dt>next or prev<br>
+  <dd>If <i>arg2</i> is not present, go to the next or previous symbol
+	of the current voice. This command loops on the current voice.<br>
+	Else, if <i>arg2</i> is 'time', go to the next symbol at the
+	same or next time on any voice (<i>arg1</i> must be 'next').
+	When there is no symbol, an empty string is returned.
+  <dt>a voice number (when starting with a digit)
+  <dd>Go to the symbol of the indicated voice at the nearest goal time
+      (which is set when going to a symbol).
+</dl>
+
+<h2>abc insert args</h2>
+
+Insert a new symbol after the current pointer.
+<p>
+The <i>args</i> is a single list of values in the same format as the one
+returned by <i>get</i>.
+
+<h2>abc load abcbuffer</h2>
+
+Load a buffer containing an ABC description and select the first tune.
+<p>
+Any previous tune/buffer is discarded, even if it has been modified.
+
+<h2>abc lyrics ?lyrics?</h2>
+
+Get or set the lyric lines of the current voice.
+<p>
+There is one list element per line. The format of a line follows the ABC 'w:'
+format, but may also contain font changes as '[%%vocalfont font size]'.
+
+<h2>abc midi type ?args?</h2>
+
+Step by step recording facilities.
+<p>
+The <i>type</i> may be:
+<dl>
+  <dt>devin and devout
+  <dd>Return a list of MIDI devices suitable for input (<i>devin</i>) or
+	output (<i>devout</i>). The first word of each item of the list
+	may be used as the <i>device</i> of <i>abc midiin/midiout</i>
+	commands<br>
+	<i>args</i> is a device name. It is used for OSS only.
+  <dt>handler
+  <dd>Set or remove the proc to call when a symbol is created,
+	either from the MIDI input or by a <i>abc midi note</i>.<br>
+	<i>args</i> is the proc name. It has no argument.<br>
+	When <i>args</i> is absent or empty, stepping recording
+	is stopped.
+  <dt>note
+  <dd>Play a note and insert.<br>
+	<i>args</i> is a list with 2 elements:
+	<dl>
+	  <dt>pitch
+	  <dd>This is the MIDI pitch (60 for the middle C).
+	  <dt>velocity
+	  <dd>Velocity of the note, range 0..127. If 0, the note stops
+		playing.
+	</dl>
+	To insert a note, first start it with some velocity, then stop
+	it. The note figure is computed from the default tempo.<br>
+	The notes pitch 36 (C) and 37 (C#) insert a rest and a bar.
+</dl>
+
+<h2>abc midiin ?device?</h2>
+
+Return or define the MIDI input device.
+<p>
+MIDI input works with OSS and/or ALSA on Unix and on MS windows.
+<p>
+With OSS, <i>device</i> is an external MIDI device name as '/dev/midi00'.
+<p>
+With ALSA, <i>device</i> is the MIDI client and port in the same format
+as the option '-p' of <i>aplayrecord</i>, as '64:0'.
+<p>
+On MS Windows, <i>device</i> is a device number.
+<p>
+With the graphical interface (tkabc.tcl), edit the MIDI preferences
+and right click on the MIDI input field to get a list of possible
+devices.
+
+<h2>abc midiload midifilename</h2>
+
+Load a MIDI file and select the tune.
+<p>
+Any previous tune/file is discarded, even if it has been modified.
+
+<h2>abc midiout ?device?</h2>
+
+Return or define the MIDI output device.
+<p>
+MIDI output works with OSS and/or ALSA on Unix and on MS windows.
+<p>
+With OSS, <i>device</i> is the sequencer name possibly followed by
+':' and a device number, as '/dev/sequencer:1'.
+<p>
+With ALSA, <i>device</i> is the MIDI client and port in the same format
+as the option '-p' of <i>aplaymidi</i>.
+<p>
+On MS Windows, <i>device</i> is a device number.
+<p>
+With the graphical interface (tkabc.tcl), edit the MIDI preferences
+and right click on the MIDI output field to get a list of possible
+devices.
+
+<h2>abc new</h2>
+
+Load an empty tune and select it.
+<p>
+Any previous tune/file is discarded, even if it has been modified.
+
+<h2>abc play ?args?</h2>
+
+Play notes.
+<p>
+When no argument, return if playing is permitted or not. Otherwise,
+<i>arg1</i> may be:
+<dl>
+  <dt>mute ?0/1?
+  <dd>Get or set the voice mute state.
+  <dt>note
+  <dd>Play the current note.
+  <dt>stop
+  <dd>Stop playing.
+  <dt>tempo
+  <dd>Set the default tempo.
+  <dt>tune
+  <dd>Start playing from the current symbol.
+  <dt>velocity ?value?
+  <dd>Get or set the velocity/volume (0..127 - 0 = keyboard value / 80).
+  <dt>which
+  <dd>Return which symbol is being played or 'none'.
+</dl>
+
+<h2>abc record</h2>
+
+Start/stop recording from the MIDI input port.
+<p>
+When recording is started, the command returns 1.
+<p>
+When recording is stopped, the command returns 0 if there was no MIDI
+event. If there was some MIDI events, the command returns 2 after the
+events have been translated to ABC and inserted in the tune.
+
+<h2>abc rewind</h2>
+
+Go to the first symbol of the first voice, and return its address.
+
+<h2>abc set ?type? args</h2>
+
+When no type, change a symbol definition.
+<p>
+The <i>args</i> is a single list of values in the same format as the one
+returned by <i>get</i>.
+<p>
+Changing the number of sharps/flats of a key signature does a note
+transposition up to the next key signature. Also, changing the main
+key signature (the one in the tune header) transposes all voices.
+<p>
+When present, the <i>type</i> may be:
+<dl>
+  <dt>deco
+  <dd>Set the decorations of the current symbol (note, rest or bar).
+  <dt>flags
+  <dd>Set the symbol flags. Actually, only the <i>space</i> flag may be
+	changed.
+  <dt>gchord
+  <dd>Set the guitar chord indication of the current symbol.
+  <dt>header
+  <dd>Set the tune header (see <i>get header</i>). The previous header is
+      completely destroyed.  Note that changing the key signature of th
+	header does not do any tranposition.
+  <dt>measure
+  <dd>Insert or delete measure bars so that all measures are full according
+	to the time signature.
+  <dt>slurs
+  <dd>Set the starting and ending slurs of the chord and of each note of
+	the chord (four values if single note). To remove all slurs, set
+	an empty value.
+  <dt>ties
+  <dd>Set the boolean tie indications on each note of the chord
+	(one value per head). To remove all ties, set an empty value.
+  <dt>words
+  <dd>Set the lyric words after the tune.
+</dl>
+
+<h2>abc tune ?args?</h2>
+
+With no argument, return the title of all the tunes which are in the
+current file, else, the argument may be:
+<dl>
+  <dt>delete
+  <dd>Remove the current tune from the file.
+  <dt>new
+  <dd>Add a new tune in the file.
+  <dt>a tune index
+  <dd>Select the tune. The index is the same as the index in the list
+	return by <i>abc tune</i> (this is not the value of X:).
+</dl>
+
+<h2>abc voice ?args?</h2>
+
+With no argument, return the number of voices of the current tune, else,
+the argument may be:
+<dl>
+  <dt>get
+  <dd>Get the voice names. This command returns the name, full name and
+	nick name of the voice as a list.
+  <dt>new
+  <dd>Add a new voice whose names as defined by the following argument (list).
+  <dt>set
+  <dd>Set the voice names as defined by the following argument (list).
+</dl>
+
+<hr>
+Kemm diwezhañ: 20 a viz Here 2011
+</body> </html>

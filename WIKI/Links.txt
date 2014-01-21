@@ -1,0 +1,54 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2013-01-08T14:35:28+00:00
+
+====== Links ======
+Created Tuesday 08 January 2013
+
+Apos pesquisa no google nao encontrei ferramentas nem tecnologias que permitissem a avaliacao automatica de documentos ABC
+
+[[http://abcnotation.com/|home of abc notation]]
+[[http://en.wikipedia.org/wiki/ABC_notation|Wiki ABC notation]]
+[[http://linux-sound.org/notation.html|Music Notation Editors]]
+[[http://elpub.scix.net/data/works/att/120_elpub2012.content.04120.pdf|WIKI::SCORE A Collaborative Environment For Music Transcription And Publishing]]
+[[http://www.nilsliberg.se/ksp/easyabc/|EasyABC]] an open source ABC editor for Windows, OSX and Linux
+[[http://www3.di.uminho.pt/~jno/ps/ipm_sl5.pdf|Towards Music Pattern Recognition (J.N. Oliveira)]]
+
+[[http://www.lucytune.com/|LucyTuning]] LucyTuning is a musical microtuning system. This system enables users to modulate and transpose using any scales or keys that they may choose. with LucyTuning, it is possible to emulate Japanese, Indonesian, Chinese, Indian, Arabic (makam) and any conceivable tuning system.
+	[[http://www.harmonics.com/lucy/lsd/pomp.html|Pitch, Pi. and Other Musical Paradoxes (a practical guide to natural microtonality)]]
+[[http://www.gnu.org/software/abcsh/|abcsh - a shell for processing ABC music notation content]]
+
+29/10/2012
+
+== Internal Representation of Music ==
+[[http://www.philomel.com/pdf/Psych_Rev-1981_88_503-522.pdf|The Internal Representation of Pitch Sequences in Tonal Music]]
+[[http://www.lenmus.org/es/lomsedocs/hacking/document/internal-model.html|Lenmus Internal Representation]]
+[[http://dreixel.net/research/pdf/fmmh.pdf|Functional Modelling of Musical Harmony]]
+[[http://repository.cmu.edu/cgi/viewcontent.cgi?article=1484&context=compsci|A Brief Survey of Music Representation Issues, Techniques, and Systems]]
+[[http://www.cparity.com/projects/AcmClassification/samples/272716.pdf|Harmonic Analysis from the Computer Representation of a Musical Score]]
+
+2/11/2012
+[[http://www.vexflow.com/|vexflow]] VexFlow is an open-source web-based music notation rendering API. It is written completely in JavaScript, and runs right in the browser.
+	Implica conhecimento Javascript.
+	Para fazer uma pauta vazia apenas com uma clave de sol sao preciso 5 linhas de código
+	Existe uma versao mais alto nivel (parece-me que é mais indicada para tablaturas) → VexTab is a language that allows you to easily create, edit, and share guitar tablature. Unlike ASCII tab, which is designed for readability, VexTab is designed for writeability.
+	Talvez seja interessante integrar na wikiscore, mas para já não me parece algo essencial.
+
+
+== Computer-aided musical analysis ==
+[[http://mit.edu/music21|music21]] Music21 is a Python-based toolkit for computer-aided musicology.
+	Applications of this toolkit include computational musicology, music informations, musical example extraction and generation, music notation editing and scripting, and a wide variety of approaches to composition, both algorithmic and directly specified.
+	A general-purpose, open source toolkit for analyzing, searching, and transforming symbolic music data.
+	(e.g., reducing scores to a series of chords, determining key or metrical strength automatically, or integrating audio data)
+	music21 presently supports import of Humdrum and its Kern format, MIDI, and **ABC**, as well as export of MIDI and Lilypond. MuseData and additional formats will be forthcoming.
+[[http://www.academia.edu/1256514/Feature_Extraction_and_Machine_Learning_on_Symbolic_Music_using_the_music21_Toolkit|Feature Extraction and Machine Learning on Symbolic Music using the music21 Toolkit]]: This paper describes the “feature” capabilities of music21 (alternativa http://www.mirlab.org/conference_papers/International_Conference/ISMIR 2011/papers/PS3-6.pdf)
+[[http://www.flexatone.org/static/docs/music21Stream.pdf|The Music21 stream: a new object model for representing, filtering, and tranforming symbolic musical structures]]
+[[http://www.cs.uga.edu/~tomasz/pub/oliwa2008gecco.pdf|Genetic Algorithms and the abc Music Notation Language for Rock Music Composition]]
+[[http://smc.afim-asso.org/smc05/papers/MikaelLaurson/intro-analysis-final-phr.pdf|INTRODUCTION TO COMPUTER-ASSITED MUSIC ANALYSIS IN PWGL]]
+
+[[http://www.aaai.org/Papers/AAAI/2007/AAAI07-133.pdf|A Corpus-Based Hybrid Approach to Music Analysis and Composition]]
+[[http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.68.206&rep=rep1&type=pdf|Folk music classification using hidden Markov models]]
+[[https://biblio.ugent.be/input/download?func=downloadFile&recordOId=423631&fileOId=448560|MUSIC RETRIEVAL BY RHYTHMIC SIMILARITY APPLIED ON GREEK AND AFRICAN TRADITIONAL MUSIC]]
+
+== abc utilities ==
+[[http://abcmr.sourceforge.net/|abc music notation utilities]]

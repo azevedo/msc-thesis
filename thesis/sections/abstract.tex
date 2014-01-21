@@ -1,0 +1,25 @@
+\paragraph{}
+
+\abc{}~\cite{abcnotation:Online} is a simple, yet powerful, textual musical notation which allows to
+produce professional and complete music scores.
+
+Presently, there is a lack of music notation general processing tools, particularly for \abc{}.
+
+This dissertation presents \abcdt{}, a rule-based
+\ac{DSL}~\cite{kosar2010comparing,kosar2008preliminary} (Perl embedded), designed to simplify the
+creation of \abcpt{}s. Inspired by the \unix{} philosophy, those tools intend to be simple and
+compositional in a \unix{} filters' way.
+
+From \abcdt{}'s rules an \abcpt{} whose main algorithm follows a traditional compiler architecture
+is obtained, therefore consisting of three stages: \textbf{1)} \abc{} parsing (based on
+\abcmtops'~\cite{abcm2ps:Online} parser), \textbf{2)} \abc{} semantic transformation (associated
+with \abc{} attributes) and \textbf{3)} output generation (either a user defined or system provided
+\abc{} generator).
+
+A set of \abcpt{}s was developed using \abcdt{}. Every one of them has its single purpose, from
+error detection, to aiding in music studying and even imitating some \unix{} tools behavior. They
+are intended to be proof of concept and can still be improved, yet they demonstrate how easily
+compact \abcpt{}s can be created.
+
+A test and evaluation were done to one of the created \abcpt{}s (\canonabc{}) with a real \abc{}
+score, \texttt{Pachelbel's Canon}.

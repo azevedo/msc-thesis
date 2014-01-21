@@ -1,0 +1,9 @@
+X:302
+T:Solo Tenor
+C:Anonimo sec XVI
+M:3/4
+L:1/8
+K:G
+V:2 clef=treble name="Contralto" sname="C."
+%%MIDI program 1 1
+%%staves [ 2 ]

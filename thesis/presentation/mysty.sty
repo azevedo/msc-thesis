@@ -1,0 +1,31 @@
+\defbeamertemplate*{headline}{Copenhagen theme}
+{%
+% \leavevmode%
+% \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,right]{section in head/foot}%
+% \usebeamerfont{section in head/foot}\insertsectionhead\hspace*{2ex}
+% \end{beamercolorbox}%
+% \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,left]{subsection in head/foot}%
+% \usebeamerfont{subsection in head/foot}\hspace*{2ex}\insertsubsectionhead
+% \end{beamercolorbox}%
+}
+\defbeamertemplate*{footline}{ntnu theme}
+{%
+  \leavevmode%
+  \hbox{\begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm,rightskip=.3cm]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\insertframenumber{}
+	\hfill\insertshortauthor
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm,rightskip=.3cm plus1fil]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+\definecolor{mygreen}{rgb}{0,0.25,0} % Verde escuro
+\setbeamercolor{structure}{fg=mygreen}
+\setbeamercolor{alerted text}{fg=blue}
+\setbeamertemplate{navigation symbols}{}
+
+\newenvironment{claim}{\footnotesize\color{blue}}{}
+\newenvironment{claimright}{\begin{flushright}\begin{minipage}{.5\textwidth}\begin{claim}}{\end{claim}\end{minipage}\end{flushright}}
+\newenvironment{claimleft}{\begin{flushleft}\begin{minipage}{.5\textwidth}\begin{claim}}{\end{claim}\end{minipage}\end{flushleft}}
+

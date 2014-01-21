@@ -1,0 +1,5 @@
+my %handler = (
+  "V:$requested_voice" => sub {
+    toabc() . "%%MIDI control 7 $min_volume\n";
+  }
+);

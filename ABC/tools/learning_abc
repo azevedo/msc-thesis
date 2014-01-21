@@ -1,0 +1,177 @@
+#!/usr/bin/perl
+package Music::Abc::LEARNING 0.1;
+
+use 5.01400;
+
+use strict;
+use warnings;
+
+use Music::Abc::DT;
+use Getopt::Long;
+use Readonly;
+use Carp;
+
+Readonly my $MIN_DEFAULT => 50;     # default value for $min_volume
+Readonly my $MAX_DEFAULT => 127;    # default value for $max_volume
+Readonly my $EXTENSION_OFFSET => -4;    # offset corresponding to the start of an abc file's extension
+
+# option variables
+my $req_voice;
+my ( $min_volume, $max_volume ) = ( $MIN_DEFAULT, $MAX_DEFAULT );
+
+GetOptions(
+            'voice=s' => \$req_voice,
+            'min=i'   => \$min_volume,
+            'max=i'   => \$max_volume
+          );
+
+my @tunes         = @ARGV;    # abc tunes
+my $result        = q{};
+my %voice_channel = ();       # voice_id => MIDI channel
+my $c_voice_id;
+my $fh;
+
+foreach my $tune (@tunes) {
+  my $tune_name = substr $tune, 0, $EXTENSION_OFFSET;
+
+  get_voice_data($tune);
+
+  $result = just_one($tune);
+  open $fh, '>', $tune_name . "_just_$req_voice.abc"
+    or croak "cannot open < $tune_name" . "_just_$req_voice.abc: $!";
+  print {$fh} $result;
+  close $fh or croak "unable to close: $!";
+
+  $result = all_but_one($tune);
+  open $fh, '>', $tune_name . "_all_but_$req_voice.abc"
+    or croak "cannot open < $tune_name" . "_all_but_$req_voice.abc: $!";
+  print {$fh} $result;
+  close $fh or croak "unable to close: $!";
+}
+
+
+############## Subroutines ##############
+
+sub get_voice_data {
+  my $tune = shift;
+  my %rule = (
+    'V:' => sub {
+      $c_voice_id = $sym->{info}->{id};
+
+      if ( not exists $voice_channel{$c_voice_id} ) {
+        $voice_channel{$c_voice_id}{channel} = ( scalar keys %voice_channel ) + 1;
+        $voice_channel{$c_voice_id}{name} = $sym->{info}->{fname};
+      }
+    },
+    'MIDI::program' => sub {
+      if (    exists $voice_channel{$c_voice_id}
+           && $sym->{text} =~ /.*program\s+\d*\s*(\d+)/xms )
+      {
+        $voice_channel{$c_voice_id}{program} = $1;
+      }
+    },
+  );
+
+  dt( $tune, %rule );
+
+  return;
+}
+
+sub all_but_one {
+  my $tune = shift;
+  my %rule = (
+    "V:$req_voice" => sub { toabc() . "%%MIDI control 7 $min_volume\n" },
+  );
+
+  return dt( $tune, %rule );
+}
+
+sub just_one {
+  my $tune = shift;
+  my %rule = (
+    'X:' => sub {
+      my $res = toabc();
+      foreach my $voice_id ( sort keys %voice_channel ) {
+        my $channel    = $voice_channel{$voice_id}{channel};
+        my $program    = $voice_channel{$voice_id}{program} || 1;
+        my $voice_name = $voice_channel{$voice_id}{name};
+        $res .= "%%MIDI channel $channel\n";
+        $res .= "%%MIDI program $channel $program\n";
+        $res .= $req_voice eq $voice_id
+                || $req_voice eq $voice_name ? "%%MIDI control 7 $max_volume\n"
+                                             : "%%MIDI control 7 $min_volume\n";
+      }
+      $res;
+    },
+    'V:' => sub { toabc() . "%%MIDI channel $voice_channel{$sym->{info}->{id}}{channel}\n" },
+  );
+
+  return dt( $tune, %rule );
+}
+
+1;
+__END__
+
+=head1 NAME
+
+learning_abc - learning and rehearsal specific ABC multi-voice music
+
+=head1 SYNOPSIS
+
+learning_abc [OPTION]... [FILE]...
+
+=head1 USAGE
+
+learning_abc -v=3 file.abc
+  Creates 2 ABC files
+    - file_all_but_3: voice 3's volume is set to 50
+    - file_just_3:    voice 3's volume is set to 127
+                      remaining voices are set to 50
+
+learning_abc -v=Tenor file.abc
+  Creates 2 ABC files
+    - file_all_but_Tenor.abc: voice Tenor's volume is set to 50
+    - file_just_Tenor.abc:    voice Tenor's volume is set to 127
+                              remaining voices are set to 50
+
+learning_abc -v=3 -min=20 -max=100 file.abc
+  Creates 2 ABC files
+    - file_all_but_3: voice 3's volume is set to 20
+    - file_just_3:    voice 3's volume is set to 100
+                      remaining voices are set to 20
+
+=head1 DESCRIPTION
+
+Generates new abc scores whose goal is to help musicians in individual rehearsal of multi-voice
+music for studying purposes.
+
+=head1 REQUIRED ARGUMENTS
+
+=head1 OPTIONS
+
+-v, --voice=voiceId|voiceName
+  This determines which voice is going to be the focus of the tool
+
+-min=volume
+  Sets the volume for the voices to be minimized. Default=50
+
+-max=volume
+  Sets the volume for the voices to be maximized. Default=127
+
+=head1 DIAGNOSTICS
+
+=head1 EXIT STATUS
+
+=head1 CONFIGURATION
+
+=head1 DEPENDENCIES
+
+=head1 INCOMPATIBILITIES
+
+=head1 BUGS AND LIMITATIONS
+
+=head1 AUTHOR
+
+  Bruno Azevedo
+
+=head1 LICENSE AND COPYRIGHT

@@ -1,0 +1,130 @@
+#!/bin/sh
+# the next line restarts using tclsh -*- tcl -*- \
+exec tclsh "$0" "$@"
+
+# This is an example of using the tclabc library.
+# This script takes ABC files from the command line and
+# checks if there is a correct number of notes per measure.
+
+if {[file exists ./tclabc[info sharedlibextension]]} {
+    # accept to run in the source directory
+    set abclib .
+    load ./tclabc[info sharedlibextension]
+    set abcversion [package require tclabc]
+} else {
+    set prefix @prefix@
+    set exec_prefix @exec_prefix@
+    set abclib @libdir@/tclabc/
+    set auto_path "$abclib $auto_path"
+    set abcversion @VERSION@
+
+    package require -exact tclabc $abcversion
+}
+
+proc main {} {
+    global argc argv
+    if {$argc == 0} {
+	puts stderr {Check the number of notes per measure.
+Usage:  abcbarchk <abc_file> [abc_file]*}
+	exit 1
+    }
+
+    # main job: loop on all files
+    foreach fn $argv {
+
+	# read the ABC file
+	if {[catch {open $fn r} fd]} {
+	    puts stderr "Cannot read $fn"
+	    continue
+	}
+	abc load [read $fd [file size $fn]]
+	close $fd
+
+	# check the measures for all tunes
+	puts stdout "Checking $fn:"
+	set tunes [abc tune]
+	set ntune [llength $tunes]
+	for {set i 0} {$i < $ntune} {incr i} {
+	    puts -nonewline stdout "    [lindex $tunes $i]..."
+	    abc tune $i
+
+	    # loop on all voices
+	    set nv [abc voice]
+	    for {set j 0} {$j <= $nv} {incr j} {
+		abc rewind
+		abc go $j
+		if {$nv != 0} {
+		    puts -nonewline stdout "
+        voice [lindex [abc voice get] 0]: "
+		}
+		set m 1536	;# 4/4
+		set t 0		;# time
+		set b 0		;# measure number
+		set error 0
+		set somenote 0
+		for {} {1} {} {
+		    set sym [abc get]
+		    switch [lindex $sym 0] {
+			note - rest {
+			    set somenote 1
+			}
+			time {
+			    set num [lindex $sym 1]
+			    if {$num == 0} break	;# no measure
+			    switch $num {
+				C - C| {
+				    set m 1536
+				}
+				default {
+				    set m [expr {$num * 1536 / [lindex $sym 2]}]
+				}
+			    }
+			}
+			bar {
+			    if {$somenote} {
+				incr t $m
+				set somenote 0
+			    }
+			    set time [abc get time]
+			    set time [lindex [split $time .] 0]
+			    if {$time != $t} {
+				# may have a shorter measure at the beginning
+				# and at the end of the tune
+				set ko 1
+				if {$time < $t} {
+				    if {$b == 0} {
+					set ko 0
+				    } else {
+					abc go next
+					if {[string compare \
+					    [lindex [abc get] 0] EOT] == 0} {
+					    break
+					}
+					abc go prev
+				    }
+				}
+				if {$ko} {
+				    puts -nonewline stdout " $b"
+#puts "\nt:$t time:$time"
+				    incr error
+				}
+				set t $time
+			    }
+			    incr b
+			}
+			EOT break
+		    }
+		    abc go next
+		}
+		if {$error} {
+		    puts -nonewline stdout " KO: $error error(s)"
+		} else {
+		    puts -nonewline stdout { OK}
+		}
+		if {$j == $nv} {puts stdout {}}
+	    }
+	}
+    }
+}
+
+main

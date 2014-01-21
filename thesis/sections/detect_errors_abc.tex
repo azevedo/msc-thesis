@@ -1,0 +1,152 @@
+\abc{} is a textual music notation, therefore it is very common for an \abc{} score to have
+syntactical errors, such as, having more beats in a measure than it can hold.
+
+There are three kinds of behavior when facing an error: correct it immediately (e.g.: insert a bar
+when it's missing); warn the user of the error's existence; and comment the error and annotate a
+\emph{FIXME} comment so that the user can locate and fix the error manually.
+
+Due to time limitations, only one behavior is adopted in \detecterrorsabc{}, which is to warn the
+user. So, for each file, it detects errors and produces an output with error messages along with the
+voice and measure number where they occurred.
+
+\detecterrorsabc{} will expose the following errors:
+
+\begin{description}
+  \item[Incomplete/Overflowing measure] \hfill \\
+    A measure is a segment of time defined by a given number of beats which is delimited by a
+    \emph{bar} element. The number of beats in a measure is determined by the \emph{Meter (M:)}
+    previously defined.
+
+    The first metrically complete measure within a score is the first measure. When the score begins
+    with an anacrusis (an incomplete measure at the head of a score), the first measure is the
+    following measure.
+
+    So, the number of beats (the length of all notes and rests) in a measure (except if it is an
+    anacrusis) must be equal to that measure's defined length.
+
+  \item[Last \abc{} element per voice isn't a bar] \hfill \\
+    \abc{} allows a score to not having a \emph{bar} at the end of a voice, however, it isn't
+    considered a good practice in modern music notation.
+
+    Therefore, a voice must finish with a \emph{bar} element, in other words, the last
+    \abcelement{}, except \emph{eoln}, for a voice has to be a \emph{bar}.
+
+  \item[Different number of measures per voice] \hfill \\
+    All voices must have the same number of measures.
+
+  \item[Different key definitions per measure] \hfill \\
+    In modern music, there are certain properties that apply to many elements simultaneously, for
+    instance, in a multi-voice score, the second measure is the second measure for all voices, as
+    well as the key, among others. However, in \abc{}, that assumption may be ignored.
+
+    Thus, for each measure, the key must be the same for all voices.
+
+\end{description}
+
+\subsection*{Algorithm}
+
+\detecterrorsabc{}'s algorithm consists of 2 stages that are applied to each tune.
+
+An algorithmic description is made in algorithm \ref{alg:detecterrorsabc}.\\
+
+For each tune:
+
+\begin{enumerate}
+  \item \textbf{Retrieve data and detect incomplete/overflowing measures}
+
+  In this stage, the tune is processed by \dt{}, in which each voice's \emph{last \abc {} element},
+  \emph{number of measures} and the \emph{key per measure} are stored to be used in the following
+  stage.
+
+  It also stores the \emph{current measure's real length} in order to detect incomplete/overflowing
+  measures. In order to accomplish the latter, when the \emph{bar} element is found, it compares the
+  \emph{current measure's real length} with the current measure's defined length.
+
+  The set of \abcdtrules{} is shown in table \ref{tab:detect_errors_abc_fst_stage}.
+
+  \begin{center}
+    \begin{table}[h]
+      \begin{tabular}{|p{2cm}|p{6cm}|p{7.5cm}|}
+        \hline
+        Actuator & Transformation (Perl) & Notes\\
+        \hline
+        \hline
+        \emph{in\_tune} & update\_data(\{\}); & Local function that sets the current element as the
+        current voice's last \abc{} element.
+        \\
+        \hline
+
+        \hline
+        \emph{note} & update\_data(\{meas\_dur => 1, n\_meas => 1\}); & Local function that sets the
+        current element as the current voice's last \abc{} element. When \emph{meas\_dur} is 1, it
+        increments the current measure's real length with the element's value. When \emph{n\_meas}
+        is 1, it updates the current voice's number of measures.
+        \\
+        \hline
+
+        \hline
+        \emph{rest} & update\_data(\{meas\_dur => 1, n\_meas => 1\}); &
+        \\
+        \hline
+
+        \hline
+        \emph{mrest} & update\_data(\{key => 1\}); & Local function that sets the current element as
+        the current voice's last \abc{} element. When \emph{key} is 1, it updates the key for all
+        measures that \emph{mrest} covers.
+        \\
+        \hline
+
+        \hline
+        \emph{bar} & \$ret .= check\_measure\_length(); update\_data(\{n\_meas => 1, key => 1\}); &
+        \emph{check\_measure\_length} is a local function that detects if the current measure is
+        incomplete or overflowing and returns an error message in case it finds one.
+        \\
+        \hline
+
+        \hline
+        \emph{eoln} & q\{\}; & The end of a line won't be set as a voice's last element.
+        \\
+        \hline
+      \end{tabular}
+      \caption{\abcdtrules{} for \detecterrorsabc{}'s first stage}
+      \label{tab:detect_errors_abc_fst_stage}
+    \end{table}
+  \end{center}
+
+  \item \textbf{Detect the remaining syntactical errors}
+
+  It detects if the tune's last \abc{} element for all voices is a \emph{bar} and if the number of
+  measures is the same for all voices. Error messages are produced in case errors are found.
+
+  If no errors were found until this moment, then the detection for different key definitions per
+  measure proceeds.
+\end{enumerate}
+
+\begin{algorithm}[H]
+  \KwIn{abc\_tunes}
+  \ForAll{$ tune \in abc\_tunes $}{
+    $dt(tune,$ rules from table \ref{tab:detect_errors_abc_fst_stage}$)$ \hfill //1)\\
+    $res \gets res$ ++ $detect\_remaining\_errors()$ \hfill //2)\\
+  }
+  \Return{$res$}
+  \caption{\detecterrorsabc{}'s algorithm}
+  \label{alg:detecterrorsabc}
+\end{algorithm}
+
+\subsection*{Usage}
+
+Listing \ref{lst:detecterrorsabcman} shows \detecterrorsabc{}'s manual.\\
+
+\lstinputlisting[caption={\detecterrorsabc{}'s manual},label={lst:detecterrorsabcman},captionpos=t,abovecaptionskip=-\medskipamount]{misc/detect_errors_manual.tex}
+
+Listing \ref{lst:detecterrorsabcbyexample} shows a usage example for \detecterrorsabc{}. It reads
+the tune \textbf{100\_errors.abc} (listing \ref{lst:100errors}) and the output is shown in listing
+\ref{lst:detect_errors_output}.\\
+
+\begin{lstlisting}[caption={\detecterrorsabc{} by example},label={lst:detecterrorsabcbyexample},captionpos=t,abovecaptionskip=-\medskipamount]
+detect_errorsabc 100_errors.abc
+\end{lstlisting}
+
+\lstinputlisting[caption={100.abc with errors},label={lst:100errors},captionpos=t,abovecaptionskip=-\medskipamount]{misc/100_errors.tex}
+
+\lstinputlisting[caption={\detecterrorsabc{}'s output},label={lst:detect_errors_output},captionpos=t,abovecaptionskip=-\medskipamount]{misc/detect_errors_output.tex}

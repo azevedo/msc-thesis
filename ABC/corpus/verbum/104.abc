@@ -1,0 +1,13 @@
+X:104
+T:Tuti
+C:Anon, 16th  century
+M:3/4
+L:1/8
+K:G
+V:4 clef=bass name="Baixo" sname="B."
+%%MIDI program 1 1
+%%staves [ 4 ]
+G,4 G,2| C,4 D,2| A,4 A,2| G,4 z2|: \
+w: Ver- bum | ca- ro | fac- tum | est |
+G,3 F, E,D,| C,2 G,2 E,2| C,2 D,4| G,,6 :| 
+w: Por - que | to - dos  | hos sal-|veis

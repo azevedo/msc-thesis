@@ -1,0 +1,43 @@
+#!/bin/sh
+# the next line restarts using tclsh -*- tcl -*- \
+exec tclsh "$0" "$@"
+
+# This is an example of using the tclabc library.
+# This script takes a list of midi files in the command line
+# and output an ABC file on stdout.
+
+#fixme: give a title to the ABC tunes
+
+if {[file exists ./tclabc[info sharedlibextension]]} {
+    # accept to run in the source directory
+    set abclib .
+    load ./tclabc[info sharedlibextension]
+    set abcversion [package require tclabc]
+} else {
+    set prefix @prefix@
+    set exec_prefix @exec_prefix@
+    set abclib @libdir@/tclabc/
+    set auto_path "$abclib $auto_path"
+    set abcversion @VERSION@
+
+    package require -exact tclabc $abcversion
+}
+
+proc main {} {
+	global argc argv
+	if {$argc == 0} {
+		puts stderr "Convert midi tunes to abc
+Usage:
+    mid2abc midi_file ..."
+	     	exit 1
+	}
+
+	# main job
+	foreach fn $argv {
+		abc midiload $fn
+		puts stdout [abc dump]
+		puts stdout ""	;# tune separator
+	}
+}
+
+main

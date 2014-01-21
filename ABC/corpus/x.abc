@@ -1,0 +1,13 @@
+X:1
+T:Overtura
+C:Pugnani, Gaetano (1731-1798)
+U:T = !trill!
+M:C
+L:1/4
+V:11 clef=treble+8 name="Violini I" sname="Vl.I" auto
+K:D
+%%staves [{ 11 }]
+%%MIDI program 109
+[V: 11] [Q: "Allegro" 1/2=70] !p!A,,,,// | !<(!A,,, z/> A,,/ A, z/> !<)!A/ | Z2 | !trill!a a' a'' z/> d/ !| d z/> f/ f z/> a/ |  \
+     a a z d' & A2 z A !invisible!| c' d' c' d' & A4 | a a z d' & (3Az_A G2 | (6:4:5GGGA2[A,,,DF] (6cegczg |]
+%comentario

@@ -1,0 +1,409 @@
+#!/usr/bin/perl
+package Music::Abc::Cat 0.1;
+
+use 5.01400;
+use Music::Abc::DT;
+use Data::Dumper;
+use List::Util qw(max);
+use List::MoreUtils qw(all);
+use Readonly;
+use Getopt::Long;
+
+use strict;
+use warnings;
+
+Readonly my $MAX_DEFAULT   => -1;          # default value for max
+Readonly my $FIRST_FILE    => 1;           # value for the first tune file
+Readonly my $GLOBAL        => 'global';    # refers to global and in header states
+Readonly my $DELTA_DEFAULT => 0;           # default value for canon's delta
+Readonly my $REP_DEFAULT   => 0;           # default value for bass' repetition
+
+my ( $canon_delta, $bass_rep, $string_mode ) = ( $DELTA_DEFAULT, $REP_DEFAULT, 0 );
+
+GetOptions(
+            'delta=i'  => \$canon_delta,
+            'rep=i'    => \$bass_rep,
+            'strmode' => \$string_mode,
+          );
+
+my @tunes        = @ARGV;         # abc filename
+my %file_info    = ();
+my %tune_info    = ();
+my $c_voice_id   = $GLOBAL;
+my $old_voice_id = $GLOBAL;
+my $file_id      = $FIRST_FILE;
+my $first_time   = 1;
+my $result       = q{};
+
+
+$result = get_main_header_info();
+$result .= cat_tunes();
+
+print $result;
+
+
+############## Subroutines ##############
+
+# retrieves the header of the first tune that has melody
+sub get_main_header_info {
+  my $main_info = q{};
+  my $has_tune  = 0;
+
+  my %rule = (
+    'in_tune'       => sub { q{} },
+    'in_line'       => sub { q{} },
+    'note'          => sub { $has_tune = 1; q{} },
+    'in_header::M:' => sub { $tune_info{$c_voice_id}{meter}  = $sym->{text}; toabc() },
+    'in_header::L:' => sub { $tune_info{$c_voice_id}{length} = $sym->{text}; toabc() },
+    'in_header::K:' => sub { $tune_info{$c_voice_id}{key}    = $sym->{text}; toabc() },
+    'in_header::Q:' => sub { $tune_info{$c_voice_id}{tempo}  = $sym->{text}; toabc() },
+  );
+
+  foreach my $tune (@tunes) {
+    %tune_info = ();
+    $main_info  = $string_mode ?  dt_string( $tune, %rule )
+                :                 dt( $tune, %rule );
+    # when a note is found then it means this tune's header should be the global one
+    last if $has_tune;
+  }
+
+  return $main_info;
+}
+
+# the remaining tunes are processed and printed
+sub cat_tunes {
+  my %rule = (
+    'in_global::info' => sub { q{} },
+    'in_header::info' => sub { q{} },
+    'staves'          => sub { q{} },
+    'score'           => sub { q{} },
+    'bar'             => sub { update_measure_count(1); insert_canon_delta() },
+    # sums the number of measure rests - 1 because the number of measures is counted by each bar
+    'mrest'           => sub { update_measure_count( $sym->{info}->{len} - 1 ); insert_canon_delta() },
+    'V:'              => sub { print_voice() },
+    'K:'              => sub { print_key() },
+    'M:'              => sub { print_meter() },
+    'Q:'              => sub { print_tempo() },
+    'L:'              => sub { print_length() },
+    '-default'        => sub { insert_canon_delta() },
+  );
+
+  my $res = q{};
+
+  foreach my $tune (@tunes) {
+    $first_time = 1;
+    for (0..$bass_rep) {
+      # processes the current tune
+      my $c_tune  = $string_mode ?  dt_string( $tune, %rule )
+                  :                 dt( $tune, %rule );
+
+      # adds measure rests (relies on context variables recorded when processing the current tune)
+      $res .= fill_empty_voices();
+
+      $c_voice_id = $GLOBAL;
+
+      # appends the current tune
+      $res .= $c_tune;
+
+      # appends measure rests if necessary
+      $res .= fill_empty_measures();
+    }
+    $file_id++;
+  }
+
+  return $res;
+}
+
+# Appends measure rests and updates the measure count
+sub append_canon_delta {
+  my $c_delta = shift;
+
+  update_measure_count($c_delta);
+
+  return "Z$c_delta |\n";
+}
+
+# Appends measure rests for voices
+sub fill_empty_voices {
+  my $res = q{};
+
+  # gets the voices existent in the current tune
+  my @c_voices = keys %{ $file_info{$file_id} };
+
+  $res = fill_previous_voices(@c_voices);
+  $res .= fill_current_voices(@c_voices);
+
+  return $res;
+}
+
+# appends rests on any voice that is not present in the current tune
+sub fill_previous_voices {
+  my @c_voices = @_;
+  my $res      = q{};
+
+  my @measures = map { $file_info{$file_id}{$_}{measures}; } @c_voices;
+  my $max_meas = max @measures;
+
+  # list of existing voices
+  my @existing_voices = grep { $_ ne $GLOBAL } keys %tune_info;
+
+  foreach my $ev (@existing_voices) {
+    # if a voice previously written in another tune isn't written in the current tune then measure rests are appended
+    if ( all { $_ ne $ev } @c_voices ) {
+      $res .= "V:$ev\nZ$max_meas |\n";
+      # updates the number of measures for voice $ev
+      $file_info{$file_id}{$ev}{measures} += $max_meas;
+    }
+  }
+
+  return $res;
+}
+
+# appends rests to any voice belonging to the current tune that is not is not present in previous
+# tunes
+sub fill_current_voices {
+  my @c_voices = @_;
+  my $res      = q{};
+
+  for my $f ( $FIRST_FILE .. ( $file_id - 1 ) ) {
+    my @prev_voices = keys %{$file_info{$f}};
+    my @measures = map { $file_info{$f}{$_}{measures}; } @prev_voices;
+    my $max_meas = max @measures;
+
+    foreach my $cv (@c_voices) {
+# if a voice belonging to the current tune isn't written in a previous tune then rests are appended
+      if ( all { $_ ne $cv } @prev_voices ) {
+        $res .= "V:$cv\nZ$max_meas |\n";
+        $file_info{$f}{$cv}{measures} += $max_meas;
+      }
+    }
+  }
+
+  return $res;
+}
+
+# A final processing is done so that some final components can be appended to the concatenated tune
+# Based on the biggest number of measures in a voice, if there is any which has less then
+# multi-measure rests will be appended for each one
+sub fill_empty_measures {
+  my $max = $MAX_DEFAULT;
+  my $res = q{};
+
+  foreach my $v (
+    reverse sort {
+      $file_info{$file_id}{$a}{measures} <=> $file_info{$file_id}{$b}{measures}
+    }
+    keys %{$file_info{$file_id}}
+                )
+  {
+    if ( $file_info{$file_id}{$v}{measures} > $max ) {
+      $max = $file_info{$file_id}{$v}{measures};
+    }
+    my $measures_short = $max - $file_info{$file_id}{$v}{measures};
+    if ($measures_short) {
+      $res .= "V:$v\nZ$measures_short |\n";
+    }
+  }
+
+  return $res;
+}
+
+# Prints the key info only if it is different from the current global one
+sub print_key {
+  my $ret = q{};
+  if ( $sym->{state} != Music::Abc::DT::ABC_S_HEAD ) {
+    my $new_key     = $sym->{text} =~ tr/ //dsr;
+    my $current_key = $tune_info{$c_voice_id}{key} =~ tr/ //dsr;
+
+    if ( $new_key ne $current_key ) {
+      $tune_info{$c_voice_id}{key} = $sym->{text};
+      $ret = insert_canon_delta();
+    }
+  }
+  return $ret;
+}
+
+# Prints the length info only if it is different from the current global one
+sub print_length {
+  my $ret = q{};
+  if ( $sym->{state} != Music::Abc::DT::ABC_S_HEAD ) {
+    my $new_length     = $sym->{text} =~ tr/ //dsr;
+    my $current_length = $tune_info{$c_voice_id}{length} =~ tr/ //dsr;
+
+    if ( $new_length ne $current_length ) {
+      $tune_info{$c_voice_id}{length} = $sym->{text};
+      $ret = insert_canon_delta();
+    }
+  }
+  return $ret;
+}
+
+# Prints the meter info only if it is different from the current global one
+sub print_meter {
+  my $ret = q{};
+  if ( $sym->{state} != Music::Abc::DT::ABC_S_HEAD ) {
+    my $new_meter     = $sym->{text} =~ tr/ //dsr;
+    my $current_meter = $tune_info{$c_voice_id}{meter} =~ tr/ //dsr;
+
+    if ( $new_meter ne $current_meter ) {
+      $tune_info{$c_voice_id}{meter} = $sym->{text};
+      $ret = insert_canon_delta();
+    }
+  }
+  return $ret;
+}
+
+# Inserts a measure rest before the element itself
+sub insert_canon_delta {
+  my $ret = q{};
+
+  # it appends measures
+  #   if delta is defined,
+  #   if it is the tune's first note and
+  #   if a voice hasn't been defined (it's assumed that the tune has only one voice and it isn't
+  #     specified with a header)
+  if ( $canon_delta > 0 && $first_time && $c_voice_id eq $GLOBAL ) {
+    $first_time = 0;
+    $ret        = append_canon_delta($canon_delta);
+  }
+  $ret .= toabc();
+
+  return $ret;
+}
+
+# Prints the tempo info only if it is different from the current global one
+sub print_tempo {
+  my $ret = q{};
+  if ( $sym->{state} != Music::Abc::DT::ABC_S_HEAD ) {
+    my $new_tempo     = $sym->{text} =~ tr/ //dsr;
+    my $current_tempo = $tune_info{$c_voice_id}{tempo} =~ tr/ //dsr;
+
+    if ( $new_tempo ne $current_tempo ) {
+      $tune_info{$c_voice_id}{tempo} = $sym->{text};
+      $ret = insert_canon_delta();
+    }
+  }
+  return $ret;
+}
+
+# Prints the voice info
+sub print_voice {
+  my $ret = q{};
+
+  $c_voice_id = $sym->{info}->{id};
+
+  # if it's a different voice from the previous
+  if ( $old_voice_id ne $c_voice_id ) {
+    # if it's a voice previously defined in the tune, then prints the short
+      # version, else prints the symbol
+    $ret .= $tune_info{$c_voice_id} ? "V:$c_voice_id\n" : toabc();
+  }
+
+  # it appends measures
+  #   if delta is defined,
+  #   if it appears after the tune's first note and
+  #   if it is the first time this voice is being defined
+  if ( $canon_delta > 0 && $first_time && !$tune_info{$c_voice_id} ) {
+    $ret .= append_canon_delta($canon_delta);
+  }
+
+  update_voice_info($sym);
+
+  return $ret;
+}
+
+# Updates a voice's measure count
+sub update_measure_count {
+  my $measures = shift;
+
+  $file_info{$file_id}{$c_voice_id}{measures} += $measures;
+
+  return;
+}
+
+# Updates a voice's information
+sub update_voice_info {
+  my $sym = shift;
+
+  $old_voice_id = $c_voice_id;
+
+  # updates tune info
+  $tune_info{$c_voice_id}{key}    ||= $tune_info{$GLOBAL}{key};
+  $tune_info{$c_voice_id}{meter}  ||= $tune_info{$GLOBAL}{meter};
+  $tune_info{$c_voice_id}{length} ||= $tune_info{$GLOBAL}{length};
+  $tune_info{$c_voice_id}{tempo}  ||= $tune_info{$GLOBAL}{tempo};
+
+  return;
+}
+1;
+__END__
+
+=head1 NAME
+
+cat_abc - concatenate ABC files, or standard input, and print on the standard output
+
+=head1 SYNOPSIS
+
+cat_abc [OPTION]...    [FILE]...
+cat_abc -s [OPTION]... [STRING]...
+
+=head1 USAGE
+
+cat_abc a.abc b.abc
+  Concatenates tune a.abc with b.abc
+
+cat_abc -s "
+X:1
+K:G
+V:1
+GB DB G4| G8|
+" "
+X:1
+K:G
+V:2
+G4 D4 | G2 D2 G4|
+"
+
+cat_abc -d=2 a.abc
+  Inserts 2 measure rests before each voice present in a.abc
+
+cat_abc -r=2 a.abc
+  Repeats tune a.abc 2 times
+
+=head1 DESCRIPTION
+
+Concatenate ABC file(s), or standard input, to standard output.
+This tool is based on UNIX's cat, as it consists on the concatenation of each tune one after the
+other in the time perspective. In other words, any voice present in the second tune is printed after
+the time offset corresponding to the end of the first tune, and so on.
+
+=head1 REQUIRED ARGUMENTS
+
+=head1 OPTIONS
+
+-s, --strmode
+  ABC tunes are text streams instead of file names
+
+-d, --delta=I
+  Measure rests of length I will be inserted at the beggining of each voice
+
+-r, --rep=I
+  The tune will be repeated I times
+
+=head1 DIAGNOSTICS
+
+=head1 EXIT STATUS
+
+=head1 CONFIGURATION
+
+=head1 DEPENDENCIES
+
+=head1 INCOMPATIBILITIES
+
+=head1 BUGS AND LIMITATIONS
+
+=head1 AUTHOR
+
+  Bruno Azevedo
+
+=head1 LICENSE AND COPYRIGHT

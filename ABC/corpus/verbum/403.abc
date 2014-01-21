@@ -1,0 +1,9 @@
+X:403
+T:Solo Soprano
+C:Anon, 16th century
+M:3/4
+L:1/8
+K:G
+V:3 clef=treble-8 name="Tenor" sname="T."
+%%MIDI program 1 1
+%%staves [ 3 ]

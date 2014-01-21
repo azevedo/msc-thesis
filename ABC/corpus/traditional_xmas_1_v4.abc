@@ -1,0 +1,10 @@
+X:1
+T:The First Noel
+C: traditional English carol
+M:3/4
+Q:1/4=88
+L:1/4
+K:D
+V:4 clef=bass
+%%MIDI transpose -12
+d | d2 B | (A a) g | f2 g | d2 g | (f d) e | (f g) e |

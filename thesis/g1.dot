@@ -1,0 +1,1 @@
+graph g1 { margin="0 0 0 0"; pscom--MIDI MIDI--"MIDI::channel" MIDI--"..." pscom--FORMAT; FORMAT--staves; FORMAT--autoclef; FORMAT--"...."; }

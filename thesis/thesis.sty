@@ -1,0 +1,158 @@
+\ProvidesPackage{thesis}
+
+% these como from lhs2TeX
+\usepackage{amstext}
+\usepackage{amssymb}
+\usepackage{stmaryrd}
+\usepackage{polytable}
+\RequirePackage{calc}
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{a4wide}
+% \usepackage{epigraph}
+\usepackage{mathpazo}
+\usepackage[pdftex]{color,graphicx}
+\usepackage{pdfpages}     % enables \includepdf
+% \usepackage{subfigure}
+% \usepackage{fancyhdr}
+\usepackage{fancyvrb}
+\DefineVerbatimEnvironment{Verbatim}{Verbatim}{fontfamily=helvetica, commandchars=\\\{\}}
+\usepackage[printonlyused,withpage]{acronym}
+\usepackage{multirow}
+% \usepackage{longtable}
+% \usepackage{moreverb}
+% \usepackage{verbatim}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{framed}
+\usepackage{float}
+% \usepackage{xspace}
+\usepackage{graphvizzz}
+% \usepackage{xr}
+% \usepackage{flafter}
+\usepackage[pdfauthor={Bruno Azevedo PG19819},pdftitle={},a4paper,pdftex,bookmarks,colorlinks,linkcolor=black,urlcolor=black,citecolor=black]{hyperref}
+% \usepackage[hyperpageref]{backref}
+
+
+% Author macros %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\abcpt}{\abc{} processing tool}
+\newcommand{\abc}{\textsc{abc}}
+\newcommand{\abcdt}{\textsc{abc::dt}}
+\newcommand{\midi}{\textsc{midi}}
+\newcommand{\unix}{\textsc{unix}}
+\newcommand{\toabc}{\emph{toabc}}
+\newcommand{\dt}{\emph{dt}}
+\newcommand{\symdumpi}{\emph{sym\_dump\_i}}
+\newcommand{\abcdtrule}{\abcdt{} \emph{rule}}
+\newcommand{\abcdtrules}{\abcdt{} \emph{rules}}
+\newcommand{\context}{\emph{context}}
+\newcommand{\abcelement}{\abc{} \emph{element}}
+\newcommand{\abcelements}{\abc{} \emph{elements}}
+\newcommand{\measurerest}{\emph{measure rest}}
+\newcommand{\measurerests}{\emph{measure rests}}
+\newcommand{\inheader}{\emph{in\_header}}
+\newcommand{\intune}{\emph{in\_tune}}
+\newcommand{\inline}{\emph{in\_line}}
+\newcommand{\actuator}{\emph{actuator}}
+\newcommand{\actuators}{\emph{actuators}}
+\newcommand{\transformation}{\emph{transformation}}
+\newcommand{\transformations}{\emph{transformations}}
+\newcommand{\timewise}{\emph{time-wise}}
+\newcommand{\partwise}{\emph{part-wise}}
+\newcommand{\sourcewise}{\emph{source-wise}}
+\newcommand{\abctoperl}{\texttt{ABC2Perl}}
+\newcommand{\tclabc}{\texttt{tclabc}}
+\newcommand{\abcmtops}{\texttt{abcm2ps}}
+\newcommand{\abctomidi}{\texttt{abc2midi}}
+\newcommand{\awk}{\texttt{awk}}
+\newcommand{\pasteabc}{\texttt{paste\_abc}}
+\newcommand{\catabc}{\texttt{cat\_abc}}
+\newcommand{\learningabc}{\texttt{learning\_abc}}
+\newcommand{\wcabc}{\texttt{wc\_abc}}
+\newcommand{\detecterrorsabc}{\texttt{detect\_errors\_abc}}
+\newcommand{\findchordsabc}{\texttt{find\_chords\_abc}}
+\newcommand{\canonabc}{\texttt{canon\_abc}}
+
+\definecolor{shadecolor}{gray}{0.9}
+
+% \renewcommand*{\backref}[1]{}
+% \renewcommand*{\backrefalt}[4]{%
+%   \ifcase #1 %
+%     (Not cited.)%
+%     \or
+%     \textbf{Cited} on page~#2.%
+%   \else
+%     \textbf{Cited} on pages~#2.%
+%   \fi
+% }
+% \renewcommand*{\backrefsep}{, }
+% \renewcommand*{\backreftwosep}{ and~}
+% \renewcommand*{\backreflastsep}{ and~}
+\usepackage{natbib}
+\usepackage[algoruled,shortend]{algorithm2e}
+
+% \usepackage{tabularx}
+
+% \usepackage{enumerate}
+% \usepackage{url}
+% \usepackage{epstopdf}
+
+% \usepackage{mathtools}
+% \usepackage{amsmath}
+% \usepackage{booktabs}
+\usepackage{setspace}
+\onehalfspace
+
+
+% \newcommand{\tab}{\hspace*{2em}}
+
+% \usepackage{epigraph}
+
+\floatstyle{boxed}
+\newfloat{program}{hbt}{lop}
+\floatname{program}{Example}
+
+\usepackage{caption}
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{\colorbox{gray}{\parbox{\textwidth-7pt}{#1#2#3}}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white}
+
+\lstset{
+  basicstyle=\footnotesize,
+  % keywordstyle=\color[rgb]{0,0,1},
+  % commentstyle=\color[rgb]{0.133,0.545,0.133},
+  % stringstyle=\color[rgb]{0.627,0.126,0.941},
+  xrightmargin=10pt,
+  framextopmargin=0pt,
+  framexleftmargin=17pt,
+  framexrightmargin=17pt,
+  framexbottommargin=4pt,
+  breaklines=true,
+  showspaces=false,
+  showstringspaces=false, 
+  showtabs=false,
+  tabsize=2,
+}
+
+
+% \newcommand{\upp}{Uppaal\xspace}
+
+%Page formatting
+\parindent=16pt
+\parskip=4pt
+
+\pdfpagewidth 8.3in
+\pdfpageheight 11.7in 
+
+\textwidth 5.9in
+
+\oddsidemargin 0.3in
+\evensidemargin 0.02in
+
+\pagestyle{headings}
+
+\renewcommand{\arraystretch}{1.2}

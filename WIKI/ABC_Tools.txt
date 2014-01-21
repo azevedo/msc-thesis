@@ -1,0 +1,111 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2013-03-05T18:21:41+00:00
+
+====== ABC Tools ======
+Created Tuesday 05 March 2013
+
+==== cat ====
+
+== Faz sentido quando: ==
+
+== Design Goals: ==
+	* info de header é escrita em cada tune (excepto quando é duplicada)
+	* quando há falta de uma voz no contexto global coloca-se pausas
+
+== Manter registo de: ==
+	* voz atual durante a travessia
+	* para cada tune (ficheiro input)
+		* para cada voz (id)
+			* measures
+	* para cada voz
+		* meter | length | key | tempo
+
+== Condições de erro: ==
+
+
+==== paste ====
+
+== Condições de erro: ==
+	* so 1 voz ou dá erro ou faz-se rename a voz
+
+== Design Goals: ==
+	* info do header da tune resultante do paste é o mesmo que a primeira tune que tiver melodia escrita
+
+== Manter registo de: ==
+	* voz atual durante a travessia
+	* para cada voz
+* meter | length | key | tempo | measures
+
+==== Handler ====
+
+== Lado esquerdo ==
+	* algo mais inteligente, com niveis de profundidade para os simbolos (ex: MIDI::program)
+	* elementos estruturados para permitir um processamento mais cirurgico
+	* notacao natural
+		* primeiro elemento mais geral e depois mais especifico (geral::especifico)
+	* principio geral de execucao de regras: regra mais especifica é executada ao invés da geral
+	* ser possivel fazer algo como:
+		* in_line (state)
+		* K: (info_type)
+		* pscom (symbol_type)
+		* MIDI (distinguir entre: abcMIDI's, PageFormat's (alguns apenas, consultar abcplus), stave/score)
+		* !fine!
+		* | (ver os tipos de barra de compasso)
+		* in_line::K:
+		* MIDI::program
+		* note::!fine! (simbolo tal que tenha uma deco)
+	* pensar em ontologias para os simbolos; ex: 
+		* !f! **is_a** intensidade **is_a** decoration
+		* || **is_a** bar
+		* MIDI **is_a** pscom
+	* simbolo com determinado atributo
+		* note::has_chord?
+
+	
+	== Dúvidas ==
+
+		Imaginado que no handler temos definido:
+			'||' 		=> sub { ... },
+			'!fine!	=> sub { ... },
+		E na tune que está a ser tratada existe o seguinte simbolo: **!fine!||**
+		Ou seja, no handler temos dois actuators que fazem match com o símbolo, no entanto, da maneira que atualmente está implementado (04/07/2013), o !fine! tem mais prioridade.
+		Como deve acontecer neste caso?
+
+
+== Lado direito ==
+	* conjunto de funcoes (podem receber o simbolo como parametro, à lá objetos)
+		* set_chord
+		* delete_...
+	* funcionalidade de acrescentar eventos a lista de coisas que o abc tenha
+		* funcoes semelhantes ao toabc()
+		* ex: %%MIDI channel 1
+
+
+==== FindChord ====
+
+Opcoes:
+	* Acordes a procurar
+		* default: triade maior
+	* Voz da peça a procurar
+		* default: todas as vozes
+	* Vozes da peça a nao procurar
+
+Output
+STDOUT: nome do acorde impresso no gchord da primeira nota que formou o acorde encontrado
+
+==== WC ====
+Prints voice, measures and notes/pitch per voice counts for each ABC file
+
+Opcoes:
+	poderá a vir a ter
+
+
+==== DetectErrors ====
+* Beats per measure
+	* A measure starts at a bar symbol
+	* If the duration of notes/rests before the **first** bar symbol isn't equal to that **voice's global wmeasure** value, then it's an anacrusis and it must be ignored
+	* The duration of all notes/rests inside a measure (**except the first**) must be equal to that **voice's global wmeasure** value
+* Verificar que em cada voz o ultimo simbolo é uma barra de compasso
+* Nº compassos por voz é igual
+* Tonalidade por voz é igual (granularidade => compasso)

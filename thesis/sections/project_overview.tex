@@ -1,0 +1,122 @@
+The main goal for this project is to have a set of \abcpt{}s. Each tool deals with a specific
+problem and tries to solve it in a simple and efficient way. In order to simplify the creation of an
+\abcpt{}, a rule-based \ac{DSL} - \abcdt{} - was designed. From \abcdt{}'s rules an \abcpt{} is
+obtained whose main algorithm follows a traditional compiler architecture.
+
+\subsection*{Design Goals}
+
+A set of design goals was defined to guide the project's implementation.
+
+\subsubsection*{Toolkit}
+% Problems associated with the processing of textual musical notation:
+% 
+% \begin{description}
+%   \item \textbf{Automatic validation of the notation and error detection} \hfill\\
+%     When writing \abc{}, since it is \ac{ASCII} based, it is relatively easy to write errors on the score.
+%     One of the features that is required for this toolkit is for it to be able to detect those
+%     errors thus validating the notation in terms of syntax, lexicon, among others that are listed
+%     below:
+%     \begin{itemize}
+%       \item \textbf{syntax}\\
+%         e.g.: beats per measure, different key definitions in voices;
+%       \item \textbf{lexicon}\\
+%         e.g.: inappropriate use of symbols;
+%       \item \textbf{misalignment}\\
+%         e.g.: voice disparity due to transcription errors;
+%       \item \textbf{suspicious use of musical symbols}\\
+%         e.g.: use of chords out of context in a certain musical style;
+%         e.g.: use of notes out of vocal range;
+%     \end{itemize}
+%   \item \textbf{Error fixing} \hfill\\
+%     Since it can detect erros it's only natural that they can be fixed, either by automatically
+%     setting the appropriate fix or by suggesting one to the user. Typically the errors fixed will be
+%     of syntactic or lexical nature.
+%     \begin{itemize}
+%       \item \textbf{syntactic}\\
+%         e.g.: when there are many consecutive rests, then a suggestion is made to join them by
+%         measure;
+%         e.g.: when the key is changed in only one voice, then that change is reproduced in all %         voices;
+%       \item \textbf{lexical}\\
+%         e.g.: when there's an orthographic or a capitalization error in reserved words, then it is
+%         automatically fixed;
+%     \end{itemize}
+% \end{description}
+
+Each \abcpt{} should:
+
+\begin{itemize}
+  \item \textbf{Deal with real \abc{} music} \hfill\\
+    Each tool should be able to deal with more than just a sequence of notes. Musical elements other
+    than notes and rests, like lyrics or accompaniment chords, are parsed and can be processed.
+    Also, unexpected elements shouldn't break the tool's process.
+  \item \textbf{Follow the \unix{} philosophy} \hfill\\
+    Each tool tackles a single problem and can be composed with others to solve more complex
+    problems.
+  \item \textbf{Be open-source} \hfill\\
+    The source code will be available to the general public therefore it will follow community
+    practices and will be installable and usable as a third-party tool. The existence of an
+    open-source community allows the exchange of information and ideas between developers and users.
+    Interesting things can come out of a discussion in this mean, like new features or a solution to
+    a certain problem.
+\end{itemize}
+
+\subsubsection*{ABC::DT}
+
+\abcdt{} is a rule-based \ac{DSL} which aims to help the creation of \abcpt{}s in a simple and
+compact way. Therefore, in order to achieve that simpleness it must have the following features:
+
+\begin{itemize}
+  \item Generate simple tools through a compact specification
+  \item \abc{} oriented
+  \item Associate transformations with specific \abc{} elements, allowing a surgical processing
+  \item Rich embedding mechanisms (using Perl for specific \abc{} transformations)
+  \item Apply the identity function to not specified elements (default transformation)
+  \item Processing guided by the music's internal structure
+  \item Transform and manipulate the internal structure as it best suits the task at hand for a more
+  efficient processing
+\end{itemize}
+
+\subsubsection*{Musical Information Representation}
+
+A score's \ac{IR} must:
+
+\begin{itemize}
+  \item \textbf{Keep the original order of the score elements} \hfill\\
+    This is an obvious goal since almost every task needs to know the exact order of a score to
+    produce anything useful.
+  \item \textbf{Hold sufficient musical information to rebuild the score as it was} \hfill\\
+    This way a score can easily be outputted as it was originally.
+  \item \textbf{Have different views of its structure} \hfill\\
+    In order to have a thorough and efficient processing, the structure may be reorganized into one
+    oriented to the part (for melodic tasks), to the time (for harmonic tasks) or to the source (for
+    general tasks, mainly to be able to reconstruct the original \abc{}).
+  \item \textbf{Facilitate the application of scripting} \hfill\\
+    This means the \ac{IR} can be serialized into a structure that is easily evaluated by a language
+    like Perl.
+\end{itemize}
+
+\subsubsection*{Musical Corpora}
+
+In order to do statistical analysis there must be:
+
+\begin{itemize}
+  \item \textbf{Musical corpus comprised of musical scores} \hfill\\
+    This corpus will be used as a source of data for the analysis as well as testing material.
+  \item \textbf{Build tools for statistical calculation} \hfill\\
+    Each tool will output some statistical information.
+\end{itemize}
+
+\subsubsection*{Musical Information Visualization}
+
+There are always different forms for displaying musical information to a user. Be it a graph, a
+drawing, some sort of symbol, the actual score or even simple text, the output must always transmit
+knowledge to the user so that a conclusion can be taken from it. Thus a tool's output must:
+
+\begin{itemize}
+  \item \textbf{Have an appropriate format (textual, graphical, other)} \hfill\\
+    So that the user can make the most out of the tool's results.
+  \item \textbf{Be easy to comprehend} \hfill\\
+    The results cannot be cryptic, otherwise the user will not understand.  
+  \item \textbf{Reveal some feature of the music} \hfill\\
+    If an analysis is made to a score then some sort of feature, hidden or not, must be revealed.
+\end{itemize}

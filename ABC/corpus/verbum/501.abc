@@ -1,0 +1,12 @@
+X:501
+T:Tuti final
+C:Anon, 16th century
+M:3/4
+L:1/8
+K:G
+V:1 clef=treble name="Soprano" sname="S."
+%%MIDI program 1 1
+%%staves [ 1 ]
+B3 A GF|   E2 D2 EF | G4 F2 | G6 !D.C.! ||
+w: 1.~Que * no * | ten -go~en* | que~os e-|cheis?'
+w: 2.~Es * na - |sci -do * | se-gun | vies

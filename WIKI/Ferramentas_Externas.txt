@@ -1,0 +1,219 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-11-15T16:00:20+00:00
+
+====== Ferramentas Externas ======
+Created Thursday 15 November 2012
+
+===== ABC PLUS =====
+**Making Music with ABC PLUS** - A guide to the notation and its applications
+
+**abc 2.0 Documentation:** http://abcnotation.com/wiki/abc:standard:v2.0
+
+===== abcm2ps =====
+	**Translates tunes written in the ABC music notation format to customary sheet music scores in PostScript. This is a format related to PDF, and it can be viewed and printed with another free program: Ghostscript. This application converts PostScript files into several formats, Acrobat PDF being the most important.**
+	**It is based on abc2ps 1.2.5 and was developed mainly to print Baroque organ scores that have independent voices played on multiple keyboards and a pedal-board. The  program  has since been extended to support various other notation conventions in use for sheet music.**
+
+	http://moinejf.free.fr/
+	http://abcplus.sourceforge.net/#abcm2ps
+	
+	**Notas:**
+	* It cannot easily use filenames containing spaces
+	* Unless otherwise indicated, the note length is automatically set in accordance to the tune metre. The rule is: if the value of the metre is greater than or equal to 0.75, the default note length will be one eighth; if it is less than 0.75, one sixteenth. For example, when the metre is 4/4 the value is 1 (4 divided by 4 is 1), so the note length will be one eighth; if the metre is 3/4 = 0.75, again one eighth; if the metre is 2/4 = 0.5, the note length will be one sixteenth. By default, the metre is 4/4 (four quarters) and the note length is one eighth (colcheia).
+	* The bass clef is automatically set when we start a piece of music with low notes ( F, and below). The treble clef is then set by abcm2ps for higher notes.
+	* Although abcm2ps will allow you to write chords containing notes of different length, doing so is not recommended because other ABC programs do not support this feature.
+	* Beware of the difference between - (hyphen) and (underscore). Usually, - is used to skip syllables within a word, while is used at the end of a word.	
+	* Take special care to write a number of syllables that matches the number of notes! Mismatch between notes and syllables is one of the most common causes of error.
+	* Explicit accidentals can also be specified by appending them to the key signature. For example, K:D exp =c ˆg would set the key of D major but mark every C as natural, and every G as sharp. The keyword exp may be omitted, but abc2midi needs it.
+	* Unfortunately, repeats are a field where incompatibilities between abcm2ps and abc-MIDI emerge:
+		* to repeat a run of notes three times, |:: ::| will not work. A simple workaround is: |:|1-3 notes :|
+		* text indications in repeat bars (as "last time" above) are not recognised.
+	* abcm2ps allows to typeset music for up to 16 voices, but this limitation can be easily overcome modifying and recompiling the program sources.
+	* The latest stable version of abcm2ps supports UTF–8, so the problems with accented letters are solved.
+	* abcm2ps has limited support for percussions.
+	
+	
+	**Using:**
+	* abcm2ps -c -O= <file>
+		-c : The  continuation  symbol  is implicitly appended to each music line. This amounts to automatic line breaking. Ignore line breaks and try and format the measures optimally
+		-O name   Define the output file name. By default, the output  file name  is  `Out.ps' for PostScript output and `Outnnn.eps' for EPS output (see -E). If this  option is given,  the output name will be name or namennn.eps, respectively. If name is `=', the output file name will be the name of the ABC  source  file  with the extension `.ps' or `.eps'. If name is `-', the output is written to stdout.
+	* To remove the slur joining grace notes to the main note, you use the -G
+
+
+===== abc2midi =====
+	**Converts abc file to MIDI file(s)**
+	
+	[[http://ifdo.pugmarks.com/~seymour/runabc/abcguide/abc2midi_guide.html|Guide to Advanced Features of Abc2midi]]
+	http://abcplus.sourceforge.net/#abcMIDI
+	
+	**Notas:**
+	* Unlike normal accidentals, microtonal accidentals don’t propagate across a whole measure. This is an important thing to remember when you make a MIDI file, to avoid unexpected results.
+	* abcMIDI does not support nested tuplets, so you will not be able to hear them
+	* Although ties and slurs are graphically very similar, they have a completely different musical meaning. Avoid the error of using ties to connect notes of different pitch: MIDI output (see Section 5.1) would be wrong
+	* Key signatures and Clefs: K:
+		* K: key [clef=] [clef type] [line number] [+8] [-8] [middle= pitch ] [transpose=] [stafflines= number ] [staffscale= number ]
+		* transpose= (or t=) currently does nothing, but is supported by abcMIDI;
+	* P: cannot be inserted within repeats (i.e. |:. . . :|), because abc2midi gets confused and produces wrong MIDI output.
+
+===== EasyABC =====
+	**An open source ABC editor**
+
+	http://www.nilsliberg.se/ksp/easyabc/
+	
+
+===== Folkinfo Abc Converter =====
+	**A web interface to abcm2ps and abcMIDI**
+
+	http://www.folkinfo.org/songs/abcconvert.php
+	
+
+===== abcpp =====
+	**'abcpp' is a simple yet powerful preprocessor designed for, but not limited to, ABC music files. It provides conditional output, macros, symbol renaming, and file inclusion. It was written to overcome incompatibilities between ABC packages, and to facilitate writing portable, and more readable ABC files.**
+	
+	Inspired by the C and S-Lang ( http://www.s-lang.org) preprocessor, abcpp supports some directives that allow you to play a few tricks. You write your ABC music files with directives lines like #define or #ifdef, defining macros or excluding portions of text according to specific conditions. Then you preprocess your file with abcpp, producing an output file suitable for each ABC application or voice. Interestingly, abcpp is actively used with MusiXTeX-related programs.
+
+
+===== abc2prt =====
+	**A simple tool to extract parts from multivoice ABC music files.**
+	
+	I know that Perl scripts exist that do the trick
+
+
+===== abctool =====
+	**abctool is a python script that manipulates music files in abc format**
+	
+	**Features:**
+	* tranposition (both my own implementation and using abc2abc)
+	* read from standard input or file
+	* output to standard output, PostScript, PDF or MIDI
+	* view (using abcm2ps and gv)
+	* translation of chord names to danish/german ("B" becomes "H")
+	* removal of chords and fingerings
+	* supports ~/.abctoolrc
+	[ ] experimentar
+
+===== ABCp =====
+	**A parser for the ABC music notation**
+	
+	ABCp is a C library to interpret the simple, but very powerful, music notation ABC.
+	It accomodates syntax flavours and includes concepts found in other notation systems reporting higher level ABC objects to the real application.
+
+	**Home Page:** https://sites.google.com/site/abcparser/
+	**Documentation:** https://sites.google.com/site/abcparser/documents-1
+
+	ABCp has been designed with the following requirements in mind:
+	* To be able to handle the ABC 2.0 standard as well as (to the maximum possible extent) the 1.6, the 1.7 standard and the extensions introduced by the most widely used tools (abcm2ps, abcmidi, barfly, ...);
+	* To be fast: nobody would use a library with poor performance;
+	* To be small: there must be a fair tradeoff between size and functionalities;
+	* To be easily embeddable: no big restriction on the programming language to use;
+	* To be usable: no complex API or class hierarchy to remember.
+
+===== abc4f =====
+	**A Java library ofor music notation in general and abc notation in particular**
+
+	The abc4j java library provides API to handle abc musical notation using java. It provides a parser to parse tunes written in abc notation, and other classes in order to support midi playback, music score display etc etc. It only supports abc v1.6 (for now... :). You can extend the basic capabilities of the library to implement your own dedicated features like improved midi player, or whatever...
+
+
+===== Music::ABC::Archive =====
+	**Parse ABC music archives**
+
+	ABC music archives contain songs in the ABC format. They are a very quick way for entering music in a text format, and there are numerous publishable quality renderers for ABC music. This module encapsulates the ABC archive, and individual songs so they may more easily be managed by perl front-ends.
+
+	**CPAN:** http://search.cpan.org/~weltyjj/Music-ABC-Archive-0.02/Archive.pm
+
+
+===== abcplay =====
+	**A python script that uses abc2midi to generate a MIDI file for each tune and then plays them with timidity++**
+	
+	**Home Page:** http://blog.tremily.us/posts/abcplay/
+
+
+===== music21 =====
+**A toolkit for computer-aided musicology**
+	
+Music21 is a set of tools for helping scholars and other active listeners answer questions about music quickly and simply. If you’ve ever asked yourself a question like, “I wonder how often Bach does that” or “I wish I knew which band was the first to use these chords in this order,” or “I’ll bet we’d know more about Renaissance counterpoint (or Indian ragas or post-tonal pitch structures or the form of minuets) if I could write a program to automatically write more of them,” then music21 can help you with your work.
+
+**Home Page:** http://mit.edu/music21/
+**Documentation:** http://mit.edu/music21/doc/html/contents.html
+	
+	
+
+==== music21.abc.base ====
+**Objects and resources for processing ABC data.**
+http://mit.edu/music21/doc/html/moduleAbcBase.html
+		
+
+== music21.abc.base.ABCFile ==
+	ABC File or String access
+
+
+== music21.abc.base.ABCHandler ==
+
+== music21.abc.base.ABCHandlerBar ==
+	A Handler specialized for storing bars. All left and right bars are collected and assigned to attributes.	
+
+
+== music21.abc.base.ABCBar(src) ==
+
+== music21.abc.base.ABCBrokenRhythmMarker(src) ==
+
+== music21.abc.base.ABCChord(src) ==
+	A representation of an ABC Chord, which contains within its delimiters individual notes.
+
+
+== music21.abc.base.ABCMetadata(src='') ==
+
+== music21.abc.base.ABCNote(src='') ==
+	A model of an ABCNote.
+
+
+== music21.abc.base.ABCToken(src='') ==
+	ABC processing works with a multi-pass procedure. The first pass breaks the data stream into a list of ABCToken objects. ABCToken objects are specialized in subclasses.
+
+
+== music21.abc.base.ABCTuplet(src) ==
+	ABCTuplet tokens always precede the notes they describe.
+			
+**Exemplo:**
+	>>> from music21 import *
+	>>> af=abc.ABCFile()
+	>>> af.open('../../Dropbox/MEI/Dissertacao/sonatas/decima-I.abc')
+	>>> ah=af.read()   (<music21.abc.base.ABCHandler>)
+	>>> tokenColls = ah.splitByVoice()     ([<music21.abc.base.ABCHandler>, <music21.abc.base.ABCHandler>, ....])
+	>>> ms=tokenColls[2].splitByMeasure()          ([<music21.abc.base.ABCHandlerBar>, <music21.abc.base.ABCHandlerBar>, ... ])
+			
+
+==== music21.abc.translate ====
+**Functions for translating music21 objects and ABCHandler instances. Mostly, these functions are for advanced, low level usage.** 
+http://mit.edu/music21/doc/html/moduleAbcTranslate.html
+
+== music21.abc.translate.abcToStreamOpus(abcHandler, inputM21=None, number=None) ==
+	Convert a multi-work stream into one or more complete works packed into a an Opus Stream.
+	If a number argument is given, and a work is defined by that number, that work is returned.
+
+
+== music21.abc.translate.abcToStreamPart(abcHandler, inputM21=None, spannerBundle=None) ==
+	Handler conversion of a single Part of a multi-part score. Results, as a Part, are built into the provided inputM21 object (a Score or similar Stream) or a newly created Stream.
+
+
+== music21.abc.translate.abcToStreamScore(abcHandler, inputM21=None) ==
+	Given an abcHandler object, build into a multi-part Score with metadata.
+	This assumes that this ABCHandler defines a single work (with 1 or fewer reference numbers).
+	If the optional parameter inputM21 is given a music21 Stream subclass, it will use that object as the outermost object. However, inner parts will always be made Part objects.
+	**Exemplo:**
+	>>> ah								(<music21.abc.base.ABCHandler>)
+	>>> ah2=abc.abcToStreamScore(ah)		(<music21.stream.Score>)
+
+
+== music21.abc.translate.reBar(music21Part, inPlace=True) ==
+	Re-bar overflow measures using the last known time signature.
+	
+	
+	
+
+===== Abjad =====
+	**Abjad helps composers build up complex pieces of music notation in an iterative and incremental way.** 
+	
+	Use Abjad to create a symbolic representation of all the notes, rests, staves, tuplets, beams and slurs in any score. Because Abjad extends the Python programming language, you can use Abjad to make systematic changes to your music as you work. And because Abjad wraps the powerful LilyPond music notation package, you can use Abjad to control the typographic details of the symbols on the page.
+	
+	**Documentation:** http://packages.python.org/Abjad/

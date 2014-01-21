@@ -1,0 +1,224 @@
+The representation of musical information is an area of research that has been receiving
+contributions throughout time and it's not expected to be a consensus about a universal structure.
+
+One of the most influent matters in making such representations is their final purpose. There are
+different intentions, such as music rendering, play back, printing, music analysis, composition,
+among others. The scope of this thesis includes only music rendering and analysis, therefore the
+representation will have a well defined orientation which will not take into account additional
+components that would benefit, for instance, composition tasks.
+
+There are many models, data structures, paradigms, techniques, systems and theories proposed by many
+authors~\cite{Brinkman1984,Buxton1978,Bilmes1992,Smaill1993,Wiggins1989,Dannenberg1993} and none can
+be labeled as \emph{the perfect} representation, as there will never be a closed definition of
+music and it is still difficult to represent all aspects of music.
+
+% As will be explained in section \ref{sec:abc_dt}, this work presents a Perl module called \abcdt{},
+% which can be viewed as a \ac{DSL} embedded in Perl. It processes some input information and returns it.
+% The input information is parsed and an \ac{IR} is generated. That representation
+% guides how the processing will be done. So, it is important to establish its structure, as it will
+% determine how an \abc{} tune may be processed.
+
+This dissertation's aim is to obtain a structure that allows the easy manipulation of music in a
+computer. That structure should be compliant with a variety of tasks regarding music rendering and
+analysis, such as, representing pitch and determining intervals from them, and obtaining all musical
+elements that occur in a specific musical moment. Most importantly, it must allow the reconstruction
+of the original \abc{}, in other words, it must contain all the original information including the
+order of each element.
+
+Next, a discussion on two topics is made: the pros and cons of sequential vs. hierarchical
+representations and melody vs. harmony representations. The latter is mentioned again in section
+\ref{sec:parse}.
+
+\subsection{Sequential vs. Hierarchical}
+
+The most used structures for music representation are the sequential and hierarchical structures.
+
+\subsubsection*{Sequential}
+
+In the beginning, computer music systems represented music as a simple sequence of notes. It was a
+simple approach, thus making it difficult to encode structural relationships between notes, such as
+enveloping a group of notes in order to apply some kind of property.
+
+For instance, \midi{}~\cite{midi:Online} has no mechanisms for describing new structural
+relationships.  However, \midi{} has a number of predefined structures. There are 16 channels, which
+effectively form 16 groups of notes. Each group has a set of controllers such as volume and
+pitch-bend. This gives \midi{} a limited 2-level structure.
+
+The sequential structure refers to a sequence of any kind of musical component, usually indexed by
+ordinal position rather than time. For instance, a musical element, such as a measure bar, is
+referred as the fourth element rather than an element at time 5.7 seconds or at musical offset 3,
+corresponding to the length of 3 quarter notes.
+
+Many groupings of interest in music are likely to exhibit this property of strict ordering - most
+melodies, for example, are monophonic. An analysis task's efficiency may improve when dealing with
+this kind of structure.
+
+\subsubsection*{Hierarchical}
+
+It is widely accepted that music is best described at higher levels in terms of some sort of
+hierarchical structure~\cite{balaban1987music}. This kind of structure has the benefit of isolating
+different components of the score, therefore allowing transformations, such as tempo or pitch, to be
+applied to each of them individually. It also represents a set of instructions for how to put the
+score back together, hence allowing to reassemble it as it was.
+
+Musical events can spread behavior to other events through the binary relation \textit{part-of},
+which denotes relations like "measures part-of phrase". They can also inherit behavior and
+characteristics from other events through the \textit{is-a} relation, which designates relations
+like "a dominant chord being a special kind of seventh chord"~\cite{Honing1993}.
+
+There are other kinds of relations that are needed as well in a hierarchical representation.
+Honing\cite{Honing1993} suggests:
+
+\begin{itemize}
+  \item Binary:
+    \begin{itemize}
+      \item \textbf{associative:}
+        e.g.: "A theme with its variations"
+      \item \textbf{functional:}
+        e.g.: "The function of a particular chord in a scale"
+      \item \textbf{referential:}
+        e.g.: "A theme referring to a previously presented or already known motif"
+    \end{itemize}
+  \item N-ary:
+    These relations can structure more complex types of relation.\\
+    e.g.: "the dependency of a certain chord on scale, mode and the context in which it is used is a
+    ternary relation"
+\end{itemize}
+
+A single hierarchy scheme is not enough because music frequently contains multiple hierarchies, for
+instance, a sequence of notes can belong simultaneously to a phrase marking and a to section (like a
+movement). So the need of a multilevel hierarchy appears. There are some other possible hierarchies:
+voices, sections (movement, measure), phrases, and chords, all of which are ways of
+grouping and structuring music.
+
+A few representations have been proposed~\cite{Dannenberg1990,Brinkman1984} that support multiple
+hierarchies through named links relating musical events and through instances of hierarchies. And
+others where tags are assigned to events in order to designate grouping, such as, all notes under a
+slur.
+
+\subsection{Melody vs. Harmony}
+
+In polyphonic music there are materials besides melody that are combined in a score: rhythm and
+harmony. Those three (melody, rhythm and harmony) determine the global quality of a
+score~\cite{benward2003music} and their combination is usually called a texture. When there's only
+one voice (melody), accompanied or not by chords, it is called monophony, but when there's two or
+more independent voices, it is called polyphony.
+
+The study of independent melodies is relatively simple compared to the analysis of polyphony. Each
+voice moving through the horizontal dimension creates other effects by overlapping with notes in
+other voices. The necessity for representing these vertical structures arises so that the harmonic
+motion can be analysed.\\
+
+Four suggestions of representations arise from this discussion: \partwise{}, \timewise{} and
+\emph{hybrid} and \sourcewise{}.
+
+\subsubsection{Part-wise}
+
+The \partwise{} representation expresses a score by part (voice, instrument). So each part contains
+many tuples (voice , \abcelements{}). Each \abcelement{} belongs to the specified voice. See example
+\ref{ex:partwise}.
+
+\begin{program}
+  score $\rightarrow$ part*\\
+  part $\rightarrow$ (voice, abc\_element*)\\
+  \caption{\emph{Part-wise} representation}
+  \label{ex:partwise}
+\end{program}
+
+This representation is best suited for melodic studies, considering that it is possible to directly
+obtain all \abcelements{} belonging to a voice.
+
+\subsubsection{Time-wise}
+
+The \timewise{} representation expresses a score by time (musical moment), this is, by the offset of
+the elapsed time. So each musical moment contains many parts. A part is a tuple (\emph{time offset}
+, \emph{voice} , \abcelement{}). See example \ref{ex:timewise}.
+
+\begin{program}
+  score $\rightarrow$ musical\_moment*\\
+  musical\_moment $\rightarrow$ part*\\
+  part $\rightarrow$ (time\_offset, voice, abc\_element)
+  \caption{\emph{Time-wise} representation}
+  \label{ex:timewise}
+\end{program}
+
+This representation is best suited for harmonic studies, considering that it is possible to directly
+obtain all musical events that occur in a specific moment in time.
+
+MusicXML allows the representation of both time and part dimensions in two separate schemas. The
+\partwise{} schema represents scores by part/instrument and the \timewise{} schema by time/measure.
+
+\subsubsection{Hybrid}
+
+The \emph{hybrid} representation derives from the need to solve an issue related with the
+variability of a score's texture. This is, a score may have different densities of notes per part
+and it is required that all events occurring at the same time are vertically aligned.
+
+So, Brinkman~\cite{Brinkman1984} suggests a solution that uses a linked representation of a sparse
+matrix. Each row of the latter references a part and each column the offset of the elapsed time,
+which would enable traversing the score in any direction required (vertical or horizontal). Thus,
+attaining a perception of the context of what's happening in a specific part, a feature that can't
+be achieved when dealing with representations with only one dimension. Moreover, it makes the task
+of score segmentation by part or time easier.
+
+\subsubsection{Source-wise}
+
+The \sourcewise{} representation expresses a score as it is parsed from the \abc{} file. So a score
+is an ordered list of tuples (\abcelement{} , \context{}). The \context{} keeps record of an
+\abcelement{}'s contextual information, this is, it keeps track of the current time offset, the
+current voice, among other information (this \context{} is explained in more detail in section
+\ref{sec:abcdt_rules}). See example \ref{ex:sourcewise}.
+
+\begin{program}
+  score $\rightarrow$ (abc\_element , context)*\\
+  context $\rightarrow$ (current\_time, current\_voice, ...)
+  \caption{\emph{Source-wise} representation}
+  \label{ex:sourcewise}
+\end{program}
+
+This representation is best suited for rewriting purposes, considering that the actual order of
+\abcelements{} is the same as in the original \abc{} file. It's also best for generic processing
+where there's no need for a specific representation.
+
+
+\subsection{Summary}
+
+Two structures most commonly approached by researchers for representing music were discussed:
+sequential and hierarchical. However, the decision of which structure type one should choose relies
+on the purpose the \ac{IR} will have, such as, rendering of music, printing, music analysis,
+composition, etc. This is, it relies in how many and what kind of questions are to be made to it.
+
+A sequential structure may benefit certain tasks where a fast and simple traversal and/or a strict
+ordering of its elements are required.
+
+A hierarchical structure allows to isolate different components of a score and establish relations
+between them. These are obvious advantages, although its traversal requires more advanced
+techniques.\\
+
+Regarding the horizontal and vertical dimensions of polyphonic music, four representations were
+suggested. A \partwise{} representation is best suited for melodic studies, \timewise{} for harmonic
+studies, \emph{hybrid} for both and \sourcewise{} for generic processing.
+
+The most relevant disadvantage of the first three representations is that they don't maintain the
+original order of elements. For instance, in \abc{}, it is common to write a part alternately with
+other parts like (voice A, voice B, voice A, voice B). Meaning that a fragment of part A's music is
+written first, followed by a fragment of part B, then another fragment from voice A and another from
+voice B. When representing a score oriented to a vertical axis, the order in which each element is
+written in the source file is lost, thus invalidating tasks like re-rendering \abc{} tunes.
+
+% An assessment is taken after a, not so thorough, research on representations and their pros and
+% cons: sequential and hierarchical structures are more suited to horizontal readings and tasks such
+% as re-rendering an \abc{} tune, since they preserve the original order of the elements.
+
+% Whereas, structures like sparse matrices grant both horizontal and vertical readings. Such
+% structures provide a representation better suited to purposes requiring a quick access to vertical
+% events on a score. Yet, it does not maintain the original order of elements. For instance, in
+% \abc{}, it is common to write a part alternately with other parts like (voice A, voice B, voice A,
+% voice B). Meaning that a fragment of part A's music is written first, followed by a fragment of part
+% B, then another fragment from voice A and another from voice B. When representing a score oriented
+% to a vertical axis, the order in which each element is written in the source file is lost, thus
+% invalidating tasks like re-rendering \abc{} tunes.
+
+A perfect representation would be one that is sufficiently generic and complete to be useful
+in different analytic tasks in many styles of music~\cite{Honing1993}, like expressing common
+abstract musical patterns.

@@ -1,0 +1,87 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2013-03-05T17:55:30+00:00
+
+====== Artigo ======
+Created Tuesday 05 March 2013
+
+estamos a abordar linguagem musical
+estrategia de abordagem triangulo
+metafora unix
+
+identidade
+funcao que esquece os detalhes (ex: slurs, ...)
+
+== Vai ter: ==
+* exemplos da ferramenta em uso (cat e paste)
+* como as coisas se escrevem (nem que seja algo que ainda vou fazer)
+* depois de explicar a travessia, dizer em que se pode mexer (handler)
+* discutir um pouco o que se pode fazer com o handler
+
+== Estrutura: ==
+* **Title:** ABC with a UNIX flavor	
+* **Introduction (2 colunas no max):** 
+	* Notacoes textuais (micro exemplo do abc)
+	* Conversores (abc para (midi, svg, ps para PDF)
+	* claim: Precisamos de SO que disponha de uma serie de: filtros, algebra que permitam fazer milagres com abc
+	* metafora unix
+		* filtros
+		* comandos pequenos e composicionais
+		* input/output comum (abc) para composicao de tools
+		* abordagem de travessias em triangulo (o tipo de dados universal possui estrutura complexa) chamada ABC::DT (script based em Perl). esta é uma metafora a criacao da ling. C (ritchie) para criacao de ferramentas Unix (ver awk)
+	* estamos a falar de:
+		* um conjunto de filtros ABC criados e por ser criados
+		* linguagem ABC::DT que permite a criacao dos filtros e processamento //esporádico// de ABC que poderao virar comandos
+* **State of the Art + Internal Representation**
+* **ABC::DT**
+	* triangulo (ver pretese)
+		* tem estrutura de um compilador
+		* a) como roubar parser ABC robusto
+		* b) travessia (varias ordens):
+			* design goal: tipo awk, funcao id por omissao; dizer so o necessario; funcoes de ordem superior, dispatch tables
+			* abc é um conjunto de simbolos que exige que se saiba o contexto onde estou (voz, tempo, etc)
+			* travessia origina sublinguagem que ...
+			* atuadores ricos: processamento cirurgico
+				* K::In_line => possui mapa que diz quais sao os atuadores
+			* o que se pode fazer com o handler
+			* algoritmo
+		* c) gerador (funcao 2abc)
+* **ABC::DT by example (exemplos comentados)**
+	* algortimos paste, cat (descricao mais abstrata, pode ter extrato minusculo para ilustrar algo)
+	* exemplo com verbum do que se pdera fazer
+		* paste (A1,A2) => Sec1
+		* paste (B1,B2) => Sec2
+		* cat (Sec1,Sec2 ) => Verbum
+		* all_but_one
+	* partturas à homem (com som?)
+* **Conclusions**
+	* moral: usando uma solucao que se mostrou gnhadora noutros sitoios (linguagem C para criar ferramentas unix): vamos criar tambem uma sub linguagem que permita de uma maneira simples criar ferramentas que se assemelham as do Unix
+
+
+== Tasks ==
+JJ
+[ ] validar Introdução
+[ ] Author should compare their work with Hudak's Haskore DSL
+[ ] validar paragrafo final do State of the Art
+[ ] validar último parágrafo da introdução do capítulo Internal Representation
+[ ] Rever e talvez refazer paragrafo introdutorio do cap. ABC::DT que está a fazer pouco sentido
+[ ] garantir semantic relation between some parts
+[ ] The references are a complete MESS!! What kind of references are those? Put them on a nicer format. Use bibtex and latex as it should...
+[ ] garantir consistencia do que o ABC::DT é ao longo do paper todo
+[ ] validar conclusao
+EU
+[*] forcar ordem do listing 1 e firgure 1!
+[*] forcar aparecimento de ambos antes do paragrafo seguinte?
+[ ] State of the Art:
+	[ ] (**é preciso entrar nestes detalhes do ABC?**) in the first example Listing 1 you show the notes with some numbers in front, for instance, G4. What do the numbers mean?
+	[ ] (**como tratar este problema?**) you also say here that many tools exist to work with ABC, but before, in the introduction you say that only two exist (**eu nao digo que só existem duas. eu digo que sao as **//de facto//) and reinforce this right before section 2.2. The interesting thing is that a simple Google search gives me a lot of such tools: (abcnotation.com/software#linux). And then in section 2.2 you contradict yourself by saying that the existing tools are 2 more some others that are being created. And in the end you only talk about 3 of them...
+[ ] Rever e talvez refazer paragrafo introdutorio do cap. ABC::DT que está a fazer pouco sentido
+[*] outro exemplo com utilidade pratica e direta para pessoas com menos background musical
+[*] Page 14, Section 5.2: The sentence "The handler is very similar to the one used in ABC Paste except for some differences.", either elaborate any specific difference to be pointed out or remove this version of the sentence, because its' contributing with nothing.
+[ ] garantir consistencia do que o ABC::DT é ao longo do paper todo
+[*] diminuir tamanho de letra nos listings
+[*] tentar por listing lado a lado no all_but_one
+[*] tirar indentacao nos listings
+[*] fazer lstset
+[ ] rever legendas das imagens de abccat e abcpaste
+[ ] quando ha partes que sao iguais nos listings, pode-se pôr "..."

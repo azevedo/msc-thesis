@@ -1,0 +1,65 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2013-07-24T17:58:25+01:00
+
+====== Future Work ======
+Created Wednesday 24 July 2013
+
+==== IR ====
+* IR mais simples. Haverá uma conversão de representações (ver o que se pode simplificar)
+
+==== Musical Corpus ====
+* Construção de corpus abc com metadados ricos
+	* material de teste
+	* para treinar sistemas de aprendizagem
+* Desenvolver modelos sobre ABC: Técnicas de análise estatística para criar modelos por obras/autores
+	Exemplo de áreas de aplicação: 
+		classificação automática de obras, 
+		verificar autoria de obras (da mesma maneira que analisam se é provável que determinado autor tenha escrito um dado texto através do tipo de linguagem usada)
+* Composition
+	* geração automática de música (treinar um programa para gerar uma obra que siga um determinado estilo, autor ou características); 
+		* markov
+		* modelos evolucionários
+		* ...
+
+==== Music Analysis ====
+
+* Text mining, extracao de conhecimento
+
+== Musical Patterns ==
+**McCormack1996: Grammar based music composition**
+It has been observed that almost all forms of music involve repetition [13], either of individual sequences of notes or at some higher levels of structural grouping. Often these repetitions appear at a number of different levels simultaneously. Some compositions repeat patters that are slightly changed at each repetition, or revolve around some musical ‘theme’, whereby complex harmonic, timing or key shifts in a basic theme provide a pleasing musical diversity.
+//[13] Leach, J. and Fitch, J. Nature, Music, and Algorithmic Composition. Computer Music Journal 19, 2 (1995), 23 – 33.//
+
+* It is also commonly known that what allows us to identify an individual piece of music is the change in pitch between notes, not the pitch of the notes themselves. We can change the key of a composition (equivalent to multiplying all frequencies by some fixed amount) and still recognise the melody.
+
+
+==== ABC::DT ====
+
+* tabela de estrategias para o ABC::DT??
+* Alguma forma de optimização interna do ABC::DT
+* toabc:
+	* finish nested tuples
+* New features:
+	* Distinguir tempo fraco de forte
+	* Tratar overlay
+	* ver xml::dt
+
+=== Parser ===
+* reportar bugs e contribuir para o melhoramento do parser e da ferramenta em si (abcm2ps e tclabc)
+
+=== Rules ===
+
+== Actuators ==
+	* Expandir conjunto de atuadores
+	* Sistema de actuadores talvez devesse ser repensado para algo mais sistemático, menos had oc, tipo XPATH
+	* O processador deve permitir ser mais específico na especificação das keys (ex: XPath no XML::DT). Isso pode implicar a criação de uma representação interna mais simples que possibilite e facilite tal feature.
+
+== Transformations ==
+	* mais default functions para o ABC::DT
+
+==== Toolkit ====
+* Novas ferramentas
+* Ferramentas de validação
+* Opções extra para as ferramentas ja existentes
+* Fazer optimizacao de algumas ferramentas

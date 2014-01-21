@@ -1,0 +1,202 @@
+#!/usr/bin/perl
+package Music::Abc::Canon 0.1;
+
+use 5.01400;
+use Music::Abc::DT;
+use Data::Dumper;
+use Readonly;
+
+use strict;
+use warnings;
+
+Readonly my $FILE_MODE   => 0;    # ABC::DT's default processor is dt
+Readonly my $STRING_MODE => 1;    # ABC::DT's default processor is dt_string
+
+# canon parts followed by info about delta measures or number of repetitions
+# ex: tune.abc+2    => tune.abc will be printed with 2 empty measures in the beggining
+# ex: bass.abc++    => bass.abc will be repeatdly printed until the end of the canon is reached
+my @canon_args = @ARGV;
+my $n_voices   = 1;
+
+#TODO make sure that the tunes passed to canon_abc and generated inside canon_abc pass with detect_errors_abc
+
+my %canon_raw = extract_canon_info(@canon_args);
+my $result    = build_canon( \%canon_raw );
+print $result;
+
+
+############## Subroutines ##############
+
+# Extracts information about the canon's parts
+sub extract_canon_info {
+  my @args       = @_;
+  my %canon_info = ();
+
+  for my $arg (@args) {
+    if ( $arg =~ /([^+]+)[+](\d+)/xms ) {    # melody.abc+2
+      push @{ $canon_info{parts} }, { abcfile => $1, delta => $2 };
+    } elsif ( $arg =~ /([^+]+)[+][+]/xms ) {    # bass.abc++
+      $canon_info{bass} = $1;
+    }
+  }
+
+  return %canon_info;
+}
+
+# Builds the canon from the information extracted
+sub build_canon {
+  my $canon_info_ref = shift;
+  my $canon          = q{};
+
+  if ( $canon_info_ref->{parts} ) {
+    $canon = add_melody( @{ $canon_info_ref->{parts} } );
+  }
+  if ( $canon_info_ref->{bass} ) {
+    $canon = add_bass( $canon_info_ref->{bass}, $canon );
+  }
+
+  return $canon;
+}
+
+# Builds the melodic parts into one single score (without bass)
+sub add_melody {
+  my @parts_info = @_;
+  my @parts      = ();
+
+  # for each melodic part
+  for my $part_info (@parts_info) {
+
+    # adds empty measures at the beggining
+    my $part_without_voice =
+      `cat_abc -d=$part_info->{delta} $part_info->{abcfile}`;
+
+    # adds a voice header
+    my ( $part, $junk ) = add_voice_and_count_measures( $part_without_voice, $STRING_MODE );
+
+    $part =~ s/"/\\"/gxms;
+    push @parts, $part;
+  }
+
+  # pastes all melodic parts into a single score
+  my $paste_cmd = 'paste_abc -s "' . join( q{" "}, @parts ) . q{"};
+  my $parts_abc = `$paste_cmd`;
+
+  return $parts_abc;
+}
+
+# Adds the bass to the canon
+sub add_bass {
+  my ( $bass_abcfile, $parts_abc ) = @_;
+  my ( $junk, $parts_meas ) = ( q{}, 0 );
+
+  # adds a voice header to the bass part
+  my ( $inc_bass_abc, $bass_meas ) = add_voice_and_count_measures( $bass_abcfile, $FILE_MODE );
+
+  # counts the number of measures of the melodic part
+  if ($parts_abc) {
+    ( $junk, $parts_meas ) = add_voice_and_count_measures( $parts_abc, $STRING_MODE );
+  }
+
+  # calculates repetitions
+  my $bass_reps = ( $parts_meas / $bass_meas ) - 1;
+  if ( $bass_reps < 0 ) { $bass_reps = 0 }
+
+  # repeats bass
+  $inc_bass_abc =~ s/"/\\"/gxms;
+  my $bass_abc  = `cat_abc -r=$bass_reps -s "$inc_bass_abc"`;
+
+  # pastes melody with bass
+  $parts_abc =~ s/"/\\"/gxms;
+  $bass_abc  =~ s/"/\\"/gxms;
+  my $canon_abc = `paste_abc -s "$parts_abc" "$bass_abc"`;
+
+  return $canon_abc;
+}
+
+# Adds the voice header to the part provided
+# Counts the number of measures of the first voice
+sub add_voice_and_count_measures {
+  my ( $part_without_voice, $mode ) = @_;
+  my $first_time = 1;
+  my %measure    = ();
+
+  my %rule = (
+    'in_header::K:' => sub { add_voice_header(\$first_time) },
+    'bar' => sub {
+      $measure{$c_voice} = $sym->{info}->{bar_num} - 1;
+      toabc();
+    },
+  );
+
+  my $canon_with_voice  = $mode == $STRING_MODE ? dt_string( $part_without_voice, %rule )
+                        :                         dt( $part_without_voice, %rule );
+  # number of measures from the first voice which is supposedly the same as the others
+  my $n_measures = $measure{ ( keys %measure )[0] };
+
+  return ( $canon_with_voice, $n_measures );
+}
+
+sub add_voice_header {
+  my $first_time_ref = shift;
+  my $ret = toabc();
+
+  if ($$first_time_ref) {
+    $$first_time_ref = 0;
+    $ret .= 'V:' . $n_voices++ . "\n";
+  }
+  return $ret;
+}
+1;
+__END__
+
+=head1 NAME
+
+canon_abc - ABC Canon Maker
+
+=head1 SYNOPSIS
+
+canon_abc [MELODY-FILE]... [ACCOMPANIMENT-FILE]
+  MELODY-FILE: \abc{} file followed by '+NUMBER'
+  ACCOMPANIMENT-FILE: \abc{} file followed by '++'
+
+=head1 USAGE
+
+canon_abc t.abc+8 t.abc+16 t.abc+24 t.abc+32 bass.abc++
+
+=head1 DESCRIPTION
+
+Generates a complete canon score from a set of ABC files containing the melodic part and another
+containing the accompaniment part. The order in which the ABC files are provided is important as
+they determine the voices' order in the final score.
+
+The melodic part is repeated as many times as the user specifies and each one of them may have
+different number of measure rests at the beginning. The accompaniment part is repeated until it has
+the same number of measures as the melodic parts.
+
+=head1 REQUIRED ARGUMENTS
+
+ABC files corresponding to the canon's melodic parts
+  Ex: tune.abc+2
+
+=head1 OPTIONS
+
+=head1 DIAGNOSTICS
+
+=head1 EXIT STATUS
+
+=head1 CONFIGURATION
+
+=head1 DEPENDENCIES
+
+Music::Abc::Cat
+Music::Abc::Paste
+
+=head1 INCOMPATIBILITIES
+
+=head1 BUGS AND LIMITATIONS
+
+=head1 AUTHOR
+
+  Bruno Azevedo
+
+=head1 LICENSE AND COPYRIGHT

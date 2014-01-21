@@ -1,0 +1,129 @@
+\documentclass[main.tex]{files}
+\begin{document}
+
+\chapter{Corpora}
+
+To be able to calculate the difference between what is considered a pattern, assess what is expected,
+calculate similarities between scores or generate statistics there must exist some example cases.
+
+Those example cases are called corpus and in the case of this thesis it is a specific corpus - a
+musical corpus - which contains a set of rich metadata of the musical scores. This corpus grants
+the toolkit a mean to take advantage of the information calculated in the analysis of corpora by
+enabling a richer combination of tools.
+
+Another uses for the corpus include using them as testing material to the toolkit, for instance a
+tool that validates the syntax needs either flawless examples and examples with deliberately typed
+errors to guarantee that it works as it's supposed to.\\
+Also using them to train systems that can learn from data. For instance, a system that is trained
+with a set of scores to learn to identify a certain music style.
+
+\section{Building corpora}
+
+This phase, according to the existing literature on building corpora\cite{Atkins1992,
+wynne2005developing}, consists on planning the whole process, getting permissions for gathering
+scores and annotating them.
+
+\subsection{Planning}
+
+In this step decisions have to be made so that the remaining steps may take place:
+\begin{itemize}
+  \item Define the quantity of scores that will be added to the corpus;
+  \item Select the scores that should be added;
+  \item Define the intermediary formats and conventions to be used in the processing pipeline;
+  \item Define if and what annotations should be included in the corpus;
+  \item Define the formats it should be available in and how should the analysis tools interface
+    with them.
+\end{itemize}
+
+\subsection{Getting permissions}
+
+Scores will be gathered from public domain as they are not subject to copyright.
+
+\subsection{Gathering scores}
+
+Abc notation has become very popular since its introduction, and nowadays thousands of tunes -
+scores, as in a music consisting of multiple voices, exist in a lesser number because the
+features that allow the writing of polyphony were only added to the standard much later, yet
+it's an ever growing culture - exist in electronic format. However a previous parsing and
+reformatting might still be needed;
+
+\subsection{Annotating scores}
+
+In order to improve the usefulness of a corpus for a richer and more rigorous statistical analysis,
+it might be subject to the process of annotation. It consists on applying some sort of structural
+representation to act as a blue print of the original text and to provide additional interpretative
+information.
+
+Yet the use of annotations is not always the best approach. Susan Hunston, in
+\textit{Corpora in Applied Linguistics}\cite{hunston2002corpora} says that the kind of questions
+that are usually asked to a corpus rather than the questions that can be asked tend to be limited.
+This happens because the categories used to annotate a corpus are frequently determined
+before any analysis is done. Thus, as mentioned before, a careful planning has to be made.
+
+
+\section{What can be analyzed} 
+
+It's desired that a set of tools for statistical calculation is built. To make it possible a large
+set of corpora (plural of corpus) must be built, so that statistical analysis and hypothesis
+checking\footnote{Hypothesis testing is the use of statistics to determine the probability that a
+given hypothesis is true.} can be done with it and from its results extract valuable information.
+
+Some examples of what kind of analysis can be done with musical corpora:
+\begin{itemize}
+  \item Find sets of vertical patterns that occur in a large number of scores in the
+    corpus\cite{Conklin2002};
+  \item Find significant statistical differences between melodies of folk music from different
+    countries\cite{chai2001folk};
+  \item Display multiple excerpts from a collection of scores, such as all of the cadences, without
+    human intervention and editing\cite{Knopke};
+  \item Measure rhythmic similarity (the repetitive nature of the music) with manual annotations to
+    the corpus\cite{antonopoulos2007music};
+  \item Study norms of behavior for documenting relationships between accents and harmonic structure
+    in common-practice music, and the role of notational variants in identifying scribes and
+    composers\cite{Ariza};
+  \item Identify trends and changes throughout a historical time period through cluster
+    analysis\cite{albrechtemergence}.
+\end{itemize}
+
+\section{Existing Corpora} 
+
+There are many existing musical corpus available in the Internet. A large corpus will be assembled
+ranging from Abc corpus, to Midi, MusicXML and still LilyPond.
+The corpus format may vary depending on what the tools can read and process, for instance, if midi
+transformation is implemented then midi corpus have to exist as well. Presently Abc is the main
+format therefore the initial focus will be in Abc corpus.
+
+Here are some of the websites and packages from where they'll be gathered:
+\begin{description}
+  \item[http://abcnotation.com/browseTunes] \hfill \\
+    Around 350,000 tunes available as Abc or Midi sound files;
+  \item[http://thesession.org/] \hfill \\
+    Around 11,000 tunes available as Abc or Midi sound files;
+  \item[http://moinejf.free.fr/abc/index.html] \hfill \\
+    Abc organ pieces;
+  \item[http://www.classicalarchives.com] \hfill \\
+    Around 14,000 Midi sound files;
+  \item[http://abc.sourceforge.net/NMD/] \hfill \\
+    Around 1000 Abc files;
+  \item[Music21 corpus package] \hfill \\
+    A collection of approximately 10,000 works provided with the toolkit, freely-distributable music
+    for analysis and testing, including a complete collection of the Bach Chorales, numerous
+    Beethoven String Quartets, and examples of Renaissance polyphony. The corpus includes Abc,
+    MusicXML and Kern files.
+  \item[http://wiki-score.org/] \hfill \\
+    It is intended for publishing modern editions of unknown works buried in music archives in Abc.
+  \item[http://www.mutopiaproject.org/] \hfill \\
+    The Mutopia Project offers sheet music editions of classical music in LilyPond.
+\end{description}
+
+\section{Summary}
+
+Musical corpus will be built according to the needs of the toolkit. The initial need is for a
+toolkit that reads and processes Abc notation so the main focus will be to build an Abc corpus.
+
+A careful planning on how to build the corpus plays an important role on determining the quality and
+quantity of tasks that can use it. Such planning strongly affects the final results a tool can
+produce.
+
+
+\end{document}

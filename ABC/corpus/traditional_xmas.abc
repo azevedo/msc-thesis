@@ -1,0 +1,377 @@
+X:1
+T:The First Noel
+C: traditional English carol
+M:3/4
+L:1/4
+Q:1/4=88
+%%staves [(1 2) (3 4)]
+K:D
+V:1 clef=treble
+F/E/ | (D>E) F/G/ | A2 B/c/ | (d c) B | A2 (B/ c/) | (d c) B | (A B) c |
+w: The* first_ No-*el, the* an-gel did say, Was to cer-tain poor shep-herds in
+w: They* look-*ed* up and* saw* a star Shin-ing in_ the east,* be-
+w: And* by_ the* light of* that* same star Three* wise* men came* from
+w: This* star_ drew* nigh to* the* north-west, O'-er Beth-*le-hem* it
+w: Then* let* us* all with* one* ac-cord Sing* prais-*es to* our
+V:2 clef=treble
+D | A,2 D | E2 E | A2 G | F2 (D/E/) | (A F) G | (A D) G |
+V:3 clef=bass
+%%MIDI transpose -12
+a/g/ | f2 d' | c'2 b | a2 b/c'/ | d'2 (b/ a/) | a2 c' | (d' b) g |
+V:4 clef=bass
+%%MIDI transpose -12
+d | d2 B | (A a) g | f2 g | d2 g | (f d) e | (f g) e |
+V:1
+(d A) G | F2 F/E/ | (D>E) (F/ G/) | A2 B/c/ | (d c) B | A2 (B/ c/) |
+w: fields as they lay; In* fields* where* they lay* keep-ing their sheep, On a
+w: yond* them far, And* to* the* earth it* gave* great light, And*
+w: coun-* try far; To* seek* for a king was* their* in-tent, And to
+w: took* its rest, And* there* it* did both* stop* and stay, Right*
+w: heav'n-* ly Lord, That* hath* made* heav'n and* earth* of naught, And*
+V:2
+F2 E | D2 C | A,2 D | E2 E | A2 G | F2 (D/ E/) |
+V:3
+(a d') a | a2 a/g/ | f2 d' | (d' c') b | a2 b/c'/ | d'2 (b/ a/) |
+V:4
+(f/g/ a) c | d2 A | d2 B | (A a) g | f2 g | d2 g |
+V:1
+(d c) B | (A B) c | (d A) G | F2 || F/E/ | (D>E) F/G/ | A2 d/c/ |
+w: cold win-ter's night* that was* so deep. No-* el,* No-* el, No-*
+w: so it con-tin-ued both day* and night.
+w: fol-low the star* wher-ev-er it went.
+w: o-ver the place* where Je-* sus lay.
+w: with * His blood* man-kind* hath bought.
+V:2
+(A F) G | (A G) G | F2 E | D2 || C | B,2 D | C2 F |
+V:3
+a2 c' | d'2 e' | (a d') a | a2 || a/g/ | f2 b | a2 a |
+V:4
+(f d) e | (f g) e | (f/g/ a) c | d2 || A | d2 B | f2 d |
+V:1
+B2 B | A3 | d c B | (A B) c | (d A) G | F2 |]
+w:
+w:
+w: el, No-el, Born is the King* of Is-*ra-el.
+V:2
+G2 G | (F2 A) | F F G | F2 G | F2 E | D2 |]
+V:3
+(b>c') d'/e'/ | (f'2 e') | d' d' d' |d'2 g | a2 a | a2 |]
+V:4
+(g>a) b/c'/ | (d'2 c') | b a g | (d' d) e | (f/g/ a) A | d2 |]
+W:2
+W:They looked up and saw a star Shining in the east, be-
+W:yond them far, And to the earth it gave great light, And
+W:so it continued both day and night.
+W:3
+W:And by the light of that same star Three wise men came from
+W:country far; To seek for a king was their intent, And to
+W:follow the star wherever it went.
+W:4
+W:This star drew nigh to the northwest, O'er Bethlehem it
+W:took its rest, And there it did both stop and stay, Right
+W:over the place where Jesus lay.
+W:5
+W:Then let us all with one accord Sing praises to our
+W:heav'nly Lord, That hath made heav'n and earth of naught, And
+W:with His blood mankind hath bought.
+
+X: 2
+T:Hark! the Herald Angels Sing
+C:Charles Wesley / Mendelssohn
+M:4/4
+L:1/4
+Q:1/4=88
+K:G
+D G G>F | G B (BA) | d d d>c |B A B2 |
+w:Hark! the her-ald an-gels sing,* "Glo-ry to the new-born King;
+D G G>F | G B (BA) | d A A>F | F E D2 |
+w:Peace on earth, and mer-cy mild,* God and sin-ners rec-on-ciled!"
+d d d G | c B (BA) | d d d G | c B (BA) |
+w:Joy-ful, all ye na-tions, rise,* Join the tri-umph of the skies;*
+e e e d | c B c2 | A B/2c/2 d>G | G A B2 |
+w:With th'an-gel-ic host pro-claim, "Christ is* born in Beth-le-hem!"
+e>e e d | c B c2 | A B/2c/2 d>G | G A G2 |]
+w:Hark! the her-ald an-gels sing, "Glo-ry* to teh new-born King."
+W:2 Christ, by high-est heav'n adored; Christ the everlasting Lord!
+W:Late in time behold Him come, Offspring of the Virgin's womb:
+W:Veiled in flesh the Godhead see; Hail thincarnate Deity,
+W:Pleased as man with men to dwell, Jesus, our Emmanuel.
+W:3 Hail the heav'n born Prince of Peace! Hail the Son of Righteousness!
+W:Light and life to all He brings, Ris'n with healing in His wings.
+W:Mild He lays His glory by, Born that man no more may die,
+W:Born to raise the sons of earth, Born to give them second birth.
+
+X:3
+T:Joy to the World!
+C:Isaac Watts / George Frederick Handel
+M:2/4
+L:1/8
+Q:1/4=88
+K:D
+d2 c>B | A3 G | F2 E2 | D3 A | B3 B | c3 c |
+w:Joy to the world! the Lord is come; Let earth re-ceive her
+d4- | d3 d | dc BA | A>GF d | dc BA | A>GF F |
+w:King;_ Let ev-* 'ry* heart__ pre-pare* Him* room,__ And
+F F F F/G/ | A3 G/F/ | E E E E/F/ | G3 F/E/ |
+w:heav'n and na-ture* sing, And* heav'n and na-ture* sing, And*
+(Dd2) B | A>GF G | F2 E2 | D4 |]
+w:heav'n,* and heav'n__ and na-ture sing.
+W:2
+W:Joy to the earth! the Savior reigns; Let men their songs em-
+W:ploy; While fields and floods, rocks, hills, and plains Re-
+W:peat the sounding joy, Repeat the sounding joy Re-
+W:peat, repeat the sounding joy.
+W:3
+W:No more let sins and sorrows grow, Nor thorns infest the
+W:ground; He comes to make His blessings flow Far
+W:as the curse is found, Far as the curse is found, Far
+W:as, far as the curse is found.
+W:4
+W:He rules the world with truth and grace, And makes the nations
+W:prove The glories of His righteousness, And
+W:wonders of His love, And wonders of His love, And
+W:wonders, wonders of His love.
+
+X:4
+T:It Came Upon a Midnight Clear
+C:Edmund H. Sears / Richard S. Willis
+M:6/8
+L:1/8
+Q:1/4=74
+K:Bb
+F | d2 c cB G | F2 G F2 F | GA B Bc d | c3- c2
+w:It came up-on* the mid-night clear, That glo-ri-ous song* of old,*
+F | d2 A cB G | F2 G F2 F | G2 G AG F | B3- B2
+w:From an-gels ben-* ing near the earth To touch their harps* of gold:*
+d | d2 D D=E ^F | G2 A B2 d | cB A GA G | F3- F2
+w:"Peace on the earth,* good-will to men, From heav-en's all gra-* cious King!"
+F | d2 A cB G | F2 G F2 F | G2 G AG F | B3- B2
+w:The world in sol-*emn still-ness lay To hear the an-* gels sing.
+W:2 Still thru the cloven skies they come With peaceful wings unfurled,
+W:And still their heav'nly music floats O'er all the weary world:
+W:Above its sad and lowly plains They bend on hov'ring wing,
+W:And ever o'er its Babel sounds The blessed angels sing.
+W:3 And ye, beneath life's crushing load, Whose forms are bending low,
+W:Who toil along the climbing way With painful steps and slow,
+W:Look now! for glad and golden hours Come swiftly on the wing:
+W:O rest beside the weary road And hear the angels sing.
+W:4 For lo, the days are hast'ning on, By prophets seen of old,
+W:When with the ever circling years Shall come the time foretold,
+W:When the new heav'n and earth shall own The Prince of Peace their King,
+W:And the whole world send back the song Which now the angels sing.
+
+X:5
+T:O Come, All Ye Faithful
+C:Latin Hymn / John Francis Wade (Adeste Fideles)
+M:4/4
+L:1/4
+Q:1/4=88
+% %staves [(1 2) (3 4)]
+K:G
+%V:1 clef=treble
+G | G2 D G | A2 D2 | B A B c | B2 A G | G2 F E |
+w: O come, all ye faith-ful, joy-ful and tri-um-phant, O come ye, O
+%w: * Sing choirs of an-gels, sing in ex-ul-ta-tion, O sing, all ye
+%w: * Yea, Lord, we greet Thee, born this hap-py morn-ing, * Je-sus, to
+%V:2 clef=treble
+%D | D2 D B, | D2 D2 | D D D E | D2 D B, | (B,^C) D ^C |
+%V:3 clef=bass
+%b | b2 g g | f2 a2 | g a g g | g2 f g | g2 a a |
+%V:4 clef=bass
+%G | G2 B G | d2 f2 | g f g c | d2 d e | e2 d a |
+%V:1
+(FG) A B | (F2E3/2) D/ | D4 | d2 c B | c2 B2 | A B G A |
+w: come* ye to Beth-* le-hem! Come and be-hold Him, born the King of
+%w: bright* hosts of heav'n* a-bove! Glo-ry to God, all glo-ry in the
+%w: Thee* be all glo-* ry giv'n; Word of the Fa-ther, now in flesh ap-
+%V:2
+%D2 D D | (D2^C3/2) D/ | D4 | D2 E/F/ G | (EF) G2 | D D E E |
+%V:3
+%(ag) f e | (a2g3/2) f/ | f4 | b2 c' d' | c'2 d'2 | d' g b c' |
+%V:4
+%(dB) F G | A7/2 d/ | d4 | b2 a g | a2 g2 | f g b c' |
+%V:1
+(F>E) D || G | G F G A | G2 D B | B A B c | B2 A B |
+w: an-* gels! O come, let us a-dore Him, O come, let us a-dore Him, O
+%w: high-* est!
+%w: pear-* ing!
+%V:2
+%D2 D || D | D4- | D3 D | D D D D | D2 D G |
+%V:3
+%(a>g) f || b | b a b c' | b3 g | g f g a | G2 f d' |
+%V:4
+%d2 d || z | z4 | z4 | z4 | z3 g |
+%V:1
+c B A G | F2 (Gc) | (B2A3/2) G/ | G3 |]
+%w: 
+w: come, let us a-dore him,* Christ* the Lord!
+%w:
+%V:2
+%E/F/ G D ^C | D2 (DE) | (D2C3/2) B,/ | B,3 |]
+%V:3
+%c' d' a a | a2 g2 | (g2f3/2) g/ | g3 |]
+%V:4
+% a g f e | (dc) (Bc) | d7/2 G/ | G3 |]
+W:2
+W:Sing choirs of angels, sing in exultation, O sing, all ye
+W:bright hosts of heav'n above! Glory to God, all glory in the highest! 
+W:3
+W:Yea, Lord, we greet Thee, born this happy morning, Jesus, to
+W:Thee be all glory giv'n; Word of the Father, now in flesh appearing!
+
+X:6
+T:O Holy Night!
+C:John Dwight / Adolphe Adam
+M:4/4
+L:1/8
+Q:1/4=88
+K:D
+F2 F>F | A2-A>A B>B G>B | d4 A z/2 A/2 F>E | D2 F>G A2 G>E D8- | D4
+w:O ho-ly night!_ the starts are bright-ly shin-ing, It is the night of the dear Sav-ior's birth;_
+F2 F>F | A-A>A B>B G>B | d4 A z/2 A/2 ^G>F | c2 A>B c2 d>c | F4 z3
+w:Long lay the world* in sin and er-ror pin-ing, Till He ap-peared and the soul felt its worth.
+A | A2 B2 E2 A2 | B>A d>F B2 A z/2 A/2 | A2 B2 E2 A2 | B>A d>F A3 z |
+w:A thrill of hope the wea-ry world re-joic-es, For yon-der breaks a new and glo-rious morn;
+d6 c>B | c6 z c | e4- e>B B>B | d4 d2 z d | (f4 e3) A | d4-(d2c3/2)
+w:Fall on your knees, Oh, hear* the an-gel voic-es! O night* di-vine,**
+B/2 | A4-A>A B>A | A6 d | e6 e2 | f6 e2 | d4 c2 d>e | d6 z2 |]
+w:O night* when Christ was born! O night, O ho-ly night, O night di-vine!
+W:2 Led by the light of faith serenely beaming, With glowing hearts by His cradle we stand;
+W:So led by light of a star sweetly gleaming, Here came the wise men from Orient land.
+W:The King of kings lay thus in lowly manger, In all our trials born to be our Friend;
+W:He knows our need, To our weakness is no stranger. Behold your King,
+W:before Him lowly bend! Behold your King, before Him lowly bend!
+W:3 Truly he taught us to love one another; His law is love and his gospel is peace;
+W:Chains shall He break, for the slave is our brother, And in His name all oppression shall cease.
+W:Sweet hymns of joy in grateful chorus raise we, Let all within us praise His holy name;
+W:Christ is the Lord, Oh, praise His name forever! His pow'r and glo-
+W:ry ever more proclaim! His pow'r and glory ever more proclaim.
+
+X:7
+T:O Little Town of Bethlehem
+C:Phillips Brooks / Lewis H. Redner
+M:4/4
+L:1/4
+Q:1/4=88
+K:G
+B | B B ^A B | (dc) E A | G F/2G/2 A D | B3
+w:O lit-tle town of Beth-le-hem, How still we* see thee lie!
+B | B B e d | d c E A | G F/2G/2 B A | G3
+w:A-bove thy deep and dream-less sleep The si-lent* stars go by.
+B | B B A G | F2 F F | E F G A | B3
+w:Yet in thy dark streets shin-eth The ev-er-last-ing Light;
+B | B B ^A B | d c E e | d G B>A | G3 |]
+w:The hopes and fears of all the years Are met in thee to-night.
+W:2 For Christ is born of Mary, And gathered all above,
+W:While mortals sleep, the angels keep Their watch of wond'ring love.
+W:O morning stars, together Proclaim the holy birth!
+W:And praises sing to God the King, And peace to men on earth.
+W:3 How silently, how silently The wondrous gift is giv'n!
+W:So God imparts to human hearts The blessings of His heav'n.
+W:No ear may hear His coming, But in this world of sin,
+W:Where meek souls will receive Him still The dear Christ enters in.
+W:4 O holy Child of Bethlehem! Descend to us, we pray;
+W:Cast out our sin, and enter in; Be born in us today.
+W:We hear the Christmas angels The great glad tidings tell;
+W:O come to us, abide with us, Our Lord Emmanuel.
+
+X:8
+T:Silent Night! Holy Night!
+T:Stille Nacht
+C:Joseph Mohr (translated by John Young) / Franz Gruber
+M:6/8
+L:1/8
+Q:1/4=65
+K:Bb
+F>G F D3 | F>G F D3 | c2 c A3 | B2 B F3 |
+w:Si-* lent night, ho-* ly night, All is calm, all is bright
+G2 G B>A G | F>G F D3 | G2 G (B>A) G | (F>G) F D3 |
+w:Round yon vir-* gin moth-er and Child. Ho-ly In-fant so ten-der and mild,
+c2 c e>c A | (B3 d3) | B F D F>E C | B,3-B,3 |
+w:Sleep in heav-en-ly peace,_ Sleep* in heav-en-ly peace._
+W:2
+W:Silent night, holy night, Shepherds quake at the sight.
+W:Glories stream from heaven afar, Heavenly hosts sing alleluia;
+W:Christ the Savior is born! Christ the Savior is born!
+W:3
+W:Silent Night, holy night, Son of God, love's pure light
+W:Radiant beams from Thy holy face, With the dawn of redeeming grace,
+W:Jesus, Lord, at Thy birth, Jesus, Lord, at Thy birth.
+
+X:9
+T:We Three Kings
+C:John H. Hopkins, Jr.
+M:6/8
+L:1/8
+Q:1/4=88
+K:G
+B2 A G2 E | F G F E3 | B2 A G2 E | (F G) F E3 |
+w:We three kings of O-ri-ent are: Bear-ing gifts we trav-el a-far
+G2 G A2 A | B2 B dc B | (A B) A G2 F | E3 ||
+w:Field and foun-tain, moor and moun-* tain Fol-low-ing yon-der star.
+(HF2 HA) | G2 G G2 D | G2 E G3 | G2 G G2 D | G2 E G3 |
+w:O_ star of won-der star of night, Star with roy-al beau-ty bright,
+G2 G A2 B | c2 B A2 B | G2 G G2 D | G2 E G3 |]
+w:West-ward lead-ing, still pro-ceed-ing, Guide us to thy per-fect light.
+W:2 Born a King on Bethlehem's plain: Gold I bring to crown Him again,
+W:King forever, ceasing never Over us all to reign.
+W:3 Frankincense to offer have I: Incense owns a Deity nigh;
+W:Prayer and praising, all men raising, Worship Him, God on high.
+W:4 Myrrh is mine: its bitter perfume Breathes a life of gathering gloom
+W:Sorr'wing, sighing, bleeding, dying, Sealed in the stone cold tomb.
+W:5 Glorious now behold Him arise: King and God and Sacrifice;
+W:Alleluia, Alleluia, Earth to heav'n replies.
+
+X:10
+T:What Child is This?
+C: William C. Dix / traditional 16th century English melody (Greensleeves)
+M:6/8
+L:1/8
+Q:1/4=88
+%%staves [(1 2) (3 4)]
+K:G
+V:1 clef=treble
+E | G2 A B>c B | A2 F D>E F | G2 F F>^D E | F3 B,2 E |
+w: What Child is this,* who, laid to rest,* On Ma-ry's lap* is sleep-ing? Whom
+w: Why lies he in* such mean es-tate* Where ox and ass* are feed-ing? Good
+w: So bring Him in-*cense, gold and myrrh,* Come, peas-ant king,* to own Him; The
+V:2 clef=treble
+B, | E2 D D2 G | F2 D D2 C | B,2 B, A,2 E | ^D3 B,2 B, |
+V:3 clef=bass
+g | b2 a g2 b | d'2 a f2 a | g2 g e2 e | f3 b2 g |
+V:4 clef=bass
+e | e2 f g2 g | d2 d d2 ^d | e2 e c2 c | B3 b2 e |
+V:1
+G2 A B>c B | A2 F D>E F | G>F E ^D2 ^D | E3 E3 |
+w: an-gels greet* with an-thems sweet,* While shep-* herds watch are keep-ing?
+w: Chris-tian, fear;* for sin-ners here* The si-* lent Word is plead-ing.
+w: King of kings* sal-va-tion brings,* Let lov-* ing hearts en-throne Him.
+V:2
+E2 D D2 G | F2 D D2 C | B,2 C  B,2 B, | B,3 B,3 |
+V:3
+b2 a g2 b | d'2 a f2 a | g2 a f2 f | g3 g3 | 
+V:4
+e2 f g2 g | d2 d d2 ^d | e2 A B2 B | e3 e3 |
+V:1
+d3 d>^c B | A2 F D>E F | G2 E E>^D E | F2 ^D B,3 |
+w:
+w: This, this* is Christ the King,* Whom shep-herds guard* and an-gels sing
+w:
+V:2
+F3 B>A G | F2 D D2 C | B,2 B, A,2 E | ^D2 B, B,3 |
+V:3
+b3 d'2 d' | d'2 a f2 a | g2 g a2 e | f2 f b3 |
+V:4
+b3 g2 g | d2 d d2 ^d | e2 e c2 c | B2 B B3 |
+V:1
+d3 d>^c B | A2 F D>E F | G>F E ^D2 ^D | E3 E2 |]
+w:
+w: Hast, haste* to bring Him laud,* The Babe,* the Son of Ma-ry.
+w:
+V:2
+F3 B>A G | F2 D D2 C | B,2 C B,2 B, | B,3 B,2 |]
+V:3
+b3 d'2 d' | d'2 a f2 a | g2 a f2 f | a3 g2 |]
+V:4
+b3 g2 g | d2 d d2 ^d | e2 A B2 B | e3 e2 |]
+

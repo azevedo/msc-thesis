@@ -1,0 +1,25 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-12-19T22:15:46+00:00
+
+====== A Brief Survey of Music Representation Issues, Techniques, and Systems ======
+Created Wednesday 19 December 2012
+
+=== Dannenberg, Roger B ===
+
+* Lido a 17/12/2012
+
+**Hierarchy and Structure**
+Many researchers have investigated hierarchical representations. For example, Buxton [Buxton 85a] describes a system where ‘‘events’’ can be notes or sequences of events, allowing arbitrarily nested structures. One advantage of hierarchically structured descriptions of music is that transformations such as tempo or pitch can be applied to aggregates of musical objects. In general, hierarchy is a way of representing structure, and it should be no surprise that many composition languages support the notion of hierarchy.
+A single hierarchy system is inadequate to represent all these concepts at the same time
+Brinkman [Brinkman 85] and Dannenberg [Dannenberg 90] describe representations that support multiple hierarchies through named links relating musical events or objects, and through explicit objects that represent instances of hierarchies. The [[http://musickit.sourceforge.net/|NeXT Music Kit]] and HyTime support a more indirect approach where events may be given ‘‘tags’’ to indicate grouping.
+**Extensibility**
+it is important that music representations allow extensions to support new concepts and structures.
+**Pitch**
+These are more problems of models, or deciding what to represent, rather than how to represent it. I mention these problems here to indicate the richness required of any general pitch representation.
+**Timbre**
+The current practice usually represents timbre by name or number. Real timbre space has so many dimensions that it is often preferable to locate and name interesting points in the space. MIDI Program Change messages and the concept of ‘‘instrument’’ found in many software synthesis systems are examples of this approach.
+**Music Notation**
+Representations for music notation usually include the representation of musical structure, such as key and time signatures, bar lines, beams, slurs, etc., and also graphical information such as staff position, stem direction, and graphical positioning.
+A view of a data structure contains a subset of the information in the data structure and sometimes provides alternate or additional data to that in the data structure. The idea is to keep shared data in one place. Even repeated sections of music might be represented as views.
+Carrying this to an extreme, we can imagine views as a general mechanism to represent structure in music. Imagine a representation where motives are represented only once, and each occurrence is some kind of view, perhaps with local alterations and transformations, of the motive. Such a scheme would quickly lead to many interesting problems. If a note in a view is edited, and then the original note in the motive is deleted, should the view’s note be deleted as well? Can the user control such decisions? Can views be nested? These issues have much in common with representational schemes proposed for artificial intelligence, programming languages, and databases.

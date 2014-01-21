@@ -1,0 +1,27 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-12-19T22:19:58+00:00
+
+====== A Model for Musical Rhythm ======
+Created Wednesday 19 December 2012
+
+=== Bilmes, J ===
+
+* Lido a 19/12/2012
+
+**Abstract**
+At least 4 elements characterize musical rhythm: 1) metric content, a quantized attribute; 2) ametric phrases, those unrelated to any tactus; 3) tempo variation, change in the number of beats persecond; and 4) event shifting, time deviations from a steady beat.
+**Introduction**
+In the model, rhythmic style is a conspicuous parameter; that is analyses of rhythmic phrases from differing musical styles should produce different model parameters.
+**Rhythm**
+The //metric content// of musical rhythm is the perceptual relation of successive rhythmic events to an evenly spaced time grid. The time grid determines the "beat" within which all musical events are heard.
+//Ametric// models of rhythm represent those phrases that do not have an associated beat. A musician produces these phrases without using a constant beat as a reference for note placement. However we will not consider ametric rhythmic models in this paper since many types of music can be represented using the three other models.
+//Tempo variation// models are usually functions that map time durations to deformed time durations or that map a beat number (essentially a time position) to a beat duration.
+//Event shift// models of musical rhythm are, like tempo variation models, functions of a time position (or metric position); but, in addition, they are functions of instantaneous tempo. These functions, when given a metric position and an instantaneous tempo, provide a duration. That duration is used to shift, ahead or behind in time, a musical event occurring at that metric position.
+**Hierarchical Rhythmic Deconstruction**
+Music, and its rhythm, can be hierarchically deconstructed based on the metric content. One simple example of a metric hierarchy can be obtained from the 32 bar jazz AABA form; the form repeats indefinitely. Each repetition is divided into four sections, each section into eight measures, each measure into four beats, and each beat into three pulses. There are many forms that can be disassembled in this way; the point is that each may be deconstructed according to its own implicit hierarchical structure.
+The arrangement of the hierarcy may change over time. For example, each beat might for a time be divided into four, rather than three, pulses to produce a "straight eights" feel rather than a "swing" feel.
+A time varying hierarchical structure thus varies due to both changes in the musician and changes in the piece.
+**Event Shift and Tempo Variation Functions**
+It is possible to define both tempo variation and even t shift functions on domains corresponding to levels in the metric hierarchy. A function defined on a domain for a given level operates on unit durations equal to the unit durations of that hierarchical level (e.g., measure, beat).
+Similarly, event shift functions should be separated into functions defined for different levels in the hierarchy, rather than grouped into one function. The output of an even tshift function is a percentage of the time duration unit defined by the level corresponding to a beat. A note onset occurring at a particular metric position is thus shifted ahead or behind in time by a percentage of that unit.

@@ -1,0 +1,161 @@
+When there is a multi-voice score, like a four part choir, it is important to, for instance, the
+Soprano to be able to study her part individually. Sometimes there's the need to hear all the other
+parts except hers, so that she may know what the rest is going to sound. Other times the opposite is
+what is needed.
+
+The \learningabc{} tool generates two \abc{} scores whose goal is to help musicians in individual
+rehearsal of multi-voice music for studying purposes. One reduces the volume of a particular voice
+and the other increases the volume of a particular voice and reduces the volume of the remaining
+voices.
+
+\subsection*{Algorithm}
+
+\learningabc{}'s algorithm consists of 3 stages that are applied to each tune.
+
+An algorithmic description is made in algorithm \ref{alg:learningabc}.\\
+
+For each tune:
+\begin{enumerate}
+  \item \textbf{Retrieve voice data}
+
+  In this stage, the tune is processed by \dt{}, in which each voice's name, channel and program
+  (instrument) are stored to be used in the following stages.
+
+  The set of \abcdtrules{} is shown in table \ref{tab:learning_abc_fst_stage}.
+
+  \begin{center}
+    \begin{table}[h]
+      \begin{tabular}{|p{3cm}|p{5cm}|p{7.5cm}|}
+        \hline
+        Actuator & Transformation (Perl) & Notes\\
+        \hline
+        \hline
+        \emph{V:} & store\_channel\_and\_name(); & Local function that stores each voice's channel
+        and name.
+        \\
+        \hline
+
+        \hline
+        \emph{MIDI::program} & store\_program(); & Local function that stores each voice's program.
+        \\
+        \hline
+      \end{tabular}
+      \caption{\abcdtrules{} for \learningabc{}'s first stage}
+      \label{tab:learning_abc_fst_stage}
+    \end{table}
+  \end{center}
+
+  \item \textbf{All but one}
+
+  In \abc{}, it is possible to add commands to control audio properties through the use of \midi{}
+  directives (\emph{\%\%MIDI}, followed by different parameters) that \abctomidi{} recognizes.
+
+  In this stage, the tune is processed by \dt{}, in which a \midi{} directive to reduce the volume
+  of the voice is inserted. To be more precise, a change-volume \midi{} directive (\emph{\%\%MIDI
+  control 7 NewVolume}, where \emph{NewVolume} is a number between (0-127)- is appended after the
+  voice definition.
+
+  In the end, the processed tune is written to a new \abc{} file.
+
+  The set of \abcdtrules{} is shown in table \ref{tab:learning_abc_snd_stage}.
+
+  \begin{center}
+    \begin{table}[h]
+      \begin{tabular}{|p{2.25cm}|p{6.75cm}|p{6.5cm}|}
+        \hline
+        Actuator & Transformation (Perl) & Notes\\
+        \hline
+        \hline
+        \emph{V:\$req\_voice} & toabc() . "\%\%MIDI control 7 \$min\_volume\textbackslash{}n"); &
+        \emph{\$req\_voice} keeps the voice requested when calling \learningabc{}.
+        \\
+        \hline
+      \end{tabular}
+      \caption{\abcdtrules{} for \learningabc{}'s second stage}
+      \label{tab:learning_abc_snd_stage}
+    \end{table}
+  \end{center}
+
+  \item \textbf{Just one}
+
+  In this stage, the tune is processed by \dt{}, in which, for each voice, three \midi{} directives
+  are inserted after the \emph{X:} statement. The first is a select-channel directive
+  (\emph{\%\%MIDI channel Channel}, where \emph{Channel} is a number between (1-16)), the second a
+  select-program directive (\emph{\%\%MIDI program Channel Program}, where \emph{Program} is the
+  instrument (0-127) for channel \emph{Channel}) and the third is a change-volume directive to
+  reduce or increase the voice's volume. Furthermore, the select-channel directive is also appended
+  to the voice statement so that \abctomidi{} can make the association between the voice and the
+  channel when reproducing.
+
+  In the end, the processed tune is written to a new \abc{} file.
+
+  The set of \abcdtrules{} is shown in table \ref{tab:learning_abc_trd_stage}.
+
+  \begin{center}
+    \begin{table}[h]
+      \begin{tabular}{|p{1.5cm}|p{7.5cm}|p{6.5cm}|}
+        \hline
+        Actuator & Transformation (Perl) & Notes\\
+        \hline
+        \hline
+        \emph{X:} & set\_volume(); & Local function that sets the volume by appending the three
+        \midi{} directives mentioned before for each voice.
+        \\
+        \hline
+
+        \hline
+        \emph{V:} & toabc() . "\%\%MIDI channel
+        \$voice\_channel\{\$c\_voice\}\{channel\}\textbackslash{}n"; & Appends the select-channel
+        directive after its corresponding voice.
+        \\
+        \hline
+      \end{tabular}
+      \caption{\abcdtrules{} for \learningabc{}'s third stage}
+      \label{tab:learning_abc_trd_stage}
+    \end{table}
+  \end{center}
+\end{enumerate}
+
+\begin{algorithm}[h]
+  \KwIn{abc\_tunes}
+  \ForAll{$ tune \in abc\_tunes $}{
+    $dt(tune,$ rules from table \ref{tab:learning_abc_fst_stage}$)$ \hfill //1)\\
+    $just\_one \gets dt(tune,$ rules from table \ref{tab:learning_abc_snd_stage}$)$ \hfill //2)\\
+    $write\_to\_file(just\_one)$ \hfill //2)\\
+    $all\_but\_one \gets dt(tune,$ rules from table \ref{tab:learning_abc_trd_stage}$)$ \hfill //3)\\
+    $write\_to\_file(all\_but\_one)$ \hfill //3)\\
+  }
+  \Return{}
+  \caption{\learningabc{}'s algorithm}
+  \label{alg:learningabc}
+\end{algorithm}
+
+\subsection*{Usage}
+
+Listing \ref{lst:learningabcman} shows \learningabc{}'s manual.\\
+
+\lstinputlisting[caption={\learningabc{}'s manual},label={lst:learningabcman},captionpos=t,abovecaptionskip=-\medskipamount]{misc/learning_manual.tex}
+
+Listing \ref{lst:learningabcbyexample} shows a usage example for \learningabc{}. It reads tune
+\textbf{100.abc} (listing \ref{lst:verbum_s1}) and the output is shown in listing
+\ref{lst:100_all_but_tenor} and \ref{lst:100_just_tenor}.\\
+
+\begin{lstlisting}[caption={\learningabc{} by example},label={lst:learningabcbyexample},captionpos=t,abovecaptionskip=-\medskipamount]
+learning_abc -v=Tenor -min=25 100.abc
+\end{lstlisting}
+
+\begin{center}
+  \begin{minipage}{.49\textwidth}
+    \lstinputlisting[caption={100.abc},label={lst:verbum_s1},captionpos=t,abovecaptionskip=-\medskipamount]{misc/verbum_s1.tex}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{.49\textwidth}
+    \lstinputlisting[caption={100\_all\_but\_Tenor.abc},label={lst:100_all_but_tenor},captionpos=t,abovecaptionskip=-\medskipamount]{misc/100_all_but_Tenor.tex}
+  \end{minipage}
+\end{center}
+
+Note the \midi{} command \texttt{\%\%MIDI control 7 25} after \texttt{V:3} in listing
+\ref{lst:100_all_but_tenor}. That way, voice "Tenor" is going to be attenuated when \abctomidi{}
+reproduces the score.\\
+
+\lstinputlisting[caption={100\_just\_Tenor.abc},label={lst:100_just_tenor},captionpos=t,abovecaptionskip=-\medskipamount]{misc/100_just_Tenor.tex}

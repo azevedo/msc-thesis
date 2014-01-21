@@ -1,0 +1,67 @@
+\documentclass[a4paper,abstract=on,twoside]{scrreprt}
+\setlength\parindent{1.5em}
+
+\usepackage{thesis}
+
+\hypersetup{pdfauthor={Bruno Miguel Correia Azevedo}}
+
+\hypersetup{pdftitle={Pre-Thesis: A Toolkit for Musical Processing and Analysis}}
+
+\bibliography{bib/pretese}
+
+% reduce chapter margins
+\renewcommand{\chapterheadstartvskip}{\vspace*{-1.6\baselineskip}}
+
+% Set which chapters to include when Latex is next run (reduces warnings)
+\includeonly{002_abstract, 009_before, 
+  100_introduction, 110_context_motivation, 120_project_overview, 130_document_structure,
+  200_related_work, 300_corpora, 400_internal_representation, 500_abc_scripting, 600_conclusions,
+  999_before_appendix}
+
+\begin{document}
+\pdfbookmark{Cover}{cover} % Sets a PDF bookmark for the cover
+\pagenumbering{roman} % Sets the pagenumbering to Roman nunerals to begin with
+\includepdf[pages=-]{misc/cover_mei} %  insert the whole pdf
+
+%
+% Header and Footer
+%
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.4pt}
+\fancyhead[LO,RE]{}
+\fancyhead[LE]{\slshape \leftmark}
+\fancyhead[RO]{\slshape \rightmark}
+\fancyfoot[RO,LE]{\thepage}%
+\fancyfoot[C]{}
+
+\fancypagestyle{plain}{%
+  \renewcommand{\headrulewidth}{0.0pt}
+  \fancyhead{}
+  \fancyfoot[C]{}
+  \fancyfoot[RO,LE]{\thepage}
+}
+
+
+%
+% include all tex/ chapter files
+%
+\subfile{tex/002_abstract}
+\subfile{tex/009_before}
+\subfile{tex/100_introduction}
+\subfile{tex/200_related_work}
+\subfile{tex/300_corpora}
+\subfile{tex/400_internal_representation}
+\subfile{tex/500_abc_scripting}
+\subfile{tex/600_conclusions}
+
+
+% \bibliographystyle{plainnat}
+% If you only want a reference to appear in the bibliography, but not where it is referenced in the main text
+\nocite{*}
+\newpage % force the bookmark to go to the new page
+\pdfbookmark{References}{references}
+\printbibliography[title=References]
+
+\subfile{tex/999_before_appendix}
+
+\end{document}

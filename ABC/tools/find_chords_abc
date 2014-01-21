@@ -1,0 +1,204 @@
+#!/usr/bin/perl
+package Music::Abc::FindChord 0.1;
+
+use 5.01400;
+use Music::Abc::DT;
+use Data::Dumper;
+use Readonly;
+use Getopt::Long;
+use List::MoreUtils qw{any uniq};
+use Clone qw(clone);
+
+use strict;
+use warnings;
+
+Readonly my $MAJOR_TRIAD => 'maj_t';  # identifies a Major Triad chord
+Readonly my $MINOR_TRIAD => 'min_t';  # identifies a Minor Triad chord
+Readonly my $DOM_SEVENTH => 'dom_s';  # identifies a Dominant Seventh chord
+
+my $req_voice   = q{};
+my @ex_voices   = ();
+my @req_chords  = ();
+my %chord_table = ( $MAJOR_TRIAD => 3, $MINOR_TRIAD => 3, $DOM_SEVENTH => 4 );
+
+GetOptions(
+            'chord=s'       => \@req_chords,
+            'voice=s'        => \$req_voice,
+            'except-voice=s' => \@ex_voices,
+          );
+
+# Validates the requested chords
+if ( any { not $chord_table{$_} } @req_chords ) {
+  die "Chord options aren't valid!\n";
+}
+
+# The major triad chord is the default chord to be searched
+if ( not @req_chords or (!any { $_ eq $MAJOR_TRIAD } @req_chords) ) {
+  push @req_chords, $MAJOR_TRIAD;
+}
+
+my @tunes  = @ARGV;    # abc filename
+my $result = q{};
+
+$result = find_chords();
+
+print $result;
+
+
+############## Subroutines ##############
+
+sub find_chords {
+  my $ret  = q{};
+  my $note_actuator = $req_voice ? "V:$req_voice" . '::note'
+                                 : 'note';
+  my %rule = (
+    $note_actuator => sub {
+
+      # Get a list of consecutive notes, skipping unisons, octaves, and rests
+      my @notes =
+        find_consecutive_notes_in_measure( { skip_unisons => 1, skip_octaves => 1,
+                                             skip_rests   => 1, no_undef     => 1 }
+                                         );
+
+      # searches for each requested chord
+      for my $n_notes (uniq values %chord_table) {
+        # selects the requested chords with the same number of notes
+        my @r_chords = grep { $n_notes == $chord_table{$_} } @req_chords;
+
+        # Takes $n_notes at a time and creates a chord
+        for my $i ( 0 .. ( scalar(@notes) - $n_notes ) ) {
+          my $chord = form_chord( @notes[ $i .. ( $i + ( $n_notes - 1 ) ) ] );
+
+          test_chord( $chord, @r_chords );
+        }
+      }
+
+      toabc();
+    },
+  );
+
+  # Adds to the rules the voices to be excluded from the search
+  #FIXME when a voice is at the same time on requested and excluded voices, dt's behaviour isn't predictable
+  for my $ex_voice (@ex_voices) {
+    $rule{ "V:$ex_voice" . '::note' } = sub { toabc() };
+  }
+
+  foreach my $tune (@tunes) {
+    $ret .= dt( $tune, %rule );
+  }
+
+  return $ret;
+}
+
+# Checks if a chord meets the criteria specified
+# Prints the chord's name in the first note's gchord
+sub test_chord {
+  my ( $chord, @r_chords ) = @_;
+
+  #FIXME later when pitched_common_name() is working, all these if's won't be needed
+  if ( any {$MAJOR_TRIAD eq $_ } @r_chords and is_major_triad($chord) ) {
+    my $root_name = get_pitch_name( root($chord) );
+    # my $common_name = chord_common_name($chord);
+    if ( $sym->{text} ) { $sym->{text} .= "\n" }
+    $sym->{text} .= "^$root_name Major Triad";
+    # $sym->{text} .= pitched_common_name($chord);
+  }
+  if ( any {$MINOR_TRIAD eq $_ } @r_chords and is_minor_triad($chord) ) {
+    my $root_name = get_pitch_name( root($chord) );
+    # my $common_name = chord_common_name($chord);
+    if ( $sym->{text} ) { $sym->{text} .= "\n" }
+    $sym->{text} .= "^$root_name Minor Triad";
+    # $sym->{text} .= pitched_common_name($chord);
+  }
+  if ( any {$DOM_SEVENTH eq $_ } @r_chords and is_dominant_seventh($chord) ) {
+    my $root_name = get_pitch_name( root($chord) );
+    # my $common_name = chord_common_name($chord);
+    if ( $sym->{text} ) { $sym->{text} .= "\n" }
+    $sym->{text} .= "^$root_name Dominant Seventh";
+    # $sym->{text} .= pitched_common_name($chord);
+  }
+
+  return;
+}
+
+# Forms an ABC chord (note element with nhd > 0) given an array of notes
+sub form_chord {
+  my @consec_notes = @_;
+  my $first_note   = shift @consec_notes;
+  my $chord        = clone($first_note); # deep clone
+  my $chord_info   = $chord->{info};
+
+  for my $note (@consec_notes) {
+    push @{ $chord_info->{pits} }, $note->{info}->{pits}->[0];
+    push @{ $chord_info->{accs} }, $note->{info}->{accs}->[0];
+    # push @{ $chord_info->{lens} }, $note->{info}->{lens}->[0];
+    # push @{ $chord_info->{sl1} },  $note->{info}->{sl1}->[0];
+    # push @{ $chord_info->{sl2} },  $note->{info}->{sl2}->[0];
+    # push @{ $chord_info->{ti1} },  $note->{info}->{ti1}->[0];
+    # push @{ $chord_info->{decs} }, $note->{info}->{decs}->[0];
+    $chord_info->{nhd}++;
+  }
+
+  return $chord;
+}
+
+1;
+__END__
+
+=head1 NAME
+
+find_chords_abc - search voices for melodically expressed chord formations
+
+=head1 SYNOPSIS
+
+find_chords_abc [OPTION]... [FILE]...
+
+=head1 USAGE
+
+find_chords_abc -c=maj_t -c=dom_s tune.abc
+  searches all voices for major triads and dominant sevenths
+
+find_chords_abc -c=maj_t -c=dom_s -v=A tune.abc
+  searches voice A for major triads and dominant sevenths
+
+find_chords_abc -c=min_t -e=A tune.abc
+  searches all voices excluding voice A for minor triads
+
+=head1 DESCRIPTION
+
+Searches voices for melodically expressed chord formations - chords formed from a
+list of consecutive notes - such as a dominant seventh or a major triad.
+Inserts an accompaniment chord with the labeled chord in the first note of a found chord.
+
+=head1 REQUIRED ARGUMENTS
+
+=head1 OPTIONS
+  
+-v, --voice=voiceID|voiceName
+  Searches only the specified voice
+  Searches all voices by default
+
+-e, --except-voice=voiceID|voiceName
+  Doesn't search the specified voice
+
+-c, --chord=chord_code
+  Searches for the specified chord
+  Searches for the major triad by default
+
+=head1 DIAGNOSTICS
+
+=head1 EXIT STATUS
+
+=head1 CONFIGURATION
+
+=head1 DEPENDENCIES
+
+=head1 INCOMPATIBILITIES
+
+=head1 BUGS AND LIMITATIONS
+
+=head1 AUTHOR
+
+  Bruno Azevedo
+
+=head1 LICENSE AND COPYRIGHT

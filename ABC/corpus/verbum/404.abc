@@ -1,0 +1,9 @@
+X:404
+T:Solo Soprano
+C:Anon, 16th century
+M:3/4
+L:1/8
+K:G
+V:4 clef=alto name="Baixo" sname="B."
+%%MIDI program 1 1
+%%staves [ 4 ]

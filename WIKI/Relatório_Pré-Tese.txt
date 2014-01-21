@@ -1,0 +1,48 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2013-01-17T16:32:53+00:00
+
+====== Relatório Pré-Tese ======
+Created Thursday 17 January 2013
+
+Estado da Arte (comparacao do que está feito)
+	Projetos Existentes
+	Notações Musicais (que coisas permite, que filosofia está por trás)
+	Corpora
+Representação Interna de Informação Musical
+	Arranjar um tipo comum para poder mostrar modelos mais abstratos
+Experiencias preliminares
+	design goals:
+		* o parser precisa de ser robusto (estar preparado para casos que o parser nao reconheca)
+	parser abc
+Scripting abc
+
+Claims (Moralidades; algo que sirva para me guiar; Eu afirmo isto e vou prová-lo;)
+	Ex: A metafora UNIX é uma boa diretiva para a construcao
+	Ex: Quanto mais simbolico o nivel da fonte, mais se pode retirar
+
+
+
+== 23/01/2013 ==
+[*] Quanto ao capitulo da representacao interna, 
+	[*] é suposto já enunciar que caracteristicas se pretendem da nossa estrutura? 
+	[*] criticar as representacoes sugeriadas em papers?
+	[*] retirar elementos que nos possam interessar para o nosso das representacoes dos papers?
+	[*] o exemplo das ligas duplamente ligadas para representar uma partitura poderia ser uma implementacao, mas seria a melhor?
+	
+	importante aparecer a descricao das opinioes, teorias das abordagens
+	conclusao sobre ex: agilidade em leituras verticais => é um bom ponto de partida quer para a visualizacao gráfica, que para outro
+	quando a preocupacao é x, a abordagem é mais ou menos e corresponde a isto...
+							, a bordagem passa pela 
+	para a nossa preocupacao atual queremos equilibrio hibrido, temos de preservar a ordem topologica dos varios elementos
+	no capitulo tal vamos discutir caso de estudo vocacionado apra scripting
+	falar tb da abordagem do abcm2ps por exemplo (mostrar representacao generica do abcparser). analisamos esta ferramenta pk estou ciente que estas ferramentas pensaram a serio nesta coisa, principalmente o moine por ser grande impulsionador da evolucao
+	a deia é contar uma hidtoria as representacoes depois de descrever (idealmente 3 tipos: timewise, partwise e sequential)
+	para scripting o sequential é o mais comodo
+	
+
+== 28/01/2013 ==
+Internal Representation
+	* o que é uma determinada representacao tem de bom, ex: hierarquia => backup, transformation, etc (segundo The Use of Hierarchy and Instance in a Data Structure for Computer Music, Buxton, William)
+[*] citacoes, normalmente nao ponho, tentando generalizar. o que devo fazer?
+

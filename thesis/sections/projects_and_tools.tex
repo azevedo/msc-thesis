@@ -1,0 +1,137 @@
+In this section some of the most relevant projects and tools being developed or used at the moment
+are discussed\footnote{A more extensive list of \abc{} software may be consulted in
+http://abcnotation.com/software\#linux}.
+
+\begin{description}
+  \item[\textbf{abcm2ps}]~\cite{abcm2ps:Online}
+    A command line program which translates music written in \abc{} music notation into customary
+    sheet music scores in PostScript or SVG format.
+
+    It is based on \texttt{abc2ps} 1.2.5 and was developed mainly to print Baroque organ scores that
+    have independent voices played on multiple keyboards and a pedal-board. The  program has since
+    then been extended to support various other notation conventions in use for sheet music.
+    Moreover, it is now one of the most complete \abc{} implementations.
+
+    It is developed in C language and the author, an organist and programmer called Jean-François
+    Moine, releases “stable” and “development” versions of his program. As of this
+    writing\footnote{\today}, the stable release is 6.6.22 and the development release is 7.6.0.
+    Since release 7.2.1, \abcmtops{} tries to follow the \abc{} standard version
+    2.1\footnote{http://abcnotation.com/wiki/abc:standard:v2.1}.
+
+  \item[\textbf{abc2midi}]~\cite{abc2midi:Online}
+    A program that converts an \abc{} music notation file into a \midi{} file.
+
+    It is part of the abcMIDI package, which includes other utility applications.
+
+    The program was developed in C language by James Allwright in the early 1990s and has been
+    supported by Seymour Shlien since 2003. It contains many features, such as expansion of guitar
+    chords, drum accompaniment, and support for micro tones which do not exist in other packages.
+
+  \item[\textbf{tclabc}]~\cite{tclabc:Online}
+    A \emph{tcl}\footnote{Tcl is a scripting language created by John Ousterhout. It is commonly
+    used for rapid prototyping, scripted applications, GUIs and testing. Tcl is used on embedded
+    systems platforms, both in its full form and in several other small-footprint versions.}
+    extension which permits ABC tunes parsing and editing.
+
+    \begin{itemize}
+      \item the \abc{} tunes are converted into an \ac{IR} suitable for many tcl operations, without
+      losing the original tune information;
+      \item most of the \abc{} specification is supported;
+      \item the headers and tune symbols may be changed in many ways;
+      \item transposition is done automatically when changing the key signature;
+      \item bars may be automatically inserted;
+      \item \midi{} files may be imported and exported;
+      \item partial dump/include solves the selection copy/paste functions;
+      \item \midi{} input and output are supported on many systems;
+    \end{itemize}
+
+  \item[\textbf{Music21}]~\cite{music21:Online}
+    A Python-based toolkit for computer-aided musicology.
+
+    Music21 is a set of tools for helping scholars and other active listeners answer questions about
+    music quickly and simply.
+
+    Music21 builds on preexisting frameworks and technologies such as Humdrum, MusicXML, MuseData,
+    \midi{}, and LilyPond, but Music21 uses an object-oriented skeleton that makes it easier to
+    handle complex data. At the same time, Music21 tries to keep its code clear and makes reusing
+    existing code simple.
+
+    Applications of this toolkit include computational musicology, music informations, musical
+    example extraction and generation, music notation editing and scripting, and a wide variety of
+    approaches to composition, both algorithmic and directly specified.
+
+    It also has a large corpus of musical scores in many formats, including \abc{} and MusicXML.
+
+  \item[\textbf{abctool}]~\cite{abctool:Online}
+    A Python script that manipulates music files in \abc{} format.
+
+    It's mostly useful for people working on the command line and/or editing \abc{} directly in an
+    editor. It relies on external programs for certain tasks like converting into PostScript or
+    transposing.
+
+    Its main features are reading from standard input or file, outputting to standard output
+    (PostScript, PDF or \midi{}), viewing (using \abcmtops{} and \texttt{gv}), transposing,
+    translating chord names to Danish/German, and removing chords and fingerings.
+
+    It is open source, developed by Atte André Jensen and released under GPL.
+
+  \item[\textbf{Haskore}]~\cite{hudak1996haskore}
+    Haskore is a set of Haskell modules for creating, analyzing and manipulating music.
+
+    The formal approach used in this project is very elegant and powerful and is a very good
+    studying resource. Nevertheless, when one wants to process existing \abc{} music, there are many
+    details that don't fit in Haskore model like slurs, dynamics, microtones. In order to process
+    them, those elements must be forgotten or drastic changes to the model must be introduced.
+
+  \item[\textbf{EasyAbc}]~\cite{easyabc:Online}
+    An open source \abc{} editor for Windows, OSX and Linux.
+
+    It uses \abcmtops{} and \abctomidi{} and it has a rich features list. Most notably, it can
+    import MusicXML files and export tunes in SVG format. It is published under the GNU Public
+    License and was developed by Nils Liberg.
+
+  \item[\textbf{abcpp Preprocessor}]~\cite{abcplus:Online}
+    A simple yet powerful preprocessor designed for, but not limited to, \abc{} music files.
+
+    It was written to overcome incompatibilities between \abc{} packages, and to facilitate writing
+    portable and more readable \abc{} files. A preprocessor is a program that modifies a text file,
+    according to commands contained in the file.
+
+    It provides:
+    \begin{itemize}
+      \item conditional output;
+      \item exclude or include parts of a piece according to specified conditions;
+      \item define macros, i.e. symbols and sequences of customized commands;
+      \item rename commands, symbols, and notes;
+      \item include parts of other files.
+    \end{itemize}
+
+  \item[\textbf{ABCp}]~\cite{abcp:Online}
+    A parser for the \abc{} music notation.
+
+    It is a C library that interprets \abc{}. It is released as open source, under the terms of the
+    BSD license, and may be used in both free and commercial software.
+
+    ABCp has been designed with the following requirements in mind:
+    \begin{itemize}
+      \item to be able to handle the \abc{} 2.0 standard as well as previous standards and the
+      extensions introduced by the most widely used tools (\abcmtops{}, abcMIDI, ...);
+      \item to be fast;
+      \item to be small: there must be a fair trade-off between size and functionalities;
+      \item to be easily embeddable: no big restriction on the programming language to use;
+      \item to be usable: no complex API or class hierarchy to remember.
+    \end{itemize}
+
+  \item[\textbf{Music::Abc::Archive}]~\cite{music_abc_archive:Online}
+    A Perl module to parse \abc{} music archives.
+
+    \abc{} music archives contain songs in the \abc{} format. This module encapsulates the \abc{}
+    archive and individual songs so they may be managed more easily by Perl front-ends.
+
+\end{description}
+
+Some of the tools and projects presented were very relevant: \texttt{abctool} is a simple command
+following \unix{}'s philosophy; \abctomidi{} and \abcmtops{} deal with processing real world \abc{}s,
+but have specific purposes; \texttt{Music21} has similar goals and has a very powerful and complex
+object oriented modules for music processing; \texttt{Haskore} is very flexible and elegant but
+can't deal with real world \abc{} details.

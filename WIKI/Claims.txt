@@ -1,0 +1,78 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2013-01-29T01:12:39+00:00
+
+====== Claims ======
+Created Tuesday 29 January 2013
+
+Moralidades; algo que sirva para me guiar; Eu afirmo isto e vou prová-lo;
+	Ex: A metafora UNIX é uma boa diretiva para a construcao
+	Ex: Quanto mais simbolico o nivel da fonte, mais se pode retirar
+	
+
+=== Claims Musicais ===
+* Quanto mais simbolico o nivel da fonte, mais se pode retirar
+* Musica simbolicamente rica permite a criacao de musica parcialmente instanciada
+* Música é processável => necessidade de uma álgebra musical
+
+* Precisamos de SO que disponha de uma serie de filtros, algebra que permitam fazer milagres com abc:
+	* servem para auxiliar em tarefas de composicao, ... (computer aided ...)
+	* Pequenos transformadores composicionais
+	* suporte ABC real
+
+=== Metáfora Unix ===
+* que mapeamentos podem ser feitos às ferramentas Unix para o ABC
+* pretende gerar sugestoes de:
+	* ferramentas interessantes
+	* C vs ABC::DT
+	* tipo universal (txt vs abc)
+* simplicidade de construcao de ferramentas
+
+=== ABC::DT ===
+
+== Approach ==
+* Abordagem da travessia => processamento cirurgico (processamento localizado) => processador
+	* o processador pode ser descrito de uma maneira eficaz se usarmos um processamento estrutural da nossa musica.
+	* baseado em experiencias anteriores, com:
+		1) processamento cirurgico,
+		2) funcao que componha resultados,
+	pode-se fazer um processamento complexo divido em sub processamentos (em funcao das partes) que serão compostos entre si
+	* esta abordagem tem sido aplicada em outros sitios ex: compiladores de gramaticas, xml::dt, ...
+	* sendo a musica uma estrutura complexa vamos tentar aplicar esta abordagem
+	* dt => especie de travessia em profundidade onde se arranja maneira de distinguir varios tipos de situacao fornecendo um processamento para cada situacao, traduzindo estruturas
+
+== Processor ==
+	* processamento estruturado (regras) => metade do processamento está escondido (aquilo que é repetitivo)
+	* funcao identidade (toabc) é a acao por defeito
+	* Ter um conjunto de funções default que por omissão fazem coisas com limpeza
+
+== Parser ==
+	* a estrategia: fazer um parser robusto para uma linguagem reflexiva (capaz de fazer eval), pode ser obtido à custa: 
+		* procurar a melhor e robusta ferramenta que processe esse objeto
+		* isolar o parser
+		* juntar uma funcao de travessia da IR que serialize a estrutura à qual se possa aplicar eval
+	* robusto
+	* rapido de se fazer
+	* eficiente
+
+== Regras ==
+	* ter uma linguagem com poder cirurgico/descritivo é importante para a eficacia da ferramenta
+
+== Conversao de formatos? ==
+	.1 IR
+	.2 vistas
+
+
+=== IR ===
+* Musica <> nota* | som*
+* Musica ~ estrutura
+* part-wise: estudo melodicos
+* time-wise: estudo harmonico
+* source-wise: reescrita, processamento nao comprometido/robusto/agnostico
+* para um processamento geral é preciso que existam umas funcoes adicionais que consigam gerar uma das 3 vistas
+* as representacoes nao cobrem a totalidade da musica
+* representacoes que esquecem coisas, dependendo da necessidade
+* na travessia é indispensavel que haja uma recalculacao das vistas para que se tenha uma nocao diferente do contexto espacial
+
+=== Corpora ===
+* se nao tivermos um conjunto robusto de corpora nao podemos garantir a robustez do toolkit (testes)

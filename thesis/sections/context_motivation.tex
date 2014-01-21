@@ -1,0 +1,112 @@
+\subsection*{Textual Musical Notation}
+
+All music needs to be written before read, comprehended or performed by any musician. To make it
+possible, a notation system has been developed that provides musicians with the information
+necessary to reproduce it as the composer wanted.
+
+The notation consists in any system that represents audible music through written symbols. The use
+of symbolic and abstract formats improves music reasoning, as it gives the composer a greater
+freedom to express his music and provides easier readability to the performer.
+
+As computers were introduced to the world of music, a variety of file formats and textual notations
+emerged in order to describe music, such as, \abc{}~\cite{abcnotation:Online},
+LilyPond~\cite{lilypond:Online} or MusicXML~\cite{musicxml:Online}.
+
+\abc{} is used as the base notation throughout this dissertation.
+
+\subsection*{\unix{} Metaphor}
+
+In the 1970s the \ac{OS} \unix{} was born and with it a new philosophy\cite{raymond2004art} based on
+the principle of creating simple, yet capable and efficient programs, which tackle only one problem
+at a time.
+
+The system's interface is the command line, thus making the work method very powerful and flexible
+as it enables the automatic execution of commands. Moreover, commands handle text streams as a
+universal type, allowing programs to be chained.
+
+% There are some \unix{} commands whose behavior can be adapted:
+% \begin{description}
+%   \item[grep:]
+%     Prints the lines of a file matching a pattern;\\
+%     It could print melodic sequences matching a pattern. The pattern could be a sequence of melodic
+%     intervals or rhythms;
+%   \item[diff:]
+%     Compares files line by line;\\
+%     It could compare files voice by voice;
+%   \item[\ldots]
+% \end{description}
+
+
+In order to facilitate the development of new \unix{} commands, \unix{} creators built a new
+language (C).
+
+\begin{quotation}
+  \small\textit{\unix{} is simple. It just takes a genius to understand its simplicity.}
+  \begin{flushright}
+    Dennis Ritchie
+  \end{flushright}
+\end{quotation}
+
+When moving to the music world, the goal is to build simple music commands, using a universal music
+stream type - \abc{} -, creating a development language for conceiving music commands and exercising
+command compositionality.
+
+%% CLAIM %%
+Each command - an \abcpt{} - assists in the solving of music related problems. For instance,
+questions like \textit{"How many times does that happen in Beethoven's sonatas?"}, or \textit{"I
+wish I could extract these parts from this score and transpose them up a major second"} could be
+easily answered.
+
+%% CLAIM %%
+As \unix{}, with its universal interface - the text stream -, an \abcpt{} uses \abc{} as its
+universal interface. Being text as well, an \abcpt{} can be chained with others.
+
+%% CLAIM %%
+There are many \unix{} commands whose functionality can be mapped to an \abcpt{}. This is true mainly
+because of the textual nature of their input. Here are some \unix{} commands that could be mapped to
+\abcpt{}s: musical cat, paste, wc, grep, diff, cut, join, sed, ...
+
+\subsection*{\abc{} toolkit}
+
+%% CLAIM %%
+Presently, there is a lack of music notation general processing tools, particularly for \abc{}. So
+the main goal is to build an \abc{} \ac{OS}, i.e. a system that provides a set of \abcpt{}s that
+deal with real \abc{} and aid in musical tasks like analysis, composition, studying, ...
+
+\subsection*{\abcdt{}}
+
+%% CLAIM %%
+In order to easily build simple and compositional (in a \unix{} filters' meaning) \abcpt{}s, a
+system capable of precisely specifying how an \abc{} score should be processed is needed. The same
+necessity appeared to \unix{}'s developers while developing it, from which the C language was built.
+Therefore, a rule-based \ac{DSL}~\cite{kosar2010comparing,kosar2008preliminary} was created - \abcdt{}.
+
+\subsection*{Application Areas}
+
+In order to better understand the benefits of the toolkit being proposed, some real life activities
+where those tools can help make a difference are described next:
+
+\begin{description}
+  \item[Musical Wikis] \hfill \\
+    Wikis that deal with the edition of musical scores. E.g.: Wiki::Score.
+  \item[Cultural and cooperative volunteering] \hfill \\
+    In environments like Wikis where the edition of documents happens concurrently in cooperation
+    with many elements. E.g.: Wiki::Score.
+  \item[Score transcription] \hfill \\
+    Often errors occur while manually transcribing a score and those errors are not easily detected.
+  \item[Music learning] \hfill \\
+    Custom tools may be created with the purpose of supporting tasks such as studying and
+    rehearsing.
+  \item[Musical analysis and composition] \hfill \\
+    E.g.: Through the detection of certain patterns in specific musical style it is possible to
+    assess if a composition uses any feature of that style;\\
+    E.g.: Automatic classification of scores;\\
+    E.g.: Verification of a score's authorship. In the same way that it is possible to assess the
+    probability of an author having written a certain text through the type of vocabulary used.\\
+    E.g.: Generation of scores that follow strict structural rules, such as the canon or the fugue.
+\end{description}
+
+The next section presents the work developed in the context of this dissertation, enumerating the
+design goals that guided the project's development. Section \ref{sec:case_studies} introduces the
+case studies which served as motivation to this work and Section \ref{sec:document_structure}
+presents the structure of the document, including a summary of each chapter.

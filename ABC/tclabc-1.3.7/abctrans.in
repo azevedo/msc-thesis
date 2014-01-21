@@ -1,0 +1,105 @@
+#!/bin/sh
+# the next line restarts using tclsh -*- tcl -*- \
+exec tclsh "$0" "$@"
+
+# This is an example of using the tclabc library.
+# This script takes an ABC file from the command line
+# and output a transposed ABC file on stdout.
+
+#fixme: have a rule for each tune
+#fixme: translate the guitar chords
+
+if {[file exists ./tclabc[info sharedlibextension]]} {
+    # accept to run in the source directory
+    set abclib .
+    load ./tclabc[info sharedlibextension]
+    set abcversion [package require tclabc]
+} else {
+    set prefix @prefix@
+    set exec_prefix @exec_prefix@
+    set abclib @libdir@/tclabc/
+    set auto_path "$abclib $auto_path"
+    set abcversion @VERSION@
+
+    package require -exact tclabc $abcversion
+}
+
+proc main {} {
+	global argc argv
+	if {$argc == 0} {
+		puts stderr {Transpose abc tunes
+Usage:  abctrans <abc_file> <new key signature> [file newsig]*}
+	     	exit 1
+	}
+
+	# initialize the 'key' to 'sf' array
+	array set key2sf {
+		Cb -7
+		Abm -7
+		Gb -6
+		Ebm -6
+		Db -5
+		Bbm -5
+		Ab -4
+		Fm -4
+		Eb -3
+		Cm -3
+		Bb -2
+		Gm -2
+		F -1
+		Dm -1
+		C 0
+		Am 0
+		G 1
+		Em 1
+		D 2
+		Bm 2
+		A 3
+		F#m 3
+		E 4
+		C#m 4
+		B 5
+		G#m 5
+		F# 6
+		D#m 6
+		C# 7
+		A#m 7
+	}
+
+	# main job
+	foreach {fn key} $argv {
+
+		# check the key signature
+		if {[catch {set sf $key2sf($key)}]} {
+			puts stderr "No such key signature '$key'"
+			continue
+		}
+
+		# read the ABC file
+		if {[catch {open $fn r} fd]} {
+			puts stderr "Cannot read $fn"
+			continue
+		}
+		abc load [read $fd [file size $fn]]
+		close $fd
+
+		# change the key signatures of all tunes
+		set ntune [llength [abc tune]]
+		for {set i 0} {$i < $ntune} {incr i} {
+			abc tune $i
+			for {} {1} {} {
+				if {[string compare [lindex [abc get] 0] key] == 0} {
+					abc set [list key $sf]
+					break
+				}
+				abc go next
+			}
+		}
+
+		# output
+		puts stdout [abc dump]
+		puts stdout ""	;# tune separator
+	}
+}
+
+main

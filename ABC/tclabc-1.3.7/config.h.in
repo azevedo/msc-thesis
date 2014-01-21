@@ -1,0 +1,12 @@
+/* config.h.in */
+
+/* Define if you have a sound card on Linux, FreeBSD or Win32.  */
+#undef HAVE_SOUND
+
+/* Define if you have a Sound Blaster AWE 32 on Linux or FreeBSD.  */
+#undef HAVE_AWE
+
+/* Define if you have the ALSA library.  */
+#undef HAVE_ALSA
+
+#define VERSION xxx

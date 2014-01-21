@@ -1,0 +1,34 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2013-07-15T12:58:05+01:00
+
+====== Tese ======
+Created Monday 15 July 2013
+
+== Internal Representation ==
+* a partir da esrutura sequencial é possivel gerar estruturas que sao mais aptas para determinadas tarefas:
+	time-wise: analise musical => captar conjunto de notas num determinado momento musical
+* como defendemos o processamento estrutural, se nao nao tivermos uma estrutura como deve de ser estaremos a errar no problema apesar da solucao estar correta
+
+=== state of the art ===
+justificacao da estrutura geral do documento (verificar claims). incidirá em x e y devido a...
+
+=== Conclusions ===
+claims
+
+=== Sections ===
+reforçar claims
+
+=== Future Work ===
+[[Future Work]]
+
+
+
+=== Apresentação ===
+[*] por as 3 representacoes
+[*] melhorar algoritmo
+[*] regras do wc_abc mais simples
+[*] publicacoes no ultimo slide + 1
+[*] cpan
+[ ] realcar que no abc::dt a grande vantagem está em so se precisar de especificar a transformacao
+[ ] olhar para o publico

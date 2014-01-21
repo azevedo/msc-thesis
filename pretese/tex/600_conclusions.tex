@@ -1,0 +1,51 @@
+\documentclass[main.tex]{subfiles}
+\begin{document}
+
+\chapter{Conclusions}
+
+%tb é permitido por duvidas do que sera feito
+
+This document addressed the topic of scripting on textual musical notation and an analysis was made
+of the components required to support its implementation.\\
+A proof of concept was demonstrated to prove that a certain approach to apply scripting on abc
+scores had the potential of being used as the basis for the toolkit.\\
+Moreover a list of known musical notations and some of the most relevant projects and tools were
+presented.
+
+A careful planning on how to build the corpus plays an important role on determining the quality and
+quantity of tasks that can use it. Such planning strongly affects the final results a tool can
+produce.
+
+There are mainly two types of internal representation's structures that are most commonly approached
+by researchers: sequential and hierarchic. To meet the established requirements for the toolkit, the
+representation used must be complete enough to allow the application of many different analytic
+tasks. However that fact does not invalidate an approach that starts by generating a sequential
+structure and from it generate something more suited to more complex uses. Furthermore the final
+goal is a toolkit built with scripts, hence the sequential structure reveals itself as an
+appropriate structure to apply scripting skills. 
+
+In order to demonstrate that it is possible to process, transform and generate Abc documents along
+with statistics through a simple algorithm a proof of concept was devised. It meant to prove that by
+tackling the parts of an elaborate problem, the complexity of building a tool that solves such
+problem may be mitigated.
+
+
+\section{Research Planning}
+
+The next step will be resuming the development of the processor that was presented in the proof of
+concept. At the same time verify that the parser used is robust. This includes guaranteeing that a
+future change to, for instance, abcm2ps's parser is easily adapted to the scripts and other programs
+created that depended on it. In other words, all developed components must be capable of handling
+subtle changes to third party parsers.
+
+Other tasks include:
+\begin{itemize}
+  \item Creating a set of tests that verify the correctness of the tools developed;
+  \item Creating the Unix-like tools for music;
+  \item Building Abc corpora;
+  \item Developing statistical tools for music;
+  \item Developing musical analysis tools;
+  \item Writing of the dissertation.
+\end{itemize}
+
+\end{document}

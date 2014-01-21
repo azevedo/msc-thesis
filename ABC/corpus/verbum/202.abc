@@ -1,0 +1,10 @@
+X:202
+T:Solo Fem
+C:Anon, 16th century
+M:3/4
+L:1/8
+K:G
+V:2 clef=treble name="Contralto" sname="C."
+%%MIDI program 1 1
+%%staves [ 2 ]
+G3 FE2| D2C2B,2| G,2 A,4| G,4 G,2|

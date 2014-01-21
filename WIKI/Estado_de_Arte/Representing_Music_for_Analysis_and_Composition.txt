@@ -1,0 +1,45 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-12-19T22:17:03+00:00
+
+====== Representing Music for Analysis and Composition ======
+Created Wednesday 19 December 2012
+
+=== Wiggins, Geraint; Harris, Mitch; Smaill, Alan ===
+
+* Lido a 17/12/2012
+
+1. **Introduction**
+Abstract representation of music material;
+	Abstract in that it should not commit the user to any particular representation, of, say, pitch in terms of a frequency in Hz or some particular note name. On the other hand, the representation of pitch should allow the determination of intervals from pitches, and, in general, should permit the user to determine and manipulate all the musically meaningful aspects of pitch.
+2. **The basic representation**
+Descrete notes of constant pitch. They correspond to events in this representation; they are the fundamental objects in the representation.
+2.1 **Representing time**
+Representations for time and pitch are very similiar, so we simply describe the time representation.
+Objects of interest:
+	* points in time
+	* duration (or time intervals)
+Mathematical machinery:
+	* 'dur' → duration as the time interval between two points; dur(t1,t2) = t2 - t1
+	* '<=' → compare the duration of notes
+	* '+'    → add two durations together to get a third
+2.2 **Pitch, Events and Scores**
+Follows the lines of time.
+Objects of interest:
+	* pitches
+	* (pitch) intervals
+
+Our basic representation of some musical structure, then, simply consists of a set of tuples, each of which we call an event that corresponds to a note of the music.
+The tuple has 5 elements, a unique **identifier**, a **pitch** element (corresponding to the pitch  of the note), a **time** element corresponding to the time of the start of the note, a **duration** element corresponding to the length of the note, and a **timbre** element that will describe  timbre and intensity information.
+Pitch, time and duration elements are taken from the apporpriate abstract data types.
+
+	**event**( Identifier, Pitch, Time, Duration, Timbre )
+	
+We then apply the functions and relations defined above, which give a way of making available most of the information needed to analyse, manipulate and create musical structures. To profit from this, we need some higher-level descriptions; this is the role of constituents.
+3. **A hierarchy of constituents**
+It is widely accepted that music is best described at higher levels in terms of some sort of //hierarchical structure.//
+Constituents are the higher-level groupings of which a hierarchy may be composed. For example, we might wish to represent rhythmic groupings, or a cadence, or both at the same time, or larger groups such as a recapitulation. These are all potential constituents.
+There will be a hierarchy where an event may appear inside a constituent, ehich may appear inside another constituent, and so on. We will call the events and/or constituents from which a given contituent is directly formed the **particles** of that constituent. A constituent is described by its **set of particles**, together a **label** of its type (like //rhythmic_unit// or //cadence//), and a unique **identifier**. It may be possible and useful to assign time information to a constituent directly, rather than have this information retrieved from the particles, and we allow this possibility. This allows the efficient computation of certain temporal information.
+6. **Related Work and Conclusions**
+Often these formal models describe musical structures in grammatical terms. Our work is not inconsistent with this approach - a grammar could be specified in terms of the contituent strucure, and a piece of music parsed by determining automatically wether such a constituent structure could be imposed upon the underlying events. Our interest in describing the internal structure, in pitch and time etc, of the musical events, sets our work apart from most grammatical approaches where the notion of event is taken as a primitive with no internal structure.
+What we have done is to formalise a method of representing music that makes it particularly straightforward to write programs that manipulate musical structures. We have suggested a set of abstract data structures ehich can be flexibily combined depending on the user's needs.

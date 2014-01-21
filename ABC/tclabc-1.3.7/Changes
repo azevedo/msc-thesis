@@ -1,0 +1,203 @@
+---- Version 1.3.7 - 12/08/26 ----
+
+Fix lack of MIDI program initialization when no %%MIDI program on play (LIB)
+	(reported by Hudson Flávio Meneses Lacerda).
+Change the default location of tclConfig.sh (GEN).
+
+---- Version 1.3.6 - 11/12/23 ----
+
+Fix bad V: after save when V: declared in tune header (LIB)
+	(reported by Hudson Flávio Meneses Lacerda).
+
+---- Version 1.3.5 - 11/12/04 ----
+
+Fix a program loop when less voices after repeat and playing (LIB).
+Fix the lack of secundary voices after repeat when playing (LIB).
+Save unicode characters >= 0x10000 as surrogates (couple of \uxxxx - LIB).
+Align the ABC front-end and parser with abcm2ps-6.5.15 (PARSER).
+
+---- Version 1.3.4 - 11/11/23 ----
+
+Set correct key signatures when voices defined before first K: (LIB)
+	(reported by Hudson Flávio Meneses Lacerda).
+Fix bad displayed key when Ionian mode (LIB)
+	(reported by Hudson Flávio Meneses Lacerda).
+
+---- Version 1.3.3 - 11/11/05 ----
+
+Change the 'K:none' tcl value to 'key 0 none add' (LIB)
+	(asked by Hudson Flávio Meneses Lacerda).
+
+---- Version 1.3.2 - 11/10/24 ----
+
+Fix bad scanning of embedded information fields when space after ':' (PARSER).
+Have better octaves after transposition (LIB).
+Fix the transposition of some guitar chords (LIB).
+Fix bad B flat when transposing from K:none to K:Dm ('key -1 minor' - LIB).
+
+---- Version 1.3.1 - 11/10/20 ----
+
+Adapt the transpose algorithm from the abcm2ps one (LIB).
+!! the latin guitar chords are no more transposed !!
+Fix bad display of notes after change and many clefs in the staff (GUI).
+Fix bad returned key value when no explicit key signature in a voice (LIB).
+Fix bad voice dump when 'voice new' and no 'voice set' (LIB).
+Fix a bug in key dump (LIB).
+Handle K:none (LIB, GUI).
+
+---- Version 1.3.0 - 11/10/12 ----
+
+Keep the key signature mode (LIB).
+Align the ABC parser with abcm2ps-6.5.0 (PARSER).
+!! all strings are now translated to utf-8 !!
+Crash when saving tunes in MIDI format with a time signature without
+	denominator (LIB).
+
+---- Version 1.2.3 - 11/05/27 ----
+
+Fix warnings when no sound or no alsa (LIB).
+Output MIDI files in format 0 instead of format 1 (LIB).
+Bad MIDI output when repeat sections and %%staves (LIB).
+%%MIDI channel did not work (LIB).
+Still loss of voice ID when saving a tune (LIB).
+Crash when saving a ABC file with new voice in a not displayed tune (LIB).
+
+---- Version 1.2.2 - 11/02/06 ----
+
+Loss of voice ID when saving a tune since previous version (LIB).
+Update documentation (README).
+Clearer configure messages (GEN).
+
+---- Version 1.2.1 - 10/09/26 ----
+
+Handle '%%score' (LIB).
+Bad microtone values when large numerator (LIB).
+Align the ABC parser with abcm2ps-6.1.1 (PARSER).
+
+---- Version 1.2.0 - 10/08/23 ----
+
+Bad microtone values when 'n' > 1 (LIB).
+Don't reset the tune(cursym) on FocusIn (GUI).
+Bad text display of %%staves with brackets (GUI).
+Improve a bit the www browser (GUI).
+More [abc get] arguments for 'key' and 'extra vover' (LIB).
+Better selection (GUI).
+Fix errors when clicking on the right or left side of the canvas (GUI).
+Change the non ms-windows default fonts (GUI).
+Bad first display when signature changes in tune (GUI).
+Change ./configure (GEN).
+Handle successive symbol dumps (LIB).
+Bad values of "abc get staff" when clef/signatures changes at start of tune (LIB).
+Crash when "abc go" with an incorrect symbol address (LIB).
+Fix errors and typos in tclabc.html (DOC).
+Change the file backup suffix from '.BAK' to '~' (GUI).
+Move all source files to UTF-8.
+Align the ABC parser with abcm2ps-6.1.0 (PARSER).
+
+---- Version 1.1.0 - 07/12/22 ----
+
+Right MIDI program of voice overlay (LIB).
+Bad display when voice overlay (LIB).
+The play following bar stopped on end of a secundary voice (LIB).
+Bad detail redisplay when inserting or deleting after a beam (GUI).
+Better pointing with the mouse (GUI).
+Redisplay the canvas when changing the lyrics under staff (GUI).
+Loss of the last line of words under tune when not ending with
+	a newline (GUI).
+Memorize the last acceded directory (GUI).
+No more "space" line when not "detail" (GUI).
+The "space" flag is now before the symbol (GUI, LIB).
+Compilation error on *nix when no AWE (LIB).
+Align the ABC parser with abcm2ps-5.7.1 (PARSER).
+
+---- Version 1.0.10 - 07/08/07 ----
+
+Display and have settable the spaces after any symbol (GUI, LIB).
+Keep the spaces after any symbol on saving (LIB).
+Bad display of clef/key/time signatures on voice overlayed (LIB).
+No TCL error when note duration too long or too short (GUI).
+More / better rests (GUI).
+Align the ABC parser with abcm2ps-5.5.1 (PARSER).
+Bad redisplay of rests when changing their duration (GUI).
+Bad saving of word (w:) when '*' as the 1st word (LIB).
+
+---- Version 1.0.9 - 07/02/01 ----
+
+Align the ABC parser with abcm2ps-5.3.0 (PARSER).
+Bad saving of repeat measures with text starting with a digit (LIB).
+New dutch translation (from Bas Schoutsen - GUI).
+New portugese translation (from Hudson Lacerda - GUI).
+
+---- Version 1.0.8 - 06/10/06 ----
+
+Handle '%%MIDI transpose n" when playing/saving MIDI (LIB).
+Have T: inside a tune as 'extra info' (LIB).
+Do not force the tie direction when setting the measure bars (LIB).
+Bad saving when changing a chord as '[CG]2' to a single note (LIB).
+Do 'abcbarchk' work with M:C (SCRIPTS).
+Language files update (+ m_full - GUI).
+Add button/shortcut to toggle the display of some window elements (GUI).
+Error when calling 'abcbarchk' and 'abctrans' without argument (SCRIPTS).
+
+---- Version 1.0.7 - 06/08/31 ----
+
+Bad MIDI play/export when "::" and ":|" (LIB).
+Bad tuplet insertion (LIB).
+
+---- Version 1.0.6 - 06/08/08 ----
+
+Swedish translation (from Jonas Petersson - GUI).
+1/4 and 3/4 sharps and flats added (GUI).
+Get and set microtone accidentals (LIB).
+Align the ABC parser with abcm2ps-5.0.2 (PARSER).
+
+---- Version 1.0.5 - 06/06/04 ----
+
+Crash when inserting with the virtual keyboard since 1.0.2 (LIB).
+'configure' problem with bash-3.1 (GEN).
+
+---- Version 1.0.4 - 06/04/24 ----
+
+Stop all the notes when changing the channels (LIB).
+Add keyboard/pedal coupling in tkorgan.tcl (GUI+).
+
+---- Version 1.0.3 - 06/04/01 ----
+
+Loop when inserting a symbol in a void voice when the next voice
+	is not empty (LIB).
+Change '%%MIDI program' with 2 args to
+	'%%MIDI program <channel> <program>' (instead of <bank> - LIB).
+Do work setting instruments with bank != 0 (GUI).
+Set the playing channels when changing the channels (LIB).
+tkorgan.tcl added (GUI+).
+Align the ABC parser with abcm2ps-4.12.12 (PARSER).
+Language files update (+ h_kb, p_browse, p_opst - GUI).
+Dutch translation (from Bas Schoutsen - GUI).
+Bad symbols when raw editing and empty values (LIB).
+Some doc update (DOC).
+
+---- Version 1.0.2 - 06/02/16 ----
+
+Option 'globally apply' in setting the instruments (GUI).
+Better insertion points of MIDI programs and channels (LIB).
+Language files update (+ c_glob, d_chord, d_mute - GUI).
+Doc update (DOC).
+Bad display when setting MIDI and cursor in staff header (LIB, GUI).
+Align the ABC parser with abcm2ps-4.12.8 (PARSER).
+Bad saved lyrics when no bar at end of previous line and more
+	lyric lines (LIB).
+
+---- Version 1.0.1 - 06/01/29 ----
+
+Bad tune dump when lyrics under staff and rest at start of line (LIB).
+Crash when lyrics in tune since 1.0.0 (LIB).
+Fix some memory leak (LIB).
+
+---- Version 1.0.0 - 06/01/19 ----
+
+Change the canvas scrolling mechanism (GUI).
+Display and may change all symbols (LIB, GUI).
+Don't insert '[' when dumping a repeat bar after a bar (LIB).
+Erroneous error when deleting a symbol (GUI).
+Better (?) key binding analysis (GUI).
+Creation from 0.19.7.

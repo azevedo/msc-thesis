@@ -1,0 +1,10 @@
+X:502
+T:Tuti final
+C:Anon, 16th century
+M:3/4
+L:1/8
+K:G
+V:2 clef=treble name="Contralto" sname="C."
+%%MIDI program 1 1
+%%staves [ 2 ]
+G4 G2 | G4 G2 | E2 D2 D2 | D6 ||

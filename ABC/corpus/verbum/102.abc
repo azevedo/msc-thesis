@@ -1,0 +1,13 @@
+X:102
+T:Tuti
+C:Anon, 16th century
+M:3/4
+L:1/8
+K:G
+V:2 clef=treble name="Contralto" sname="C."
+%%MIDI program 1 1
+%%staves [ 2 ]
+D4 D2 | E4 D2 | E4 F2 | G4 z2 |:\
+w: Ver- bum | ca- ro | fac- tum | est | 
+G4 G2 | G4 G2 | E2 D4 | D6 :|
+w: Por- que | to- dos  | hos sal-|veis

@@ -1,0 +1,6 @@
+test/tune_multiple_errors.abc
+Measure 5 in voice A isn't complete!
+Measure 2 in voice B isn't complete!
+Voice B must finish with a bar!
+The number of measures per voice is different!
+

@@ -1,0 +1,108 @@
+\findchordsabc{} searches voices for melodically expressed chord formations (chords formed from a
+list of consecutive notes) such as a \emph{dominant seventh} or a \emph{major triad}. It then
+inserts an accompaniment chord with the labeled chord in the first note of a found chord.
+
+\subsection*{Algorithm}
+
+\findchordsabc{}'s algorithm consists in processing each tune with \dt{} in order to find the
+request chord formations. In the end, it returns the original tune with a labeled chord inserted as
+accompaniment chord into the first note of all chords found.
+
+An algorithmic description is made in algorithm \ref{alg:findchordsabc}.\\
+
+The set of \abcdtrules{} has only one rule. Basically, for each visited \emph{note} element, all
+consecutive notes in that measure are collected in order to form a chord and test if its formation
+has been requested by the user. The actuator isn't static though, i.e. the user may limit the search
+to a particular voice, consequently a \emph{voice restriction} needs to be added to the \emph{note}
+actuator.
+
+The set of \abcdtrules{} is shown in table \ref{tab:find_chords_abc_stage}.
+
+\begin{center}
+  \begin{table}[h]
+    \begin{tabular}{|p{2cm}|p{7cm}|p{6cm}|}
+      \hline
+      Actuator & Transformation (Perl) & Notes\\
+      \hline
+      \hline
+      \multirow{15}{*}{\$note\_act}
+      & my @notes = find\_consecutive\_notes\_in\_measure( { skip\_unisons => 1, skip\_octaves => 1,
+      skip\_rests   => 1, no\_undef     => 1 } );& \abcdt{}'s function that gets a list of
+      consecutive notes, skipping unisons, octaves, and rests.
+      \\
+
+      & search\_requested\_chords(@notes); & Local function that searches for each requested chord
+      formation by taking \emph{X} consecutive notes at a time from \emph{@notes} and creating the
+      chord to be tested against the requested chord formations. \emph{X} is a number taken from a
+      table that associates a chord formation to the number of notes that form it.
+      \\
+
+      & to\_abc(); & Prints the \emph{note} element that may have or not a labeled chord as
+      accompaniment chord.
+      \\
+      \hline
+    \end{tabular}
+    \caption{\abcdtrules{} for \findchordsabc{}}
+    \label{tab:find_chords_abc_stage}
+  \end{table}
+\end{center}
+
+To test a chord's formation, some \abcdt{} functions are being used, namely, \emph{root()},
+\emph{get\_pitch\_name()}, \emph{is\_major\_triad()}, \emph{is\_minor\_triad()},
+\emph{is\_dominant\_seventh()}. These are explained in appendix \ref{sec:abcdt_functions}.
+
+\findchordsabc{} also allows the user to specify which voices shouldn't be searched. That feature is
+translated into a set of \abcdtrules{} for each of the specified voices, in which, each rule assigns
+\toabc{} to a \emph{note} element with a \emph{voice restriction}. So, if \emph{\$ex\_voice} is a
+particular voice to be excluded from the search, then the additional rule in table
+\ref{tab:find_chords_abc_additional_rule} would be added to the existing set of \abcdtrules{}.
+
+\begin{center}
+  \begin{table}[h]
+    \begin{tabular}{|p{4.5cm}|p{4cm}|p{6.5cm}|}
+      \hline
+      Actuator & Transformation (Perl) & Notes\\
+      \hline
+      \hline
+      "V:\$ex\_voice" . '::note' & to\_abc(); & No chord formations will be searched in this
+      particular voice.\\
+      \hline
+    \end{tabular}
+    \caption{Additional \abcdtrules{} for \findchordsabc{}}
+    \label{tab:find_chords_abc_additional_rule}
+  \end{table}
+\end{center}
+
+\begin{algorithm}[H]
+  \KwIn{abc\_tunes}
+  \ForAll{$ tune \in abc\_tunes $}{
+    $res \gets res$ ++ $dt(tune,$ rules from tables \ref{tab:find_chords_abc_stage} and \ref{tab:find_chords_abc_additional_rule} $)$\\
+  }
+  \Return{$res$}
+  \caption{\findchordsabc{}'s algorithm}
+  \label{alg:findchordsabc}
+\end{algorithm}
+
+\subsection*{Usage}
+
+Listing \ref{lst:findchordsabcman} shows \findchordsabc{}'s manual.\\
+
+\lstinputlisting[caption={\findchordsabc{}'s manual},label={lst:findchordsabcman},captionpos=t,abovecaptionskip=-\medskipamount]{misc/findchords_manual.tex}
+
+Listing \ref{lst:findchords_abc_by_example} shows a usage example for \findchordsabc{}. It reads
+tunes \textbf{100\_with\_maj\_t.abc} (listing \ref{lst:verbum_s1_with_maj_t}) and the output is
+shown in listing \ref{lst:verbum_s1_with_chords}.\\
+
+\begin{lstlisting}[caption={\findchordsabc{} by example},label={lst:findchords_abc_by_example},captionpos=t,abovecaptionskip=-\medskipamount]
+find_chords_abc 100_with_maj_t.abc
+\end{lstlisting}
+
+\begin{center}
+  \begin{minipage}{.49\textwidth}
+    \lstinputlisting[caption={100\_with\_maj\_t.abc},label={lst:verbum_s1_with_maj_t},captionpos=t,abovecaptionskip=-\medskipamount]{misc/verbum_s1_with_maj_t.tex}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{.49\textwidth}
+    \lstinputlisting[caption={\findchordsabc{}'s output},label={lst:verbum_s1_with_chords},captionpos=t,abovecaptionskip=-\medskipamount]{misc/verbum_s1_with_chords.tex}
+  \end{minipage}
+\end{center}

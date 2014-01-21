@@ -1,0 +1,28 @@
+\paragraph{}
+
+\abc{}~\cite{abcnotation:Online} é uma notação musical simples mas poderosa que permite a produção
+de partituras completas e profissionais.
+
+Atualmente, existe uma escassez de ferramentas genéricas para processamento de notação musical,
+particularmente para \abc{}.
+
+Esta dissertação apresenta o \abcdt{}, uma linguagem de domínio
+específico~\cite{kosar2010comparing,kosar2008preliminary} baseada em regras (embutida em Perl),
+projetada para simplificar a criação de ferramentas para processamento de \abc{}. Inpiradas na
+filosofia \unix{}, essas ferramentas pretendem ser simples e composicionais à semelhança dos filtros
+\unix{}.
+
+A partir das regras do \abcdt{} obtém-se uma ferramenta para processamento de \abc{} cujo algoritmo
+principal segue a arquitetura de um compilador tradicional, dessa forma consistindo em três fases:
+\textbf{1)} parsing de \abc{} (baseado no parser do \abcmtops{}~\cite{abcm2ps:Online}), \textbf{2)}
+transformação semântica de \abc{} (associada a atributos \abc{}) e \textbf{3)} geração de output (um
+gerador definido pelo utilizador or fornecido pelo sistema).
+
+Um conjunto de ferramentas para processamento de \abc{} foi desenvolvido utilizando o \abcdt{}.
+Cada uma delas tem uma finalidade única, desde detetar erros, a auxiliar no estudo de música e até
+imitar o comportamento de algumas ferramentas \unix{}. Estas têm o objetivo de serem provas de
+conceito e ainda podem ser melhoradas, no entanto demonstram quão facilmente ferramentas compactas
+para processamento de \abc{} podem ser criadas.
+
+Um teste e avaliação foram realizados a uma das ferramentas criadas (\canonabc{}) com uma partitura
+\abc{} real, o \texttt{Canon de Pachelbel}.

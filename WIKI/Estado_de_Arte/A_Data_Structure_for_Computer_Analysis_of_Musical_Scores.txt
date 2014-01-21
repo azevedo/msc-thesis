@@ -1,0 +1,28 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-12-19T22:18:05+00:00
+
+====== A Data Structure for Computer Analysis of Musical Scores ======
+Created Wednesday 19 December 2012
+
+=== Brinkman, A ===
+
+* Lido a 18/12/2012
+
+**Introduction**
+The gols of this work was to produce a data structure for use within the computer (as opposed to an external coding language) that could represent musical scores in natural manner, that would be relativily easy to manipulate, and would be applicable to a broad spectrum of music-analytic activities. Some requirements for this system follow:
+1. Each musical parameter should be represented in a manner which is easily accessible to the programmer and natural to the analyst
+2. The pitch parameter must be fully  specified, that is octave, pitch class, and spelling should be available
+3. The system should provide for precise handling of rhythm of any complexity
+4. There should be good representations of other attributes that might be usefull in analysis (dynamics, articulation, etc)
+5. It must be possible to follow any part through the score and to ascertain vertical structure, but the path through the music should not be limited to these two
+6. Segmentation of the score by rests, articulations, slurs, instrumentation, registers, dynamics, etc. must be possible
+7. It should be possible to represent scores of virtually any complexity
+8. Although the system would begin modestly, is must be designed so that it must be extensible
+**The score structure**
+A major problem in representing score for computer processing is that the texture is often variable. One part may have many notes, while others have few or none at all, and parts may divide and subdivide. In addition, it is desirable to maintain alignment between events that occur at the same time in all parts. Thus a linked representation of a sparse matrix is a logical choice for a data structure.
+Our data structure is based on circular doubly linked lists.
+Our score representation is a doubly-linked ring structure consisting of many interlocking instances of the circular list.
+This allows an analysis program to move about in the score in any manner desired, looking back or ahead at will, combining horizontal and vertical motion in any manner required.
+**Application and Development**
+The representation is sufficiently general and complete to be useful in many different analytic tasks in many styles of music. We have experimented with algorithms that do diverse tasks such as elementary harmonic analysis, location of subject entries in fugues, and segmentation og 20th Century music.
